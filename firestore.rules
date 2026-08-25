@@ -3,26 +3,33 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Randevular koleksiyonu
-    match /appointments/{appointmentId} {
+    // Yönetici e-postası — kendi yönetici Google e-postanızı yazın (küçük harf).
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'YONETICI_EPOSTA@gmail.com';
+    }
 
-      // Giriş yapmış (Google/e-posta) kullanıcı randevu oluşturabilir.
-      // Telefon ve ad alanları zorunlu.
+    // Randevular
+    match /appointments/{appointmentId} {
+      // Giriş yapmış kullanıcı randevu oluşturabilir (telefon + ad zorunlu).
       allow create: if request.auth != null
         && request.resource.data.phone is string
         && request.resource.data.phone.size() >= 10
         && request.resource.data.name is string
         && request.resource.data.name.size() >= 2;
 
-      // Kullanıcı yalnızca kendi randevusunu okuyabilir;
-      // yöneticiler (admin custom claim) tüm randevuları okuyabilir.
+      // Kullanıcı yalnızca kendi randevusunu okur; yönetici tümünü okur.
       allow read: if request.auth != null
-        && (resource.data.userId == request.auth.uid
-            || request.auth.token.admin == true);
+        && (resource.data.userId == request.auth.uid || isAdmin());
 
       // Durum güncelleme ve silme yalnızca yöneticiye açıktır.
-      allow update, delete: if request.auth != null
-        && request.auth.token.admin == true;
+      allow update, delete: if isAdmin();
+    }
+
+    // Kullanıcı profili (telefon vb.) — yalnızca kendisi erişir.
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
     }
   }
 }

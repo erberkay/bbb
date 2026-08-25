@@ -1,20 +1,57 @@
 /* =========================================================
    HB ŞANZIMAN — Uygulama Mantığı
-   Veri katmanı (Store) + Auth + Randevu + Admin + UI
-   NOT: Demo amaçlı veriler tarayıcıda (localStorage) tutulur.
-        Gerçek ortam için Firebase/sunucu entegrasyonu önerilir.
+   Firebase (Auth + Firestore) varsa gerçek backend,
+   yoksa localStorage (demo) ile çalışır.
    ========================================================= */
 (function () {
   'use strict';
 
   /* -----------------------------------------------------
-     STORE — localStorage veri katmanı ("backend" simülasyonu)
+     FIREBASE — yapılandırma varsa başlat
+  ----------------------------------------------------- */
+  const CFG = window.HB_FIREBASE_CONFIG;
+  const ADMIN_EMAIL = String(window.HB_ADMIN_EMAIL || '').trim().toLowerCase();
+
+  const FB = (() => {
+    const ok = CFG && CFG.apiKey && !String(CFG.apiKey).includes('BURAYA') && window.firebase;
+    if (!ok) return { on: false };
+    try {
+      firebase.initializeApp(CFG);
+      const auth = firebase.auth();
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
+      const provider = new firebase.auth.GoogleAuthProvider();
+      return { on: true, auth, db: firebase.firestore(), provider };
+    } catch (e) {
+      console.warn('[HB] Firebase başlatılamadı, localStorage moduna geçiliyor:', e);
+      return { on: false };
+    }
+  })();
+
+  function firebaseErr(e) {
+    const m = {
+      'auth/popup-closed-by-user': 'Giriş penceresi kapatıldı.',
+      'auth/cancelled-popup-request': 'Giriş iptal edildi.',
+      'auth/popup-blocked': 'Tarayıcı açılır pencereyi engelledi.',
+      'auth/email-already-in-use': 'Bu e-posta zaten kayıtlı.',
+      'auth/invalid-email': 'Geçersiz e-posta.',
+      'auth/weak-password': 'Şifre çok zayıf (en az 6 karakter).',
+      'auth/wrong-password': 'E-posta veya şifre hatalı.',
+      'auth/user-not-found': 'E-posta veya şifre hatalı.',
+      'auth/invalid-credential': 'E-posta veya şifre hatalı.',
+      'auth/operation-not-allowed': 'Bu giriş yöntemi Firebase Console\'da açık değil.',
+      'permission-denied': 'Yetki reddedildi (Firestore kuralları).',
+    };
+    return m[e && e.code] || (e && e.message) || 'Bir hata oluştu.';
+  }
+
+  /* -----------------------------------------------------
+     STORE — localStorage veri katmanı (Firebase yoksa)
   ----------------------------------------------------- */
   const KEY = { users: 'hb_users', appts: 'hb_appointments', session: 'hb_session', admin: 'hb_admin_session' };
-  const ADMIN_CREDS = { username: 'admin', password: 'hb2024' }; // Üretimde sunucu tarafında doğrulanmalı
+  const ADMIN_CREDS = { username: 'admin', password: 'hb2024' };
 
   const Store = {
-    read(k, fallback) { try { return JSON.parse(localStorage.getItem(k)) ?? fallback; } catch { return fallback; } },
+    read(k, fb) { try { return JSON.parse(localStorage.getItem(k)) ?? fb; } catch { return fb; } },
     write(k, v) { localStorage.setItem(k, JSON.stringify(v)); },
     getUsers() { return this.read(KEY.users, []); },
     saveUsers(u) { this.write(KEY.users, u); },
@@ -38,7 +75,6 @@
   function uid() { return 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
   function refCode() { return 'HB' + String(Date.now()).slice(-6); }
 
-  // Türkiye telefon doğrulama & biçimlendirme
   function normPhone(v) { let d = String(v).replace(/\D/g, ''); if (d.startsWith('90')) d = d.slice(2); if (d.startsWith('0')) d = d.slice(1); return d; }
   function validPhone(v) { const d = normPhone(v); return d.length === 10 && /^[2-5]/.test(d); }
   function fmtPhone(v) { const d = normPhone(v); if (d.length !== 10) return v; return `0${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 8)} ${d.slice(8)}`; }
@@ -53,7 +89,58 @@
   };
 
   /* -----------------------------------------------------
-     TOAST bildirimleri
+     SESSION — oturum durumu (Firebase modunda bellek + mirror)
+  ----------------------------------------------------- */
+  let SESSION = FB.on ? null : Store.getSession();
+  function getSession() { return SESSION; }
+  function setSession(s) { SESSION = s; if (!FB.on) Store.setSession(s); }
+
+  /* -----------------------------------------------------
+     DATA — randevu veri katmanı (Firestore veya localStorage)
+  ----------------------------------------------------- */
+  const Data = {
+    async create(appt) {
+      if (FB.on) return FB.db.collection('appointments').doc(appt.id).set(appt);
+      const a = Store.getAppts(); a.push(appt); Store.saveAppts(a);
+    },
+    async listByUser(userId) {
+      if (FB.on) {
+        const q = await FB.db.collection('appointments').where('userId', '==', userId).get();
+        return q.docs.map(d => d.data()).sort((a, b) => b.createdAt - a.createdAt);
+      }
+      return Store.getAppts().filter(a => a.userId === userId).sort((a, b) => b.createdAt - a.createdAt);
+    },
+    async listAll() {
+      if (FB.on) {
+        const q = await FB.db.collection('appointments').orderBy('createdAt', 'desc').get();
+        return q.docs.map(d => d.data());
+      }
+      return Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
+    },
+    async setStatus(id, status) {
+      if (FB.on) return FB.db.collection('appointments').doc(id).update({ status });
+      const a = Store.getAppts(); const x = a.find(y => y.id === id); if (x) { x.status = status; Store.saveAppts(a); }
+    },
+    async remove(id) {
+      if (FB.on) return FB.db.collection('appointments').doc(id).delete();
+      Store.saveAppts(Store.getAppts().filter(y => y.id !== id));
+    },
+    async saveUserPhone(userId, phone, name) {
+      if (FB.on) { try { await FB.db.collection('users').doc(userId).set({ phone, name }, { merge: true }); } catch (e) { /* opsiyonel */ } }
+    },
+    async getUserPhone(userId) {
+      if (FB.on) { try { const d = await FB.db.collection('users').doc(userId).get(); return d.exists ? (d.data().phone || '') : ''; } catch (e) { return ''; } }
+      return '';
+    },
+  };
+
+  function isAdminUser() {
+    if (FB.on) { const s = getSession(); return !!(s && ADMIN_EMAIL && s.email === ADMIN_EMAIL); }
+    return Store.isAdmin();
+  }
+
+  /* -----------------------------------------------------
+     TOAST
   ----------------------------------------------------- */
   function toast(title, msg, type = 'success') {
     const wrap = $('#toastWrap');
@@ -71,7 +158,7 @@
   }
 
   /* -----------------------------------------------------
-     MODAL kontrolü
+     MODAL
   ----------------------------------------------------- */
   function openModal(id) { $('#' + id).classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeModal(id) { $('#' + id).classList.remove('open'); if (!$('.modal-overlay.open')) document.body.style.overflow = ''; }
@@ -82,9 +169,9 @@
   }
 
   /* -----------------------------------------------------
-     AUTH — kayıt / giriş / Google / çıkış
+     AUTH
   ----------------------------------------------------- */
-  let authMode = 'login'; // 'login' | 'register'
+  let authMode = 'login';
 
   function setAuthMode(mode) {
     authMode = mode;
@@ -95,7 +182,8 @@
     $('#authSwitchText').textContent = reg ? 'Zaten hesabınız var mı?' : 'Hesabınız yok mu?';
     $('#authSwitchBtn').textContent = reg ? 'Giriş Yap' : 'Kayıt Ol';
     $('#nameField').style.display = reg ? 'flex' : 'none';
-    $('#phoneField').style.display = reg ? 'flex' : 'none';
+    // Firebase modunda telefon üyelikte değil, randevuda alınır
+    $('#phoneField').style.display = (reg && !FB.on) ? 'flex' : 'none';
     $('#authForm').querySelector('[name=password]').setAttribute('autocomplete', reg ? 'new-password' : 'current-password');
     clearFieldErrors($('#authForm'));
   }
@@ -109,7 +197,7 @@
     if (msg) { const err = $('.err', field); if (err) err.textContent = msg; }
   }
 
-  function handleAuthSubmit(e) {
+  async function handleAuthSubmit(e) {
     e.preventDefault();
     const form = e.target;
     clearFieldErrors(form);
@@ -118,54 +206,80 @@
 
     if (authMode === 'register' && (!data.name || data.name.trim().length < 2)) { markInvalid(form.name, 'Lütfen adınızı girin.'); ok = false; }
     if (!validEmail(data.email)) { markInvalid(form.email, 'Geçerli bir e-posta girin.'); ok = false; }
-    if (authMode === 'register' && !validPhone(data.phone)) { markInvalid(form.phone, 'Geçerli bir telefon girin.'); ok = false; }
+    if (authMode === 'register' && !FB.on && !validPhone(data.phone)) { markInvalid(form.phone, 'Geçerli bir telefon girin.'); ok = false; }
     if (!data.password || data.password.length < 6) { markInvalid(form.password, 'Şifre en az 6 karakter olmalı.'); ok = false; }
     if (!ok) return;
 
-    const users = Store.getUsers();
+    // --- Firebase Auth (e-posta/şifre) ---
+    if (FB.on) {
+      const btn = $('#authSubmit'); btn.disabled = true;
+      try {
+        if (authMode === 'register') {
+          const cred = await FB.auth.createUserWithEmailAndPassword(data.email.trim(), data.password);
+          await cred.user.updateProfile({ displayName: data.name.trim() });
+          await Data.saveUserPhone(cred.user.uid, '', data.name.trim());
+          toast('Hoş geldiniz, ' + data.name.trim().split(' ')[0] + '!', 'Hesabınız oluşturuldu.', 'success');
+        } else {
+          await FB.auth.signInWithEmailAndPassword(data.email.trim(), data.password);
+          toast('Tekrar hoş geldiniz!', '', 'success');
+        }
+        closeModal('authModal'); form.reset();
+      } catch (err) {
+        markInvalid(form.password, firebaseErr(err));
+      } finally { btn.disabled = false; }
+      return;
+    }
 
+    // --- localStorage (demo) ---
+    const users = Store.getUsers();
     if (authMode === 'register') {
-      if (users.some(u => u.email.toLowerCase() === data.email.toLowerCase())) {
-        markInvalid(form.email, 'Bu e-posta zaten kayıtlı.'); return;
-      }
+      if (users.some(u => u.email.toLowerCase() === data.email.toLowerCase())) { markInvalid(form.email, 'Bu e-posta zaten kayıtlı.'); return; }
       const user = { id: uid(), name: data.name.trim(), email: data.email.toLowerCase(), phone: fmtPhone(data.phone), pass: simpleHash(data.password), provider: 'email', createdAt: Date.now() };
       users.push(user); Store.saveUsers(users);
-      loginSession(user); closeModal('authModal');
+      loginSessionLocal(user); closeModal('authModal');
       toast('Hoş geldiniz, ' + user.name.split(' ')[0] + '!', 'Hesabınız oluşturuldu.', 'success');
     } else {
       const user = users.find(u => u.email.toLowerCase() === data.email.toLowerCase());
       if (!user || user.pass !== simpleHash(data.password)) { markInvalid(form.password, 'E-posta veya şifre hatalı.'); return; }
-      loginSession(user); closeModal('authModal');
+      loginSessionLocal(user); closeModal('authModal');
       toast('Tekrar hoş geldiniz!', user.name, 'success');
     }
     form.reset();
   }
 
-  // Google ile giriş — DEMO simülasyonu.
-  // Gerçek entegrasyon: Google Identity Services veya Firebase Auth (aşağıdaki nota bakın).
-  function handleGoogleLogin() {
+  async function handleGoogleLogin() {
+    if (FB.on) {
+      try {
+        await FB.auth.signInWithPopup(FB.provider);
+        closeModal('authModal');
+        toast('Google ile giriş yapıldı', '', 'success');
+      } catch (err) {
+        toast('Giriş yapılamadı', firebaseErr(err), 'error');
+      }
+      return;
+    }
+    // demo
     const users = Store.getUsers();
     let user = users.find(u => u.provider === 'google');
-    if (!user) {
-      user = { id: uid(), name: 'Google Kullanıcısı', email: 'kullanici@gmail.com', phone: '', pass: null, provider: 'google', createdAt: Date.now() };
-      users.push(user); Store.saveUsers(users);
-    }
-    loginSession(user); closeModal('authModal');
+    if (!user) { user = { id: uid(), name: 'Google Kullanıcısı', email: 'kullanici@gmail.com', phone: '', pass: null, provider: 'google', createdAt: Date.now() }; users.push(user); Store.saveUsers(users); }
+    loginSessionLocal(user); closeModal('authModal');
     toast('Google ile giriş yapıldı', 'Demo modu — randevuda telefonunuzu ekleyin.', 'success');
   }
 
-  function loginSession(user) {
-    Store.setSession({ id: user.id, name: user.name, email: user.email, phone: user.phone || '', provider: user.provider });
-    renderAuthUI();
-    renderApptCard();
+  // localStorage modunda oturum aç
+  function loginSessionLocal(user) {
+    setSession({ id: user.id, name: user.name, email: user.email, phone: user.phone || '', provider: user.provider });
+    renderAuthUI(); renderApptCard();
   }
-  function logout() {
-    Store.setSession(null); renderAuthUI(); renderApptCard();
+
+  async function logout() {
+    if (FB.on) { try { await FB.auth.signOut(); } catch (e) {} }
+    else { setSession(null); renderAuthUI(); renderApptCard(); }
     toast('Çıkış yapıldı', 'Tekrar bekleriz!', 'info');
   }
 
   function renderAuthUI() {
-    const s = Store.getSession();
+    const s = getSession();
     const area = $('#navAuthArea');
     if (s) {
       area.innerHTML = `<div class="nav-user">
@@ -179,16 +293,38 @@
     }
   }
 
+  // Firebase oturum değişimini izle
+  function watchFirebaseAuth() {
+    FB.auth.onAuthStateChanged(async (u) => {
+      if (u) {
+        const phone = await Data.getUserPhone(u.uid);
+        SESSION = {
+          id: u.uid,
+          name: u.displayName || (u.email || 'Kullanıcı').split('@')[0],
+          email: (u.email || '').toLowerCase(),
+          phone: phone || '',
+          provider: (u.providerData[0] && u.providerData[0].providerId) || 'password',
+        };
+      } else {
+        SESSION = null;
+      }
+      renderAuthUI();
+      renderApptCard();
+    });
+  }
+
   /* -----------------------------------------------------
-     RANDEVU — kart render, form, gönderim
+     RANDEVU
   ----------------------------------------------------- */
   const SERVICES = ['Otomatik Şanzıman Tamiri', 'Tork Konvertörü Tamiri', 'DSG / CVT Şanzıman', 'Şanzıman Revizyonu', 'Arıza Tespiti (Diagnostik)', 'Şanzıman Yağı & Bakım', 'Diğer / Emin Değilim'];
   const GEARTYPES = ['Otomatik', 'Yarı Otomatik', 'DSG (Çift Kavrama)', 'CVT', 'Bilmiyorum'];
   const TIMES = ['09:00', '10:00', '11:00', '12:00', '13:30', '14:30', '15:30', '16:30', '17:30'];
 
+  const GOOGLE_SVG = `<svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 13.2 4.5 4.5 13.2 4.5 24S13.2 43.5 24 43.5 43.5 34.8 43.5 24c0-1.2-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 16.3 4.5 9.7 8.9 6.3 14.7z"/><path fill="#4CAF50" d="M24 43.5c5.4 0 10.3-2 14-5.3l-6.5-5.5c-2 1.5-4.6 2.3-7.5 2.3-5.2 0-9.6-3.3-11.2-7.9l-6.5 5C9.6 39 16.2 43.5 24 43.5z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.5 5.5c-.5.4 6.7-4.9 6.7-15 0-1.2-.1-2.3-.9-3.5z"/></svg>`;
+
   function renderApptCard() {
     const card = $('#apptCard');
-    const s = Store.getSession();
+    const s = getSession();
 
     if (!s) {
       card.innerHTML = `
@@ -196,10 +332,7 @@
           <div class="lock-ic"><svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
           <h3>Randevu için giriş yapın</h3>
           <p>Randevu oluşturmak için hesabınızla giriş yapın veya hızlıca ücretsiz hesap oluşturun.</p>
-          <button class="btn-google" id="gateGoogle" style="margin-bottom:14px">
-            <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 13.2 4.5 4.5 13.2 4.5 24S13.2 43.5 24 43.5 43.5 34.8 43.5 24c0-1.2-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 16.3 4.5 9.7 8.9 6.3 14.7z"/><path fill="#4CAF50" d="M24 43.5c5.4 0 10.3-2 14-5.3l-6.5-5.5c-2 1.5-4.6 2.3-7.5 2.3-5.2 0-9.6-3.3-11.2-7.9l-6.5 5C9.6 39 16.2 43.5 24 43.5z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.5 5.5c-.5.4 6.7-4.9 6.7-15 0-1.2-.1-2.3-.9-3.5z"/></svg>
-            Google ile devam et
-          </button>
+          <button class="btn-google" id="gateGoogle" style="margin-bottom:14px">${GOOGLE_SVG} Google ile devam et</button>
           <button class="btn btn-ghost btn-block" id="gateEmail">E-posta ile giriş / kayıt</button>
         </div>`;
       $('#gateGoogle').addEventListener('click', handleGoogleLogin);
@@ -207,7 +340,6 @@
       return;
     }
 
-    const myAppts = Store.getAppts().filter(a => a.userId === s.id).sort((a, b) => b.createdAt - a.createdAt);
     const serviceOpts = SERVICES.map(x => `<option value="${esc(x)}">${esc(x)}</option>`).join('');
     const gearOpts = GEARTYPES.map(x => `<option value="${esc(x)}">${esc(x)}</option>`).join('');
     const timeOpts = TIMES.map(x => `<option value="${x}">${x}</option>`).join('');
@@ -256,20 +388,25 @@
             <textarea name="note" placeholder="Aracınızdaki belirtileri kısaca anlatın (ses, sarsıntı, vites atlaması vb.)"></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px">
+        <button type="submit" class="btn btn-primary btn-block" id="apptSubmitBtn" style="margin-top:20px">
           <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
           Randevuyu Onayla
         </button>
         <p class="form-note">Randevunuz için telefon numaranız zorunludur; onay araması yapılabilir.</p>
       </form>
-      ${myAppts.length ? renderMyAppts(myAppts) : ''}`;
+      <div id="myApptsWrap"></div>`;
 
     $('#apptForm').addEventListener('submit', handleApptSubmit);
+    loadMyAppts(s.id);
   }
 
-  function renderMyAppts(list) {
+  async function loadMyAppts(userId) {
+    let list = [];
+    try { list = await Data.listByUser(userId); } catch (e) { return; }
+    const wrap = $('#myApptsWrap');
+    if (!wrap || !list.length) return;
     const rows = list.slice(0, 4).map(a => {
-      const st = STATUS[a.status];
+      const st = STATUS[a.status] || STATUS.pending;
       return `<div class="appt-summary" style="margin-bottom:10px">
         <div class="r"><span>Randevu No</span><b>${esc(a.ref)}</b></div>
         <div class="r"><span>Tarih</span><b>${esc(a.date)} · ${esc(a.time)}</b></div>
@@ -277,11 +414,11 @@
         <div class="r"><span>Durum</span><span class="badge ${st.cls}">${st.label}</span></div>
       </div>`;
     }).join('');
-    return `<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px">
+    wrap.innerHTML = `<div style="margin-top:28px;border-top:1px solid var(--border);padding-top:22px">
       <h4 style="font-family:var(--ff-display);margin-bottom:14px">Randevularım</h4>${rows}</div>`;
   }
 
-  function handleApptSubmit(e) {
+  async function handleApptSubmit(e) {
     e.preventDefault();
     const form = e.target;
     clearFieldErrors(form);
@@ -294,7 +431,7 @@
     if (!d.date || d.date < todayStr()) { markInvalid(form.date, 'Bugün veya ileri bir tarih seçin.'); ok = false; }
     if (!ok) { toast('Formu kontrol edin', 'Zorunlu alanları doldurun.', 'error'); return; }
 
-    const s = Store.getSession();
+    const s = getSession();
     const appt = {
       ref: refCode(), id: uid(), userId: s.id,
       name: d.name.trim(), phone: fmtPhone(d.phone), email: s.email,
@@ -302,10 +439,22 @@
       date: d.date, time: d.time, note: (d.note || '').trim(),
       status: 'pending', createdAt: Date.now(),
     };
-    const appts = Store.getAppts(); appts.push(appt); Store.saveAppts(appts);
 
-    // Kullanıcının telefonunu güncelle (bir dahaki sefere hazır gelsin)
-    if (!s.phone) { s.phone = appt.phone; Store.setSession(s); const us = Store.getUsers(); const u = us.find(x => x.id === s.id); if (u) { u.phone = appt.phone; Store.saveUsers(us); } }
+    const btn = $('#apptSubmitBtn'); if (btn) btn.disabled = true;
+    try {
+      await Data.create(appt);
+    } catch (err) {
+      if (btn) btn.disabled = false;
+      toast('Randevu kaydedilemedi', firebaseErr(err), 'error');
+      return;
+    }
+
+    // Telefonu profile kaydet (bir dahaki sefer hazır gelsin)
+    if (!s.phone) {
+      s.phone = appt.phone;
+      if (FB.on) { Data.saveUserPhone(s.id, appt.phone, s.name); }
+      else { setSession(s); const us = Store.getUsers(); const u = us.find(x => x.id === s.id); if (u) { u.phone = appt.phone; Store.saveUsers(us); } }
+    }
 
     showApptSuccess(appt);
     toast('Randevu oluşturuldu!', 'No: ' + appt.ref, 'success');
@@ -333,8 +482,10 @@
   }
 
   /* -----------------------------------------------------
-     ADMIN — giriş, tablo, durum, silme, filtre, dışa aktarım
+     ADMIN
   ----------------------------------------------------- */
+  let ADMIN_CACHE = [];
+
   function handleAdminSubmit(e) {
     e.preventDefault();
     const d = Object.fromEntries(new FormData(e.target));
@@ -349,15 +500,19 @@
   function openAdminPanel() { $('#adminPanel').classList.add('open'); document.body.style.overflow = 'hidden'; renderAdmin(); }
   function closeAdminPanel() { $('#adminPanel').classList.remove('open'); document.body.style.overflow = ''; }
 
-  function renderAdmin() {
-    const all = Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
-    // İstatistikler
+  async function renderAdmin() {
+    try { ADMIN_CACHE = await Data.listAll(); }
+    catch (err) { toast('Randevular okunamadı', firebaseErr(err), 'error'); ADMIN_CACHE = []; }
+    renderAdminTable();
+  }
+
+  function renderAdminTable() {
+    const all = ADMIN_CACHE;
     $('#stTotal').textContent = all.length;
     $('#stPending').textContent = all.filter(a => a.status === 'pending').length;
     $('#stConfirmed').textContent = all.filter(a => a.status === 'confirmed').length;
     $('#stDone').textContent = all.filter(a => a.status === 'done').length;
 
-    // Filtre + arama
     const q = ($('#searchInput').value || '').toLowerCase().trim();
     const fs = $('#filterStatus').value;
     const list = all.filter(a => {
@@ -385,26 +540,31 @@
       </tr>`;
     }).join('');
 
-    // Olay bağlama
     $$('.status-select', body).forEach(sel => sel.addEventListener('change', () => updateStatus(sel.dataset.id, sel.value)));
     $$('[data-del]', body).forEach(b => b.addEventListener('click', () => deleteAppt(b.dataset.del)));
     $$('[data-call]', body).forEach(b => b.addEventListener('click', () => { location.href = 'tel:' + b.dataset.call; }));
   }
 
-  function updateStatus(id, status) {
-    const appts = Store.getAppts(); const a = appts.find(x => x.id === id);
-    if (a) { a.status = status; Store.saveAppts(appts); renderAdmin(); toast('Durum güncellendi', STATUS[status].label, 'info'); }
+  async function updateStatus(id, status) {
+    try { await Data.setStatus(id, status); } catch (err) { toast('Güncellenemedi', firebaseErr(err), 'error'); return; }
+    const a = ADMIN_CACHE.find(x => x.id === id); if (a) a.status = status;
+    renderAdminTable();
+    toast('Durum güncellendi', STATUS[status].label, 'info');
   }
-  function deleteAppt(id) {
+
+  async function deleteAppt(id) {
     if (!confirm('Bu randevuyu silmek istediğinize emin misiniz?')) return;
-    Store.saveAppts(Store.getAppts().filter(x => x.id !== id)); renderAdmin(); toast('Randevu silindi', '', 'info');
+    try { await Data.remove(id); } catch (err) { toast('Silinemedi', firebaseErr(err), 'error'); return; }
+    ADMIN_CACHE = ADMIN_CACHE.filter(x => x.id !== id);
+    renderAdminTable();
+    toast('Randevu silindi', '', 'info');
   }
 
   function exportCSV() {
-    const appts = Store.getAppts();
+    const appts = ADMIN_CACHE;
     if (!appts.length) { toast('Veri yok', 'Dışa aktarılacak randevu bulunmuyor.', 'error'); return; }
     const head = ['Randevu No', 'Ad Soyad', 'Telefon', 'E-posta', 'Araç', 'Şanzıman Tipi', 'Hizmet', 'Tarih', 'Saat', 'Durum', 'Not'];
-    const rows = appts.map(a => [a.ref, a.name, a.phone, a.email, a.vehicle, a.gearType, a.service, a.date, a.time, STATUS[a.status].label, a.note]
+    const rows = appts.map(a => [a.ref, a.name, a.phone, a.email, a.vehicle, a.gearType, a.service, a.date, a.time, (STATUS[a.status] || {}).label || a.status, a.note]
       .map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(','));
     const csv = '﻿' + [head.join(','), ...rows].join('\n');
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -413,35 +573,42 @@
     toast('CSV indirildi', appts.length + ' randevu dışa aktarıldı.', 'success');
   }
 
+  function handleAdminEntry(e) {
+    e.preventDefault();
+    if (FB.on) {
+      const s = getSession();
+      if (!s) { toast('Giriş gerekli', 'Yönetici Google hesabıyla giriş yapın.', 'info'); openAuth('login'); return; }
+      if (!ADMIN_EMAIL) { toast('Yönetici ayarlı değil', 'firebase-config.js içine yönetici e-postası ekleyin.', 'error'); return; }
+      if (s.email !== ADMIN_EMAIL) { toast('Yetkisiz hesap', 'Bu hesap yönetici değil.', 'error'); return; }
+      openAdminPanel();
+    } else {
+      if (Store.isAdmin()) openAdminPanel(); else openModal('adminModal');
+    }
+  }
+
   /* -----------------------------------------------------
-     UI — navbar, mobil menü, reveal, sayaçlar
+     UI
   ----------------------------------------------------- */
   function bindUI() {
-    // Navbar scroll
     const nav = $('#nav');
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
     window.addEventListener('scroll', onScroll); onScroll();
 
-    // Mobil menü
     const burger = $('#hamburger'), links = $('#navLinks');
     burger.addEventListener('click', () => links.classList.toggle('open'));
     $$('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
-    // Yıl
     $('#year').textContent = new Date().getFullYear();
 
-    // Reveal animasyonu
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     $$('.reveal').forEach(el => io.observe(el));
 
-    // Sayaç animasyonu
-    const counters = $$('[data-count]');
     const cio = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); } });
     }, { threshold: 0.5 });
-    counters.forEach(c => cio.observe(c));
+    $$('[data-count]').forEach(c => cio.observe(c));
   }
 
   function animateCount(el) {
@@ -465,25 +632,21 @@
     renderAuthUI();
     renderApptCard();
 
-    // Auth modal olayları
     $('#authForm').addEventListener('submit', handleAuthSubmit);
     $('#googleBtn').addEventListener('click', handleGoogleLogin);
     $('#authSwitchBtn').addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
-    $('#navLoginBtn')?.addEventListener('click', () => openAuth('login'));
+    $('#navLoginBtn') && $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
 
-    // Randevu Al butonları giriş yoksa uyarı vermeden bölüme kaydırır; kart zaten gate gösterir.
-
-    // Admin olayları
-    $('#adminEntry').addEventListener('click', (e) => { e.preventDefault(); if (Store.isAdmin()) openAdminPanel(); else openModal('adminModal'); });
+    $('#adminEntry').addEventListener('click', handleAdminEntry);
     $('#adminForm').addEventListener('submit', handleAdminSubmit);
-    $('#adminLogout').addEventListener('click', () => { Store.setAdmin(false); closeAdminPanel(); toast('Yönetici çıkışı yapıldı', '', 'info'); });
+    $('#adminLogout').addEventListener('click', () => { if (!FB.on) Store.setAdmin(false); closeAdminPanel(); toast('Yönetici çıkışı yapıldı', '', 'info'); });
     $('#refreshBtn').addEventListener('click', renderAdmin);
-    $('#searchInput').addEventListener('input', renderAdmin);
-    $('#filterStatus').addEventListener('change', renderAdmin);
+    $('#searchInput').addEventListener('input', renderAdminTable);
+    $('#filterStatus').addEventListener('change', renderAdminTable);
     $('#exportBtn').addEventListener('click', exportCSV);
 
-    // Demo verisi (ilk açılışta örnek randevular)
-    seedDemo();
+    if (FB.on) { setAuthMode('login'); watchFirebaseAuth(); }
+    else { seedDemo(); }
   }
 
   function seedDemo() {
