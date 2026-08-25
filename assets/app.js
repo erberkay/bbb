@@ -182,8 +182,8 @@
   /* -----------------------------------------------------
      RANDEVU — kart render, form, gönderim
   ----------------------------------------------------- */
-  const SERVICES = ['Otomatik Şanzıman Tamiri', 'Manuel Şanzıman Tamiri', 'DSG / CVT Şanzıman', 'Şanzıman Revizyonu', 'Arıza Tespiti (Diagnostik)', 'Şanzıman Yağı & Bakım', 'Diğer / Emin Değilim'];
-  const GEARTYPES = ['Otomatik', 'Manuel', 'Yarı Otomatik', 'DSG (Çift Kavrama)', 'CVT', 'Bilmiyorum'];
+  const SERVICES = ['Otomatik Şanzıman Tamiri', 'Tork Konvertörü Tamiri', 'DSG / CVT Şanzıman', 'Şanzıman Revizyonu', 'Arıza Tespiti (Diagnostik)', 'Şanzıman Yağı & Bakım', 'Diğer / Emin Değilim'];
+  const GEARTYPES = ['Otomatik', 'Yarı Otomatik', 'DSG (Çift Kavrama)', 'CVT', 'Bilmiyorum'];
   const TIMES = ['09:00', '10:00', '11:00', '12:00', '13:30', '14:30', '15:30', '16:30', '17:30'];
 
   function renderApptCard() {
