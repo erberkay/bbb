@@ -106,11 +106,27 @@
       }
       return Store.getAppts().filter(a => a.userId === userId).sort((a, b) => b.createdAt - a.createdAt);
     },
-    // NOT: listAll / setStatus / remove kaldırıldı.
-    // Bunlar yalnızca yönetici paneli tarafından kullanılıyordu. Panel herkese
-    // açık siteden çıkarıldığı için, tüm randevuları okuma / durum değiştirme /
-    // silme yetenekleri de istemci kodundan tamamen kaldırıldı.
-    // Randevular Firebase Console üzerinden yönetilir.
+    // Yönetici işlemleri. Bu fonksiyonların çağrılabiliyor olması yetki VERMEZ:
+    // yetkilendirme Firestore güvenlik kurallarındaki isAdmin() ile sunucu
+    // tarafında yapılır. İstemci kodunu değiştiren biri paneli açabilir ama
+    // Firestore veriyi yine de vermez.
+    async listAll() {
+      if (!FB.on) return Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
+      const q = await FB.db.collection('appointments').get();
+      return q.docs.map(d => d.data()).sort((a, b) => b.createdAt - a.createdAt);
+    },
+    async setStatus(id, status) {
+      if (!FB.on) {
+        const a = Store.getAppts(); const x = a.find(v => v.id === id);
+        if (x) { x.status = status; Store.saveAppts(a); }
+        return;
+      }
+      return FB.db.collection('appointments').doc(id).update({ status });
+    },
+    async remove(id) {
+      if (!FB.on) { Store.saveAppts(Store.getAppts().filter(v => v.id !== id)); return; }
+      return FB.db.collection('appointments').doc(id).delete();
+    },
     async saveUserPhone(userId, phone, name) {
       if (FB.on) { try { await FB.db.collection('users').doc(userId).set({ phone, name }, { merge: true }); } catch (e) { /* opsiyonel */ } }
     },
@@ -266,6 +282,7 @@
   }
 
   async function logout() {
+    closeAdmin();
     if (FB.on) { try { await FB.auth.signOut(); } catch (e) {} }
     else { setSession(null); renderAuthUI(); renderApptCard(); }
     toast('Çıkış yapıldı', 'Tekrar bekleriz!', 'info');
@@ -277,10 +294,13 @@
     if (!area) return;
     if (s) {
       area.innerHTML = `<div class="nav-user">
+        ${isAdminUser() ? '<button class="btn btn-primary btn-sm" id="navAdminBtn">Randevular</button>' : ''}
         <div class="avatar" title="${esc(s.name)}">${esc(initials(s.name))}</div>
         <button class="btn btn-ghost btn-sm" id="navLogoutBtn">Çıkış</button>
       </div>`;
       $('#navLogoutBtn').addEventListener('click', logout);
+      const ab = $('#navAdminBtn');
+      if (ab) ab.addEventListener('click', openAdmin);
     } else {
       area.innerHTML = `<button class="btn btn-ghost btn-sm" id="navLoginBtn">Giriş Yap</button>`;
       $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
@@ -305,6 +325,119 @@
       renderAuthUI();
       renderApptCard();
     });
+  }
+
+  /* -----------------------------------------------------
+     YÖNETİCİ PANELİ
+     Yetki Firestore kurallarında (isAdmin) tanımlı; buradaki kontrol
+     yalnızca arayüzü göstermek/gizlemek için. Gerçek koruma sunucuda.
+  ----------------------------------------------------- */
+  const ADMIN_EMAIL = 'hbotomatiksanziman16@gmail.com';
+  let adminCache = [];
+
+  function isAdminUser() {
+    const s = getSession();
+    return !!s && (s.email || '').toLowerCase() === ADMIN_EMAIL;
+  }
+
+  function openAdmin() {
+    const panel = $('#adminPanel');
+    if (!panel) return;
+    panel.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    loadAdmin();
+  }
+
+  function closeAdmin() {
+    const panel = $('#adminPanel');
+    if (!panel) return;
+    panel.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  async function loadAdmin() {
+    const body = $('#adminBody');
+    if (!body) return;
+    body.innerHTML = '<div class="admin-empty">Randevular yükleniyor…</div>';
+    try {
+      adminCache = await Data.listAll();
+    } catch (err) {
+      body.innerHTML = `<div class="admin-empty">Randevular okunamadı.<br><small>${esc(firebaseErr(err))}</small></div>`;
+      return;
+    }
+    renderAdmin();
+  }
+
+  function renderAdmin() {
+    const body = $('#adminBody');
+    if (!body) return;
+    const q = ($('#adminSearch') && $('#adminSearch').value || '').trim().toLowerCase();
+    const f = ($('#adminFilter') && $('#adminFilter').value) || 'all';
+
+    let rows = adminCache;
+    if (f !== 'all') rows = rows.filter(a => a.status === f);
+    if (q) rows = rows.filter(a => [a.name, a.phone, a.vehicle, a.ref, a.email].join(' ').toLowerCase().includes(q));
+
+    const counts = adminCache.reduce((m, a) => { m[a.status] = (m[a.status] || 0) + 1; return m; }, {});
+    const stat = $('#adminStats');
+    if (stat) {
+      stat.innerHTML = Object.keys(STATUS).map(k =>
+        `<div class="astat"><b>${counts[k] || 0}</b><span>${STATUS[k].label}</span></div>`).join('')
+        + `<div class="astat"><b>${adminCache.length}</b><span>Toplam</span></div>`;
+    }
+
+    if (!rows.length) {
+      body.innerHTML = '<div class="admin-empty">Kayıt bulunamadı.</div>';
+      return;
+    }
+
+    body.innerHTML = rows.map(a => {
+      const st = STATUS[a.status] || STATUS.pending;
+      return `<div class="arow" data-id="${esc(a.id)}">
+        <div class="arow-main">
+          <div class="arow-top">
+            <b>${esc(a.name)}</b>
+            <span class="badge ${st.cls}">${st.label}</span>
+            <span class="aref">${esc(a.ref || '')}</span>
+          </div>
+          <div class="arow-meta">
+            <a href="tel:${esc((a.phone || '').replace(/\s/g, ''))}">${esc(a.phone || '')}</a>
+            <span>${esc(a.vehicle || '')}</span>
+            <span>${esc(a.service || '')}</span>
+            <span>${esc(a.date || '')} ${esc(a.time || '')}</span>
+          </div>
+          ${a.note ? `<div class="arow-note">${esc(a.note)}</div>` : ''}
+        </div>
+        <div class="arow-actions">
+          <select class="astatus" data-id="${esc(a.id)}">
+            ${Object.keys(STATUS).map(k => `<option value="${k}"${k === a.status ? ' selected' : ''}>${STATUS[k].label}</option>`).join('')}
+          </select>
+          <button class="adel" data-id="${esc(a.id)}" title="Sil" aria-label="Randevuyu sil">Sil</button>
+        </div>
+      </div>`;
+    }).join('');
+
+    $$('.astatus').forEach(sel => sel.addEventListener('change', async (e) => {
+      const id = e.target.dataset.id, status = e.target.value;
+      try {
+        await Data.setStatus(id, status);
+        const x = adminCache.find(v => v.id === id); if (x) x.status = status;
+        renderAdmin();
+        toast('Durum güncellendi', '', 'success');
+      } catch (err) { toast('Güncellenemedi', firebaseErr(err), 'error'); }
+    }));
+
+    $$('.adel').forEach(btn => btn.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id;
+      const rec = adminCache.find(v => v.id === id);
+      if (!confirm(`${rec ? rec.name : 'Bu'} randevusu silinsin mi? Bu işlem geri alınamaz.`)) return;
+      try {
+        await Data.remove(id);
+        adminCache = adminCache.filter(v => v.id !== id);
+        renderAdmin();
+        toast('Randevu silindi', '', 'success');
+      } catch (err) { toast('Silinemedi', firebaseErr(err), 'error'); }
+    }));
   }
 
   /* -----------------------------------------------------
@@ -526,6 +659,16 @@
     if (googleBtn) googleBtn.addEventListener('click', handleGoogleLogin);
     const switchBtn = $('#authSwitchBtn');
     if (switchBtn) switchBtn.addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
+
+    const adminClose = $('#adminCloseBtn');
+    if (adminClose) adminClose.addEventListener('click', closeAdmin);
+    const adminRefresh = $('#adminRefreshBtn');
+    if (adminRefresh) adminRefresh.addEventListener('click', loadAdmin);
+    const adminSearch = $('#adminSearch');
+    if (adminSearch) adminSearch.addEventListener('input', renderAdmin);
+    const adminFilter = $('#adminFilter');
+    if (adminFilter) adminFilter.addEventListener('change', renderAdmin);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAdmin(); });
     $('#navLoginBtn') && $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
 
     if (FB.on) { setAuthMode('login'); watchFirebaseAuth(); }

@@ -354,6 +354,39 @@
   </div>
 
   <!-- Yönetici giriş modalı
+<!-- ===================== YÖNETİCİ PANELİ =====================
+       Yetki Firestore güvenlik kurallarındaki isAdmin() ile SUNUCU tarafında
+       doğrulanır. Buradaki arayüz yalnızca görünürlüğü yönetir; istemci kodunu
+       değiştirip paneli açan biri Firestore'dan veri alamaz. -->
+  <div class="admin-panel" id="adminPanel" role="dialog" aria-label="Randevu yönetimi">
+    <div class="admin-top">
+      <div>
+        <h3>Randevular</h3>
+        <p>Firestore'dan canlı okunuyor</p>
+      </div>
+      <div class="admin-top-actions">
+        <button class="btn btn-ghost btn-sm" id="adminRefreshBtn">Yenile</button>
+        <button class="btn btn-ghost btn-sm" id="adminCloseBtn">Kapat</button>
+      </div>
+    </div>
+
+    <div class="admin-stats" id="adminStats"></div>
+
+    <div class="admin-toolbar">
+      <input type="search" id="adminSearch" placeholder="Ad, telefon, araç veya referans ara…" aria-label="Randevu ara">
+      <select id="adminFilter" aria-label="Duruma göre filtrele">
+        <option value="all">Tüm durumlar</option>
+        <option value="pending">Bekliyor</option>
+        <option value="confirmed">Onaylandı</option>
+        <option value="done">Tamamlandı</option>
+        <option value="cancelled">İptal</option>
+      </select>
+    </div>
+
+    <div class="admin-body" id="adminBody"></div>
+  </div>
+
+  <!-- ===================== TOAST
   <div class="toast-wrap" id="toastWrap"></div>
 
 <!-- Firebase SDK (compat) -->

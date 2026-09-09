@@ -43,6 +43,7 @@ def load_shell():
         "footer": to_home_anchors(slice_between(home, "<!-- ===================== FOOTER", "</footer>")),
         "mailscript": slice_between(home, "<!-- E-posta adreslerini kur", "</script>"),
         "authmodal": slice_between(home, "<!-- ===================== AUTH MODAL", "<!-- Yönetici giriş modalı"),
+        "adminpanel": to_home_anchors(slice_between(home, "<!-- ===================== YÖNETİCİ PANELİ", "<!-- ===================== TOAST")),
         "scripts": slice_between(home, "<!-- Firebase SDK (compat) -->", '<script src="/assets/app.js"></script>'),
     }
 
@@ -241,6 +242,7 @@ PAGE_TMPL = """<!DOCTYPE html>
 {mailscript}
 
 {authmodal}
+{adminpanel}
   <div class="toast-wrap" id="toastWrap"></div>
 
 {scripts}
@@ -268,6 +270,7 @@ def main():
             footer=shell["footer"],
             mailscript=shell["mailscript"],
             authmodal=shell["authmodal"],
+            adminpanel=shell["adminpanel"],
             scripts=shell["scripts"],
             h1=page["h1"],
             kicker=page["kicker"],
