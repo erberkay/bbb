@@ -168,6 +168,13 @@ body::before {
 }
 .submenu a:hover { background: rgba(47,111,224,.12); color: var(--text); }
 .submenu a::after { display: none !important; }
+/* 14 sayfa tek düz liste olarak okunmuyordu; üç gruba ayrıldı */
+.submenu-head {
+  padding: 10px 14px 5px; font-size: .68rem; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--text-dim);
+}
+.submenu-head + li a { margin-top: 0; }
+.submenu li + .submenu-head { margin-top: 6px; border-top: 1px solid var(--border); padding-top: 11px; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -223,7 +230,9 @@ body::before {
 .brand-wall { margin-top: 20px; }
 .brand-wall-label { color: var(--text-dim); font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-align: center; margin-bottom: 24px; }
 .brand-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.brand-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.brand-item { display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; padding: 10px 6px; border-radius: 14px; border: 1px solid transparent; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+a.brand-item:hover, a.brand-item:focus-visible { border-color: var(--border); background: var(--surface); transform: translateY(-2px); }
+a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
 .brand-logo-box {
   width: 100%; aspect-ratio: 4 / 3; background: #fff; border-radius: var(--radius);
   display: flex; align-items: center; justify-content: center; padding: 18px;
@@ -559,6 +568,9 @@ body::before {
 .faq-item[open] summary::after { content: '−'; }
 .faq-item summary:hover { color: var(--accent-2); }
 .faq-item p { color: var(--text-soft); padding-bottom: 18px; margin: 0; font-size: .95rem; }
+.faq-item p a { color: var(--accent-2); text-decoration: underline; text-underline-offset: 2px; }
+/* Ana sayfadaki SSS bölümü — okuma genişliğini sınırla */
+.faq-wrap { max-width: 820px; margin: 44px auto 0; }
 
 .related { max-width: 760px; margin-bottom: 44px; }
 .related h2 { font-family: var(--ff-display); font-size: 1.3rem; margin-bottom: 18px; }
@@ -615,7 +627,8 @@ body::before {
 /* Navbar → hamburger menü. Kırılma noktası 960px'in ustunde ve ayrı tutuluyor:
    marka + rozet + 7 nav linki + 2 buton tek satırda ~1450px altında sıkışıp
    üst üste biniyordu (bkz. gerçek pencerede gözlemlenen çakışma). */
-@media (max-width: 1220px) {
+/* Nav'a S.S.S. linki eklendi; hamburger esigi buna gore yukseltildi */
+@media (max-width: 1320px) {
   .hamburger { display: block; }
   .nav-links {
     position: fixed; inset: var(--nav-h) 0 auto 0; flex-direction: column; gap: 0;

@@ -76,7 +76,9 @@
     "related": [
       "s-tronic-sanziman-tamiri",
       "cvt-sanziman-tamiri",
-      "ford-powershift-sanziman-tamiri"
+      "ford-powershift-sanziman-tamiri",
+      "dct-cift-kavramali-sanziman-tamiri",
+      "mekatronik-arizasi"
     ]
   },
   {
@@ -138,7 +140,9 @@
     ],
     "related": [
       "dsg-sanziman-tamiri",
-      "cvt-sanziman-tamiri"
+      "cvt-sanziman-tamiri",
+      "vag-grubu-sanziman-tamiri",
+      "mekatronik-arizasi"
     ]
   },
   {
@@ -224,7 +228,9 @@
     ],
     "related": [
       "dsg-sanziman-tamiri",
-      "cvt-sanziman-tamiri"
+      "cvt-sanziman-tamiri",
+      "dct-cift-kavramali-sanziman-tamiri",
+      "otomatik-sanziman-ariza-belirtileri"
     ]
   },
   {
@@ -305,7 +311,9 @@
     ],
     "related": [
       "dsg-sanziman-tamiri",
-      "ford-powershift-sanziman-tamiri"
+      "ford-powershift-sanziman-tamiri",
+      "otomatik-sanziman-ariza-belirtileri",
+      "otomatik-sanziman-yag-degisimi"
     ]
   },
   {
@@ -385,7 +393,9 @@
     "related": [
       "mercedes-sanziman-tamiri",
       "dsg-sanziman-tamiri",
-      "cvt-sanziman-tamiri"
+      "cvt-sanziman-tamiri",
+      "land-rover-sanziman-tamiri",
+      "sanziman-revizyonu-nedir"
     ]
   },
   {
@@ -466,7 +476,1012 @@
     "related": [
       "bmw-sanziman-tamiri",
       "dsg-sanziman-tamiri",
+      "cvt-sanziman-tamiri",
+      "sanziman-revizyonu-nedir",
+      "otomatik-sanziman-yag-degisimi"
+    ]
+  },
+  {
+    "slug": "porsche-pdk-sanziman-tamiri",
+    "kicker": "Porsche · PDK Çift Kavramalı",
+    "title": "Porsche PDK Şanzıman Tamiri Bursa | 7DT | HB",
+    "meta": "Bursa Nilüfer'de Porsche PDK şanzıman tamiri: 7DT-45, 7DT-70 ve 7DT-75'te mekatronik, ıslak kavrama paketi onarımı ve PDK yağ servisi.",
+    "h1": "Porsche PDK Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "Porsche PDK Şanzıman Tamiri",
+    "service_type": "Porsche PDK çift kavramalı otomatik şanzıman onarımı",
+    "intro": "911, 718, Panamera ve Macan modellerindeki PDK şanzımanlarda arıza tespiti, mekatronik onarımı, ıslak kavrama paketi yenileme ve yağ servisi. Belirtiyi dinliyor, adaptasyon ve basınç değerlerini okuyor, şanzımanı sökme kararını ancak ölçümden sonra veriyoruz.",
+    "sections": [
+      {
+        "h2": "PDK nedir, klasik otomatikten farkı ne?",
+        "body": [
+          "PDK, Porsche'nin çift kavramalı şanzımanına verdiği addır. İçinde iki ayrı giriş mili ve iki ayrı kavrama paketi bulunur: biri tek numaralı vitesleri (1-3-5-7), diğeri çift numaralıları (2-4-6) taşır. Sürüş sırasında bir sonraki vites zaten önceden seçilmiş hâlde bekler; geçiş, bir kavrama boşalırken diğerinin dolmasıyla gerçekleşir. Vites geçişinde tork kesintisinin neredeyse hissedilmemesinin sebebi budur.",
+          "Klasik otomatikten en önemli farkı tork konvertörünün olmamasıdır. Kalkış hareketini akışkan bir konvertör değil, doğrudan bir kavrama paketi üstlenir. Bu yüzden PDK'da en çok yüklenen an kalkış anıdır ve şikâyetlerin büyük bölümü tam da orada — rampada, park manevrasında, sürünme trafiğinde — ortaya çıkar.",
+          "PDK'nın kavramaları yağ içinde çalışır. Bu, kuru kavramalı kutulara göre ciddi bir ısı avantajı sağlar; buna karşılık balatadan kopan malzeme doğrudan şanzıman yağına karışır. Yani PDK'da yağın durumu, kavramanın durumu hakkında da bilgi verir. Kuru ve ıslak kavrama arasındaki farkı ayrıntılı anlattığımız <a href=\"/dct-cift-kavramali-sanziman-tamiri/\">çift kavramalı şanzıman rehberimize</a> da bakabilirsiniz."
+        ]
+      },
+      {
+        "h2": "Hangi Porsche'de hangi kutu var?",
+        "body": [
+          "Porsche tarafında ilk netleştirdiğimiz şey, aracın gerçekten PDK taşıyıp taşımadığıdır. Aynı marka içinde birbirinden tamamen farklı iki şanzıman mimarisi kullanılıyor ve bu iki mimarinin arıza karakteri birbirine benzemiyor."
+        ],
+        "items": [
+          "<strong>911 (997 ve 991) ile Panamera (970)</strong> — 7 ileri PDK. Standart versiyonlarda 7DT-70, daha yüksek torklu motorlarda 7DT-75 kullanılır. Boyuna yerleşim, ıslak çift kavrama.",
+          "<strong>718 / Cayman / Boxster</strong> — 7DT-45. Orta motorlu yerleşim için, daha düşük tork kapasitesine göre boyutlandırılmış PDK.",
+          "<strong>Macan</strong> — 7 ileri PDK, ancak bu kutu VAG'ın boyuna ıslak çift kavramalı ailesiyle akrabadır. Bakım ve arıza karakteri bakımından 911'den çok <a href=\"/s-tronic-sanziman-tamiri/\">Audi S-Tronic</a> tarafına yakındır.",
+          "<strong>Cayenne</strong> — burada yaygın bir yanlış anlamayı düzeltmek gerekiyor: Cayenne'de PDK yoktur. Tiptronic S adıyla ZF kaynaklı, tork konvertörlü 8 ileri otomatik kullanılır. Belirtiler ve onarım yaklaşımı <a href=\"/bmw-sanziman-tamiri/\">ZF 8HP ailesiyle</a> aynıdır.",
+          "<strong>Panamera'nın 971 nesli ve 992 nesli 911</strong> — 8 ileri PDK'ya geçilmiştir. Kavrama paketi ve hidrolik kumanda düzeni 7 ileri kutulardan farklıdır; parça ve prosedür ayrıdır."
+        ]
+      },
+      {
+        "h2": "En sık gördüğümüz PDK arızaları",
+        "body": [
+          "PDK'da şikâyetler nadiren bir anda ortaya çıkar. Genellikle önce tek bir koşulda görülür — soğukken, rampada, sadece 1-2 geçişinde — sonra sıklaşır ve sürekli hâle gelir."
+        ],
+        "items": [
+          "<strong>Kalkışta titreme ve silkeleme</strong> — ıslak kavramanın kavrama noktası kaydığında ya da balata yüzeyi camlaştığında görülür. Rampa kalkışında ve manevra hızında en belirgindir.",
+          "<strong>D veya R'ye alırken gecikme, ardından darbe</strong> — hidrolik basıncın geç kurulmasının tipik belirtisidir. Çoğu zaman kavramadan değil, kumanda tarafından gelir.",
+          "<strong>Panelde şanzıman uyarısı ve acil çalışma modu</strong> — araç tek viteste kalır veya vites göstergesi kaybolur. Bu durumda aracı zorlamamak, mümkünse çekiciyle getirmek gerekir.",
+          "<strong>Vites geçişlerinde sertlik ve kademe atlama</strong> — valf gövdesi ve basınç solenoidlerindeki aşınmada sık karşılaşılır.",
+          "<strong>Sürünme trafiğinde kavrama sıcaklık uyarısı</strong> — özellikle yaz aylarında, uzun süreli dur-kalk kullanımda kendini gösterir.",
+          "<strong>Şanzıman bölgesinde yağ izi</strong> — mil keçeleri, yağ soğutucu hatları ve soket contası öncelikli kontrol noktalarımızdır."
+        ]
+      },
+      {
+        "h2": "Mekatronik mi, kavrama paketi mi? Ayrımı nasıl yapıyoruz",
+        "body": [
+          "PDK'da aynı şikâyet iki farklı kaynaktan gelebilir. Kalkıştaki titreme, kavrama balatasının yorulmasından da olabilir; mekatroniğin o kavramaya uyguladığı basıncı doğru kontrol edememesinden de. Parça değiştirerek ayırt etmeye çalışmak hem pahalı hem de çoğu zaman sonuçsuz bir yöntemdir.",
+          "İşe hata kayıtlarını okuyarak ve kavrama adaptasyon değerlerine bakarak başlıyoruz: iki kavramanın kavrama noktası nerede, sınır değere ne kadar yaklaşmış, aralarında anlamlı bir fark var mı. Ardından yol testinde basınç ve devir sinyallerini canlı izliyoruz — kayma varsa giriş mili devri ile motor devri arasındaki fark bunu ele verir.",
+          "<strong>Kavrama tarafını işaret eden tablo:</strong> adaptasyon değerlerinin sınıra dayanmış olması, yüklü kalkışta belirginleşen titreme, yalnızca tek numaralı ya da yalnızca çift numaralı vitesleri kapsayan şikâyet. <strong>Kumanda tarafını işaret eden tablo:</strong> soğukken var olup ısınınca kaybolan davranış, belirli bir vitese hiç girmemek, tekrarlayan basınç hata kodları, D-R geçişindeki gecikme.",
+          "Karteri açıp yağı ve manyetik toplayıcılardaki birikintiyi görmek de ayrımın parçasıdır. Islak kavrama balatasından kopan malzeme yağda gözle görülür bir iz bırakır. Yağ temiz ve kavrama adaptasyonu normal aralıktaysa aramayı kumanda tarafına yoğunlaştırırız."
+        ]
+      },
+      {
+        "h2": "PDK yağ servisi neden ertelenmemeli?",
+        "body": [
+          "PDK'da yağ üç işi aynı anda yapar: kavramaları soğutur, hidrolik kumandanın çalışma akışkanıdır ve dişli ile rulman yağlamasını üstlenir. Bu yüzden yaşlanmış yağın ilk etkisi vites kalitesinde görülür — geçişler kabalaşır, kalkış hissi değişir, düşük hızda tereddüt başlar.",
+          "Porsche'nin servis dokümanlarında PDK için yaklaşık 90.000 km ya da altı yıllık bir yenileme aralığı tanımlanır. Şehir içi ağır dur-kalk kullanım, pist günleri, yüksek dış sıcaklıkta çok sayıda kalkış ve düzenli launch control kullanımı bu aralığı kısaltan başlıklardır.",
+          "Serviste yalnızca yağı boşaltıp doldurmuyoruz: filtre yenileniyor, karter ve manyetik toplayıcılar üzerindeki birikinti değerlendiriliyor, dolum belirlenen sıcaklık penceresinde yapılıyor. PDK'da seviye kontrolü çubukla değil, belirli bir yağ sıcaklığında taşma tapasından yapılır. Sıcaklık penceresi tutturulmadan yapılan dolum eksik ya da fazla kalır; ikisi de vites kalitesini bozar."
+        ]
+      },
+      {
+        "h2": "Onarımdan sonra: adaptasyon ve yol testi",
+        "body": [
+          "Kavrama paketi, mekatronik ya da valf gövdesine dokunulan her işlemden sonra şanzımanın öğrenilmiş değerlerinin sıfırlanması ve yeniden öğrenmesi gerekir. Bu adım atlanırsa mekanik olarak kusursuz yapılmış bir onarım bile sürüşte kaba kalır ve müşteri haklı olarak sorunun sürdüğünü düşünür.",
+          "Bursa Nilüfer'deki atölyemizde işi, adaptasyon tamamlanıp yol testinde geçiş kalitesi oturmadan bitmiş saymıyoruz. Teslim sırasında hangi parçanın neden değiştiğini, hangi değerlerin nerede olduğunu ve kullanımda nelere dikkat etmeniz gerektiğini birlikte konuşuyoruz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "PDK yağı gerçekten ömür boyu mu?",
+        "Hayır. PDK'da yağ aynı anda soğutucu, hidrolik akışkan ve yağlayıcıdır; ısı ve sürtünme altında yaşlanır, içine kavrama balatasından kopan malzeme karışır. Porsche servis dokümanlarında yaklaşık 90.000 km ya da altı yıllık bir yenileme aralığı tanımlıdır; ağır kullanımda bu aralık kısalır."
+      ],
+      [
+        "Kavrama paketi değişince mekatronik de değişmek zorunda mı?",
+        "Zorunlu değil. Mekatronik ayrıca test edilir; basınç kontrolü ve solenoid davranışı normalse yerinde kalır. Aynı şekilde mekatronik arızasında da kavramaların otomatik olarak değişmesi gerekmez. İkisi ayrı ayrı ölçülür."
+      ],
+      [
+        "Kalkıştaki titreme sadece kavramadan mı olur?",
+        "Hayır. Aynı titreme mekatroniğin basınç kontrolünden, kavrama adaptasyon değerlerinin kaymasından ya da motor tarafındaki bir düzensizlikten de gelebilir. Bu yüzden titreme şikâyetinde parça değiştirmeden önce adaptasyon ve basınç değerlerini okuyup yol testi yapıyoruz."
+      ],
+      [
+        "Macan'ın PDK'sı 911'inkiyle aynı mı?",
+        "Aynı değil. İkisi de 7 ileri ıslak çift kavramalıdır ama farklı ailelerden gelirler. Macan'daki kutu VAG'ın boyuna çift kavramalı ailesiyle akrabadır; parça, prosedür ve bakım kalemleri 911'in 7DT ailesinden ayrıdır."
+      ],
+      [
+        "Cayenne'de PDK var mı?",
+        "Yok. Cayenne'de Tiptronic S adıyla ZF kaynaklı tork konvertörlü 8 ileri otomatik kullanılır. Bu yüzden Cayenne'deki titreşim ve gecikme şikâyetlerine PDK mantığıyla değil, ZF 8HP mantığıyla yaklaşıyoruz — arıza noktaları da bakım kalemleri de farklıdır."
+      ],
+      [
+        "Araç acil çalışma moduna geçtiyse sürmeye devam edebilir miyim?",
+        "Önermiyoruz. Acil çalışma modu, kontrol ünitesinin güvenilmeyen bir sinyal ya da basınç değeri gördüğünde kendini koruma refleksidir. Bu durumda sürmeye devam etmek, elektronik kaynaklı bir sorunun mekanik hasara dönüşmesine yol açabilir. Çekiciyle getirmek en güvenli seçenektir."
+      ],
+      [
+        "Fiyatı telefonda öğrenebilir miyim?",
+        "Telefonda net fiyat vermiyoruz. Belirleyici olan kutu tipi, arızanın kavrama / mekatronik / valf gövdesi ayrımı, şanzımanın sökülüp sökülmeyeceği ve değişecek parça kalemleridir. Aracı görmeden çıkarılan rakam yanıltıcı olur; tespit sonrası kapsamı ve bedeli işe başlamadan onayınıza sunuyoruz."
+      ]
+    ],
+    "related": [
+      "dct-cift-kavramali-sanziman-tamiri",
+      "s-tronic-sanziman-tamiri",
+      "dsg-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "land-rover-sanziman-tamiri",
+    "kicker": "Land Rover · ZF 8HP / 9HP / 6HP",
+    "title": "Land Rover Şanzıman Tamiri Bursa | ZF 8HP | HB",
+    "meta": "Bursa Nilüfer'de Land Rover otomatik şanzıman tamiri: Range Rover, Discovery, Velar ve Evoque'ta ZF 8HP/9HP valf gövdesi ve mekatronik onarımı.",
+    "h1": "Land Rover Otomatik Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "Land Rover Otomatik Şanzıman Tamiri",
+    "service_type": "Land Rover ZF 8HP, 9HP ve 6HP otomatik şanzıman onarımı",
+    "intro": "Range Rover, Discovery, Velar ve Evoque modellerinde ZF kaynaklı otomatik şanzımanların onarımı: valf gövdesi ve mekatronik, tork konvertörü kilitleme titreşimi, yağ ve filtre bakımı. Şanzımanı komple değiştirmeden önce arızanın gerçekte nerede olduğunu ölçüyoruz.",
+    "sections": [
+      {
+        "h2": "Land Rover'da hangi şanzıman var?",
+        "body": [
+          "Land Rover kendi otomatik şanzımanını üretmez; kullandığı kutuların neredeyse tamamı ZF kaynaklıdır. Bu aslında iyi haberdir: aynı aileler Jaguar, Audi ve <a href=\"/bmw-sanziman-tamiri/\">BMW tarafında</a> da yaygın olduğu için arıza karakterleri iyi bilinir ve parça tarafında gerçek bir seçenek vardır.",
+          "Buna karşılık aynı model adı altında farklı kutular kullanılıyor. \"Discovery\" ismi, boyuna 8 ileri kutu taşıyan bir araca da, enine 9 ileri kutu taşıyan bir araca da ait olabiliyor. Bu yüzden işe her zaman model yılı ve şanzıman kodunun doğrulanmasıyla başlıyoruz."
+        ],
+        "items": [
+          "<strong>ZF 8HP45 / 8HP70</strong> — Range Rover (L405), Range Rover Sport (L494), Velar, Discovery 5 ve Discovery 4'ün geç modelleri. Boyuna yerleşim, 8 ileri, mekatronik yağın içinde çalışır.",
+          "<strong>ZF 9HP48</strong> — Evoque ve Discovery Sport gibi enine motorlu modeller. 9 ileri, kompakt gövde. Vites stratejisi ve kilitleme davranışı 8HP'den belirgin biçimde farklıdır.",
+          "<strong>ZF 6HP26 / 6HP28</strong> — Range Rover (L322), Discovery 3 ve Range Rover Sport'un (L320) erken modelleri. Bu ailede mekatronik adaptör manşonu ve konduktör bağlantısı öncelikli kontrol noktasıdır.",
+          "<strong>Aisin AWF21</strong> — Freelander 2'de kullanılan enine 6 ileri otomatik. ZF ailelerinden ayrı bir bakım ve onarım yaklaşımı gerektirir."
+        ]
+      },
+      {
+        "h2": "ZF 8HP'de en sık gördüğümüz arızalar",
+        "body": [
+          "8HP mekanik olarak sağlam bir kutudur; sahada gördüğümüz arızaların büyük bölümü mekanik grupta değil, hidrolik kumanda ve elektronik tarafında başlar. Bu, <a href=\"/mercedes-sanziman-tamiri/\">Mercedes 722.9 ailesinde</a> gördüğümüz tabloya çok benzer: mekanik grubu sağlam bir şanzıman, elektronik bir sinyal yüzünden vites almıyor olabilir. Erken müdahale ile geç müdahale arasındaki fark, çoğu zaman parça onarımı ile komple revizyon arasındaki farktır."
+        ],
+        "items": [
+          "<strong>Valf gövdesi ve basınç solenoidi aşınması</strong> — Yağ içindeki aşınma ürünleri valf yuvalarını zamanla ovalleştirir. Belirti: D veya R'ye alırken gecikme, geçişlerde darbe, kademe atlama, yokuş aşağı geri vites geçişlerinde sertlik.",
+          "<strong>Mekatronik soketi ve kablo demeti sızdırması</strong> — Şanzıman yağı kablo demetinin içinden ilerleyip sokete ulaşır. Dışarıdan görünür bir sızıntı olmadan açıklanamayan hata kodları ve kararsız vites davranışı yaratır.",
+          "<strong>Plastik yağ karteri ve entegre filtre</strong> — 8HP'de filtre kartere entegredir; bakımda karter komple yenilenir. Karter contası yaşlandığında ilk belirti park yerinde koyu kırmızımsı damla izidir.",
+          "<strong>Park kilidi ve vites seçici modülü</strong> — \"Vites almıyor\" şikâyetinin bir bölümü şanzımanın kendisinden değil; döner vites seçicisinden, park kilidi aktüatöründen veya fren pedalı sinyalinden gelir. Bunları ayırmadan şanzıman sökmüyoruz.",
+          "<strong>Isı yönetimi arızaları</strong> — Yağ soğutucusu ya da termostatik valfi sorunlu bir araçta şanzıman sürekli olması gerekenden sıcak çalışır. Bu, yağı ve kavramaları hızlandırılmış biçimde yorar; arıza kartere değil, ısıya yazılır."
+        ]
+      },
+      {
+        "h2": "40-80 km/s bandındaki titreşim: kilitleme kavraması",
+        "body": [
+          "Land Rover sahiplerinden en sık duyduğumuz tariflerden biri şudur: düz yolda, sabit gazda, 50 ile 70 arasında yol bozukmuş gibi ince bir titreşim geliyor; gaza basınca ya da vites düşünce kayboluyor.",
+          "Bu tarif, ZF 8HP ailesinde tork konvertörü kilitleme kavramasının yorulmasına işaret eder. 8HP'de kilitleme kavraması yakıt tüketimi için çok düşük devirlerde ve kısmi kayma rejiminde devreye girer. Sürtünme yüzeyi yorulduğunda bu kısmi kayma düzensizleşir ve kabinde titreşim olarak hissedilir.",
+          "Ayırt edici nokta şudur: titreşim <strong>hıza değil, devre ve gaz yüküne</strong> bağlıysa şanzıman tarafını düşünürüz. Sadece belirli hızlarda ve gaz durumundan bağımsız olarak çıkıyorsa lastik, balans, jant ya da kardan tarafına bakarız. Land Rover'da ayrıca transfer kutusu ve kardan haçları da çok benzer bir titreşim üretebildiği için bu ayrımı yol testinde canlı veriyle birlikte yapıyoruz.",
+          "Erken evrede yağ ve filtre yenilemesi belirtiyi hafifletebilir. Ancak sürtünme yüzeyi yorulmuşsa kalıcı çözüm tork konvertörünün revizyonudur. Geciktirildiğinde kavramadan kopan malzeme yağa karışır, valf gövdesine de zarar verir ve onarımın kapsamı büyür."
+        ]
+      },
+      {
+        "h2": "Evoque ve Discovery Sport: 9HP48'in kendine has karakteri",
+        "body": [
+          "Enine motorlu Evoque ve Discovery Sport'ta kullanılan ZF 9HP48, dokuz vitesi çok kompakt bir gövdeye sığdırabilmek için klasik ıslak kavramaların yanında kilit tipi (dog clutch) elemanlar kullanır. Mekanik olarak zarif bir çözümdür, ama vites geçiş kalitesini yazılım ve adaptasyona alışılmadık ölçüde bağımlı hâle getirir.",
+          "Sahada en çok karşılaştığımız şikâyetler düşük hızda vites arayışı, 2-3 arasında tereddüt, P'den D'ye geçişte gecikme ve sabit hızda kilitleme kaynaklı titreşimdir. Bu kutuda ilk adımımız kontrol ünitesinin yazılım seviyesini ve adaptasyon değerlerini kontrol etmektir; mekanik bir arıza olmadan da benzer belirtiler oluşabilir.",
+          "9HP48 yağ tipi ve seviye doğruluğu konusunda 8HP'ye göre daha az affedicidir. Yanlış spesifikasyonda yağ ya da sıcaklık penceresi tutturulmadan yapılan bir dolum, kendini doğrudan geçiş kalitesinde gösterir."
+        ]
+      },
+      {
+        "h2": "Yağ ve filtre bakımı bu araçlarda neden daha kritik?",
+        "body": [
+          "Bu şanzımanlarda yağ yalnızca yağlayıcı değildir; hidrolik kumandanın çalışma akışkanı ve kavrama sürtünmesinin bir parçasıdır. ZF, 8HP ailesi için servis dokümanlarında yaklaşık 80.000-120.000 km aralığında yağ ve filtre yenilemesi tanımlar.",
+          "Land Rover kullanım profili bu aralığı kısaltan bir profildir: ağır araç, sık römork veya karavan çekme, arazi ve düşük hızda yüksek yük, uzun süreli dur-kalk. Bu koşullarda yağın ısı yükü belirgin biçimde artar ve sürtünme özelliğini daha erken kaybeder.",
+          "Bakımda karter ve entegre filtre yenilenir, manyetik toplayıcılardaki birikinti değerlendirilir, seviye ayarı belirlenen yağ sıcaklığı penceresinde yapılır. Sıcaklık penceresi gözetilmeden yapılan dolum eksik ya da fazla kalır; ikisi de vites kalitesini bozar. Bursa Nilüfer'deki atölyemizde bu adımların hiçbirini atlamıyoruz."
+        ]
+      },
+      {
+        "h2": "Bu belirtiler varsa ertelemeyin",
+        "body": [
+          "Aşağıdaki belirtilerle araç kullanmaya devam etmek, elektronik ya da hidrolik kaynaklı bir sorunun mekanik hasara dönüşmesine yol açabilir."
+        ],
+        "items": [
+          "Panelde şanzıman arıza uyarısı veya vites göstergesinin kaybolması",
+          "Araç tek viteste kalıyor; devir yükseliyor ama hız artmıyor",
+          "D veya R'ye alırken belirgin gecikme, ardından sert darbe",
+          "Sabit hızda, özellikle 40-80 km/s arasında ince titreşim",
+          "Soğukken sert, ısındıkça değişen vites geçişleri",
+          "Döner vites seçicisi yükselmiyor ya da konum değiştirmiyor",
+          "Şanzıman karteri veya kablo soketi çevresinde yağ izi"
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Land Rover şanzıman yağı ömür boyu mu?",
+        "Pratikte hayır. Şanzıman yağı ısı ve sürtünme altında yaşlanır, sürtünme özelliğini kaybeder ve içine aşınma ürünleri karışır. ZF, 8HP ailesi için yaklaşık 80.000-120.000 km aralığında yağ ve filtre yenilemesi önerir. Römork çekme, arazi kullanımı ve dur-kalk trafiği bu aralığı kısaltır."
+      ],
+      [
+        "Titreşim şanzımandan mı, lastikten mi geliyor?",
+        "Ayrımın anahtarı titreşimin neye bağlı olduğudur. Gaz yükü ve devirle değişiyor, gaz kesince kayboluyorsa tork konvertörü kilitleme kavramasını düşünürüz. Sadece belirli hızlarda ve gaz durumundan bağımsız olarak varsa lastik, balans, jant ya da kardan tarafına bakarız. Yol testi ve canlı veri bu ayrımı netleştirir."
+      ],
+      [
+        "Vites kadranı yükselmiyor, şanzıman mı arızalı?",
+        "Çoğu zaman değil. Döner vites seçicisinin yükselmemesi genellikle seçici modülü, park kilidi aktüatörü, fren pedalı sinyali veya besleme tarafındaki bir sorunla ilgilidir. Şanzımanın mekanik grubu tamamen sağlam olabilir. Bu yüzden bu şikâyette önce elektrik ve kumanda tarafını kontrol ediyoruz."
+      ],
+      [
+        "Mekatronik komple mi değişir?",
+        "Her zaman değil. Arızaların önemli bir kısmı solenoid, valf gövdesi aşınması veya soket sızdırması kaynaklıdır ve ünite sökülüp test edilerek parça bazında onarılabilir. Bakmadan \"mekatronik gitmiş\" demek çoğu zaman gereksiz masraf demektir."
+      ],
+      [
+        "Evoque'ta da 8HP mi var?",
+        "Hayır. Evoque ve Discovery Sport enine motorlu platformdadır ve ZF 9HP48 kullanır. Range Rover, Range Rover Sport, Velar ve Discovery 5 ise boyuna yerleşimli 8HP45 ya da 8HP70 taşır. İki kutunun arıza karakteri, bakım kalemleri ve prosedürleri farklıdır."
+      ],
+      [
+        "Aracı çekiciyle mi getirmeliyim?",
+        "Araç acil çalışma moduna geçmişse, tek viteste kalıyorsa veya vites almıyorsa çekici öneriyoruz. Dört çeker aktarma organı bulunan bir aracın yanlış biçimde çekilmesi ayrıca transfer kutusuna zarar verebilir; emin değilseniz aramadan yola çıkmayın."
+      ],
+      [
+        "Fiyat neye göre belirleniyor?",
+        "Şanzıman ailesi, arızanın valf gövdesi / mekatronik / tork konvertörü ayrımı, şanzımanın araçtan sökülüp sökülmeyeceği ve değişecek parça kalemleri belirleyicidir. Telefonda net fiyat vermiyoruz; aracı görmeden çıkarılan rakam yanıltıcı olur. Tespit sonrası kapsam ve bedel, işe başlamadan onayınıza sunulur."
+      ]
+    ],
+    "related": [
+      "bmw-sanziman-tamiri",
+      "mercedes-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "vag-grubu-sanziman-tamiri",
+    "kicker": "VAG Grubu · VW · Audi · Seat · Škoda · Cupra",
+    "title": "VAG Şanzıman Tamiri Bursa | DQ200 DQ250 DQ381 | HB",
+    "meta": "VW, Audi, Seat, Škoda ve Cupra'da DQ200, DQ250, DQ381 ve DQ500 şanzıman tamiri. Bursa Nilüfer'de kutu kodu tespiti, mekatronik ve kavrama onarımı.",
+    "h1": "VAG Grubu Otomatik Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "VAG Grubu Otomatik Şanzıman Tamiri",
+    "service_type": "Volkswagen, Audi, Seat, Škoda ve Cupra çift kavramalı şanzıman onarımı",
+    "intro": "Volkswagen, Audi, Seat, Škoda ve Cupra aynı çift kavramalı şanzıman ailesini paylaşır. Farklı marka amblemi taşıyan iki aracın içinde çoğu zaman aynı kutu vardır. Bu sayfada hangi araçta hangi kutunun bulunduğunu, kuru ve ıslak tiplerin ayrıldığı noktaları ve onarımda neye baktığımızı anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Aynı motor, farklı kutu: neden önce kod tespiti yapıyoruz?",
+        "body": [
+          "VAG grubunda marka değil, <strong>tork kapasitesi ve platform</strong> belirleyicidir. Aynı 1.5 TSI motoru taşıyan bir Golf ile bir Karoq'ta farklı şanzıman kodları olabilir; aynı şekilde bir Škoda Octavia ile bir Seat Leon'da tıpatıp aynı kutu bulunabilir. Sürücünün gördüğü isim değişir — DSG, S tronic, DSG 7 hız — ama içerideki donanım aynı ailedendir.",
+          "Bu yüzden telefonda \"Golf'ün DSG'si\" tarifiyle bir kapsam çıkarmıyoruz. Kuru kavramalı bir DQ200 ile ıslak kavramalı bir DQ381'in arıza karakteri, bakım kalemleri, kullanılan yağ ve onarım süreci birbirinden tamamen farklıdır. Yanlış kutu varsayımıyla başlayan bir iş, çoğu zaman yanlış parçayla biter.",
+          "Genel çalışma mantığı ve markadan bağımsız ortak arıza tabloları için <a href=\"/dct-cift-kavramali-sanziman-tamiri/\">çift kavramalı şanzıman rehberimize</a>, VW tarafındaki ayrıntılar için ise <a href=\"/dsg-sanziman-tamiri/\">DSG şanzıman tamiri</a> sayfamıza bakabilirsiniz."
+        ]
+      },
+      {
+        "h2": "Hangi araçta hangi kutu var?",
+        "body": [
+          "Aşağıdaki liste yönlendirme amaçlıdır; kesin kod her zaman araç üzerinden doğrulanır. Motor gücü, çekiş tipi ve model yılı aynı gövdede farklı kutulara yol açabilir."
+        ],
+        "items": [
+          "<strong>DQ200 (0AM / 0CW) — kuru kavrama, 7 ileri, yaklaşık 250 Nm'e kadar</strong> — Polo, Golf'ün 1.0 ve 1.4 TSI versiyonları, Jetta, Passat 1.4 TSI, T-Roc ve T-Cross'un düşük torklu motorları, Škoda Fabia ve Rapid, Octavia 1.0/1.4, Seat Ibiza ve Leon 1.0/1.4, Audi A1 ile A3'ün 1.0/1.4 TFSI versiyonları.",
+          "<strong>DQ250 (02E) — ıslak kavrama, 6 ileri, yaklaşık 350 Nm'e kadar</strong> — Golf 5 ve 6 GTI ile 2.0 TDI, Passat B6/B7, birinci nesil Tiguan, Touran, Jetta 2.0 TDI, Octavia II ve III'ün 2.0 versiyonları, Octavia RS, Superb II, Leon 2.0 TDI ve FR, Audi A3 (8P) 2.0.",
+          "<strong>DQ381 (0GC) — ıslak kavrama, 7 ileri, yaklaşık 420 Nm'e kadar</strong> — Golf 7.5 ve Golf 8, ikinci nesil Tiguan, Passat B8, Arteon, Superb III, Kodiaq, Karoq, Ateca, Tarraco, Cupra Leon ve Formentor'un orta güç seviyeleri. DQ250'nin yerini alan aile.",
+          "<strong>DQ500 (0BH / 0BT) — ıslak kavrama, 7 ileri, yaklaşık 600 Nm'e kadar</strong> — Transporter T6 ve T6.1, Multivan, Amarok, Golf R, Audi TT RS ve RS3, Tiguan'ın yüksek torklu versiyonları. Ticari kullanımda en çok karşımıza çıkan kutu budur.",
+          "<strong>DQ400e</strong> — GTE ve e-Hybrid modellerinde kullanılan, elektrik motorunun şanzıman gövdesine entegre edildiği ıslak tip. Yüksek gerilim tarafı nedeniyle ayrı bir çalışma disiplini gerektirir.",
+          "<strong>DL501 ve DL382 (boyuna S tronic)</strong> — Audi A4, A5, A6, Q5 gibi boyuna motorlu ve çoğunlukla quattro modellerde. Bu aile için ayrı sayfamız var: <a href=\"/s-tronic-sanziman-tamiri/\">Audi S-Tronic şanzıman tamiri</a>."
+        ]
+      },
+      {
+        "h2": "DQ200 — kuru kavramalı 7 ileri",
+        "body": [
+          "DQ200'ün en belirleyici özelliği kavramaların yağ içinde soğutulmamasıdır. Kavrama gövdesi kurudur; mekatronik ünitesi ise kendi ayrı hidrolik devresinde, yaklaşık bir buçuk-iki litrelik özel bir yağla çalışır. Yani bu kutuda \"şanzıman yağı\" ile \"mekatronik yağı\" aynı şey değildir ve bunu karıştırmak sık rastladığımız bir hatadır.",
+          "Kuru kavrama, düşük torklu motorlarda verim avantajı sağlar; ancak şehir içi dur-kalk kullanımda ısı yükü yüksektir. Bursa gibi rampalı ve yoğun trafikli bir şehirde bu kutunun kavrama tarafı, aynı aracın otoyol ağırlıklı kullanılan bir örneğine göre belirgin biçimde daha çok yorulur.",
+          "Bu ailede en sık gördüğümüz başlıklar şunlardır: mekatroniğin hidrolik bloğu ve basınç devresi kaynaklı arızalar, kavrama aktüatör mekanizmasında aşınma, kavrama noktasının kayması ve adaptasyonun sınıra dayanması, giriş mili keçesinden sızan yağın kuru kavrama balatasını ıslatması. Son maddedeki sızıntı giderilmeden yapılan bir kavrama değişimi kısa sürede aynı noktaya geri döner.",
+          "Belirtiler tanıdıktır: rampada geri kaçma, kalkışta titreme, 1-2 geçişinde sarsıntı, P ve N konumunda takırtı, vites göstergesinin yanıp sönmesi ve aracın acil çalışma moduna geçmesi."
+        ]
+      },
+      {
+        "h2": "DQ250, DQ381 ve DQ500 — ıslak kavramalılar",
+        "body": [
+          "Bu üç kutuda kavramalar yağ içinde çalışır. Isı yönetimi daha iyidir, tork kapasitesi daha yüksektir; buna karşılık kavrama balatasından kopan malzeme doğrudan şanzıman yağına karışır. Bu yüzden ıslak tiplerde yağ ve filtre bakımı bir konfor kalemi değil, doğrudan ömür belirleyen bir işlemdir.",
+          "VW tarafında ıslak çift kavramalı kutular için genel olarak 60.000 km civarında yağ ve filtre yenilemesi tanımlanır. Yoğun dur-kalk, yüklü kullanım, römork çekme ve yüksek dış sıcaklıklarda bu aralığın kısaltılması yerinde olur. İhmal edildiğinde önce vites kalitesi bozulur, ardından valf gövdesi ve kavrama paketi hızlanmış biçimde yorulur.",
+          "<strong>DQ250</strong> olgun ve tanıdık bir kutudur; en sık karşımıza çıkan başlıklar valf gövdesi aşınması, basınç solenoidi arızası ve ihmal edilmiş yağ bakımının getirdiği kavrama yorgunluğudur. <strong>DQ381</strong> ise daha geniş oran aralığı ve serbest yuvarlanma stratejisiyle çalışır; motor yükte değilken kavramaların açılması, düşük hızda tereddüt olarak hissedilebilir ve bu her zaman arıza anlamına gelmez.",
+          "<strong>DQ500</strong> özellikle Transporter ve Multivan gibi ağır ve yolcu taşımacılığında kullanılan araçlarda karşımıza çıkar. Bu kullanımda kalkış sayısı çok yüksektir; kavrama paketi ve yağ, binek kullanıma göre çok daha hızlı yaşlanır. Ticari kullanımda bakım aralığını kısaltmak, en ucuz sigortadır."
+        ]
+      },
+      {
+        "h2": "Kutu kodunuzu nasıl bulursunuz?",
+        "body": [
+          "Aracınıza hangi kutunun takılı olduğunu öğrenmek için birkaç güvenilir yol var. Bunlardan biriyle doğrulama yapmak, hem sizin hem bizim doğru başlamamızı sağlar.",
+          "Servis kitapçığınızda ya da araç veri etiketinde yer alan üç harfli şanzıman kodu (örneğin QPY, NTU gibi) doğrudan kutu tipini gösterir. Şanzıman gövdesi üzerindeki etiket de aynı bilgiyi taşır. Bunlara ulaşamıyorsanız diagnostik cihazla kontrol ünitesi kimliğini okumak en kesin yöntemdir; biz de ilk adımda bunu yapıyoruz.",
+          "Parça numarası önekleri de yol göstericidir: 0AM ve 0CW DQ200'ü, 02E DQ250'yi, 0GC DQ381'i, 0BH ve 0BT ise DQ500'ü işaret eder. Bu bilgi, parça teminini ve kapsamı konuşurken ikimizin de aynı şeyden bahsettiğinden emin olmamızı sağlar."
+        ]
+      },
+      {
+        "h2": "Onarımda izlediğimiz yol",
+        "body": [
+          "Önce şikâyeti dinliyoruz: titreme ne zaman başlıyor, hangi viteste, soğukken mi sıcakken mi, yüklüyken mi belirginleşiyor. Ardından hata kayıtlarını, kavrama adaptasyon değerlerini ve basınç verilerini okuyup yol testi yapıyoruz. Kuru ve ıslak tiplerde bakılan değerler farklıdır; ıslak tiplerde karterdeki birikinti de tabloya dâhil olur.",
+          "Ölçüm sonrası arızanın kavrama, mekatronik ya da valf gövdesi kaynaklı olduğunu ayırıyor, yapılacak işlemi ve değişecek parça kalemlerini onayınıza sunuyoruz. İşlem bittiğinde adaptasyon yapılmadan araç teslim edilmiyor; mekanik olarak doğru yapılmış bir onarım bile adaptasyonsuz sürüşte kaba kalır."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Aracımda kuru mu ıslak mı kavrama var, nasıl anlarım?",
+        "En pratik ayrım tork kapasitesidir: 1.0, 1.2 ve 1.4 gibi düşük torklu benzinli motorlarda genellikle kuru kavramalı DQ200 bulunur; 2.0 TDI ve TSI gibi motorlarda ıslak kavramalı DQ250, DQ381 ya da DQ500 kullanılır. Kesin yanıt için servis kitapçığındaki üç harfli şanzıman kodu ya da diagnostik okuma gerekir."
+      ],
+      [
+        "DQ200'de yağ değişimi yapılır mı?",
+        "Kavrama tarafı kuru olduğu için orada bir yağ yoktur; ancak mekatronik ünitesinin kendi hidrolik devresi ve kendi yağı vardır. Bu yağ için üretici tarafında \"ömür boyu\" yaklaşımı geçerli olsa da, pratikte yaşlandığını ve basınç kontrolünü etkilediğini görüyoruz. Aracın durumuna göre değerlendiriyoruz."
+      ],
+      [
+        "Islak DSG'lerde yağ ve filtre kaç kilometrede değişir?",
+        "VW tarafında ıslak çift kavramalı kutular için genel olarak 60.000 km civarında yağ ve filtre yenilemesi tanımlanır. Yoğun dur-kalk trafiği, yüklü ve ticari kullanım, römork çekme ve yüksek dış sıcaklık bu aralığın kısaltılmasını gerektirir."
+      ],
+      [
+        "Golf ile Octavia'nın şanzımanı aynı mı?",
+        "Aynı motor ve aynı güç seviyesindeyse büyük olasılıkla evet — VAG grubunda kutular marka değil platform ve tork kapasitesi üzerinden dağıtılır. Ama aynı model adı altında farklı motorlar farklı kutular taşıdığı için varsayımla ilerlemiyoruz; kodu doğruluyoruz."
+      ],
+      [
+        "Mekatronik arızasında ünite komple mi değişir?",
+        "Zorunlu değil. Arızanın elektronik kartta mı, basınç devresinde mi, yoksa valf gövdesinde mi olduğu ayrılabilir. Onarım mümkünse önce onarım değerlendirilir; komple değişim ilk seçenek değildir. Bu ayrımı yapmadan verilen kararlar çoğu zaman gereksiz masrafa dönüşür."
+      ],
+      [
+        "Kavrama değişince mekatronik de değişmeli mi?",
+        "Hayır. Mekatronik ayrıca test edilir; basınç kontrolü ve solenoid davranışı normalse yerinde kalır. Tersi de geçerlidir: mekatronik arızasında kavramaların otomatik olarak değişmesi gerekmez."
+      ],
+      [
+        "Fiyatı önceden söyleyebilir misiniz?",
+        "Telefonda net fiyat vermiyoruz. Kutu kodu, arızanın kavrama / mekatronik / valf gövdesi ayrımı, şanzımanın sökülüp sökülmeyeceği ve parça kalemleri belirleyicidir. Aracı görmeden çıkarılan rakam yanıltıcı olur; tespit sonrası kapsam ve bedel işe başlamadan onayınıza sunulur."
+      ]
+    ],
+    "related": [
+      "dsg-sanziman-tamiri",
+      "s-tronic-sanziman-tamiri",
+      "dct-cift-kavramali-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "dct-cift-kavramali-sanziman-tamiri",
+    "kicker": "Çift Kavramalı Şanzımanlar · Genel Rehber",
+    "title": "DCT Çift Kavramalı Şanzıman Tamiri | Bursa | HB",
+    "meta": "Çift kavramalı (DCT) şanzımanın çalışma mantığı, kuru ve ıslak kavrama farkı, ortak arıza belirtileri ve bakım aralıkları. Bursa Nilüfer'de onarım.",
+    "h1": "Çift Kavramalı (DCT) Şanzıman Tamiri ve Bakımı",
+    "service_name": "Çift Kavramalı Şanzıman Tamiri",
+    "service_type": "DCT çift kavramalı otomatik şanzıman onarımı",
+    "intro": "DSG, S tronic, PDK, PowerShift, EDC, DKG… Farklı isimler taşısalar da hepsi aynı temel mimariyi kullanır. Bu sayfada çift kavramalı şanzımanın nasıl çalıştığını, kuru ile ıslak tipin nerede ayrıldığını, hangi belirtinin neyi işaret ettiğini ve bakım aralıklarının neden bu kadar belirleyici olduğunu anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Çift kavramalı şanzıman nasıl çalışır?",
+        "body": [
+          "Bir çift kavramalı şanzımanı en kolay şekilde, tek gövde içine yerleştirilmiş iki ayrı manuel şanzıman gibi düşünebilirsiniz. İç içe geçmiş iki giriş mili vardır: biri tek numaralı vitesleri (1-3-5-7), diğeri çift numaralıları (2-4-6) taşır. Her milin başında kendi kavraması bulunur.",
+          "Siz üçüncü viteste giderken şanzıman dördüncü vitesi zaten seçmiş, kavramasını kapalı tutarak beklemektedir. Vites geçişi geldiğinde bir kavrama boşalırken diğeri dolar. Motorla tekerlek arasındaki bağ hiçbir zaman tamamen kopmadığı için geçiş hem hızlı hem de tork kesintisiz olur. Bu şanzımanların sürüş hissini belirleyen özellik budur.",
+          "Aynı mimarinin bedeli de vardır. Klasik otomatikteki tork konvertörü yoktur; kalkış hareketini akışkan bir eleman değil, doğrudan bir kavrama üstlenir. Bu yüzden çift kavramalı bir şanzımanın en zorlandığı an, en yavaş gittiği andır: rampa kalkışı, park manevrası, sürünme trafiği. Şikâyetlerin ezici çoğunluğu bu üç durumdan doğar."
+        ]
+      },
+      {
+        "h2": "Kuru kavrama mı, ıslak kavrama mı?",
+        "body": [
+          "Çift kavramalı şanzımanlarda en temel ayrım budur ve bir aracın bakım planından beklenen ömrüne kadar her şeyi belirler. Kuru tipte kavramalar havayla soğutulur; ıslak tipte yağ içinde çalışır."
+        ],
+        "items": [
+          "<strong>Kuru kavrama</strong> — Sürtünme kayıpları düşüktür, verim avantajı sağlar. Düşük torklu motorlarda kullanılır. Soğutma sınırlı olduğu için uzun süreli dur-kalk ve rampa kullanımında ısınır; ısı yorgunluğu ve kalkış titremesi bu tipin klasik başlığıdır.",
+          "<strong>Islak kavrama</strong> — Kavramalar yağ içinde çalıştığı için ısı çok daha iyi yönetilir ve tork kapasitesi yüksektir. Karşılığında balatadan kopan malzeme doğrudan yağa karışır; yağ ve filtre bakımı doğrudan ömür belirleyicidir.",
+          "<strong>Kuru tipte yağ nerede?</strong> — Kavrama gövdesi kurudur ama mekatronik ünitesinin kendi ayrı hidrolik devresi ve kendi yağı vardır. Bu ikisini karıştırmak sahada sık gördüğümüz bir hatadır.",
+          "<strong>Islak tipte titreme neyi gösterir?</strong> — Kuru tipte kalkış titremesi çoğu zaman doğrudan balatayı işaret ederken, ıslak tipte aynı belirti basınç kontrolü ve kavrama doldurma kalitesinden de gelebilir. Bu yüzden ıslak kutularda ölçüm daha da belirleyicidir."
+        ]
+      },
+      {
+        "h2": "Hangi markada hangi isimle karşınıza çıkıyor?",
+        "body": [
+          "Markalar aynı teknolojiye farklı ticari isimler verir. Bu isimler sürücüyü yanıltabilir; teknik olarak hepsi çift kavramalıdır ve ortak arıza mantığını paylaşır."
+        ],
+        "items": [
+          "<strong>Volkswagen, Seat, Škoda, Cupra — DSG</strong> — Kuru DQ200 ve ıslak DQ250, DQ381, DQ500. Ayrıntılar için <a href=\"/vag-grubu-sanziman-tamiri/\">VAG grubu şanzıman sayfamız</a> ve <a href=\"/dsg-sanziman-tamiri/\">DSG şanzıman tamiri</a> sayfamız.",
+          "<strong>Audi — S tronic</strong> — Enine motorlu modellerde DSG ile aynı aile; boyuna quattro modellerde ıslak DL501 ve DL382. Bkz. <a href=\"/s-tronic-sanziman-tamiri/\">Audi S-Tronic şanzıman tamiri</a>.",
+          "<strong>Porsche — PDK</strong> — Islak çift kavrama, 7 ve 8 ileri. Bkz. <a href=\"/porsche-pdk-sanziman-tamiri/\">Porsche PDK şanzıman tamiri</a>.",
+          "<strong>Ford — PowerShift</strong> — Focus, Fiesta ve C-Max'te kuru kavramalı DPS6. Bkz. <a href=\"/ford-powershift-sanziman-tamiri/\">Ford PowerShift şanzıman tamiri</a>.",
+          "<strong>BMW — DKG / M DCT</strong> — Islak çift kavrama; özellikle M modellerinde ve dönemin sportif versiyonlarında kullanıldı.",
+          "<strong>Hyundai ve Kia — DCT</strong> — Düşük torklu modellerde kuru 6 ileri, daha güçlü versiyonlarda ıslak 7 ve 8 ileri tipler.",
+          "<strong>Renault ve Dacia — EDC</strong> — Modeline göre kuru ya da ıslak çift kavrama. <strong>Fiat ve Alfa Romeo — TCT / DDCT</strong> — Kuru çift kavrama. <strong>Volvo — Powershift</strong> — Islak çift kavrama."
+        ]
+      },
+      {
+        "h2": "Ortak arıza belirtileri ve arkasındaki nedenler",
+        "body": [
+          "Markadan bağımsız olarak, çift kavramalı şanzımanların dili aşağı yukarı aynıdır. Belirtiyi doğru tarif etmek, teşhis süresini kısaltan en önemli şeydir."
+        ],
+        "items": [
+          "<strong>Kalkışta titreme (judder)</strong> — Balata yorgunluğu, kavrama noktasının kayması, kuru tipte keçe sızıntısının balatayı ıslatması ya da mekatroniğin basınç kontrolü. Rampa ve yüklü kalkışta belirginleşir.",
+          "<strong>Rampada geri kaçma, geç kavrama</strong> — Genellikle hidrolik basınç yetersizliği veya adaptasyonun bozulması.",
+          "<strong>Belirli vitese girmeme</strong> — Yalnızca 1-3-5 sorunluysa arama alanı o milin kavraması ve aktüatör grubudur; her iki tarafta da varsa ortak basınç kaynağı ve mekatronik öne çıkar. Bu ayrım, teşhiste en çok işimize yarayan tablodur.",
+          "<strong>Vites göstergesinin yanıp sönmesi, acil çalışma modu</strong> — Kontrol ünitesi güvenilmeyen bir değer gördüğünde kendini korumaya alır. Bu hâldeki bir araçla yola devam edilmemelidir.",
+          "<strong>P veya N konumunda takırtı, sürüşte uğultu</strong> — Rulman ve mil grubunu işaret eder; erken müdahale kapsamı küçük tutar.",
+          "<strong>Sürünme trafiğinde sıcaklık uyarısı</strong> — Özellikle kuru tiplerde ve yaz aylarında görülür. Uyarı geldiğinde aracı zorlamak, geçici bir belirtiyi kalıcı hasara çevirir.",
+          "<strong>Gaz kesince boşa alma hissi, geçişlerde tereddüt</strong> — Bazı modern ıslak kutularda serbest yuvarlanma stratejisinin normal davranışıdır; her tereddüt arıza değildir. Ayrımı canlı veriyle yapıyoruz."
+        ]
+      },
+      {
+        "h2": "Bakım aralıkları: kestirme yok",
+        "body": [
+          "Islak kavramalı tiplerde yağ ve filtre yenilemesi genel olarak 60.000-80.000 km bandında tanımlanır; VW tarafında bu aralık çoğunlukla 60.000 km, Porsche PDK'da ise yaklaşık 90.000 km ya da altı yıl olarak geçer. Kesin değer araca ve üretici dokümanına göre değişir; bu yüzden \"her araçta şu kilometre\" demiyoruz.",
+          "Kuru kavramalı tiplerde kavrama gövdesinde yağ yoktur, ancak mekatronik ünitesinin hidrolik yağı vardır. Üretici bu yağ için sıklıkla ömür boyu kullanım öngörse de, sahada yaşlandığını ve basınç kontrolünü etkilediğini görüyoruz. Bu değerlendirmeyi aracın kilometresine, kullanım profiline ve okunan değerlere bakarak yapıyoruz.",
+          "Bakım aralığını asıl belirleyen kilometre değil, o kilometrenin nasıl yapıldığıdır. Çoğunlukla şehir içi kullanılan, rampalı bir güzergâhta günde çok sayıda kalkış yapan bir araç, aynı kilometreyi otoyolda yapan bir araçla aynı ömrü vermez. Bursa'nın trafiği ve eğimli güzergâhları, bu şanzımanlar için aralık kısaltmayı haklı çıkaran koşullardır."
+        ]
+      },
+      {
+        "h2": "Çift kavramalıyı yoran kullanım alışkanlıkları",
+        "body": [
+          "Çift kavramalı şanzımanların ömrünü belirleyen şeylerin bir kısmı atölyede değil, direksiyon başında olup biter. Aşağıdaki alışkanlıklar değiştiğinde kavrama ve mekatronik üzerindeki yük belirgin biçimde azalır."
+        ],
+        "items": [
+          "<strong>Rampada gazla tutmak</strong> — En yıpratıcı davranış budur. Kavrama sürekli kısmi kavrama hâlinde kalır ve doğrudan ısı üretir; bunun yerine fren ya da el freni kullanın.",
+          "<strong>Sürünme trafiğinde D konumunda frenle beklemek</strong> — Uzun kırmızı ışıklarda ve durağan trafikte N ya da P konumu kavramayı dinlendirir.",
+          "<strong>D-R geçişini araç tam durmadan yapmak</strong> — Manevrada acele etmek, kavrama ve mekanik gruba gereksiz darbe bindirir.",
+          "<strong>Kısa mesafeli, hep soğuk kullanım</strong> — Yağ çalışma sıcaklığına ulaşmadan yapılan sürüşler, uzun vadede yağın ve kavramanın aleyhinedir.",
+          "<strong>Ani ve tam gazlı kalkışları alışkanlık hâline getirmek</strong> — Şanzıman bunu kaldıracak şekilde tasarlanmıştır; ancak sık tekrarlandığında kavrama ömrünü kısaltır.",
+          "<strong>Belirtiyi erteleme</strong> — Titreme başladığında beklemek aşınmayı diğer parçalara yayar. Erken müdahale hem kapsamı hem maliyeti küçük tutar."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Çift kavramalı şanzıman otomatik mi, manuel mi?",
+        "Kullanım açısından otomatiktir; vites değiştirmek için pedala basmaz, kolu oynatmazsınız. Mekanik olarak ise manuel bir şanzımana daha yakındır: içeride tork konvertörü yerine iki kavrama ve senkronize dişli grupları vardır. Bu ikili karakter, hem sürüş hissini hem de arıza tablosunu açıklar."
+      ],
+      [
+        "Kuru kavramalı mı ıslak kavramalı mı daha dayanıklı?",
+        "Islak tip ısıyı daha iyi yönetir ve genellikle daha yüksek tork taşır; bu nedenle ağır kullanımda avantajlıdır. Ancak yağ ve filtre bakımı ihmal edildiğinde ıslak tip de hızla yıpranır. Kuru tip ise verimlidir ama sürünme trafiğine ve rampa kullanımına daha duyarlıdır. Belirleyici olan tip değil, kullanım ve bakımdır."
+      ],
+      [
+        "Kalkıştaki titremenin kaynağını nasıl ayırıyorsunuz?",
+        "Önce şikâyeti tarif ettiriyoruz: soğukta mı, yüklüyken mi, hangi viteste. Sonra hata kayıtlarını, kavrama adaptasyon ve kavrama noktası değerlerini, basınç verilerini okuyup yol testi yapıyoruz. Kayma varsa giriş mili devri ile motor devri arasındaki fark bunu gösterir. Ölçüm yapmadan parça değiştirmiyoruz."
+      ],
+      [
+        "Yazılım güncellemesi titremeyi çözer mi?",
+        "Sorun adaptasyon ya da kalibrasyon kaynaklıysa belirgin fayda sağlayabilir. Ancak balata yorgunluğu, keçe sızıntısı veya mekanik aşınma varsa çözmez; yalnızca belirtiyi bir süre maskeler. Bu yüzden güncellemeyi teşhisin yerine değil, teşhisin bir parçası olarak kullanıyoruz."
+      ],
+      [
+        "Şanzıman komple değişmeli mi?",
+        "Çoğu durumda gerekmez. Arızalar kavrama paketi, mekatronik, valf gövdesi, aktüatör grubu ya da keçe-conta düzeyinde ayrılabilir ve hedefli biçimde onarılabilir. Komple değişim, iç mekanik grupta yaygın hasar olduğunda gündeme gelir; ilk seçenek değildir."
+      ],
+      [
+        "Araç acil çalışma moduna geçtiyse ne yapmalıyım?",
+        "Aracı zorlamayın. Vites göstergesi yanıp sönüyor, araç tek viteste kalıyor ya da sarsıntı sürüyorsa çekiciyle getirmek en güvenli seçenektir. Bu modda sürmeye devam etmek, elektronik kaynaklı bir sorunun mekanik hasara dönüşmesine yol açabilir."
+      ],
+      [
+        "Fiyatı telefonda öğrenebilir miyim?",
+        "Telefonda net fiyat vermiyoruz. Kutu tipi, arızanın kavrama / mekatronik / valf gövdesi ayrımı, şanzımanın sökülüp sökülmeyeceği ve parça kalemleri bedeli belirler. Aracı görmeden çıkarılan rakam yanıltıcı olur. Nilüfer'deki atölyemizde tespit yapıldıktan sonra kapsamı ve bedeli, işe başlamadan onayınıza sunuyoruz."
+      ]
+    ],
+    "related": [
+      "dsg-sanziman-tamiri",
+      "ford-powershift-sanziman-tamiri",
+      "porsche-pdk-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "otomatik-sanziman-ariza-belirtileri",
+    "kicker": "Belirti Rehberi · Tüm Markalar",
+    "title": "Otomatik Şanzıman Arıza Belirtileri | Bursa | HB",
+    "meta": "Sarsıntı, vites atlamama, kayma, geri viteste gecikme, ısınma ve arıza lambası. Her belirtinin muhtemel kaynağı, sürüş riski ve ne yapmanız gerektiği.",
+    "h1": "Otomatik Şanzıman Arıza Belirtileri",
+    "service_name": "Otomatik Şanzıman Arıza Tespiti",
+    "service_type": "Otomatik şanzıman arıza tespiti ve onarımı",
+    "intro": "Araç sarsıyor, vites atlamıyor ya da panelde uyarı yanıyorsa: bu sayfa belirtiyi doğru tarif etmenize, olası kaynağı anlamanıza ve yola devam etmenin riskli olup olmadığına karar vermenize yardımcı olur.",
+    "sections": [
+      {
+        "h2": "Önce sakin olun: her sarsıntı revizyon demek değil",
+        "body": [
+          "Otomatik şanzımanda bir belirti neredeyse hiçbir zaman tek bir parçayı işaret etmez. Aynı sarsıntı yaşlanmış yağdan da gelebilir, valf gövdesindeki bir solenoidden de, kavrama aşınmasından da. Bu yüzden bir belirtiyi doğrudan bir parçaya eşlemek gereksiz masrafla sonuçlanır.",
+          "İşin iyi tarafı şu: otomatik şanzımanlar genellikle aniden ölmez, öncesinde haftalarca uyarı verir. <strong>Belirtiyi erken yakalayan sürücü çoğu zaman hedefli bir onarımla kurtulur; ertelendiğinde aynı arıza komple revizyona dönüşür.</strong>",
+          "Aşağıdaki başlıkları hep aynı sırayla okuyun: ne hissedilir, muhtemel kaynak nedir, sürmeye devam etmek riskli mi, ne yapmalı."
+        ]
+      },
+      {
+        "h2": "1) Vites geçişinde sarsıntı ve vuruntu",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Araç vites değiştirirken arkadan hafifçe itilmiş gibi bir darbe, net bir vuruntu ya da geçişin uzayıp sonunda sertçe oturması. Genellikle önce 1–2 ve 2–3 gibi düşük vites geçişlerinde başlar, soğuk çalıştırmada belirginleşir.",
+          "<strong>Muhtemel kaynak:</strong> Özelliğini kaybetmiş veya seviyesi düşmüş yağ, valf gövdesi ve solenoidlerde aşınma, bozulmuş adaptasyon değerleri, kavrama aşınması. Çift kavramalı tiplerde mekatroniğin basınç kontrolü de aynı hissi verir.",
+          "<strong>Sürmeye devam riskli mi:</strong> Kısa vadede genellikle acil değildir. Ancak her sert geçiş kavrama yüzeyini fazladan aşındırır; sarsıntı arttıkça ve süre uzadıkça risk büyür.",
+          "<strong>Ne yapmalı:</strong> Yağın en son kaç kilometrede değiştiğini öğrenin, hata kayıtlarını okutun. Yağ değişimini “belki geçer” diye tek başına denemeyin; önce basınç ve adaptasyon verilerine bakılsın."
+        ]
+      },
+      {
+        "h2": "2) Vites atlamama, tek viteste kalma",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Araç bir vitese takılı kalır, devir yükselir ama üst vitese geçmez. Hız çoğu zaman sınırlanır, gaza basmak sadece devri artırır. Vites göstergesi kaybolabilir veya yanıp sönebilir.",
+          "<strong>Muhtemel kaynak:</strong> Bu tablo çoğu zaman acil çalışma (limp home) modudur — kontrol ünitesi güvenilmez bir sinyal gördüğünde şanzımanı sabit bir vitese alır. Sebep sıklıkla elektronik taraftadır: hız sensörü sinyalleri, mekatronik veya konduktör plaka, soket sızdırması, solenoid arızası.",
+          "<strong>Sürmeye devam riskli mi:</strong> Evet. Araç bu modda hareket eder ama sürüşü uzatmak, elektronik bir sorunun mekanik hasara dönüşmesine yol açabilir. Otoyola çıkmayın.",
+          "<strong>Ne yapmalı:</strong> Aracı güvenli bir yerde durdurun, kontağı kapatıp birkaç dakika sonra tekrar çalıştırın. Belirti geçse bile hata kaydı hafızada kalır; okutmadan yola devam etmeyin. Vites hiç girmiyorsa çekiciyle getirin."
+        ]
+      },
+      {
+        "h2": "3) Geri viteste gecikme, D–R geçişinde boşluk",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Vitesi R konumuna alıyorsunuz, araç bir–iki saniye hiçbir şey yapmıyor, sonra bir darbeyle geri kavrıyor. Aynı durum D konumunda da olabilir. Soğukken belirgin, motor ısındıkça hafifleyen bir tablo tipiktir.",
+          "<strong>Muhtemel kaynak:</strong> Hidrolik basıncın geç kurulması — düşük yağ seviyesi, yaşlanmış yağ, valf gövdesinde iç kaçak, aşınmış geri vites kavraması. Bazı ailelerde yağ pompası kaynaklı, sabahları belirginleşen gecikmeler görülür.",
+          "<strong>Sürmeye devam riskli mi:</strong> Orta riskli. Gecikme sırasında kavrama yüzeyleri kayarak ısınır; bu, aşınmayı hızlandıran bir döngüdür. Gecikme birkaç saniyeyi buluyorsa erteleme yapmayın.",
+          "<strong>Ne yapmalı:</strong> Vites kolunu araç tam dururken değiştirin, R'ye alıp hemen gaza basmayın. Yağ seviyesi ve durumunu kontrol ettirin; belirti sürüyorsa basınç ölçümü gerekir."
+        ]
+      },
+      {
+        "h2": "4) Kayma — devir yükseliyor, araç hızlanmıyor",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Gaza basıyorsunuz, motor devri fırlıyor ama hız aynı oranda artmıyor. Sanki debriyaj kaçırıyormuş gibi bir his. Rampada, yüklüyken ve sollamada en belirgin hâlini alır.",
+          "<strong>Muhtemel kaynak:</strong> Kavrama balatası veya bant aşınması, hidrolik basınç kaybı, iç kaçak yapan valf gövdesi, tork konvertörü kilitleme kavraması. <a href=\"/cvt-sanziman-tamiri/\">CVT'de</a> kayış–kasnak kayması da tam olarak bu hissi verir.",
+          "<strong>Sürmeye devam riskli mi:</strong> Yüksek riskli. Kayma, sürtünme yüzeylerinin tutunamadan ısınması demektir; devam eden her kilometre yağı ve iç parçaları hızla bozar, onarımın kapsamını büyütür.",
+          "<strong>Ne yapmalı:</strong> Aracı zorlamayı bırakın, mümkünse sürmeyin. Kaymanın başladığı andan itibaren yağa karışan aşınma ürünleri valf gövdesine de zarar verir. Çekici en güvenli seçenektir."
+        ]
+      },
+      {
+        "h2": "5) Şanzımanın ısınması ve yanık yağ kokusu",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Aracı park ettiğinizde keskin, yanık bir koku. Bazı araçlarda panelde “şanzıman sıcak, aracı durdurun” tarzında bir uyarı çıkar; bazılarında hiçbir uyarı olmadan sadece koku vardır.",
+          "<strong>Muhtemel kaynak:</strong> Yağın aşırı ısınması. Bunun ardında ya kayan bir kavrama, ya düşük yağ seviyesi, ya tıkanmış bir soğutucu/radyatör devresi, ya da uzun süre ihmal edilmiş bakım vardır. Kilitlenmeyen bir tork konvertörü de sürekli ısı üretir.",
+          "<strong>Sürmeye devam riskli mi:</strong> Evet, en riskli belirtilerden biri. Yağ belli bir sıcaklığın üstünde sürtünme özelliğini hızla kaybeder; bu noktadan sonra hasar dakikalarla ölçülür. Yanık koku balataların da yandığının işareti olabilir.",
+          "<strong>Ne yapmalı:</strong> Aracı durdurun ve soğumasını bekleyin. Kokunun geçmesi sorunun geçtiği anlamına gelmez. Yapılacak ilk iş yağın rengine ve kokusuna bakmaktır; kararmış ve yanık kokan yağ, iç parçaların da kontrol edilmesi gerektiğini söyler."
+        ]
+      },
+      {
+        "h2": "6) Arıza lambası, şanzıman uyarısı ve acil çalışma modu",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Panelde motor arıza lambası, dişli/şanzıman ikonu ya da metin uyarısı. Bazı araçlarda vites göstergesi yanıp söner, bazılarında Sport/Manuel modlar devre dışı kalır.",
+          "<strong>Muhtemel kaynak:</strong> Kontrol ünitesinin hata kaydı üretmesi: basınç sapması, sensör sinyali, solenoid arızası, yağın sokete ilerlemesi ya da haberleşme hatası. Uyarı lambası bir teşhis değil, teşhise davettir.",
+          "<strong>Sürmeye devam riskli mi:</strong> Uyarıyla birlikte sürüş davranışı da değiştiyse (sarsıntı, kayma, vites atlamama) yola devam etmeyin. Sürüş normalse kısa mesafe gidilebilir ama erteleme yapmayın.",
+          "<strong>Ne yapmalı:</strong> <strong>Hata kodlarını sildirip “geçti” demeyin.</strong> Silinen kod arızayı kaldırmaz, sadece kanıtı yok eder. Kodların hangi koşulda oluştuğuna dair kayıt verileriyle birlikte okunması gerekir."
+        ]
+      },
+      {
+        "h2": "7) Ters tepme, gaz kesince darbe",
+        "body": [
+          "<strong>Ne hissedilir:</strong> Gazdan ayağı çekince arkadan bir tekme, ya da yavaşlarken alt vitese geçerken sert bir darbe. Kavşağa yaklaşırken araç kendini ileri–geri sallayabilir.",
+          "<strong>Muhtemel kaynak:</strong> Alt vites (downshift) stratejisinin bozulması, adaptasyon değerlerinin kaybolması, valf gövdesinde tepki gecikmesi, tork konvertörü kilitleme kavramasının geç bırakması. Motor tarafındaki bir sorun da benzer his verebilir.",
+          "<strong>Sürmeye devam riskli mi:</strong> Orta riskli. Her darbe aktarma organlarına, takozlara ve diferansiyele yük biner. Belirti hızla artıyorsa bekletmeyin.",
+          "<strong>Ne yapmalı:</strong> Belirtinin hangi hızda ve hangi viteste olduğunu not edin. Bazen doğru yağ ve düzgün bir adaptasyon belirgin fark yaratır, bazen mekanik aşınma vardır. İkisini ayıran şey ölçümdür."
+        ]
+      },
+      {
+        "h2": "Hangi belirtide yola devam etmemeli?",
+        "body": [
+          "Şu maddelerden biri varsa aracı zorlamayın; çekiciyle getirmek çoğu zaman daha ucuza gelir."
+        ],
+        "items": [
+          "<strong>Devir yükseliyor ama araç hızlanmıyor</strong> — kavrama kayıyor, her kilometre hasarı büyütür",
+          "<strong>Yanık yağ kokusu veya sıcaklık uyarısı</strong> — yağ sürtünme özelliğini kaybetmiş olabilir",
+          "<strong>Vites hiç girmiyor ya da araç tek viteste kalmış</strong> — acil çalışma modu",
+          "<strong>Şanzımandan metalik takırtı, uğultu veya çınlama geliyor</strong> — mekanik temas ihtimali",
+          "<strong>Park yerinde belirgin kırmızımsı/kahverengi yağ birikintisi var</strong> — seviye kritik düşmüş olabilir",
+          "<strong>Vites göstergesi yanıp sönüyor</strong> — şanzıman kendini korumaya almış"
+        ]
+      },
+      {
+        "h2": "Servise gelmeden önce bunları not edin",
+        "body": [
+          "Teşhis süresini kısaltan en değerli şey sürücünün doğru tarifidir. Şu soruların cevabını yanınızda getirin."
+        ],
+        "items": [
+          "Belirti soğukken mi, ısındıktan sonra mı, yoksa her zaman mı ortaya çıkıyor?",
+          "Hangi viteste ve hangi hızda hissediliyor?",
+          "Ne zaman başladı, giderek mi artıyor yoksa sabit mi?",
+          "Panelde uyarı çıktı mı, çıktıysa hangi ikon veya mesaj?",
+          "Şanzıman yağı en son kaç kilometrede ve nerede değişti?",
+          "Daha önce yapılmış işlem, silinmiş hata kaydı veya değişmiş parça var mı?"
+        ]
+      },
+      {
+        "h2": "Bursa Nilüfer'de arıza tespiti",
+        "body": [
+          "HB Otomatik Şanzıman olarak Bursa Nilüfer'de yalnızca otomatik şanzımanla ilgileniyoruz. Belirti tarifinizi dinliyor, hata kayıtlarını ve canlı verileri okuyor, yol testi yapıyoruz. Sökme kararı ancak bu adımlardan sonra veriliyor.",
+          "Tespit bittiğinde yapılacak işlem ve değişecek parça kalemleri onayınıza sunulur. <strong>Aracı görmeden telefonda rakam vermiyoruz;</strong> aynı belirti bir araçta yağ ve adaptasyonla, bir başkasında revizyonla çözülüyor.",
+          "Marka bazlı ayrıntı için <a href=\"/dsg-sanziman-tamiri/\">DSG</a>, <a href=\"/bmw-sanziman-tamiri/\">BMW ZF</a> ve <a href=\"/cvt-sanziman-tamiri/\">CVT</a> sayfalarımıza bakabilirsiniz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Otomatik şanzıman arızası aniden mi ortaya çıkar?",
+        "Genellikle hayır. Ciddi arızaların çoğu öncesinde sarsıntı, gecikme, sert geçiş veya aralıklı uyarı verir. Erken fark edilip ölçüldüğünde onarımın kapsamı çoğu zaman küçük kalır."
+      ],
+      [
+        "Arıza lambası yanınca aracı sürebilir miyim?",
+        "Sürüş davranışı da değiştiyse (sarsıntı, kayma, vites atlamama) sürmeyin. Sürüş normalse kısa mesafe gidilebilir, ancak hata kaydının okunmasını ertelemeyin. Kodu silmek arızayı çözmez, teşhisi zorlaştırır."
+      ],
+      [
+        "Şanzıman yağı değişimi belirtileri geçirir mi?",
+        "Erken evrede bazı belirtileri hafifletebilir, çünkü sert geçişlerin arkasında sıklıkla yaşlanmış yağ vardır. Ancak oluşmuş mekanik aşınmayı geri döndürmez; yağ değişimini teşhis yerine koymuyoruz."
+      ],
+      [
+        "Sarsıntı ile kayma arasındaki fark nedir?",
+        "Sarsıntı, vites geçişi sırasında hissedilen ani bir darbedir. Kayma ise devir yükselirken aracın aynı oranda hızlanmamasıdır. Kayma daha ciddidir; yüzeyler tutunamadan ısındığı için yola devam etmek hasarı hızla büyütür."
+      ],
+      [
+        "Aracım tek viteste kaldı, şanzıman gitti mi?",
+        "Genellikle hayır. Bu çoğu zaman acil çalışma modudur; kontrol ünitesi güvenilmez bir sinyal gördüğünde şanzımanı sabit bir vitese alarak korur. Sebep sıklıkla elektronik taraftadır, mekanik grup sağlam olabilir."
+      ],
+      [
+        "Yanık koku alıyorum ama araç normal gidiyor, bekleyebilir miyim?",
+        "Beklemeyin. Yanık yağ kokusu, yağın aşırı ısındığını ve sürtünme özelliğini kaybetmeye başladığını gösterir. Sürüş normal görünse bile iç parçalar bu süreçte yıpranır."
+      ],
+      [
+        "Teşhis için şanzımanı sökmek şart mı?",
+        "Hayır, ilk adım hiçbir zaman sökmek değildir. Hata kayıtları, canlı veri takibi, basınç değerleri ve yol testiyle çoğu arızanın kaynağı daraltılabilir. Sökme kararı ancak bu veriler onu gerektirdiğinde verilir."
+      ]
+    ],
+    "related": [
+      "dsg-sanziman-tamiri",
+      "bmw-sanziman-tamiri",
       "cvt-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "otomatik-sanziman-yag-degisimi",
+    "kicker": "Bakım · ATF ve DSG Yağı",
+    "title": "Otomatik Şanzıman Yağı Değişimi | ATF ve DSG | HB",
+    "meta": "Otomatik şanzıman yağı kaç km'de değişir, “ömür boyu yağ” doğru mu, ATF tipi neden kritik, filtre ve karter, flush yönteminin riskleri. Bursa Nilüfer.",
+    "h1": "Otomatik Şanzıman Yağı Değişimi",
+    "service_name": "Otomatik Şanzıman Yağ ve Filtre Değişimi",
+    "service_type": "Otomatik şanzıman bakımı",
+    "intro": "Otomatik şanzımanda yağ sadece yağlamaz; basınç iletir, kavramayı tutar, ısıyı taşır. Bu sayfada ne zaman değişmesi gerektiğini, yanlış yağın ne yaptığını ve yıkamalı yöntemin neden her araca uygun olmadığını anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Şanzıman yağı, motor yağı gibi düşünülemez",
+        "body": [
+          "Motor yağının işi büyük ölçüde yağlamak ve soğutmaktır. Otomatik şanzıman yağı ise aynı anda dört iş yapar: <strong>hidrolik basıncı taşır, kavrama yüzeylerinin tutunma karakterini belirler, ısıyı dışarı atar ve dişli yüzeylerini yağlar.</strong>",
+          "Bunun pratik sonucu şudur: yağ yaşlandığında araç önce “yağsız kalmaz”, önce <strong>kötü vites atmaya başlar</strong>. Sert geçişler, gecikmeler, düşük hızda titreşim — bunların çoğu mekanik bir kırılma değil, yağın artık kendinden beklenen sürtünme ve basınç davranışını gösterememesidir.",
+          "Şanzıman yağı ısı ve sürtünme altında yaşlanır, sürtünme katkıları tükenir, içine kavrama ve dişli kaynaklı mikro aşınma ürünleri karışır. Bu ürünler valf gövdesindeki dar kanallarda ve solenoid yuvalarında aşınma yaratır. Yani yaşlanmış yağ sadece işini yapmaz; aynı zamanda zarar verir."
+        ]
+      },
+      {
+        "h2": "“Ömür boyu yağ” iddiasının gerçeği",
+        "body": [
+          "Birçok üretici bazı şanzıman ailelerini “lifetime fill” (ömür boyu dolum) olarak tanımlar. Bu ifadenin gerçekte ne anlama geldiğini bilmek önemli: burada kastedilen aracın ömrü değil, üreticinin tasarım ömrü olarak kabul ettiği süredir. Aracını 250.000 km kullanmayı planlayan bir sürücü için bu tanım pratikte geçerliliğini yitirir.",
+          "Sahada gördüğümüz tablo nettir: yağ değişmeden yüz binlerce kilometre yapmış şanzımanlarda karter içi çamurlanma, kararmış yağ ve valf gövdesinde aşınma çok daha sık karşımıza çıkar. Yağın kimyasal olarak yaşlanmadığı bir senaryo yok; sadece ne zaman kritik hâle geldiği araca ve kullanıma göre değişir.",
+          "<strong>Kural şu: “ömür boyu yağ” bir bakım muafiyeti değil, bir üretici tanımıdır.</strong> Aracınızı uzun süre kullanacaksanız, şanzıman yağını bakım kalemi olarak görmek çok daha ucuza gelir."
+        ]
+      },
+      {
+        "h2": "Kaç kilometrede bir değişmeli?",
+        "body": [
+          "Tek bir rakam vermek doğru olmaz; aralık şanzıman ailesine ve kullanım koşuluna göre değişir. Genel çerçeve şöyledir:"
+        ],
+        "items": [
+          "<strong>Klasik tork konvertörlü otomatikler</strong> — üretici dokümanlarında sıklıkla 60.000–120.000 km bandında yağ ve filtre yenilemesi tanımlanır; ZF 8HP ailesi için bu aralık genellikle 80.000–120.000 km olarak geçer",
+          "<strong>Islak kavramalı çift kavramalılar (DSG DQ250/DQ381, DL501)</strong> — genellikle 60.000–80.000 km",
+          "<strong>Kuru kavramalı çift kavramalılar (DQ200, PowerShift DPS6)</strong> — kavrama yağ içinde çalışmaz; mekatroniğin kendi yağ devresi ayrı değerlendirilir",
+          "<strong>CVT</strong> — kayış ve kasnak yağa çok duyarlıdır; aralık genellikle daha kısadır ve ihmali en pahalıya mal olan tiptir",
+          "<strong>Zorlu kullanım</strong> — yoğun şehir içi dur-kalk, römork/karavan çekme, sportif kullanım, sık yokuş: bu koşullarda aralığı kısaltmak gerekir"
+        ]
+      },
+      {
+        "h2": "Yağ tipi neden bu kadar kritik?",
+        "body": [
+          "Otomatik şanzıman yağı jenerik bir sıvı değildir. Her aile için üreticinin tanımladığı bir onay numarası vardır ve bu onay, yağın sürtünme katsayısı davranışını, viskozite eğrisini ve katık paketini kapsar. <a href=\"/mercedes-sanziman-tamiri/\">Mercedes'te 722.9 ile 9G-Tronic aynı yağı kullanmaz;</a> ZF 8HP'nin yağı 6HP'ninkiyle birebir aynı değildir. DSG'nin ıslak kavramalı tipleri kendi spesifikasyonundaki yağı ister.",
+          "<strong>Yanlış spesifikasyondaki yağ genellikle hemen arıza vermez</strong> — asıl tehlike de buradadır. Araç birkaç bin kilometre sorunsuz gidebilir. Ama sürtünme karakteri farklı bir yağ, kavramanın tutma anını kaydırır: geçişler ya sertleşir ya uzar, kavrama yüzeyi her geçişte biraz daha fazla kayarak yorulur. Fark hissedildiğinde aşınma çoktan başlamıştır.",
+          "“Çok amaçlı ATF” etiketli ürünler bu yüzden risklidir. Etiketteki uzun uyumluluk listesi, o yağın her listedeki şanzımanda üreticinin istediği davranışı göstereceği anlamına gelmez. <strong>Doğru yağ, en ucuz sigortadır.</strong>"
+        ]
+      },
+      {
+        "h2": "Filtre ve karter contası — yağdan ayrı düşünülmez",
+        "body": [
+          "Yağ değişiminde filtre atlanırsa iş yarım kalır. Tıkanmış bir filtre pompanın emişini zorlar, basıncın kurulmasını geciktirir ve sistemi kendi kendini kirleten bir döngüye sokar.",
+          "Karter tarafında ailelere göre iki farklı durum var. Bazı şanzımanlarda metal karter ve ayrı filtre vardır; conta yenilenir, karter temizlenir, mıknatıslardaki aşınma ürünleri temizlenir. <a href=\"/bmw-sanziman-tamiri/\">ZF 8HP gibi ailelerde</a> ise filtre plastik kartere entegredir; bu tiplerde bakım, karterin komple yenilenmesi anlamına gelir.",
+          "Karterden çıkan malzemeyi okumak da bakımın parçasıdır. Mıknatısta ince gri bir film normaldir; <strong>metal talaşı, sürtünme malzemesi parçacığı veya çamur kıvamında bir tortu ise ayrı bir konuşma başlatır</strong> — bu durumda sadece yağ değiştirip yola devam etmek doğru olmaz."
+        ]
+      },
+      {
+        "h2": "Yıkamalı (flush) yöntem: neden temkinliyiz",
+        "body": [
+          "Yıkamalı yöntemde makineyle şanzımandaki yağın tamamına yakını basınçlı biçimde tazesiyle değiştirilir. Yağın büyük bölümünü yenilediği için cazip görünür ve yerinde kullanıldığında faydalıdır. Ancak her araca uygun değildir.",
+          "Riskin kaynağı şu: bakımı uzun süre ihmal edilmiş, içi çamurlanmış bir şanzımanda birikmiş tortu, akış tersine döndüğünde yerinden kalkıp dar kanallara ve solenoid yuvalarına taşınabilir. İkincisi, aşınmış kavramalar zaman içinde bozulmuş yağın “kalınlığına” alışmıştır; taze ve akışkan yağ bu yüzeylerde kaymayı belirginleştirebilir. Bu yüzden bazı araçlarda yıkamadan hemen sonra belirti artar.",
+          "<strong>Yaklaşımımız:</strong> yağın durumu, kilometre, bakım geçmişi ve karterden çıkan malzeme görülmeden yıkama önerilmez. Bakımı düzenli yapılmış bir araçta yıkama makul bir seçenektir; uzun süre ihmal edilmiş ve belirti veren bir şanzımanda ise önce arıza tespiti gelir. <strong>Yıkama bir onarım yöntemi değildir</strong> — arızalı bir şanzımanı düzeltmek için kullanılmaz."
+        ]
+      },
+      {
+        "h2": "Doğru değişim: sıcaklık ve seviye",
+        "body": [
+          "Modern otomatiklerin çoğunda yağ seviyesi çubukla ölçülmez; seviye, şanzıman belirli bir sıcaklık aralığındayken kontrol tapası üzerinden ayarlanır. Bu aralık genellikle dar tanımlanmıştır ve dışına çıkıldığında ölçüm yanıltır.",
+          "Sonuçları önemli: <strong>soğukken bakılıp “tam” denen bir şanzıman gerçekte eksik kalabilir; sıcakken taşırılan bir şanzımanda ise yağ köpürür.</strong> Köpüren yağ basınç iletmez — eksik yağla aynı belirtileri verir. Bu yüzden değişim sırasında diagnostik cihazla yağ sıcaklığının takip edilmesi işin ayrılmaz parçasıdır.",
+          "Bazı ailelerde işlem sonrası adaptasyon değerlerinin sıfırlanması ve şanzımanın yeniden öğrenmesi gerekir. Bu adım atlandığında araç yeni yağla eski öğrenilmiş değerleri kullanmaya devam eder ve geçiş kalitesi beklenen düzeye çıkmaz."
+        ]
+      },
+      {
+        "h2": "Yağ değişimi arızalı bir şanzımanı düzeltir mi?",
+        "body": [
+          "Kısmen. Sert geçiş, hafif gecikme ve düşük hızda titreşim gibi erken belirtilerin arkasında sıklıkla yaşlanmış yağ vardır; bu durumlarda doğru yağ ve filtre belirgin fark yaratır.",
+          "Ama kayma başlamışsa, yanık koku varsa, araç acil çalışma moduna geçiyorsa ya da metalik ses geliyorsa <strong>yağ değişimi teşhisin yerine geçmez.</strong> Bu tabloda yağ değiştirmek belirtiyi kısa süreliğine değiştirebilir, arızayı ortadan kaldırmaz. Belirtileriniz varsa önce <a href=\"/otomatik-sanziman-ariza-belirtileri/\">arıza belirtileri sayfasına</a> bakmanızı öneririz."
+        ]
+      },
+      {
+        "h2": "Bursa Nilüfer'de yağ ve filtre bakımı",
+        "body": [
+          "HB Otomatik Şanzıman'da bakım, kapağı açıp yağ boşaltmakla başlamaz. Önce şanzıman kodunu ve üreticinin o aile için tanımladığı spesifikasyonu doğruluyoruz; ardından karterden çıkan malzemeye bakıyoruz. Çıkan tabloya göre bakımın kapsamı değişebilir — bunu işlem sırasında size söylüyoruz, sonradan değil.",
+          "Yağ ve filtre bakımını, gerektiğinde <a href=\"/sanziman-revizyonu-nedir/\">revizyon</a> ve <a href=\"/mekatronik-arizasi/\">mekatronik onarımı</a> ile aynı çatı altında yürütüyoruz; böylece bakım sırasında görülen bir bulgu başka bir servise devredilmiyor. <strong>Aracı görmeden fiyat vermiyoruz;</strong> şanzıman kodu, yağ miktarı, filtrenin kartere entegre olup olmaması ve ek bulgular kapsamı değiştirir."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Otomatik şanzıman yağı gerçekten ömür boyu mu?",
+        "Pratikte hayır. Üreticilerin ömür boyu dolum tanımı, aracın kullanım ömrünü değil tasarım ömrünü kasteder. Şanzıman yağı ısı ve sürtünme altında yaşlanır, katkıları tükenir ve içine aşınma ürünleri karışır. Aracı uzun süre kullanacaksanız yağ ve filtre bir bakım kalemidir."
+      ],
+      [
+        "Kaç kilometrede bir değiştirmeliyim?",
+        "Şanzıman ailesine ve kullanıma göre değişir. Klasik otomatiklerde üretici dokümanlarında sıklıkla 60.000–120.000 km bandı, ıslak kavramalı çift kavramalılarda genellikle 60.000–80.000 km geçer. Yoğun şehir içi dur-kalk, römork çekme ve sportif kullanım bu aralığı kısaltır."
+      ],
+      [
+        "Yanlış yağ konursa ne olur?",
+        "Genellikle hemen arıza vermez, tehlikeli olan da budur. Farklı sürtünme karakterindeki bir yağ kavramanın tutma anını kaydırır; geçişler sertleşir veya uzar ve kavrama yüzeyi her geçişte biraz daha yorulur. Fark hissedildiğinde aşınma çoktan başlamış olur."
+      ],
+      [
+        "Çok amaçlı ATF kullanabilir miyim?",
+        "Önermiyoruz. Etiketteki geniş uyumluluk listesi, o yağın her şanzımanda üreticinin istediği davranışı göstereceği anlamına gelmez. Her aile için tanımlı onay numarasına uygun yağ kullanılmalıdır."
+      ],
+      [
+        "Filtre değişmeden sadece yağ değişebilir mi?",
+        "Teknik olarak mümkün ama doğru değil. Tıkanmış filtre pompanın emişini zorlar, basıncın kurulmasını geciktirir ve taze yağı kısa sürede kirletir. ZF 8HP gibi filtrenin kartere entegre olduğu ailelerde bakım zaten karterin komple yenilenmesi anlamına gelir."
+      ],
+      [
+        "Yıkamalı (flush) yöntem zararlı mı?",
+        "Her araçta değil. Bakımı düzenli yapılmış bir şanzımanda makul bir seçenektir. Uzun süre ihmal edilmiş, içi çamurlanmış veya belirti veren bir şanzımanda ise birikmiş tortunun dar kanallara taşınma riski vardır. Karterden çıkan malzeme görülmeden yıkama önermiyoruz."
+      ],
+      [
+        "Yağ değişimi sırasında sıcaklık neden önemli?",
+        "Modern otomatiklerin çoğunda seviye, şanzıman belirli bir sıcaklık aralığındayken kontrol tapasından ayarlanır. Bu aralığın dışında yapılan ölçüm yanıltır: soğukta tam görünen şanzıman eksik kalabilir, sıcakta taşırılan şanzımanda yağ köpürür ve basınç iletmez."
+      ],
+      [
+        "Kararmış yağ görünce panik yapmalı mıyım?",
+        "Renk tek başına yeterli bir ölçüt değildir; yağ zamanla doğal olarak koyulaşır. Asıl bakılacak şey yanık koku, çamur kıvamında tortu ve karter mıknatısındaki malzemedir. Bunlar varsa yağ değişimi tek başına yeterli olmayabilir."
+      ]
+    ],
+    "related": [
+      "cvt-sanziman-tamiri",
+      "bmw-sanziman-tamiri",
+      "mercedes-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "sanziman-revizyonu-nedir",
+    "kicker": "Süreç Rehberi · Revizyon",
+    "title": "Şanzıman Revizyonu Nedir? | Süreç ve Garanti | HB",
+    "meta": "Şanzıman revizyonu nedir, tamirden ve komple değişimden farkı ne? Adım adım süreç, ne kadar sürdüğü ve garantinin nasıl işlediği. Bursa Nilüfer.",
+    "h1": "Şanzıman Revizyonu Nedir, Nasıl Yapılır?",
+    "service_name": "Otomatik Şanzıman Revizyonu",
+    "service_type": "Otomatik şanzıman revizyonu ve onarımı",
+    "intro": "“Şanzımanınızın revizyona girmesi gerekiyor” cümlesini duyduğunuzda tam olarak ne söylendiğini bilmek hakkınız. Bu sayfada revizyonun ne olduğunu, tamir ve değişimden farkını, sürecin adımlarını ve garantinin nasıl işlediğini anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Revizyon nedir?",
+        "body": [
+          "Revizyon, şanzımanın araçtan sökülüp <strong>tamamen parçalarına ayrılması, her parçanın tek tek ölçülüp değerlendirilmesi, aşınmış olanların yenilenmesi ve şanzımanın yeniden toplanması</strong> işlemidir. İngilizce kaynaklarda “overhaul” ya da “rebuild” olarak geçer.",
+          "Revizyonun tanımlayıcı özelliği kapsamı değil, yöntemidir: belirli bir parçayı hedeflemek yerine şanzımanın bütününü gözden geçirir. Bu yüzden revizyondan çıkan bir şanzımanda sadece arızayı yapan parça değil, ömrünü doldurmaya yakın parçalar da yenilenmiş olur.",
+          "Standart bir revizyonda tipik olarak tüm conta ve keçe takımı, sürtünme ve çelik disk setleri, contalı segmanlar, rulmanlar ve burçlar, gerektiğinde valf gövdesi ve tork konvertörü ele alınır. Hangi kalemlerin gireceği, sökümden sonra ortaya çıkan tabloya göre netleşir."
+        ]
+      },
+      {
+        "h2": "Tamir, revizyon, değişim — üçü aynı şey değil",
+        "body": [
+          "Bu üç kelime günlük konuşmada birbirinin yerine kullanılıyor, oysa maliyeti ve sonucu tamamen farklı üç yoldur. Doğru olanı seçmek, teşhisin ne kadar sağlam yapıldığına bağlıdır."
+        ],
+        "items": [
+          "<strong>Hedefli tamir</strong> — Arıza tek bir gruba oturuyorsa sadece o grup ele alınır: solenoid, konduktör plaka, keçe sızıntısı, <a href=\"/mekatronik-arizasi/\">mekatronik onarımı</a> gibi. Şanzıman sökülür ama tamamen parçalanmaz. En kısa ve en ekonomik yoldur — <strong>şartı, teşhisin doğru olmasıdır.</strong>",
+          "<strong>Revizyon</strong> — Aşınma tek bir gruba sığmıyorsa, yağa metal karışmışsa veya birden fazla sistem etkilenmişse şanzıman komple açılır ve yenilenir. Daha uzun sürer, ama sonucu en öngörülebilir olan yoldur.",
+          "<strong>Komple değişim</strong> — Gövde çatlamış, ana mil hasar görmüş ya da yapısal bir hasar varsa şanzıman komple değiştirilir. <strong>Bu bizde ilk seçenek değil, son seçenektir</strong> — çünkü kullanılmış bir ünitenin geçmişi bilinmez, yeni ünite ise çoğu zaman en pahalı yoldur."
+        ]
+      },
+      {
+        "h2": "Hangi durumda revizyon gerçekten gerekir?",
+        "body": [
+          "Her ciddi belirti revizyon anlamına gelmez. Şu bulgular varsa revizyon gündeme gelir:"
+        ],
+        "items": [
+          "Karterde ve yağda gözle görülür metal talaşı veya sürtünme malzemesi birikmesi",
+          "Birden fazla vitesi kapsayan kayma — tek bir kavrama grubuyla açıklanamayan tablo",
+          "Şanzımandan gelen metalik takırtı, uğultu veya çınlama",
+          "Uzun süre kayarak sürülmüş, ısınmış ve yanık koku vermiş bir şanzıman",
+          "Aynı arızanın önceki hedefli onarımlardan sonra tekrar etmesi",
+          "Tork konvertörünün dağılıp yağa malzeme göndermiş olması"
+        ]
+      },
+      {
+        "h2": "Revizyon süreci adım adım",
+        "body": [
+          "Süreci en baştan anlatıyoruz, çünkü araç sahibinin en çok merak ettiği şey “şimdi ne oluyor” sorusu. Adımlar şöyle işler:"
+        ],
+        "items": [
+          "<strong>1. Arıza tespiti</strong> — Sizi dinliyoruz, hata kayıtlarını ve canlı verileri okuyoruz, basınç değerlerine bakıyoruz ve yol testi yapıyoruz. Amaç, sökmeden önce arızanın kaynağını mümkün olduğunca daraltmak.",
+          "<strong>2. Söküm</strong> — Şanzıman araçtan indirilir ve tezgâhta parçalarına ayrılır. Bu aşamada iç durum ilk kez net olarak görülür; yağın ve karterin verdiği ipuçları burada doğrulanır ya da çürütülür.",
+          "<strong>3. Temizlik ve ölçüm</strong> — Tüm parçalar temizlenir. Kavrama disklerinin kalınlığı, kasnak ve mil yüzeyleri, rulman boşlukları, valf yuvaları ölçülür. Değişecek parça listesi tahminle değil, bu ölçümlerle çıkar.",
+          "<strong>4. Onay</strong> — Değişecek kalemleri ve kapsamı size iletiyoruz. Onay vermeden parça takılmaz. Sökümden sonra beklenmedik bir bulgu çıkarsa aynı şekilde önce haber veriyoruz.",
+          "<strong>5. Parça değişimi ve montaj</strong> — Conta ve keçe takımı, sürtünme setleri ve tespit edilen kalemler yenilenir; şanzıman tork ve boşluk değerlerine uygun şekilde toplanır. Gerekliyse tork konvertörü ayrıca revize edilir.",
+          "<strong>6. Doğru yağ ve doldurma</strong> — Aileye özgü spesifikasyondaki yağ, üreticinin tanımladığı sıcaklık aralığında seviyelendirilir.",
+          "<strong>7. Adaptasyon ve yazılım</strong> — Öğrenilmiş değerler sıfırlanır, gerekiyorsa kodlama yapılır. Bu adım atlanırsa iyi toplanmış bir şanzıman bile kötü vites atar.",
+          "<strong>8. Yol testi</strong> — Soğuk ve sıcak durumda, düşük ve yüksek hızda test edilir. Geçiş kalitesi istenen düzeye gelmeden araç teslim edilmez."
+        ]
+      },
+      {
+        "h2": "Ne kadar sürer?",
+        "body": [
+          "Dürüst cevap: değişir — ve süreyi belirleyen şey işçilik değil, çoğu zaman parça teminidir. Şanzımanın araçtan indirilmesi, sökülüp ölçülmesi ve yeniden toplanması öngörülebilir bir iştir; asıl belirsizlik, ölçüm sonrası çıkan listedeki kalemlerin ne kadar sürede geleceğidir.",
+          "Süreyi etkileyen başlıklar: şanzımanın araçtaki konumu ve söküm zorluğu (özellikle dört çeker ve boyuna motorlu modellerde), revizyon kapsamı, tork konvertörünün de revize edilip edilmeyeceği, ve parça tedariği.",
+          "<strong>Yaklaşımımız net:</strong> baştan gerçekçi olmayan bir süre söyleyip sonra uzatmak yerine, ölçüm ve parça listesi çıktıktan sonra size bir süre veriyoruz. Süre değişirse — örneğin bir parça beklenenden geç gelirse — bunu beklemenizi bekleyip haber vermek yerine öğrendiğimiz gün söylüyoruz."
+        ]
+      },
+      {
+        "h2": "Garanti nasıl işler?",
+        "body": [
+          "Revizyon garantisi, yapılan işi ve değişen parçaları kapsar. Aracın tamamını ya da şanzımanla ilgisi olmayan sistemleri kapsamaz — bu ayrımı baştan net konuşmak, sonradan yaşanan hayal kırıklıklarının çoğunu ortadan kaldırır.",
+          "Garantinin sağlıklı işlemesi için iki taraf da üzerine düşeni yapmalı. <strong>Bizim tarafımızda:</strong> yapılan işlemin ve değişen parçaların yazılı olarak belgelenmesi, doğru spesifikasyonda yağ kullanılması, adaptasyon ve kodlamanın eksiksiz tamamlanması. <strong>Sizin tarafınızda:</strong> teslimde anlatılan ilk kullanım önerilerine uyulması, önerilen ilk kontrolün yaptırılması ve bir belirti hissedildiğinde beklemeden haber verilmesi.",
+          "Garanti kapsamını daraltan durumlar da vardır ve bunları da baştan söylüyoruz: aracın motor veya soğutma tarafındaki giderilmemiş bir arızayla kullanılması, şanzımanın başka bir yerde açılması, yanlış yağ eklenmesi, ya da belirtiyle uzun süre sürülmesi. <strong>Bir sorun hissettiğinizde en doğru hareket, sürmeye devam etmek değil, aramaktır.</strong>"
+        ]
+      },
+      {
+        "h2": "Revizyondan sonra ilk kilometreler",
+        "body": [
+          "Yeni sürtünme yüzeylerinin oturması ve kontrol ünitesinin geçişleri yeniden öğrenmesi zaman alır. İlk dönemde geçişlerin karakteri gün gün değişebilir; bu genellikle normaldir.",
+          "İlk kilometrelerde önerdiklerimiz: sert kalkışlardan ve tam gaz hızlanmalardan kaçının, römork çekmeyin, D–R geçişlerini araç tam dururken yapın, rampada gazla tutmak yerine freni kullanın. Bu birkaç haftalık disiplin, şanzımanın uzun vadeli karakterini belirler.",
+          "Teslimden sonra belirlenen bir noktada yağ seviyesi ve sızdırmazlık kontrolü yapılması önerilir. Bu arada olağandışı bir ses, koku ya da davranış fark ederseniz beklemeden bize dönün."
+        ]
+      },
+      {
+        "h2": "Fiyat neden telefonda söylenmiyor?",
+        "body": [
+          "Bu soruyu çok duyuyoruz ve cevabımız değişmiyor: <strong>aracı görmeden rakam vermiyoruz.</strong> Sebebi şeffaflık eksikliği değil, tam tersi.",
+          "Aynı marka, aynı model ve aynı belirtiye sahip iki araçtan biri solenoid değişimiyle çözülürken diğeri komple revizyona gidebilir. Farkı yaratan şey, belirtiyle ne kadar süre sürüldüğü, yağın durumu ve iç parçaların gerçek hâlidir. Telefonda söylenen bir rakam ya gereksiz yere yüksektir ya da işin ortasında yukarı çıkar. İkisi de doğru değil.",
+          "Bunun yerine şunu yapıyoruz: önce tespit, sonra kapsam ve kalem listesi, sonra onayınız. <strong>Onaylamadığınız hiçbir işlem yapılmaz.</strong> Belirtileriniz hakkında önce fikir edinmek isterseniz <a href=\"/otomatik-sanziman-ariza-belirtileri/\">arıza belirtileri sayfamıza</a> bakabilirsiniz."
+        ]
+      },
+      {
+        "h2": "Bursa Nilüfer'de revizyon",
+        "body": [
+          "HB Otomatik Şanzıman, Bursa Nilüfer'de yalnızca otomatik şanzıman üzerine çalışan bağımsız bir servistir. Tespit, revizyon, mekatronik onarımı, tork konvertörü revizyonu ve onarım sonrası adaptasyon işlemleri aynı çatı altında yürütülür; iş parça parça başka yerlere devredilmez.",
+          "Marka bazlı ayrıntılar için <a href=\"/bmw-sanziman-tamiri/\">BMW ZF</a>, <a href=\"/mercedes-sanziman-tamiri/\">Mercedes</a> ve <a href=\"/ford-powershift-sanziman-tamiri/\">Ford PowerShift</a> sayfalarımıza göz atabilirsiniz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Şanzıman revizyonu tam olarak nedir?",
+        "Şanzımanın araçtan sökülüp tamamen parçalarına ayrılması, her parçanın ölçülerek değerlendirilmesi, aşınmış olanların yenilenmesi ve şanzımanın yeniden toplanmasıdır. Tek bir parçayı hedeflemek yerine bütünü gözden geçirdiği için sonucu daha öngörülebilirdir."
+      ],
+      [
+        "Revizyon ile tamir arasındaki fark ne?",
+        "Hedefli tamirde arıza tek bir gruba oturur ve sadece o grup ele alınır; şanzıman sökülür ama tamamen parçalanmaz. Revizyonda ise şanzıman komple açılır ve aşınmış tüm kalemler yenilenir. Tamir daha kısa ve ekonomiktir, ancak teşhisin doğru olması şarttır."
+      ],
+      [
+        "Şanzımanı komple değiştirmek daha mı mantıklı?",
+        "Genellikle hayır. Komple değişim bizde son seçenektir; gövde çatlağı veya ana mil hasarı gibi yapısal bir sorun varsa gündeme gelir. Kullanılmış bir ünitenin geçmişi bilinmez, sıfır ünite ise çoğu zaman en pahalı yoldur."
+      ],
+      [
+        "Revizyon ne kadar sürer?",
+        "Kapsama, aracın söküm zorluğuna ve en çok da parça teminine bağlıdır. Baştan gerçekçi olmayan bir süre söylemek yerine, ölçüm ve parça listesi çıktıktan sonra size net bir süre veriyoruz; süre değişirse öğrendiğimiz gün haber veriyoruz."
+      ],
+      [
+        "Söküldükten sonra kapsam büyürse ne oluyor?",
+        "Beklenmedik bir bulgu çıkarsa işleme devam etmeden önce size haber veriyoruz. Onaylamadığınız hiçbir ek işlem yapılmaz. Sökümden sonra sürpriz kalem eklemek çalışma biçimimiz değildir."
+      ],
+      [
+        "Garanti neyi kapsıyor?",
+        "Yapılan işi ve değişen parçaları kapsar; aracın tamamını veya şanzımanla ilgisi olmayan sistemleri kapsamaz. Yanlış yağ eklenmesi, şanzımanın başka bir yerde açılması, giderilmemiş bir motor veya soğutma arızasıyla kullanım ve belirtiyle uzun süre sürme kapsamı daraltır."
+      ],
+      [
+        "Revizyondan sonra vites geçişleri neden farklı hissediliyor?",
+        "Yeni sürtünme yüzeylerinin oturması ve kontrol ünitesinin geçişleri yeniden öğrenmesi zaman alır. İlk dönemde geçiş karakterinin gün gün değişmesi genellikle normaldir. Sert kalkışlardan kaçınmak bu süreci sağlıklı tamamlar."
+      ],
+      [
+        "Telefonda yaklaşık bir fiyat öğrenebilir miyim?",
+        "Aracı görmeden rakam vermiyoruz. Aynı belirtiye sahip iki araçtan biri solenoid değişimiyle çözülürken diğeri revizyona gidebilir; farkı belirtiyle ne kadar sürüldüğü ve iç parçaların gerçek durumu yaratır. Telefonda verilen rakam ya gereksiz yüksek olur ya da iş sırasında yukarı çıkar."
+      ]
+    ],
+    "related": [
+      "bmw-sanziman-tamiri",
+      "mercedes-sanziman-tamiri",
+      "ford-powershift-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "mekatronik-arizasi",
+    "kicker": "Mekatronik · DSG · S-Tronic · ZF",
+    "title": "Mekatronik Arızası: Belirtiler ve Onarım | HB",
+    "meta": "Mekatronik ünitesi nedir, neden arızalanır? DSG, S-Tronic ve ZF'de belirtiler, tamir mi değişim mi kararı, yazılım ve adaptasyon. Bursa Nilüfer.",
+    "h1": "Mekatronik Arızası — Belirtileri ve Onarımı",
+    "service_name": "Mekatronik Ünitesi Onarımı",
+    "service_type": "Otomatik şanzıman mekatronik onarımı",
+    "intro": "“Mekatronik gitmiş” cümlesi çoğu araç sahibinin duyduğu ilk teşhistir ve çoğu zaman eksiktir. Bu sayfada mekatroniğin ne yaptığını, nasıl arızalandığını, belirtilerini ve tamir–değişim kararının neye göre verildiğini anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Mekatronik nedir, ne iş yapar?",
+        "body": [
+          "Mekatronik, adından anlaşılacağı gibi mekanik ve elektroniğin tek gövdede birleştiği kontrol ünitesidir. İçinde üç katman bir arada bulunur: <strong>elektronik kontrol kartı, hidrolik valf gövdesi ve bu ikisini bağlayan solenoid ile sensör grubu.</strong>",
+          "İşlevi şudur: sürücünün gaz, fren ve vites kolu girdilerini, motorun devrini, tekerlek hızlarını ve şanzıman içindeki basınç ile sıcaklık verilerini okur; hangi vitesin ne zaman ve hangi sertlikte gireceğine karar verir; kararını solenoidler üzerinden hidrolik basınca çevirir. Yani şanzımanın hem beyni hem de eli mekatroniktir.",
+          "Bu yapı, mekatroniğin neden bu kadar konuşulduğunu da açıklar. Belirtilerin büyük bölümü bir noktada mekatronikten geçer — ama <strong>her belirti mekatroniğin arızalı olduğu anlamına gelmez.</strong> Ünite sağlam olduğu hâlde, kendisine ulaşan yanlış bir sensör sinyali yüzünden hatalı davranıyor olabilir."
+        ]
+      },
+      {
+        "h2": "Mekatronik neden arızalanır?",
+        "body": [
+          "Mekatronik zor bir ortamda çalışır: sürekli ısı, titreşim ve çoğu tipte doğrudan yağın içi. Arızaların arkasında genellikle şu başlıklar vardır."
+        ],
+        "items": [
+          "<strong>Yağ kaynaklı aşınma</strong> — Yaşlanmış yağdaki aşınma ürünleri valf yuvalarında ve solenoid pistonlarında aşınma yaratır. Sonuç: basıncın geç kurulması, sert veya gecikmeli geçişler.",
+          "<strong>Solenoid arızası</strong> — Bobin sargısında kopma ya da pistonun yuvasında takılması. Belirli bir vites veya belirli bir geçiş bozulur; diğerleri normal çalışmaya devam eder.",
+          "<strong>Basınç sensörü ve hız sensörü sinyalleri</strong> — Güvenilmez bir sinyal, mekanik grubu tamamen sağlam bir şanzımanı acil çalışma moduna sokmaya yeter.",
+          "<strong>Elektronik kartta lehim ve iz yorgunluğu</strong> — Isı ve titreşimle zamanla oluşur. Tipik olarak önce aralıklı, ısındıkça ortaya çıkan hatalar verir.",
+          "<strong>Soket ve kablo demetinden yağ ilerlemesi</strong> — Yaşlanan conta veya manşondan sızan yağ kablo demetinin içinden sokete ulaşır. Dışarıdan sızdırma görünmeyebilir; belirti açıklanamayan hata kodlarıdır.",
+          "<strong>Akü ve besleme sorunları</strong> — Düşük gerilim ve gerilim dalgalanmaları, mekatroniğin gerçekte olmayan arızalar kaydetmesine yol açabilir. Bu yüzden teşhise elektrik tarafını doğrulayarak başlıyoruz."
+        ]
+      },
+      {
+        "h2": "DSG'de mekatronik (DQ200, DQ250, DQ381)",
+        "body": [
+          "<a href=\"/dsg-sanziman-tamiri/\">DSG şanzımanlarda</a> mekatronik, iki kavramanın hangi anda ve hangi basınçla tutacağını yöneten birimdir. Kuru kavramalı DQ200'de mekatronik kendi ayrı yağ devresine sahiptir; ıslak kavramalı DQ250 ve DQ381'de ise şanzıman yağının içinde çalışır.",
+          "Bu ayrım pratikte önemli. DQ200'de mekatroniğin kendi devresindeki basınç kaybı ve akümülatör kaynaklı sorunlar öne çıkar; kalkışta titreme çoğu zaman kuru kavrama aşınmasıyla karışır. DQ250 ve DQ381'de ise mekatroniğin ömrünü doğrudan şanzıman yağının durumu belirler: <strong>yağ bakımı ihmal edilmiş bir ıslak DSG'de mekatronik arızası, ihmalin sonucu olarak ortaya çıkar.</strong>",
+          "DSG'de en sık gördüğümüz tablo, vites göstergesinin yanıp sönmesi ve aracın kendini korumaya almasıdır. Bu, sürüşe devam edilmemesi gereken bir uyarıdır."
+        ]
+      },
+      {
+        "h2": "S-Tronic'te mekatronik (DL501, DL382)",
+        "body": [
+          "<a href=\"/s-tronic-sanziman-tamiri/\">Audi S-Tronic'in</a> boyuna motorlu tipleri olan DL501 ve DL382, ayrı yağ devrelerine sahip olmalarıyla ayrışır. Kavrama paketinin yağı ile mekanik grubun yağı aynı değildir ve bu, hem bakımı hem de teşhisi farklılaştırır.",
+          "Bu ailede sık karşılaşılan tablo, hızlanma sırasında kavrama kaçırma hissi ile gecikmeli vites atmanın birlikte görülmesidir. İkisi farklı kaynaklara işaret eder: birincisi çoğunlukla kavrama balata aşınması, ikincisi mekatronik ve valf gövdesi. <strong>Ayrım yapılmadan verilen karar, çoğu zaman gereksiz parça değişimiyle sonuçlanır.</strong>",
+          "Kavrama değişimi gerektiğinde mekatroniğin de zorunlu olarak değişmesi gerekmez. Ünite ayrıca test edilir; sağlamsa yerinde kalır."
+        ]
+      },
+      {
+        "h2": "ZF ve Mercedes tarafında karşılığı",
+        "body": [
+          "Klasik tork konvertörlü otomatiklerde aynı işlevi gören birim farklı adlarla anılır ama mantık aynıdır. <a href=\"/bmw-sanziman-tamiri/\">ZF 8HP ailesinde</a> mekatronik yağın içinde çalışır; 6HP'de ise mekatronik adaptör manşonundan yağ sızması klasikleşmiştir — manşon sertleşip sızdırır, yağ kablo demetinin içinden sokete ilerler.",
+          "<a href=\"/mercedes-sanziman-tamiri/\">Mercedes'te</a> karşılığı VGS kontrol ünitesi ve konduktör plakadır. Konduktör plaka, valf gövdesi üzerindeki iletken hatları, solenoid bağlantılarını ve hız sensörlerini taşıyan katmandır; arızasında araç sıklıkla acil çalışma moduna geçer.",
+          "Ortak nokta şudur: bu ailelerin hepsinde <strong>elektronik kaynaklı bir belirti, mekanik grubu tamamen sağlam bir şanzımanda ortaya çıkabilir.</strong> Teşhisi bu ihtimali dışlamadan yapmak, gereksiz revizyon kararlarının en yaygın sebebidir."
+        ]
+      },
+      {
+        "h2": "Mekatronik arızasının belirtileri",
+        "body": [
+          "Belirtiler tipik olarak önce aralıklı görülür, sonra sıklaşır. Aşağıdaki maddelerin birkaçı bir arada görülüyorsa mekatronik tarafı ciddi bir aday hâline gelir."
+        ],
+        "items": [
+          "Vites göstergesinin yanıp sönmesi veya panelden kaybolması",
+          "Aracın tek viteste kalması, acil çalışma (limp) moduna geçmesi",
+          "D veya R'ye alındığında vitesin girmemesi ya da uzun gecikmeyle girmesi",
+          "Belirli bir vitesin atlanması, kademe atlayarak geçiş yapılması",
+          "Soğukken belirgin, ısındıkça değişen sert geçişler — ya da tam tersi",
+          "Motor devri yükselirken hızın gecikmeli artması",
+          "Aralıklı gelip giden, sürüş sırasında kendiliğinden kaybolan uyarılar",
+          "Şanzıman kablo soketi çevresinde yağ izi"
+        ]
+      },
+      {
+        "h2": "Tamir mi, değişim mi?",
+        "body": [
+          "Bu, sayfanın en önemli sorusu. Kısa cevap: <strong>ünite açılıp test edilmeden verilecek her karar tahmindir.</strong>",
+          "Mekatronik tek bir parça değil, üç katmanlı bir gruptur. Arızaların önemli bir kısmı solenoid, valf gövdesi aşınması, soket sızdırması veya sensör kaynaklıdır ve <strong>parça bazında onarılabilir.</strong> Bu durumda komple ünite değiştirmek gereksiz masraftır.",
+          "Değişimin gerçekten gündeme geldiği durumlar da vardır: elektronik kartta onarılamayacak düzeyde hasar, valf gövdesinde yuvaların ölçü dışına çıkacak kadar aşınması, ya da uzun süre yağ almış bir ünitede yaygın korozyon. Bu tabloda onarım kalıcı olmaz ve ünite yenilenir.",
+          "<strong>Bizim yaklaşımımız:</strong> önce hata kayıtları, canlı veri ve basınç ölçümü; sonra ünitenin sökülüp test edilmesi; sonra karar. “Mekatronik gitmiş” cümlesini bakmadan kurmuyoruz. Arızanın gerçekte kavrama tarafında olduğu ve mekatroniğin sağlam çıktığı durumlar hiç de nadir değil."
+        ]
+      },
+      {
+        "h2": "Yazılım, kodlama ve adaptasyon",
+        "body": [
+          "Mekatronikte parça takmak işin yarısıdır. Yeni veya onarılmış bir ünite, <strong>araca özgü verilerle eşleştirilmeden düzgün çalışmaz</strong> — tak-çalıştır bir işlem değildir. Şanzıman kodu, motor tipi, diferansiyel oranı ve araç donanımı üniteye tanıtılmalıdır.",
+          "Ardından adaptasyon gelir. Kontrol ünitesi, kavramaların hangi noktada tutmaya başladığını zaman içinde öğrenir ve geçişleri bu değerlere göre şekillendirir. Kavrama veya mekatronik değiştiğinde eski değerler gerçeği yansıtmaz; sıfırlanıp yeniden öğrenilmesi gerekir. <strong>Bu adım atlandığında iyi yapılmış bir onarım bile kötü vites atar</strong> — ve bu çoğu zaman “iş tutmadı” diye yorumlanır.",
+          "Buradan çıkan bir uyarı: yazılım güncellemesi tek başına bir onarım yöntemi değildir. Mekanik aşınma, yağ bulaşması veya sızdırma varsa güncelleme belirtiyi bir süre maskeleyebilir ama nedeni ortadan kaldırmaz."
+        ]
+      },
+      {
+        "h2": "Belirti varken aracı sürmeli miyim?",
+        "body": [
+          "Vites göstergesi yanıp sönüyorsa, araç tek viteste kalıyorsa veya vites girmiyorsa <strong>sürüşe devam etmeyin.</strong> Bu tabloda şanzıman zaten kendini korumaya almıştır; zorlamak, elektronik kaynaklı bir sorunun mekanik hasara dönüşme riskini artırır.",
+          "Belirti aralıklıysa ve sürüş çoğunlukla normalse kısa mesafe gidilebilir, ancak otoyol ve uzun yol yapmayın. <strong>Hata kodlarını sildirip yola devam etmeyin;</strong> silinen kod arızayı çözmez, sadece hangi koşulda oluştuğunu gösteren kaydı yok eder ve teşhisi zorlaştırır.",
+          "Aracı getirmeden önce belirtinin ne zaman başladığını, hangi viteste ve hangi sıcaklıkta ortaya çıktığını, panelde hangi uyarının belirdiğini not alın. Bu bilgi teşhis süresini gerçekten kısaltır."
+        ]
+      },
+      {
+        "h2": "Bursa Nilüfer'de mekatronik onarımı",
+        "body": [
+          "HB Otomatik Şanzıman'da mekatronik arızalarına parça değişimiyle değil, ölçümle başlıyoruz. Hata kayıtları ve canlı veriler okunur, elektrik beslemesi doğrulanır, basınç ölçülür ve yol testi yapılır. Ünitenin sökülüp test edilmesi gerekiyorsa onayınızı alıyoruz.",
+          "Onarım sonrası kodlama ve adaptasyon işin ayrılmaz parçasıdır; bunlar tamamlanıp yol testinde geçiş kalitesi doğrulanmadan araç teslim edilmez. <strong>Aracı görmeden fiyat vermiyoruz</strong> — çünkü aynı belirtinin arkasında bir araçta solenoid, bir başkasında komple ünite yenilemesi çıkabiliyor."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Mekatronik nedir?",
+        "Mekanik ve elektroniğin tek gövdede birleştiği şanzıman kontrol ünitesidir. İçinde elektronik kontrol kartı, hidrolik valf gövdesi ve bunları bağlayan solenoid ile sensör grubu bulunur. Hangi vitesin ne zaman ve hangi sertlikte gireceğine karar verir ve bunu hidrolik basınca çevirir."
+      ],
+      [
+        "Mekatronik arızasında ünite komple mi değişir?",
+        "Her zaman değil. Arızaların önemli bir kısmı solenoid, valf gövdesi aşınması, soket sızdırması veya sensör kaynaklıdır ve parça bazında onarılabilir. Komple değişim; elektronik kartta onarılamayacak hasar, valf yuvalarında ölçü dışı aşınma veya yaygın korozyon varsa gündeme gelir."
+      ],
+      [
+        "Her vites sorunu mekatronikten mi kaynaklanır?",
+        "Hayır. Kavrama aşınması, yaşlanmış yağ, keçe sızıntısı ve tork konvertörü sorunları çok benzer belirtiler verir. Mekatronik sağlam olduğu hâlde, kendisine ulaşan yanlış bir sensör sinyali yüzünden hatalı davranıyor da olabilir. Bu yüzden karar ölçümle veriliyor."
+      ],
+      [
+        "Yeni mekatronik takılınca hemen çalışır mı?",
+        "Hayır, tak-çalıştır bir işlem değildir. Ünitenin araca özgü verilerle eşleştirilmesi, gerekiyorsa kodlanması ve adaptasyon değerlerinin yeniden öğrenilmesi gerekir. Bu adım atlandığında yeni ünite de hata verir veya vites kalitesi bozuk kalır."
+      ],
+      [
+        "Yazılım güncellemesi mekatronik arızasını çözer mi?",
+        "Sorun gerçekten yazılım kaynaklıysa çözebilir. Ancak mekanik aşınma, yağ bulaşması veya sızdırma varsa çözmez; belirtiyi bir süre maskeleyebilir, nedeni ortadan kaldırmaz."
+      ],
+      [
+        "Vites göstergesi yanıp sönüyor, sürebilir miyim?",
+        "Sürmeyin. Bu, şanzımanın kendini korumaya aldığını gösteren bir uyarıdır. Zorlamak, elektronik kaynaklı bir sorunun mekanik hasara dönüşme riskini artırır. Aracı çekiciyle getirmek en güvenli seçenektir."
+      ],
+      [
+        "Akü zayıflığı mekatronik hatası verir mi?",
+        "Verebilir. Düşük gerilim ve gerilim dalgalanmaları, kontrol ünitesinin gerçekte olmayan arızalar kaydetmesine yol açabilir. Bu yüzden teşhise elektrik beslemesini doğrulayarak başlıyoruz."
+      ],
+      [
+        "Yağ bakımı mekatronik ömrünü etkiler mi?",
+        "Islak tiplerde doğrudan etkiler. Mekatronik bu şanzımanlarda yağın içinde çalışır; yaşlanmış yağdaki aşınma ürünleri valf yuvalarında ve solenoid pistonlarında aşınma yaratır. Düzenli yağ ve filtre bakımı, mekatronik arızasına karşı en somut önlemdir."
+      ]
+    ],
+    "related": [
+      "dsg-sanziman-tamiri",
+      "s-tronic-sanziman-tamiri",
+      "bmw-sanziman-tamiri"
     ]
   }
 ]
