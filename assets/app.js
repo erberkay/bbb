@@ -196,14 +196,32 @@
 
   function openAuth(mode = 'login') { setAuthMode(mode); openModal('authModal'); }
 
-  // Giriş sonrası kullanıcıyı randevu bölümüne getirir. Bu sitede hesabın tek
-  // amacı randevu almak, o yüzden her başarılı girişten sonra oraya iniyoruz.
-  // Kart (auth kapısı → form) yeniden çizildikten sonra kaydırmak için bir tur bekliyoruz.
+  // Giriş sonrası nereye gidileceği kullanıcıya göre değişir: yönetici hesabı
+  // randevuları yönetmek için giriyor, o yüzden panel doğrudan açılıyor.
+  // Diğer herkes için hesabın tek amacı randevu almak.
+  //
+  // Dikkat: Firebase'de SESSION'ı onAuthStateChanged dolduruyor ve bu asenkron.
+  // Giriş anında hemen karar verirsek e-postayı henüz bilmiyor olabiliriz, o
+  // yüzden niyeti bayrağa yazıp oturum belli olunca çalıştırıyoruz.
+  let pendingPostLogin = false;
+
   function goToAppointment() {
-    setTimeout(() => {
-      const el = document.getElementById('randevu');
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 150);
+    pendingPostLogin = true;
+    setTimeout(runPostLogin, 150);
+  }
+
+  function runPostLogin() {
+    if (!pendingPostLogin || !getSession()) return;
+    pendingPostLogin = false;
+
+    if (isAdminUser()) {
+      // Panel yalnızca ana sayfada var; alt sayfadan giren yöneticiyi oraya al.
+      if ($('#adminPanel')) openAdmin();
+      else location.href = '/#randevu';
+      return;
+    }
+    const el = document.getElementById('randevu');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function clearFieldErrors(form) { $$('.field.invalid', form).forEach(f => f.classList.remove('invalid')); }
@@ -331,6 +349,7 @@
       }
       renderAuthUI();
       renderApptCard();
+      runPostLogin(); // oturum artık belli — bekleyen giriş sonrası iş varsa şimdi
     });
   }
 

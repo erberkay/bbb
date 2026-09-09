@@ -318,7 +318,10 @@ def main():
     # sitemap.xml — ana sayfa + üretilen sayfalar
     from datetime import date
     today = date.today().isoformat()
-    urls = [(f"{SITE}/", "1.0")] + [(f"{SITE}/{p['slug']}/", "0.8") for p in pages]
+    urls = ([(f"{SITE}/", "1.0")]
+            + [(f"{SITE}/{p['slug']}/", "0.8") for p in pages]
+            # Elle yazılan sayfalar (pages.json'dan üretilmiyor)
+            + [(f"{SITE}/gizlilik/", "0.3")])
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, prio in urls:
