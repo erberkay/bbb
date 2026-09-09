@@ -627,8 +627,8 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
 /* Navbar → hamburger menü. Kırılma noktası 960px'in ustunde ve ayrı tutuluyor:
    marka + rozet + 7 nav linki + 2 buton tek satırda ~1450px altında sıkışıp
    üst üste biniyordu (bkz. gerçek pencerede gözlemlenen çakışma). */
-/* Nav'a S.S.S. linki eklendi; hamburger esigi buna gore yukseltildi */
-@media (max-width: 1320px) {
+/* Hamburger esigi: menu icerigi olcülerek belirlendi (bkz. nav-links) */
+@media (max-width: 1120px) {
   .hamburger { display: block; }
   .nav-links {
     position: fixed; inset: var(--nav-h) 0 auto 0; flex-direction: column; gap: 0;
