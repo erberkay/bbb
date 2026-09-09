@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hbsanziman.com/sitemap.xml
+Sitemap: https://hbotomatiksanziman.com/sitemap.xml
