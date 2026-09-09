@@ -240,7 +240,7 @@ body::before {
 /* Neden biz */
 .feature { display: flex; gap: 16px; align-items: flex-start; }
 .feature .ic { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: var(--navy-grad); color: var(--accent-2); flex-shrink: 0; }
-.feature h4 { font-family: var(--ff-display); font-size: 1.08rem; margin-bottom: 5px; }
+.feature h3 { font-family: var(--ff-display); font-size: 1.08rem; margin-bottom: 5px; }
 .feature p { color: var(--text-soft); font-size: .94rem; }
 
 /* Süreç */
@@ -252,7 +252,7 @@ body::before {
   background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
   display: block; margin-bottom: 12px; opacity: .9;
 }
-.step h4 { font-family: var(--ff-display); margin-bottom: 8px; }
+.step h3 { font-family: var(--ff-display); margin-bottom: 8px; }
 .step p { color: var(--text-soft); font-size: .92rem; }
 
 /* ---------- Randevu bölümü ---------- */
@@ -316,7 +316,7 @@ body::before {
 .footer { background: var(--bg-2); border-top: 1px solid var(--border-soft); padding: 60px 0 26px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 40px; }
 .footer p { color: var(--text-soft); font-size: .92rem; margin-top: 14px; max-width: 280px; }
-.footer h5 { font-family: var(--ff-display); font-size: 1rem; margin-bottom: 16px; }
+.footer h4 { font-family: var(--ff-display); font-size: 1rem; margin-bottom: 16px; }
 .footer li { margin-bottom: 10px; }
 .footer li a { color: var(--text-soft); font-size: .92rem; transition: color .2s; }
 .footer li a:hover { color: var(--accent); }
@@ -413,7 +413,7 @@ body::before {
 }
 .review-cta-text { display: flex; align-items: center; gap: 16px; }
 .review-cta .stars { color: var(--accent); display: flex; gap: 2px; flex-shrink: 0; }
-.review-cta h4 { font-family: var(--ff-display); font-size: 1.05rem; margin-bottom: 3px; }
+.review-cta h3 { font-family: var(--ff-display); font-size: 1.05rem; margin-bottom: 3px; }
 .review-cta p { color: var(--text-soft); font-size: .92rem; }
 
 /* ---------- Reveal animasyonu ---------- */
