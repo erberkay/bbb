@@ -149,6 +149,26 @@ body::before {
 .hamburger { display: none; width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--border); }
 .hamburger span { display: block; width: 20px; height: 2px; background: var(--text); margin: 4px auto; transition: .25s; }
 
+
+/* ---------- Nav açılır menü ---------- */
+.has-sub { position: relative; }
+.sub-caret { font-size: .7em; opacity: .7; }
+.submenu {
+  position: absolute; top: calc(100% + 14px); left: -14px; min-width: 250px;
+  background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: 8px; display: none; z-index: 120;
+}
+.has-sub:hover .submenu, .has-sub:focus-within .submenu { display: block; }
+/* Fare menüye inerken boşlukta kaybolmasın */
+.has-sub::after { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 16px; }
+.submenu li { width: 100%; }
+.submenu a {
+  display: block; padding: 10px 14px; border-radius: 6px; font-size: .9rem;
+  color: var(--text-soft); white-space: nowrap;
+}
+.submenu a:hover { background: rgba(47,111,224,.12); color: var(--text); }
+.submenu a::after { display: none !important; }
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative; min-height: 92vh; display: flex; align-items: center;
@@ -517,6 +537,13 @@ body::before {
   .nav-links li { width: 100%; }
   .nav-links a:not(.btn) { padding: 15px 26px; width: 100%; display: block; }
   .nav-links a:not(.btn)::after { display: none; }
+  .has-sub::after { display: none; }
+  .submenu {
+    position: static; display: block; min-width: 0; border: none; box-shadow: none;
+    background: transparent; padding: 0 0 8px 0;
+  }
+  .submenu a { padding: 11px 26px 11px 42px; font-size: .88rem; border-radius: 0; }
+  .sub-caret { display: none; }
   .nav-links .nav-only-desktop { display: block; padding: 14px 26px 6px; }
   .nav-links .nav-only-desktop .btn { width: 100%; }
 }

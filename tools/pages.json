@@ -52,13 +52,32 @@
       }
     ],
     "faqs": [
-      ["DSG şanzıman yağı ne zaman değişmeli?", "Islak kavramalı tiplerde üretici ve kullanım koşuluna göre genellikle 60.000–80.000 km aralığında yağ ve filtre değişimi önerilir. Şehir içi yoğun dur-kalk kullanımda aralığı kısaltmak gerekebilir."],
-      ["Mekatronik tamir mi edilir, değişir mi?", "Arızanın elektronik kartta mı yoksa valf gövdesinde mi olduğuna bağlıdır. Tespit sonrası onarım mümkünse önce onarım değerlendirilir; komple değişim ilk seçenek değildir."],
-      ["Titreme sadece kavramadan mı olur?", "Hayır. Kalkış titremesi mekatroniğin basınç kontrolünden de gelebilir. Bu yüzden parça değişmeden önce ölçüm yapıyoruz."],
-      ["DSG tamiri ne kadar sürer?", "İşlemin kapsamına ve parça teminine göre değişir. Net süreyi arıza tespitinden sonra, işe başlamadan bildiriyoruz."],
-      ["Fiyat neye göre belirleniyor?", "Şanzıman kodu, arızanın kavrama/mekatronik/gövde ayrımı, değişecek parça sayısı ve şanzımanın sökülüp sökülmeyeceği belirleyicidir. Telefonda net fiyat vermiyoruz; aracı görmeden çıkarılan rakam yanıltıcı olur."]
+      [
+        "DSG şanzıman yağı ne zaman değişmeli?",
+        "Islak kavramalı tiplerde üretici ve kullanım koşuluna göre genellikle 60.000–80.000 km aralığında yağ ve filtre değişimi önerilir. Şehir içi yoğun dur-kalk kullanımda aralığı kısaltmak gerekebilir."
+      ],
+      [
+        "Mekatronik tamir mi edilir, değişir mi?",
+        "Arızanın elektronik kartta mı yoksa valf gövdesinde mi olduğuna bağlıdır. Tespit sonrası onarım mümkünse önce onarım değerlendirilir; komple değişim ilk seçenek değildir."
+      ],
+      [
+        "Titreme sadece kavramadan mı olur?",
+        "Hayır. Kalkış titremesi mekatroniğin basınç kontrolünden de gelebilir. Bu yüzden parça değişmeden önce ölçüm yapıyoruz."
+      ],
+      [
+        "DSG tamiri ne kadar sürer?",
+        "İşlemin kapsamına ve parça teminine göre değişir. Net süreyi arıza tespitinden sonra, işe başlamadan bildiriyoruz."
+      ],
+      [
+        "Fiyat neye göre belirleniyor?",
+        "Şanzıman kodu, arızanın kavrama/mekatronik/gövde ayrımı, değişecek parça sayısı ve şanzımanın sökülüp sökülmeyeceği belirleyicidir. Telefonda net fiyat vermiyoruz; aracı görmeden çıkarılan rakam yanıltıcı olur."
+      ]
     ],
-    "related": ["s-tronic-sanziman-tamiri", "cvt-sanziman-tamiri", "ford-powershift-sanziman-tamiri"]
+    "related": [
+      "s-tronic-sanziman-tamiri",
+      "cvt-sanziman-tamiri",
+      "ford-powershift-sanziman-tamiri"
+    ]
   },
   {
     "slug": "s-tronic-sanziman-tamiri",
@@ -100,12 +119,27 @@
       }
     ],
     "faqs": [
-      ["DL501 yağı ne zaman değişir?", "Kullanım koşuluna bağlı olmakla birlikte genellikle 60.000–80.000 km aralığı önerilir."],
-      ["Kavrama değişince mekatronik de değişir mi?", "Zorunlu değildir. Mekatronik ayrıca test edilir; sağlamsa değiştirilmez."],
-      ["Yetkili servis şart mı?", "Hayır. HB bağımsız bir uzman şanzıman servisidir; yapılacak işlem ve parça kalemleri onayınıza sunulur."],
-      ["Aracı çekiciyle mi getirmeliyim?", "Emniyet moduna geçmiş veya vites atmayan araçlarda çekici öneriyoruz."]
+      [
+        "DL501 yağı ne zaman değişir?",
+        "Kullanım koşuluna bağlı olmakla birlikte genellikle 60.000–80.000 km aralığı önerilir."
+      ],
+      [
+        "Kavrama değişince mekatronik de değişir mi?",
+        "Zorunlu değildir. Mekatronik ayrıca test edilir; sağlamsa değiştirilmez."
+      ],
+      [
+        "Yetkili servis şart mı?",
+        "Hayır. HB bağımsız bir uzman şanzıman servisidir; yapılacak işlem ve parça kalemleri onayınıza sunulur."
+      ],
+      [
+        "Aracı çekiciyle mi getirmeliyim?",
+        "Emniyet moduna geçmiş veya vites atmayan araçlarda çekici öneriyoruz."
+      ]
     ],
-    "related": ["dsg-sanziman-tamiri", "cvt-sanziman-tamiri"]
+    "related": [
+      "dsg-sanziman-tamiri",
+      "cvt-sanziman-tamiri"
+    ]
   },
   {
     "slug": "ford-powershift-sanziman-tamiri",
@@ -167,13 +201,31 @@
       }
     ],
     "faqs": [
-      ["Titreme kendi kendine geçer mi?", "Hayır. Azalıp artabilir ama nedeni ortadan kalkmaz."],
-      ["Yazılım güncellemesi çözer mi?", "Mekanik aşınma veya yağ bulaşması varsa çözmez; belirtiyi bir süre maskeleyebilir."],
-      ["Sadece kavrama değişse yeter mi?", "Keçe sızıntısı varsa yetmez. Sızıntı yeni kavramayı da kısa sürede ıslatır."],
-      ["Şanzımanı komple değiştirmek gerekir mi?", "Çoğu durumda gerekmez; arızalı grup hedefli olarak onarılır."],
-      ["Araç arıza moduna geçtiyse çekiciyle mi gelmeli?", "Sarsıntı veya uyarı sürüyorsa çekici en güvenli seçenektir."]
+      [
+        "Titreme kendi kendine geçer mi?",
+        "Hayır. Azalıp artabilir ama nedeni ortadan kalkmaz."
+      ],
+      [
+        "Yazılım güncellemesi çözer mi?",
+        "Mekanik aşınma veya yağ bulaşması varsa çözmez; belirtiyi bir süre maskeleyebilir."
+      ],
+      [
+        "Sadece kavrama değişse yeter mi?",
+        "Keçe sızıntısı varsa yetmez. Sızıntı yeni kavramayı da kısa sürede ıslatır."
+      ],
+      [
+        "Şanzımanı komple değiştirmek gerekir mi?",
+        "Çoğu durumda gerekmez; arızalı grup hedefli olarak onarılır."
+      ],
+      [
+        "Araç arıza moduna geçtiyse çekiciyle mi gelmeli?",
+        "Sarsıntı veya uyarı sürüyorsa çekici en güvenli seçenektir."
+      ]
     ],
-    "related": ["dsg-sanziman-tamiri", "cvt-sanziman-tamiri"]
+    "related": [
+      "dsg-sanziman-tamiri",
+      "cvt-sanziman-tamiri"
+    ]
   },
   {
     "slug": "cvt-sanziman-tamiri",
@@ -234,11 +286,187 @@
       }
     ],
     "faqs": [
-      ["CVT gerçekten tamir edilemez mi?", "Edilebilir. Belirleyici olan kasnak ve kayışın durumudur; elektronik ve hidrolik kaynaklı arızaların büyük kısmı onarılabilir."],
-      ["Yağ değişimi arızalı CVT'yi düzeltir mi?", "Erken evrede belirtiyi hafifletebilir, ancak mekanik aşınmayı geri döndürmez."],
-      ["Vuruntu ile titreme aynı şey mi?", "Değil. Farklı grupları işaret ederler; ayırmak için yol testi ve ölçüm gerekir."],
-      ["CVT'li araç çekilebilir mi?", "Riskli. Mümkünse çekici tercih edin."]
+      [
+        "CVT gerçekten tamir edilemez mi?",
+        "Edilebilir. Belirleyici olan kasnak ve kayışın durumudur; elektronik ve hidrolik kaynaklı arızaların büyük kısmı onarılabilir."
+      ],
+      [
+        "Yağ değişimi arızalı CVT'yi düzeltir mi?",
+        "Erken evrede belirtiyi hafifletebilir, ancak mekanik aşınmayı geri döndürmez."
+      ],
+      [
+        "Vuruntu ile titreme aynı şey mi?",
+        "Değil. Farklı grupları işaret ederler; ayırmak için yol testi ve ölçüm gerekir."
+      ],
+      [
+        "CVT'li araç çekilebilir mi?",
+        "Riskli. Mümkünse çekici tercih edin."
+      ]
     ],
-    "related": ["dsg-sanziman-tamiri", "ford-powershift-sanziman-tamiri"]
+    "related": [
+      "dsg-sanziman-tamiri",
+      "ford-powershift-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "bmw-sanziman-tamiri",
+    "kicker": "BMW · ZF 8HP / 6HP",
+    "title": "BMW Şanzıman Tamiri Bursa | ZF 8HP · Mekatronik | HB",
+    "meta": "Bursa Nilüfer'de BMW otomatik şanzıman tamiri: ZF 8HP45/8HP70, GA6HP, mekatronik ünitesi, konduktör plaka ve tork konvertörü onarımı.",
+    "h1": "BMW Otomatik Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "BMW Otomatik Şanzıman Tamiri",
+    "service_type": "BMW ZF 8HP ve 6HP otomatik şanzıman onarımı",
+    "intro": "BMW'nin ZF kaynaklı 8 ileri ve 6 ileri otomatik şanzımanlarında mekatronik, konduktör plaka, valf gövdesi ve tork konvertörü onarımı. Şanzımanı komple değiştirmeden önce arızanın gerçekte nerede olduğunu tespit ediyoruz.",
+    "sections": [
+      {
+        "h2": "BMW şanzımanlarında ne yapıyoruz?",
+        "body": [
+          "BMW'de arıza çoğu zaman şanzımanın mekanik grubunda değil, hidrolik kumanda ve elektronik tarafında başlar. Bu yüzden işe arıza kodlarının okunması, canlı veri takibi ve yol testiyle başlıyoruz; şanzımanı sökme kararını ancak bundan sonra veriyoruz.",
+          "Kapsamımız mekatronik ünitesi onarımı, konduktör plaka ve soket sızdırmalarının giderilmesi, valf gövdesi ve solenoid yenileme, tork konvertörü revizyonu, kavrama ve conta setiyle komple revizyon ile yağ-filtre bakımını içeriyor. Onarım sonrası adaptasyon yapılıp yol testiyle doğrulanmadan araç teslim edilmiyor."
+        ]
+      },
+      {
+        "h2": "Servis verdiğimiz BMW şanzıman aileleri",
+        "body": [
+          "<b>ZF 8HP (GA8HP45Z / GA8HP70Z)</b> — 3, 4, 5, 7 Serisi, X3–X7 ve birçok modelde kullanılan güncel nesil. Mekatronik ünitesi şanzımanın içinde, yağın içinde çalışır. Yağ karteri plastiktir ve filtre kartere entegredir; yağ yenilemesinde karterin komple değişmesi gerekir.",
+          "<b>ZF 6HP (GA6HP19Z / GA6HP26Z)</b> — E90, E60, E70 ve dönemin diğer modellerinde yaygın. Bu ailede mekatronik adaptör manşonu ile konduktör plaka kaynaklı sorunlar, tork konvertörü kilitleme kavraması aşınmasıyla birlikte en sık gördüğümüz iki başlıktır."
+        ]
+      },
+      {
+        "h2": "En sık gördüğümüz arızalar",
+        "body": [],
+        "items": [
+          "<b>Mekatronik manşonundan yağ sızması</b> — özellikle ZF 6HP'de klasikleşmiş. Manşon sertleşip sızdırır, yağ kablo demetinin içinden sokete ilerler. Belirtisi sebepsiz görünen vites geçiş hataları ve acil çalışma modudur.",
+          "<b>Tork konvertörü kilitleme kavraması yorgunluğu</b> — 8HP'de kavrama düşük devirde erken devreye girer. Yüzey yorulduğunda genellikle 40–80 km/s bandında, sabit gazda yol bozukmuş gibi hissedilen ince bir titreşim ortaya çıkar.",
+          "<b>Valf gövdesi ve solenoid aşınması</b> — yağ içindeki aşınma ürünleri valf yuvalarında aşınma yaratır. Sonuç: gecikmeli vites girmesi, sert geçişler, D–R arasında darbe, kademe atlama.",
+          "<b>İhmal edilen yağ bakımı</b> — ZF, 8HP ailesi için servis dokümanlarında yaklaşık 80.000–120.000 km aralığında yağ ve filtre yenilemesini önerir. Yaşlanmış yağ önce vites kalitesini bozar, sonra mekatronik ve tork konvertörü ömrünü kısaltır."
+        ]
+      },
+      {
+        "h2": "Bu belirtiler varsa ertelemeyin",
+        "body": [
+          "Otomatik şanzımanda erken müdahale ile geç müdahale arasındaki fark, çoğu zaman bir parça onarımı ile komple revizyon arasındaki farktır."
+        ],
+        "items": [
+          "Gösterge panelinde şanzıman uyarısı veya ikaz mesajı",
+          "Araç tek viteste kalıyor, devir yükseliyor ama hız artmıyor",
+          "D veya R'ye alırken belirgin gecikme ya da sert darbe",
+          "Sabit hızda, özellikle 40–80 km/s arasında ince titreşim",
+          "Soğukken sert, ısındıkça değişen vites geçişleri",
+          "Şanzıman bölgesinde yağ sızıntısı veya park yerinde kırmızımsı damla izi"
+        ]
+      },
+      {
+        "h2": "Doğru yağ, doğru dolum, doğru sıcaklık",
+        "body": [
+          "BMW otomatik şanzımanlarında yağ yalnızca yağlama değil, aynı zamanda hidrolik kumanda ve sürtünme elemanıdır. Yanlış spesifikasyondaki bir ATF hemen arıza vermez ama vites kalitesini bozar ve kavrama yüzeylerini erken yorar.",
+          "8HP'de filtre yağ karterine entegre olduğu için bakımda karter komple yenilenir. 6HP ailesinde ise yağ değişimi sırasında manşon ve conta grubunun durumunu da kontrol ediyoruz; sızdırma henüz başlamamışsa bile yaşlanmış manşon kısa vadede sorun çıkaracak parçadır."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "BMW şanzıman yağı ömür boyu mu?",
+        "Pratikte hayır. Şanzıman yağı ısı ve sürtünme altında yaşlanır, sürtünme özelliğini kaybeder ve içine aşınma ürünleri karışır. ZF, 8HP ailesi için yaklaşık 80.000–120.000 km aralığında yağ ve filtre yenilemesi önerir. Dur-kalk trafiği, römork çekme ve sportif kullanım bu aralığı kısaltır."
+      ],
+      [
+        "Mekatronik arızasında ünite komple mi değişir?",
+        "Her zaman değil. Arızaların önemli bir kısmı solenoid, valf gövdesi aşınması, soket sızdırması veya konduktör plaka kaynaklıdır; ünite sökülüp test edilerek parça bazında onarılabilir. Bakmadan mekatronik gitmiş demek çoğu zaman gereksiz masraf demektir."
+      ],
+      [
+        "40–80 km/s arasındaki titreşim neyin belirtisi?",
+        "Bu bantta sabit gazda hissedilen ince titreşim, ZF 8HP'de tork konvertörü kilitleme kavramasının yorulmasıyla sık görülür. Ancak aynı his ateşleme sorunlarından, lastik veya balanstan da gelebilir; ayrımı yol testi ve canlı veri takibiyle yapıyoruz."
+      ],
+      [
+        "Yetkili servise mi gitmeliyim?",
+        "Belirleyici olan servisin yetkili olup olmaması değil; işi yapan ekibin o şanzıman ailesine hâkim olması, doğru spesifikasyonda yağ ve OEM standardında parça kullanması, onarım sonrası adaptasyon ve kodlama işlemlerini eksiksiz yapmasıdır. Aracınız hâlâ fabrika garantisi kapsamındaysa garanti şartlarınızı önce marka ile teyit etmenizi öneririz."
+      ]
+    ],
+    "related": [
+      "mercedes-sanziman-tamiri",
+      "dsg-sanziman-tamiri",
+      "cvt-sanziman-tamiri"
+    ]
+  },
+  {
+    "slug": "mercedes-sanziman-tamiri",
+    "kicker": "Mercedes-Benz · 722.9 / 9G",
+    "title": "Mercedes Şanzıman Tamiri Bursa | 722.9 · 9G-Tronic | HB",
+    "meta": "Bursa Nilüfer'de Mercedes-Benz otomatik şanzıman tamiri: 722.9 (7G-Tronic), 9G-Tronic, konduktör plaka, fiş adaptörü ve valf gövdesi onarımı.",
+    "h1": "Mercedes-Benz Otomatik Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "Mercedes-Benz Otomatik Şanzıman Tamiri",
+    "service_type": "Mercedes 722.9 ve 9G-Tronic otomatik şanzıman onarımı",
+    "intro": "722.9 (7G-Tronic) ve 9G-Tronic şanzımanlarda konduktör plaka, fiş adaptörü sızdırması, valf gövdesi ve tork konvertörü onarımı. Vites sorunlarının büyük bölümü elektronik ve hidrolik kumanda tarafındadır; doğru teşhis gereksiz ünite değişimini önler.",
+    "sections": [
+      {
+        "h2": "Mercedes şanzımanlarında ne yapıyoruz?",
+        "body": [
+          "Sık karşılaştığımız senaryo şudur: araç bir sabah vites almıyor ya da tek viteste kalıyor, panelde uyarı çıkıyor ve ilk teşhis şanzımanın komple değişmesi oluyor. Oysa bu belirtilerin çoğu, mekanik grubu sağlam bir şanzımanda elektronik veya hidrolik kumanda kaynaklıdır.",
+          "Kapsamımız konduktör plaka ve valf gövdesi onarımı, fiş adaptörü sızdırmalarının giderilmesi ve kablo demeti kontrolü, solenoid yenileme, tork konvertörü revizyonu, komple revizyon, yağ-filtre bakımı ile onarım sonrası programlama ve adaptasyon işlemlerini içerir."
+        ]
+      },
+      {
+        "h2": "Servis verdiğimiz Mercedes şanzıman aileleri",
+        "body": [
+          "<b>722.9 — 7G-Tronic / 7G-Tronic Plus</b> — Uzun yıllar C, E, S, ML, GLK ve birçok modelde kullanılan 7 ileri otomatik. Kontrol ünitesi (VGS) şanzımanın içinde, yağ içinde çalışır ve konduktör plaka ile bir bütün oluşturur. Arızaların önemli kısmı konduktör plaka, hız sensörü sinyalleri ve fiş adaptörü çevresinde toplanır.",
+          "<b>9G-Tronic (725.0)</b> — Güncel nesil 9 ileri otomatik; daha erken devreye giren kilitleme stratejisiyle çalışır. Yağın durumu ve doğru spesifikasyon vites kalitesi üzerinde doğrudan etkilidir; ihmal edilen bakım kendini önce geçiş sertliği ve düşük hızda titreşim olarak gösterir.",
+          "<b>Konduktör plaka ve VGS</b> — Konduktör plaka, valf gövdesi üzerindeki iletken hatları, solenoid bağlantılarını ve hız sensörlerini taşıyan katmandır. Yeni parça takılması tek başına yeterli değildir; ünitenin araca programlanması ve uyarlanması gerekir."
+        ]
+      },
+      {
+        "h2": "En sık gördüğümüz arızalar",
+        "body": [],
+        "items": [
+          "<b>Konduktör plaka arızası</b> — 722.6 ve 722.9 ailelerinde klasikleşmiş. Hız sensörü sinyalleri güvenilmez hâle geldiğinde kontrol ünitesi şanzımanı emniyete alır. Belirtiler: vitesin girmemesi, sabit vitesle hareket, vites göstergesinin kaybolması.",
+          "<b>Fiş adaptörü (soket) sızdırması</b> — Adaptör contası yaşlandığında ATF kablo demetinin içinden sokete ilerler. Dışarıdan sızdırma görünmeyebilir; belirti çoğunlukla açıklanamayan hata kodları ve kararsız vites davranışıdır.",
+          "<b>Valf gövdesi ve solenoid aşınması</b> — Sert veya geç vites geçişleri, D–R arasında darbe, devrin yükselip hızın gecikmeli artması, kademe atlama.",
+          "<b>Tork konvertörü kilitleme kavraması</b> — Düşük devirde sabit gazda ince titreşim. Kavramadan kopan malzeme yağa karışıp valf gövdesine ve konduktör plakaya zarar verdiği için geciktirildiğinde onarımın kapsamı büyür."
+        ]
+      },
+      {
+        "h2": "Bu belirtiler varsa aracı zorlamayın",
+        "body": [
+          "Bu belirtilerle araç kullanmaya devam etmek, elektronik kaynaklı bir sorunun mekanik hasara dönüşmesine yol açabilir. Şanzıman kendini acil çalışma moduna aldıysa aracı zorlamadan servise getirmek en doğru adımdır."
+        ],
+        "items": [
+          "Araç sabit bir viteste kalıyor, hızlanmıyor",
+          "D veya R'ye alındığında vites girmiyor ya da uzun gecikmeyle giriyor",
+          "Panelde şanzıman uyarısı veya vites göstergesinin kaybolması",
+          "Soğukken belirgin sert geçişler, ısındıkça değişen davranış",
+          "Düşük hızda sabit gazda ince titreşim",
+          "Şanzıman kablo soketi çevresinde yağ izi"
+        ]
+      },
+      {
+        "h2": "Onarım sonrası programlama ve adaptasyon",
+        "body": [
+          "Konduktör plaka veya kontrol ünitesi değişiminden sonra parçanın araca programlanması gerekir; tak-çalıştır bir işlem değildir. Bu adım atlanırsa yeni parça da hata verir ya da vites kalitesi bozuk kalır.",
+          "Aynı şekilde revizyon veya kavrama işlemlerinden sonra adaptasyon değerlerinin sıfırlanması ve şanzımanın yeniden öğrenmesi gerekir. Aracı, yol testinde vites geçişleri istenen kaliteye ulaşmadan teslim etmiyoruz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Konduktör plaka nedir, neden sık arızalanır?",
+        "Valf gövdesi üzerinde yer alan; hız sensörlerini, solenoid bağlantılarını ve iletken hatları taşıyan katmandır. Arızasında araç sıklıkla acil çalışma moduna geçer. Ancak her vites sorunu bundan kaynaklanmaz; valf gövdesi aşınması veya fiş adaptörü sızdırması çok benzer belirti verir."
+      ],
+      [
+        "Araç tek viteste kalıyor, şanzıman gitti mi?",
+        "Genellikle hayır — bu acil çalışma (limp home) modudur. Kontrol ünitesi güvenilmeyen bir sinyal gördüğünde kendini korumak için sabit bir vitese geçer. Sebep çoğu zaman elektronik taraftadır; mekanik grup sağlam olabilir."
+      ],
+      [
+        "Mercedes'te şanzıman yağı değişir mi?",
+        "Evet ve doğru spesifikasyon kritiktir. Her şanzıman ailesi için ayrı bir MB onay numarası tanımlıdır; 722.9 ile 9G-Tronic aynı yağı kullanmaz. Yanlış ATF hemen arıza vermez ama vites kalitesini bozar ve erken kavrama aşınması yaratır."
+      ],
+      [
+        "Değişen parça programlanmalı mı?",
+        "Evet. VGS ve konduktör plaka araca özgü verilerle eşleştirilmelidir; takıldığı gibi çalışması beklenmez. Programlama yapılmadan yeni parça da hata verir."
+      ]
+    ],
+    "related": [
+      "bmw-sanziman-tamiri",
+      "dsg-sanziman-tamiri",
+      "cvt-sanziman-tamiri"
+    ]
   }
 ]
