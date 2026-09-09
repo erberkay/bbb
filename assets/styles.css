@@ -385,6 +385,26 @@ body::before {
 .appt-summary .r:last-child { border-bottom: none; }
 .appt-summary .r span { color: var(--text-dim); }
 
+/* ---------- Blog & Rehber ---------- */
+.blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.blog-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.blog-card:hover { transform: translateY(-4px); border-color: rgba(47,111,224,.4); box-shadow: var(--shadow); }
+.blog-tag {
+  display: inline-block; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-2); background: rgba(47,111,224,.10); border: 1px solid rgba(47,111,224,.22);
+  padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+}
+.blog-card h3 { font-family: var(--ff-display); font-size: 1.15rem; margin-bottom: 10px; }
+.blog-card p { color: var(--text-soft); font-size: .95rem; }
+.blog-cta {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border-soft);
+}
+.blog-cta p { color: var(--text-soft); font-size: .95rem; max-width: 480px; }
+
 /* ---------- Google değerlendirme çağrısı ---------- */
 .review-cta {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px;
@@ -402,6 +422,7 @@ body::before {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
+  .hero { min-height: unset; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 48px; }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .hero-card { max-width: 480px; }
   .hero-bg-overlay { background: rgba(11,16,29,.93); }
@@ -433,6 +454,7 @@ body::before {
   .section { padding: 68px 0; }
   .brand-grid { grid-template-columns: repeat(2,1fr); }
   .review-cta { flex-direction: column; align-items: flex-start; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .brand-text span { display: none; }
