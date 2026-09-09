@@ -463,7 +463,6 @@
   }
 
   /* -----------------------------------------------------
-  /* -----------------------------------------------------
      ADMIN — KALDIRILDI (güvenlik)
      Yönetici paneli herkese açık siteden tamamen çıkarıldı. Statik bir sitede
      istemci tarafında güvenli yetkilendirme yapılamaz: tarayıcıya inen her şey
