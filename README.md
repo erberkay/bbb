@@ -33,14 +33,16 @@ python3 -m http.server 8123
 # tarayıcı: http://localhost:8123
 ```
 
-## 🔑 Yönetici Girişi
+## 🔑 Randevuları Görüntüleme
 
-Sitenin en altındaki **"Yönetici Girişi"** bağlantısından:
+Yönetici paneli **güvenlik gerekçesiyle siteden kaldırılmıştır.**
 
-- Kullanıcı adı: `admin`
-- Şifre: `hb2024`
+Sebep: Bu tamamen statik bir sitedir. Tarayıcıya inen her şey — HTML, CSS, JavaScript — ziyaretçi tarafından okunabilir. Bu yüzden istemci tarafında tutulan bir şifre, nasıl saklanırsa saklansın (düz metin, base64, hash) gerçek bir koruma sağlamaz. Eski sabit kodlanmış yönetici girişi sayfa kaynağında herkese açıktı ve müşteri ad/telefon bilgilerine erişim veriyordu.
 
-> ⚠️ Bu bilgiler `assets/app.js` içinde `ADMIN_CREDS` sabitindedir. Yayına almadan önce mutlaka değiştirin ve gerçek doğrulamayı sunucu tarafında yapın.
+Randevular artık **Firebase Console** üzerinden yönetilir:
+`Firebase Console > Firestore Database > appointments`
+
+Gerçek bir yönetim paneli istenirse, yetkilendirme sunucu tarafında yapılmalıdır (Firebase Authentication + Firestore güvenlik kuralları veya Cloud Functions).
 
 ## 📌 Yayına Alma Notları (Öneriler)
 

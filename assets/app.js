@@ -10,7 +10,6 @@
      FIREBASE — yapılandırma varsa başlat
   ----------------------------------------------------- */
   const CFG = window.HB_FIREBASE_CONFIG;
-  const ADMIN_EMAIL = String(window.HB_ADMIN_EMAIL || '').trim().toLowerCase();
 
   const FB = (() => {
     const ok = CFG && CFG.apiKey && !String(CFG.apiKey).includes('BURAYA') && window.firebase;
@@ -47,8 +46,7 @@
   /* -----------------------------------------------------
      STORE — localStorage veri katmanı (Firebase yoksa)
   ----------------------------------------------------- */
-  const KEY = { users: 'hb_users', appts: 'hb_appointments', session: 'hb_session', admin: 'hb_admin_session' };
-  const ADMIN_CREDS = { username: 'admin', password: 'hb2024' };
+  const KEY = { users: 'hb_users', appts: 'hb_appointments', session: 'hb_session' };
 
   const Store = {
     read(k, fb) { try { return JSON.parse(localStorage.getItem(k)) ?? fb; } catch { return fb; } },
@@ -59,8 +57,6 @@
     saveAppts(a) { this.write(KEY.appts, a); },
     getSession() { return this.read(KEY.session, null); },
     setSession(s) { s ? this.write(KEY.session, s) : localStorage.removeItem(KEY.session); },
-    isAdmin() { return this.read(KEY.admin, false) === true; },
-    setAdmin(v) { v ? this.write(KEY.admin, true) : localStorage.removeItem(KEY.admin); },
   };
 
   /* -----------------------------------------------------
@@ -110,21 +106,11 @@
       }
       return Store.getAppts().filter(a => a.userId === userId).sort((a, b) => b.createdAt - a.createdAt);
     },
-    async listAll() {
-      if (FB.on) {
-        const q = await FB.db.collection('appointments').orderBy('createdAt', 'desc').get();
-        return q.docs.map(d => d.data());
-      }
-      return Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
-    },
-    async setStatus(id, status) {
-      if (FB.on) return FB.db.collection('appointments').doc(id).update({ status });
-      const a = Store.getAppts(); const x = a.find(y => y.id === id); if (x) { x.status = status; Store.saveAppts(a); }
-    },
-    async remove(id) {
-      if (FB.on) return FB.db.collection('appointments').doc(id).delete();
-      Store.saveAppts(Store.getAppts().filter(y => y.id !== id));
-    },
+    // NOT: listAll / setStatus / remove kaldırıldı.
+    // Bunlar yalnızca yönetici paneli tarafından kullanılıyordu. Panel herkese
+    // açık siteden çıkarıldığı için, tüm randevuları okuma / durum değiştirme /
+    // silme yetenekleri de istemci kodundan tamamen kaldırıldı.
+    // Randevular Firebase Console üzerinden yönetilir.
     async saveUserPhone(userId, phone, name) {
       if (FB.on) { try { await FB.db.collection('users').doc(userId).set({ phone, name }, { merge: true }); } catch (e) { /* opsiyonel */ } }
     },
@@ -133,11 +119,6 @@
       return '';
     },
   };
-
-  function isAdminUser() {
-    if (FB.on) { const s = getSession(); return !!(s && ADMIN_EMAIL && s.email === ADMIN_EMAIL); }
-    return Store.isAdmin();
-  }
 
   /* -----------------------------------------------------
      TOAST
@@ -482,109 +463,13 @@
   }
 
   /* -----------------------------------------------------
-     ADMIN
+  /* -----------------------------------------------------
+     ADMIN — KALDIRILDI (güvenlik)
+     Yönetici paneli herkese açık siteden tamamen çıkarıldı. Statik bir sitede
+     istemci tarafında güvenli yetkilendirme yapılamaz: tarayıcıya inen her şey
+     okunabilir, bu yüzden şifreyi gömmek/hash'lemek koruma sağlamaz.
+     Randevular Firebase Console üzerinden yönetilir.
   ----------------------------------------------------- */
-  let ADMIN_CACHE = [];
-
-  function handleAdminSubmit(e) {
-    e.preventDefault();
-    const d = Object.fromEntries(new FormData(e.target));
-    if (d.username === ADMIN_CREDS.username && d.password === ADMIN_CREDS.password) {
-      Store.setAdmin(true); closeModal('adminModal'); e.target.reset(); openAdminPanel();
-      toast('Yönetici girişi başarılı', 'Panele hoş geldiniz.', 'success');
-    } else {
-      toast('Giriş başarısız', 'Kullanıcı adı veya şifre hatalı.', 'error');
-    }
-  }
-
-  function openAdminPanel() { $('#adminPanel').classList.add('open'); document.body.style.overflow = 'hidden'; renderAdmin(); }
-  function closeAdminPanel() { $('#adminPanel').classList.remove('open'); document.body.style.overflow = ''; }
-
-  async function renderAdmin() {
-    try { ADMIN_CACHE = await Data.listAll(); }
-    catch (err) { toast('Randevular okunamadı', firebaseErr(err), 'error'); ADMIN_CACHE = []; }
-    renderAdminTable();
-  }
-
-  function renderAdminTable() {
-    const all = ADMIN_CACHE;
-    $('#stTotal').textContent = all.length;
-    $('#stPending').textContent = all.filter(a => a.status === 'pending').length;
-    $('#stConfirmed').textContent = all.filter(a => a.status === 'confirmed').length;
-    $('#stDone').textContent = all.filter(a => a.status === 'done').length;
-
-    const q = ($('#searchInput').value || '').toLowerCase().trim();
-    const fs = $('#filterStatus').value;
-    const list = all.filter(a => {
-      const matchQ = !q || [a.ref, a.name, a.phone, a.vehicle, a.service].some(v => String(v).toLowerCase().includes(q));
-      const matchS = !fs || a.status === fs;
-      return matchQ && matchS;
-    });
-
-    const body = $('#apptTableBody');
-    $('#emptyState').style.display = list.length ? 'none' : 'block';
-    body.innerHTML = list.map(a => {
-      const opts = Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${k === a.status ? 'selected' : ''}>${v.label}</option>`).join('');
-      return `<tr data-id="${a.id}">
-        <td><b style="color:var(--gold)">${esc(a.ref)}</b></td>
-        <td class="cust-name">${esc(a.name)}<small>${esc(a.email || '')}</small></td>
-        <td><a href="tel:${esc(a.phone)}" style="color:var(--text-soft)">${esc(a.phone)}</a></td>
-        <td>${esc(a.vehicle)}<br><small style="color:var(--text-dim)">${esc(a.gearType || '')}</small></td>
-        <td>${esc(a.service)}</td>
-        <td>${esc(a.date)}<br><small style="color:var(--text-dim)">${esc(a.time)}</small></td>
-        <td><select class="status-select" data-id="${a.id}">${opts}</select></td>
-        <td><div class="row-actions">
-          <button class="icon-btn" data-call="${esc(a.phone)}" title="Ara"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></button>
-          <button class="icon-btn danger" data-del="${a.id}" title="Sil"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg></button>
-        </div></td>
-      </tr>`;
-    }).join('');
-
-    $$('.status-select', body).forEach(sel => sel.addEventListener('change', () => updateStatus(sel.dataset.id, sel.value)));
-    $$('[data-del]', body).forEach(b => b.addEventListener('click', () => deleteAppt(b.dataset.del)));
-    $$('[data-call]', body).forEach(b => b.addEventListener('click', () => { location.href = 'tel:' + b.dataset.call; }));
-  }
-
-  async function updateStatus(id, status) {
-    try { await Data.setStatus(id, status); } catch (err) { toast('Güncellenemedi', firebaseErr(err), 'error'); return; }
-    const a = ADMIN_CACHE.find(x => x.id === id); if (a) a.status = status;
-    renderAdminTable();
-    toast('Durum güncellendi', STATUS[status].label, 'info');
-  }
-
-  async function deleteAppt(id) {
-    if (!confirm('Bu randevuyu silmek istediğinize emin misiniz?')) return;
-    try { await Data.remove(id); } catch (err) { toast('Silinemedi', firebaseErr(err), 'error'); return; }
-    ADMIN_CACHE = ADMIN_CACHE.filter(x => x.id !== id);
-    renderAdminTable();
-    toast('Randevu silindi', '', 'info');
-  }
-
-  function exportCSV() {
-    const appts = ADMIN_CACHE;
-    if (!appts.length) { toast('Veri yok', 'Dışa aktarılacak randevu bulunmuyor.', 'error'); return; }
-    const head = ['Randevu No', 'Ad Soyad', 'Telefon', 'E-posta', 'Araç', 'Şanzıman Tipi', 'Hizmet', 'Tarih', 'Saat', 'Durum', 'Not'];
-    const rows = appts.map(a => [a.ref, a.name, a.phone, a.email, a.vehicle, a.gearType, a.service, a.date, a.time, (STATUS[a.status] || {}).label || a.status, a.note]
-      .map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(','));
-    const csv = '﻿' + [head.join(','), ...rows].join('\n');
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob); const a = document.createElement('a');
-    a.href = url; a.download = `hb-randevular-${todayStr()}.csv`; a.click(); URL.revokeObjectURL(url);
-    toast('CSV indirildi', appts.length + ' randevu dışa aktarıldı.', 'success');
-  }
-
-  function handleAdminEntry(e) {
-    e.preventDefault();
-    if (FB.on) {
-      const s = getSession();
-      if (!s) { toast('Giriş gerekli', 'Yönetici Google hesabıyla giriş yapın.', 'info'); openAuth('login'); return; }
-      if (!ADMIN_EMAIL) { toast('Yönetici ayarlı değil', 'firebase-config.js içine yönetici e-postası ekleyin.', 'error'); return; }
-      if (s.email !== ADMIN_EMAIL) { toast('Yetkisiz hesap', 'Bu hesap yönetici değil.', 'error'); return; }
-      openAdminPanel();
-    } else {
-      if (Store.isAdmin()) openAdminPanel(); else openModal('adminModal');
-    }
-  }
 
   /* -----------------------------------------------------
      UI
@@ -636,14 +521,6 @@
     $('#googleBtn').addEventListener('click', handleGoogleLogin);
     $('#authSwitchBtn').addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
     $('#navLoginBtn') && $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
-
-    $('#adminEntry').addEventListener('click', handleAdminEntry);
-    $('#adminForm').addEventListener('submit', handleAdminSubmit);
-    $('#adminLogout').addEventListener('click', () => { if (!FB.on) Store.setAdmin(false); closeAdminPanel(); toast('Yönetici çıkışı yapıldı', '', 'info'); });
-    $('#refreshBtn').addEventListener('click', renderAdmin);
-    $('#searchInput').addEventListener('input', renderAdminTable);
-    $('#filterStatus').addEventListener('change', renderAdminTable);
-    $('#exportBtn').addEventListener('click', exportCSV);
 
     if (FB.on) { setAuthMode('login'); watchFirebaseAuth(); }
     else { seedDemo(); }

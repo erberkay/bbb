@@ -12,6 +12,7 @@ window.HB_FIREBASE_CONFIG = {
   measurementId: "G-7GJR4C4N4H"
 };
 
-// Yönetici panelini açabilecek Google hesabının e-postası (küçük harf).
-// Bu e-posta ile Google girişi yapıldığında yönetici paneli açılır.
-window.HB_ADMIN_EMAIL = "";
+// NOT: HB_ADMIN_EMAIL kaldırıldı — yönetici paneli güvenlik gerekçesiyle
+// herkese açık siteden çıkarıldı. Randevular Firebase Console üzerinden yönetilir.
+// Yetkilendirme yeniden eklenecekse sunucu tarafında (Firestore güvenlik
+// kuralları / Cloud Functions) yapılmalıdır, istemci kodunda değil.

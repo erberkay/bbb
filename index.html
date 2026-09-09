@@ -43,7 +43,7 @@
     "description": "Bursa Nilüfer'de otomatik, DSG ve CVT şanzıman tamiri, revizyonu ve bakımı. Uzman kadro, ücretsiz arıza tespiti.",
     "url": "https://hbsanziman.com/",
     "telephone": "+905304918005",
-    "email": "info@hbsanziman.com",
+    "email": "hbotomatiksanziman16@gmail.com",
     "image": "https://hbsanziman.com/assets/logo.svg",
     "logo": "https://hbsanziman.com/assets/logo.svg",
     "priceRange": "₺₺",
@@ -318,7 +318,7 @@
           </div>
           <div class="contact-item reveal">
             <div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
-            <div><b>E-posta</b><a href="mailto:info@hbsanziman.com">info@hbsanziman.com</a></div>
+            <div><b>E-posta</b><a class="mail-link" data-mu="hbotomatiksanziman16" data-md="gmail.com" href="#">e-posta adresi yükleniyor…</a><noscript>hbotomatiksanziman16 [at] gmail [nokta] com</noscript></div>
           </div>
           <div class="contact-item reveal">
             <div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
@@ -369,16 +369,30 @@
           <ul>
             <li><a href="#iletisim">Üçevler, 28. Sk. No:51<br>Nilüfer / Bursa</a></li>
             <li><a href="tel:+905304918005">0530 491 80 05</a></li>
-            <li><a href="mailto:info@hbsanziman.com">info@hbsanziman.com</a></li>
+            <li><a class="mail-link" data-mu="hbotomatiksanziman16" data-md="gmail.com" href="#">e-posta</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© <span id="year"></span> HB Şanzıman. Tüm hakları saklıdır.</span>
-        <span><a href="#" id="adminEntry">Yönetici Girişi</a></span>
       </div>
     </div>
   </footer>
+
+  <!-- E-posta adreslerini kur (basit spam-bot koruması: adres HTML'de bütün hâlde yazılı değil,
+       parçalar data- özniteliklerinden birleştirilir. Bu script sayfa çizilmeden önce
+       senkron çalışır, bu yüzden kullanıcı gecikme görmez ve bağlantı tıklanabilir kalır.) -->
+  <script>
+    (function () {
+      document.querySelectorAll('a.mail-link').forEach(function (a) {
+        var u = a.getAttribute('data-mu'), d = a.getAttribute('data-md');
+        if (!u || !d) return;
+        var addr = u + String.fromCharCode(64) + d;
+        a.setAttribute('href', 'mailto:' + addr);
+        a.textContent = addr;
+      });
+    })();
+  </script>
 
   <!-- ===================== AUTH MODAL ===================== -->
   <div class="modal-overlay" id="authModal">
@@ -431,95 +445,11 @@
     </div>
   </div>
 
-  <!-- ===================== ADMIN LOGIN MODAL ===================== -->
-  <div class="modal-overlay" id="adminModal">
-    <div class="modal" style="max-width:400px">
-      <button class="modal-close" data-close="adminModal" aria-label="Kapat">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-      <div class="modal-head">
-        <div class="logo" style="width:54px;height:54px;margin:0 auto 14px;display:grid;place-items:center;background:var(--navy-grad);border-radius:14px;color:var(--gold-2)">
-          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        </div>
-        <h3>Yönetici Girişi</h3>
-        <p>Randevuları yönetmek için giriş yapın</p>
-      </div>
-      <form id="adminForm" novalidate>
-        <div class="field full" style="margin-bottom:14px">
-          <label>Kullanıcı Adı</label>
-          <input type="text" name="username" placeholder="admin" autocomplete="username">
-        </div>
-        <div class="field full" style="margin-bottom:18px">
-          <label>Şifre</label>
-          <input type="password" name="password" placeholder="••••••••" autocomplete="current-password">
-        </div>
-        <button type="submit" class="btn btn-navy btn-block">Panele Giriş</button>
-      </form>
-      <p class="form-note">Varsayılan giriş — Kullanıcı adı: <b>admin</b> · Şifre: <b>hb2024</b></p>
-    </div>
-  </div>
-
-  <!-- ===================== ADMIN PANEL ===================== -->
-  <div class="admin-panel" id="adminPanel">
-    <div class="admin-top">
-      <div class="brand">
-        <img src="assets/logo.svg" class="logo" alt="HB" style="width:40px;height:40px">
-        <span class="brand-text"><b>HB ŞANZIMAN</b> <span>Yönetim Paneli</span></span>
-      </div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <button class="btn btn-ghost btn-sm" id="refreshBtn">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0114.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0020.5 15"/></svg>
-          Yenile
-        </button>
-        <button class="btn btn-primary btn-sm" id="adminLogout">Çıkış</button>
-      </div>
-    </div>
-    <div class="admin-body">
-      <div class="admin-stats">
-        <div class="astat"><div class="num" id="stTotal">0</div><div class="lbl">Toplam Randevu</div></div>
-        <div class="astat gold"><div class="num" id="stPending">0</div><div class="lbl">Bekleyen</div></div>
-        <div class="astat blue"><div class="num" id="stConfirmed">0</div><div class="lbl">Onaylanan</div></div>
-        <div class="astat green"><div class="num" id="stDone">0</div><div class="lbl">Tamamlanan</div></div>
-      </div>
-
-      <div class="admin-toolbar">
-        <input type="text" id="searchInput" placeholder="🔍  İsim, telefon, araç veya randevu no ara...">
-        <select id="filterStatus">
-          <option value="">Tüm Durumlar</option>
-          <option value="pending">Bekleyen</option>
-          <option value="confirmed">Onaylanan</option>
-          <option value="done">Tamamlanan</option>
-          <option value="cancelled">İptal Edilen</option>
-        </select>
-        <button class="btn btn-ghost btn-sm" id="exportBtn">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          CSV İndir
-        </button>
-      </div>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Randevu No</th>
-              <th>Müşteri</th>
-              <th>Telefon</th>
-              <th>Araç</th>
-              <th>Hizmet</th>
-              <th>Tarih / Saat</th>
-              <th>Durum</th>
-              <th>İşlem</th>
-            </tr>
-          </thead>
-          <tbody id="apptTableBody"></tbody>
-        </table>
-      </div>
-      <div class="empty-state" id="emptyState" style="display:none">
-        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <p>Henüz randevu bulunmuyor.</p>
-      </div>
-    </div>
-  </div>
+  <!-- Yönetici giriş modalı ve yönetim paneli GÜVENLİK GEREKÇESİYLE KALDIRILDI.
+       Sabit kodlanmış yönetici giriş bilgisi bu sayfanın kaynağında herkese
+       görünür durumdaydı ve müşteri ad/telefon bilgilerine erişim sağlıyordu.
+       Statik bir sitede istemci tarafında güvenli yetkilendirme mümkün değildir.
+       Randevular artık Firebase Console üzerinden yönetilir. -->
 
   <!-- ===================== TOAST ===================== -->
   <div class="toast-wrap" id="toastWrap"></div>
