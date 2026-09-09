@@ -214,7 +214,6 @@ body::before {
 .brand-logo-box.vag img { max-width: 90%; max-height: 30px; width: auto; height: auto; margin: 0 auto; }
 .brand-item span { font-family: var(--ff-display); font-weight: 600; font-size: .92rem; color: var(--text-soft); text-align: center; }
 .brand-item small { display: block; color: var(--text-dim); font-size: .72rem; margin-top: 1px; font-weight: 400; }
-.brand-disclaimer { margin-top: 26px; color: var(--text-dim); font-size: .78rem; text-align: center; line-height: 1.6; }
 
 /* ---------- Kartlar (hizmetler) ---------- */
 .grid { display: grid; gap: 22px; }

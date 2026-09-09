@@ -4,11 +4,10 @@ Bursa / Nilüfer'de faaliyet gösteren **HB Şanzıman** için hazırlanmış, p
 
 ## ✨ Özellikler
 
-- **Modern kurumsal tasarım** — koyu tema, altın vurgular, tam responsive (mobil/tablet/masaüstü)
+- **Modern kurumsal tasarım** — koyu tema, mavi vurgular, tam responsive (mobil/tablet/masaüstü)
 - **Online randevu sistemi** — telefon numarası zorunlu + doğrulamalı
 - **Üyelik / Giriş** — Google ile giriş (demo) veya e-posta ile hesap oluşturma
-- **Yönetici paneli** — randevu listesi, durum yönetimi, arama/filtreleme, CSV dışa aktarma
-- **Bölümler** — Hizmetler, Neden Biz, Çalışma Süreci, İletişim (Google Haritalar)
+- **Bölümler** — Hizmetler, Uzmanlık Alanlarımız (şanzıman tipleri ve marka grupları), Neden Biz, Çalışma Süreci, İletişim (Google Haritalar)
 
 ## 🗂 Dosya Yapısı
 
@@ -55,4 +54,4 @@ Gerçek bir yönetim paneli istenirse, yetkilendirme sunucu tarafında yapılmal
 
 ## 📍 İletişim
 
-Üçevler, 28. Sk. 27. Blok No:51, 16120 Nilüfer / Bursa
+Üçevler, 28. Sk. 27. Blok No:51, 16270 Nilüfer / Bursa
