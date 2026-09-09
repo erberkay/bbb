@@ -589,6 +589,28 @@ body::before {
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
+/* Ekranın ilk görünen kısmı JS'i BEKLEMEZ.
+   .reveal, IntersectionObserver'a (app.js) bağlı; app.js ise DOMContentLoaded'ı,
+   o da body sonundaki Firebase SDK'larını bekliyordu. Sonuç: hero ve sayfa
+   başlığı, ~150 KB JavaScript inene kadar boş kalıyordu — LCP'yi doğrudan
+   JavaScript'e zincirliyordu. Bu iki blok artık saf CSS ile açılıyor. */
+.hero .reveal,
+.page-head.reveal {
+  opacity: 1;
+  transform: none;
+  animation: hb-rise .6s ease both;
+}
+@keyframes hb-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero .hero-card.reveal { animation-delay: .12s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .hero .reveal, .page-head.reveal { animation: none; }
+}
+
 /* ---------- Responsive ---------- */
 /* Navbar → hamburger menü. Kırılma noktası 960px'in ustunde ve ayrı tutuluyor:
    marka + rozet + 7 nav linki + 2 buton tek satırda ~1450px altında sıkışıp

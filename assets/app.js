@@ -19,12 +19,19 @@
       const auth = firebase.auth();
       auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).catch(() => {});
       const provider = new firebase.auth.GoogleAuthProvider();
-      return { on: true, auth, db: firebase.firestore(), provider };
+      // Firestore SDK'sı yalnızca randevu bölümü olan sayfalara yükleniyor
+      // (alt sayfalarda ~100 KB boşuna inmesin diye). Yoksa db null kalır;
+      // giriş/çıkış etkilenmez, yalnızca veri okuma/yazma devre dışıdır.
+      const db = (typeof firebase.firestore === 'function') ? firebase.firestore() : null;
+      return { on: true, auth, db, provider };
     } catch (e) {
       console.warn('[HB] Firebase başlatılamadı, localStorage moduna geçiliyor:', e);
       return { on: false };
     }
   })();
+
+  // Firestore gerçekten kullanılabilir mi? (FB.on tek başına yetmez)
+  const canDb = () => FB.on && !!FB.db;
 
   function firebaseErr(e) {
     const m = {
@@ -96,11 +103,11 @@
   ----------------------------------------------------- */
   const Data = {
     async create(appt) {
-      if (FB.on) return FB.db.collection('appointments').doc(appt.id).set(appt);
+      if (canDb()) return FB.db.collection('appointments').doc(appt.id).set(appt);
       const a = Store.getAppts(); a.push(appt); Store.saveAppts(a);
     },
     async listByUser(userId) {
-      if (FB.on) {
+      if (canDb()) {
         const q = await FB.db.collection('appointments').where('userId', '==', userId).get();
         return q.docs.map(d => d.data()).sort((a, b) => b.createdAt - a.createdAt);
       }
@@ -111,12 +118,12 @@
     // tarafında yapılır. İstemci kodunu değiştiren biri paneli açabilir ama
     // Firestore veriyi yine de vermez.
     async listAll() {
-      if (!FB.on) return Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
+      if (!canDb()) return Store.getAppts().sort((a, b) => b.createdAt - a.createdAt);
       const q = await FB.db.collection('appointments').get();
       return q.docs.map(d => d.data()).sort((a, b) => b.createdAt - a.createdAt);
     },
     async setStatus(id, status) {
-      if (!FB.on) {
+      if (!canDb()) {
         const a = Store.getAppts(); const x = a.find(v => v.id === id);
         if (x) { x.status = status; Store.saveAppts(a); }
         return;
@@ -124,14 +131,14 @@
       return FB.db.collection('appointments').doc(id).update({ status });
     },
     async remove(id) {
-      if (!FB.on) { Store.saveAppts(Store.getAppts().filter(v => v.id !== id)); return; }
+      if (!canDb()) { Store.saveAppts(Store.getAppts().filter(v => v.id !== id)); return; }
       return FB.db.collection('appointments').doc(id).delete();
     },
     async saveUserPhone(userId, phone, name) {
-      if (FB.on) { try { await FB.db.collection('users').doc(userId).set({ phone, name }, { merge: true }); } catch (e) { /* opsiyonel */ } }
+      if (canDb()) { try { await FB.db.collection('users').doc(userId).set({ phone, name }, { merge: true }); } catch (e) { /* opsiyonel */ } }
     },
     async getUserPhone(userId) {
-      if (FB.on) { try { const d = await FB.db.collection('users').doc(userId).get(); return d.exists ? (d.data().phone || '') : ''; } catch (e) { return ''; } }
+      if (canDb()) { try { const d = await FB.db.collection('users').doc(userId).get(); return d.exists ? (d.data().phone || '') : ''; } catch (e) { return ''; } }
       return '';
     },
   };
@@ -294,7 +301,7 @@
     if (!area) return;
     if (s) {
       area.innerHTML = `<div class="nav-user">
-        ${isAdminUser() ? '<button class="btn btn-primary btn-sm" id="navAdminBtn">Randevular</button>' : ''}
+        ${(isAdminUser() && $('#adminPanel')) ? '<button class="btn btn-primary btn-sm" id="navAdminBtn">Randevular</button>' : ''}
         <div class="avatar" title="${esc(s.name)}">${esc(initials(s.name))}</div>
         <button class="btn btn-ghost btn-sm" id="navLogoutBtn">Çıkış</button>
       </div>`;
@@ -580,7 +587,7 @@
     // Telefonu profile kaydet (bir dahaki sefer hazır gelsin)
     if (!s.phone) {
       s.phone = appt.phone;
-      if (FB.on) { Data.saveUserPhone(s.id, appt.phone, s.name); }
+      if (canDb()) { Data.saveUserPhone(s.id, appt.phone, s.name); }
       else { setSession(s); const us = Store.getUsers(); const u = us.find(x => x.id === s.id); if (u) { u.phone = appt.phone; Store.saveUsers(us); } }
     }
 

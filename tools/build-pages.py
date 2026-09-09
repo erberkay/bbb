@@ -18,9 +18,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://hbotomatiksanziman.com"
 
 
-def slice_between(html, start_marker, end_marker):
+def slice_between(html, start_marker, end_marker, include_end=True):
+    """start_marker'dan end_marker'a kadar olan parçayı döndürür.
+
+    include_end=False, bitiş işaretçisinin kendisini DIŞARIDA bırakır. Bitiş
+    işaretçisi bir sonraki bölümün açılış yorumu olduğunda (ör. "<!-- TOAST")
+    bu şart: aksi hâlde kapanmamış bir yorum üretilir ve arkasından gelen
+    HTML yorumun içinde kalıp ekrana hiç çıkmaz.
+    """
     i = html.index(start_marker)
-    j = html.index(end_marker, i) + len(end_marker)
+    j = html.index(end_marker, i)
+    if include_end:
+        j += len(end_marker)
     return html[i:j]
 
 
@@ -42,10 +51,24 @@ def load_shell():
         "nav": to_home_anchors(slice_between(home, "<!-- ===================== NAVBAR", "</nav>")),
         "footer": to_home_anchors(slice_between(home, "<!-- ===================== FOOTER", "</footer>")),
         "mailscript": slice_between(home, "<!-- E-posta adreslerini kur", "</script>"),
-        "authmodal": slice_between(home, "<!-- ===================== AUTH MODAL", "<!-- Yönetici giriş modalı"),
-        "adminpanel": to_home_anchors(slice_between(home, "<!-- ===================== YÖNETİCİ PANELİ", "<!-- ===================== TOAST")),
-        "scripts": slice_between(home, "<!-- Firebase SDK (compat) -->", '<script src="/assets/app.js"></script>'),
+        "authmodal": slice_between(home, "<!-- ===================== AUTH MODAL", "<!-- Yönetici giriş modalı", include_end=False),
+        # app.js'i şablon kendisi ekliyor; buraya dahil edilirse iki kez yüklenir.
+        "scripts": subpage_scripts(
+            slice_between(home, "<!-- Firebase SDK (compat) -->", '<script src="/assets/app.js"></script>', include_end=False)
+        ),
     }
+
+
+def subpage_scripts(block):
+    """Alt sayfalarda Firestore SDK'sını yükleme.
+
+    Randevu formu ve yönetici paneli yalnızca ana sayfada; alt sayfalarda
+    Firestore'un tek işi ~100 KB indirilmek olurdu. Giriş/çıkış için gereken
+    firebase-auth kalıyor, app.js Firestore yoksa FB.db'yi null bırakıyor.
+    """
+    return "\n".join(
+        line for line in block.split("\n") if "firebase-firestore-compat" not in line
+    )
 
 
 def faq_schema(faqs):
@@ -177,7 +200,7 @@ PAGE_TMPL = """<!DOCTYPE html>
   <title>{title}</title>
   <meta name="description" content="{meta}">
   <meta name="theme-color" content="#0a0d14">
-  <link rel="icon" type="image/png" href="/assets/img/logo-hb-square.png">
+  <link rel="icon" type="image/png" href="/assets/img/favicon-48.png">
   <link rel="canonical" href="{url}">
   <meta name="robots" content="index, follow">
 
@@ -187,7 +210,16 @@ PAGE_TMPL = """<!DOCTYPE html>
   <meta property="og:url" content="{url}">
   <meta property="og:site_name" content="HB Otomatik Şanzıman">
   <meta property="og:locale" content="tr_TR">
-  <meta property="og:image" content="{site}/assets/img/logo-hb-square.png">
+  <meta property="og:image" content="{site}/assets/img/og-hb.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title}">
+  <meta name="twitter:description" content="{meta}">
+  <meta name="twitter:image" content="{site}/assets/img/og-hb.png">
+
+  <meta name="geo.region" content="TR-16">
+  <meta name="geo.placename" content="Nilüfer, Bursa">
+  <meta name="geo.position" content="40.2214;28.9847">
 
   <script type="application/ld+json">
 {schema}
@@ -242,7 +274,6 @@ PAGE_TMPL = """<!DOCTYPE html>
 {mailscript}
 
 {authmodal}
-{adminpanel}
   <div class="toast-wrap" id="toastWrap"></div>
 
 {scripts}
@@ -270,7 +301,6 @@ def main():
             footer=shell["footer"],
             mailscript=shell["mailscript"],
             authmodal=shell["authmodal"],
-            adminpanel=shell["adminpanel"],
             scripts=shell["scripts"],
             h1=page["h1"],
             kicker=page["kicker"],
