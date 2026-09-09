@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const { SITE } = require('./config');
+const { gbpSchemaFields } = require('./layout');
 
 const file = path.join(__dirname, '..', 'index.html');
 let h = fs.readFileSync(file, 'utf8');
@@ -88,7 +89,7 @@ ${JSON.stringify({
   '@id': SITE.origin + '/#organization', name: SITE.name, legalName: SITE.legalName,
   url: SITE.origin + '/', logo: SITE.origin + SITE.logo, image: SITE.origin + SITE.ogImage,
   email: SITE.email,
-  ...(SITE.socials.length ? { sameAs: SITE.socials } : {}),
+  ...gbpSchemaFields(),
   address: {
     '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.district,
     addressRegion: SITE.city, postalCode: SITE.postalCode, addressCountry: SITE.country
@@ -109,10 +110,33 @@ ${JSON.stringify({
   </script>
 `;
 
-apply('WebSite / Organization / FAQPage yapısal verisi eklendi', s => s.includes('#organization') ? s : s.replace(
-  '  <link rel="preconnect" href="https://fonts.googleapis.com">',
-  extraSchema + '\n  <link rel="preconnect" href="https://fonts.googleapis.com">'
-));
+const SCHEMA_START = '  <!-- ÜRETİLEN YAPISAL VERİ — BAŞLANGIÇ (elle düzenlemeyin; build/patch-index.js üretir) -->';
+const SCHEMA_END   = '  <!-- ÜRETİLEN YAPISAL VERİ — BİTİŞ -->';
+const schemaBlock  = `${SCHEMA_START}\n${extraSchema}${SCHEMA_END}\n`;
+
+const GENERATED_TYPES = ['WebSite', 'Organization', 'FAQPage'];
+
+apply('WebSite / Organization / FAQPage yapısal verisi güncellendi', s => {
+  // 1) Daha önce üretilmiş blokları — işaretli ya da işaretsiz — tamamen kaldır.
+  //    Tür bazlı çalışır, bu yüzden eski sürümlerin çıktısını da temizler ve
+  //    tekrar tekrar çalıştırıldığında blok çoğaltmaz.
+  s = s.replace(
+    /[ \t]*(?:<!--[^>]*-->\s*)?<script type="application\/ld\+json">\s*(\{[\s\S]*?\})\s*<\/script>\n?/g,
+    (full, json) => {
+      let obj;
+      try { obj = JSON.parse(json); } catch { return full; }
+      return GENERATED_TYPES.includes(obj['@type']) ? '' : full;
+    }
+  );
+  s = s.replace(new RegExp(SCHEMA_START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\n*'), '')
+       .replace(new RegExp(SCHEMA_END.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\n*'), '');
+
+  // 2) Taze bloğu yerleştir.
+  return s.replace(
+    '  <link rel="preconnect" href="https://fonts.googleapis.com">',
+    schemaBlock + '\n  <link rel="preconnect" href="https://fonts.googleapis.com">'
+  );
+});
 
 /* ---------- 7. İçeriğe atlama bağlantısı ---------- */
 apply('içeriğe atlama bağlantısı eklendi', s => s.includes('skip-link') ? s : s.replace(
@@ -300,6 +324,26 @@ const mobileBar = `
 apply('mobil hızlı eylem çubuğu eklendi', s => s.includes('mobile-bar') ? s : s.replace(
   '</body>', mobileBar + '</body>'
 ));
+
+
+/* ---------- 17. Ana sayfa AutoRepair şemasına İşletme Profili bağlantısı ----------
+   Elle yazılmış JSON-LD bloğu ayrıştırılır, alanlar ayarlanır ve yeniden
+   yazılır. Metin üzerinde arama/değiştirme yapılmadığı için tekrar tekrar
+   çalıştırıldığında alan çoğaltmaz; config boşaltılırsa alanları temizler. */
+apply('AutoRepair şemasına Google İşletme Profili bağlandı', s => {
+  const fields = gbpSchemaFields();
+  return s.replace(
+    /(<script type="application\/ld\+json">\s*)(\{[\s\S]*?\})(\s*<\/script>)/g,
+    (full, open, json, close) => {
+      let obj;
+      try { obj = JSON.parse(json); } catch { return full; }
+      if (obj['@type'] !== 'AutoRepair') return full;
+      delete obj.sameAs; delete obj.hasMap;
+      Object.assign(obj, fields);
+      return open + JSON.stringify(obj, null, 2).replace(/\n/g, '\n  ') + close;
+    }
+  );
+});
 
 fs.writeFileSync(file, h, 'utf8');
 console.log(changes.join('\n'));

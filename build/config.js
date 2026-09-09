@@ -30,10 +30,28 @@ const SITE = {
   ogImage: '/assets/og-image.png',
   logo: '/assets/logo.svg',
 
-  // Kurulduktan sonra doldurun (boşsa ilgili etiket üretilmez)
+  // Kurulduktan sonra doldurun (boşsa ilgili etiket/blok hiç üretilmez)
   googleSiteVerification: '',
   gaMeasurementId: '',
-  socials: [] // ör: ['https://www.instagram.com/hbsanziman']
+  socials: [], // ör: ['https://www.instagram.com/hbsanziman']
+
+  /* ---- Google İşletme Profili ----------------------------------------
+     Her ikisi de İşletme Profili panelinden alınır:
+
+     • googleBusinessUrl — profilin herkese açık Haritalar bağlantısı.
+       Google Haritalar'da işletmenizi açın → Paylaş → Bağlantıyı kopyala.
+       Yapısal veride `sameAs` ve `hasMap` olarak kullanılır; Google'ın
+       site ile işletme kaydını eşleştirmesini kolaylaştırır.
+
+     • googleReviewUrl — kısa yorum bağlantısı.
+       İşletme Profili → "Yorum isteyin" → bağlantıyı kopyalayın
+       (https://g.page/r/... biçiminde olur).
+       Doldurulduğunda iletişim sayfasına ve alt bilgiye "Google'da
+       değerlendirin" bağlantısı otomatik eklenir.
+
+     İkisi de boş bırakılabilir; boşken hiçbir bağlantı görünmez.       */
+  googleBusinessUrl: '',
+  googleReviewUrl: ''
 };
 
 SITE.addressText = `${SITE.street}, ${SITE.postalCode} ${SITE.district} / ${SITE.city}`;

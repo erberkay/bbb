@@ -94,6 +94,8 @@ npm run check     # ikisini birden
 | Yeni bölge sayfası | `build/content/regions.js` | `npm run build` |
 | Google Analytics kimliği | `build/config.js` → `gaMeasurementId` | `npm run build` |
 | Sosyal medya hesapları | `build/config.js` → `socials` | `npm run build` |
+| Google İşletme Profili bağlantısı | `build/config.js` → `googleBusinessUrl` | `npm run build` |
+| Google yorum bağlantısı | `build/config.js` → `googleReviewUrl` | `npm run build` |
 
 > `build/config.js` içindeki NAP bilgileri (ad, adres, telefon) tüm sayfalarda
 > ve yapısal veride kullanılır. Google İşletme Profili ve dizin kayıtlarında

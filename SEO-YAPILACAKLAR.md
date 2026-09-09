@@ -72,7 +72,29 @@ sayfaların sıralanması normalde 1–3 ay sürer.
 
 ---
 
-## 3. Google İşletme Profili (yerel SEO'nun **en önemli** adımı)
+## 3. ✅ Google İşletme Profili — TAMAMLANDI
+
+> **Durum:** Profil oluşturuldu. ✅
+>
+> **Sıradaki tek kod adımı — profil bağlantısını siteye ekleyin:**
+> ```js
+> // build/config.js
+> googleBusinessUrl: 'https://maps.app.goo.gl/...',   // Haritalar → Paylaş → Bağlantıyı kopyala
+> googleReviewUrl:   'https://g.page/r/.../review',   // İşletme Profili → "Yorum isteyin"
+> ```
+> ardından `npm run build`. Bu iki satır şunları açar:
+> - Yapısal veride `sameAs` + `hasMap` → Google'ın site ile işletme kaydını
+>   eşleştirmesini kolaylaştırır (aynı işletme olduğunuzu doğrular)
+> - İletişim sayfasında "Google'da değerlendirin" kartı
+> - Tüm sayfaların alt bilgisinde profil ve yorum bağlantısı
+>
+> Alanlar boşken hiçbir bağlantı görünmez — yanlışlıkla kırık bağlantı oluşmaz.
+
+---
+
+### Profil kurulduktan sonra: kontrol listesi
+
+Aşağıdakiler sıralamayı doğrudan etkiler; profil açıldı diye bitmiş sayılmaz.
 
 Bursa'da "şanzıman tamiri" aratan birinin gördüğü ilk şey harita
 sonuçlarıdır. Web sitesi bu sıralamayı destekler ama **belirleyici olan
@@ -100,7 +122,7 @@ sonuçlarıdır. Web sitesi bu sıralamayı destekler ama **belirleyici olan
 
 ---
 
-## 4. Müşteri yorumları (sıralamada en yüksek etkili faktör)
+## 4. 🔴 Müşteri yorumları — ŞİMDİ SIRA BUNDA (en yüksek etkili faktör)
 
 Yerel aramada yorum sayısı ve puanı, sıralamayı belirleyen en güçlü
 sinyallerden biridir.
@@ -225,7 +247,7 @@ SEO 2–6 ayda sonuç verir. Hemen müşteri gerekiyorsa:
 | Ne zaman | Ne yapılacak |
 |----------|--------------|
 | **Yayından önce** | Madde 0 (güvenlik), Madde 1 (alan adı) |
-| **1. hafta** | Madde 2 (Search Console), Madde 3 (İşletme Profili), Madde 5 (Analytics) |
+| **1. hafta** | Madde 2 (Search Console), ~~Madde 3 (İşletme Profili)~~ ✅, Madde 5 (Analytics) |
 | **2.–4. hafta** | Madde 6 (fotoğraflar), Madde 7 (dizin kayıtları) |
 | **Sürekli** | Madde 4 (yorum toplama), Madde 8 (ayda 1–2 yazı) |
 | **İsteğe bağlı** | Madde 9 (Google Ads) |

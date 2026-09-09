@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const { SITE } = require('./config');
-const { layout, esc } = require('./layout');
+const { layout, esc, gbpSchemaFields } = require('./layout');
 const B = require('./blocks');
 const { SERVICES } = require('./content/services');
 const { BRANDS } = require('./content/brands');
@@ -350,6 +350,7 @@ write(contactUrl, layout({
     telephone: SITE.phone,
     email: SITE.email,
     image: SITE.origin + SITE.ogImage,
+    ...gbpSchemaFields(),
     address: {
       '@type': 'PostalAddress', streetAddress: SITE.street, addressLocality: SITE.district,
       addressRegion: SITE.city, postalCode: SITE.postalCode, addressCountry: SITE.country
@@ -378,6 +379,13 @@ write(contactUrl, layout({
             <p class="muted">Teklif ve kurumsal talepler</p>
           </div>
         </div>
+${SITE.googleReviewUrl || SITE.googleBusinessUrl ? `        <div class="card review-card">
+          <h3>Bizi Google'da değerlendirin</h3>
+          <p>Hizmetimizden memnun kaldıysanız kısa bir değerlendirme yazmanız,
+             aynı sorunu yaşayan diğer araç sahiplerinin bize ulaşmasına yardımcı olur.</p>
+          <div class="review-actions">
+${SITE.googleReviewUrl ? `            <a class="btn btn-primary btn-sm" href="${SITE.googleReviewUrl}" target="_blank" rel="noopener">★ Değerlendirme yaz</a>\n` : ''}${SITE.googleBusinessUrl ? `            <a class="btn btn-ghost btn-sm" href="${SITE.googleBusinessUrl}" target="_blank" rel="noopener">Google İşletme Profilimiz →</a>\n` : ''}          </div>
+        </div>` : ''}
         <div class="card address-card">
           <h3>Adres</h3>
           <p>${SITE.street}<br>${SITE.postalCode} ${SITE.district} / ${SITE.city}</p>

@@ -28,6 +28,22 @@ function navHtml(root) {
   return NAV.map(i => `<li><a href="${root}${i.href}">${i.label}</a></li>`).join('\n          ');
 }
 
+/* ---------- Google İşletme Profili yardımcıları ---------- */
+
+/** Yapısal veride `sameAs` için: İşletme Profili + sosyal hesaplar. */
+function sameAsList() {
+  return [SITE.googleBusinessUrl, ...SITE.socials].filter(Boolean);
+}
+
+/** İşletme Profili doldurulmuşsa yerel işletme şemasına eklenecek alanlar. */
+function gbpSchemaFields() {
+  const out = {};
+  const same = sameAsList();
+  if (same.length) out.sameAs = same;
+  if (SITE.googleBusinessUrl) out.hasMap = SITE.googleBusinessUrl;
+  return out;
+}
+
 /* ---------- Yapısal veri parçaları ---------- */
 
 function breadcrumbSchema(trail) {
@@ -68,6 +84,7 @@ function serviceSchema(page) {
       name: SITE.name,
       telephone: SITE.phone,
       url: SITE.origin + '/',
+      ...gbpSchemaFields(),
       address: {
         '@type': 'PostalAddress',
         streetAddress: SITE.street,
@@ -265,7 +282,7 @@ ${page.body}
             <li><a href="${root}iletisim/">${SITE.street}<br>${SITE.postalCode} ${SITE.district} / ${SITE.city}</a></li>
             <li><a href="tel:${SITE.phone}">${SITE.phoneDisplay}</a></li>
             <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
-          </ul>
+${SITE.googleBusinessUrl ? `            <li><a href="${SITE.googleBusinessUrl}" target="_blank" rel="noopener">Google'da bizi bulun</a></li>\n` : ''}${SITE.googleReviewUrl ? `            <li><a href="${SITE.googleReviewUrl}" target="_blank" rel="noopener">★ Google'da değerlendirin</a></li>\n` : ''}          </ul>
           <h5 style="margin-top:18px">Yasal</h5>
           <ul>
             <li><a href="${root}gizlilik-politikasi/">Gizlilik Politikası</a></li>
@@ -303,4 +320,4 @@ ${page.body}
 `;
 }
 
-module.exports = { layout, esc, rootOf, breadcrumbSchema, faqSchema, SITE };
+module.exports = { layout, esc, rootOf, breadcrumbSchema, faqSchema, gbpSchemaFields, sameAsList, SITE };
