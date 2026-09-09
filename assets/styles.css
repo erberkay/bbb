@@ -118,20 +118,20 @@ body::before {
 }
 .nav.scrolled { background: rgba(10,13,20,.92); border-bottom-color: var(--border-soft); box-shadow: var(--shadow-sm); }
 .nav .container { display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand .logo { height: 52px; width: auto; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand .logo { height: 44px; width: auto; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; gap: 5px; }
-.brand-text b { font-family: var(--ff-display); font-size: 1.15rem; letter-spacing: .04em; line-height: 1; white-space: nowrap; color: var(--text); }
+.brand-text b { font-family: var(--ff-display); font-size: 1.1rem; letter-spacing: .04em; line-height: 1; white-space: nowrap; color: var(--text); }
 .brand-text span { font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); line-height: 1; }
 .brand-badge {
-  display: inline-flex; align-items: center; margin-left: 4px; padding: 6px 14px;
+  display: inline-flex; align-items: center; margin-left: 2px; padding: 5px 11px;
   border: 1px solid rgba(47,111,224,.35); border-radius: 999px; background: rgba(47,111,224,.10);
-  color: var(--accent-2); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent-2); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
   white-space: nowrap;
 }
 
-.nav-links { display: flex; align-items: center; gap: 30px; }
-.nav-links a:not(.btn) { font-size: .95rem; color: var(--text-soft); font-weight: 500; transition: color .2s; position: relative; }
+.nav-links { display: flex; align-items: center; gap: 16px; }
+.nav-links a:not(.btn) { font-size: .9rem; color: var(--text-soft); font-weight: 500; transition: color .2s; position: relative; }
 .nav-links a:not(.btn):hover { color: var(--text); }
 .nav-links a:not(.btn)::after {
   content: ''; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
@@ -421,19 +421,10 @@ body::before {
 .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 960px) {
-  .hero { min-height: unset; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 48px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-  .hero-card { max-width: 480px; }
-  .hero-bg-overlay { background: rgba(11,16,29,.93); }
-  .appt-wrap, .contact-wrap { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: repeat(2,1fr); }
-  .steps { grid-template-columns: repeat(2,1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .type-grid { grid-template-columns: repeat(2,1fr); }
-  .brand-grid { grid-template-columns: repeat(3,1fr); }
-
-  /* Navbar → hamburger menü */
+/* Navbar → hamburger menü. Kırılma noktası 960px'in ustunde ve ayrı tutuluyor:
+   marka + rozet + 7 nav linki + 2 buton tek satırda ~1450px altında sıkışıp
+   üst üste biniyordu (bkz. gerçek pencerede gözlemlenen çakışma). */
+@media (max-width: 1220px) {
   .hamburger { display: block; }
   .nav-links {
     position: fixed; inset: var(--nav-h) 0 auto 0; flex-direction: column; gap: 0;
@@ -446,6 +437,18 @@ body::before {
   .nav-links a:not(.btn)::after { display: none; }
   .nav-links .nav-only-desktop { display: block; padding: 14px 26px 6px; }
   .nav-links .nav-only-desktop .btn { width: 100%; }
+}
+@media (max-width: 960px) {
+  .hero { min-height: unset; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 48px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero-card { max-width: 480px; }
+  .hero-bg-overlay { background: rgba(11,16,29,.93); }
+  .appt-wrap, .contact-wrap { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .steps { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .type-grid { grid-template-columns: repeat(2,1fr); }
+  .brand-grid { grid-template-columns: repeat(3,1fr); }
 }
 @media (max-width: 720px) {
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
