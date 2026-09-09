@@ -171,6 +171,16 @@
 
   function openAuth(mode = 'login') { setAuthMode(mode); openModal('authModal'); }
 
+  // Giriş sonrası kullanıcıyı randevu bölümüne getirir. Bu sitede hesabın tek
+  // amacı randevu almak, o yüzden her başarılı girişten sonra oraya iniyoruz.
+  // Kart (auth kapısı → form) yeniden çizildikten sonra kaydırmak için bir tur bekliyoruz.
+  function goToAppointment() {
+    setTimeout(() => {
+      const el = document.getElementById('randevu');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  }
+
   function clearFieldErrors(form) { $$('.field.invalid', form).forEach(f => f.classList.remove('invalid')); }
   function markInvalid(input, msg) {
     const field = input.closest('.field');
@@ -204,7 +214,7 @@
           await FB.auth.signInWithEmailAndPassword(data.email.trim(), data.password);
           toast('Tekrar hoş geldiniz!', '', 'success');
         }
-        closeModal('authModal'); form.reset();
+        closeModal('authModal'); form.reset(); goToAppointment();
       } catch (err) {
         markInvalid(form.password, firebaseErr(err));
       } finally { btn.disabled = false; }
@@ -217,12 +227,12 @@
       if (users.some(u => u.email.toLowerCase() === data.email.toLowerCase())) { markInvalid(form.email, 'Bu e-posta zaten kayıtlı.'); return; }
       const user = { id: uid(), name: data.name.trim(), email: data.email.toLowerCase(), phone: fmtPhone(data.phone), pass: simpleHash(data.password), provider: 'email', createdAt: Date.now() };
       users.push(user); Store.saveUsers(users);
-      loginSessionLocal(user); closeModal('authModal');
+      loginSessionLocal(user); closeModal('authModal'); goToAppointment();
       toast('Hoş geldiniz, ' + user.name.split(' ')[0] + '!', 'Hesabınız oluşturuldu.', 'success');
     } else {
       const user = users.find(u => u.email.toLowerCase() === data.email.toLowerCase());
       if (!user || user.pass !== simpleHash(data.password)) { markInvalid(form.password, 'E-posta veya şifre hatalı.'); return; }
-      loginSessionLocal(user); closeModal('authModal');
+      loginSessionLocal(user); closeModal('authModal'); goToAppointment();
       toast('Tekrar hoş geldiniz!', user.name, 'success');
     }
     form.reset();
@@ -232,7 +242,7 @@
     if (FB.on) {
       try {
         await FB.auth.signInWithPopup(FB.provider);
-        closeModal('authModal');
+        closeModal('authModal'); goToAppointment();
         toast('Google ile giriş yapıldı', '', 'success');
       } catch (err) {
         toast('Giriş yapılamadı', firebaseErr(err), 'error');
@@ -243,7 +253,7 @@
     const users = Store.getUsers();
     let user = users.find(u => u.provider === 'google');
     if (!user) { user = { id: uid(), name: 'Google Kullanıcısı', email: 'kullanici@gmail.com', phone: '', pass: null, provider: 'google', createdAt: Date.now() }; users.push(user); Store.saveUsers(users); }
-    loginSessionLocal(user); closeModal('authModal');
+    loginSessionLocal(user); closeModal('authModal'); goToAppointment();
     toast('Google ile giriş yapıldı', 'Demo modu — randevuda telefonunuzu ekleyin.', 'success');
   }
 
