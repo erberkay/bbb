@@ -12,3 +12,6 @@
 
 # Node (ileride kullanılırsa)
 node_modules/
+
+# Yerel sunucu logları
+serve.log

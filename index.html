@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <script>if('IntersectionObserver' in window)document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HB Şanzıman — Bursa Otomatik Şanzıman Uzmanı</title>
   <meta name="description" content="HB Şanzıman — Bursa Nilüfer'de otomatik, DSG ve CVT şanzıman tamiri, revizyonu ve bakımı. Uzman kadro, ücretsiz arıza tespiti. Online randevu alın.">
   <meta name="theme-color" content="#0a0e17">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="canonical" href="https://hbsanziman.com/">
   <meta name="keywords" content="şanzıman, otomatik şanzıman, Bursa şanzıman, Nilüfer şanzıman, şanzıman tamiri, otomatik şanzıman tamiri, DSG şanzıman, CVT şanzıman, tork konvertörü, şanzıman revizyonu, şanzıman yağı değişimi, HB Şanzıman, Bursa oto servis">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="HB Şanzıman">
 
   <!-- Coğrafi konum (yerel SEO) -->
@@ -26,13 +29,16 @@
   <meta property="og:url" content="https://hbsanziman.com/">
   <meta property="og:site_name" content="HB Şanzıman">
   <meta property="og:locale" content="tr_TR">
-  <meta property="og:image" content="https://hbsanziman.com/assets/logo.svg">
+  <meta property="og:image" content="https://hbsanziman.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HB Şanzıman — Bursa Otomatik Şanzıman Uzmanı">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="HB Şanzıman — Bursa Otomatik Şanzıman Uzmanı">
   <meta name="twitter:description" content="Otomatik, DSG ve CVT şanzıman tamiri ve revizyonu. Online randevu alın.">
-  <meta name="twitter:image" content="https://hbsanziman.com/assets/logo.svg">
+  <meta name="twitter:image" content="https://hbsanziman.com/assets/og-image.png">
 
   <!-- Yapısal Veri: Yerel İşletme (schema.org AutoRepair) -->
   <script type="application/ld+json">
@@ -80,26 +86,156 @@
   }
   </script>
 
+
+  <!-- Yapısal Veri: Web Sitesi -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://hbsanziman.com/#website",
+  "name": "HB Şanzıman",
+  "url": "https://hbsanziman.com/",
+  "inLanguage": "tr-TR",
+  "publisher": {
+    "@id": "https://hbsanziman.com/#organization"
+  }
+}
+  </script>
+
+  <!-- Yapısal Veri: Kurum -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://hbsanziman.com/#organization",
+  "name": "HB Şanzıman",
+  "legalName": "HB Şanzıman Otomotiv",
+  "url": "https://hbsanziman.com/",
+  "logo": "https://hbsanziman.com/assets/logo.svg",
+  "image": "https://hbsanziman.com/assets/og-image.png",
+  "email": "info@hbsanziman.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Üçevler, 28. Sk. 27. Blok No:51",
+    "addressLocality": "Nilüfer",
+    "addressRegion": "Bursa",
+    "postalCode": "16120",
+    "addressCountry": "TR"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+905304918005",
+      "contactType": "customer service",
+      "areaServed": "TR",
+      "availableLanguage": [
+        "Turkish"
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- Yapısal Veri: Sıkça Sorulan Sorular -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Şanzıman arıza tespiti ücretli mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Hata kodu okuma, yağ kontrolü ve yol testini içeren standart arıza tespitimiz ücretsizdir ve sizi hiçbir şeye bağlamaz. Onarım kararını, bulguları ve maliyeti gördükten sonra siz verirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şanzıman tamiri ne kadar sürer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arızanın kapsamına göre değişir. Solenoid veya valf bloğu müdahalesi genellikle 1 iş günü içinde tamamlanır. Komple revizyon, parça teminine bağlı olarak 2–5 iş günü sürebilir. Kesin süre arıza tespiti sonrasında bildirilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yaptığınız işe garanti veriyor musunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. İşçilik ve değişen parçalar için garanti veriyoruz. Garanti kapsamı ve süresi, uygulanan işleme göre teslim sırasında yazılı olarak belirtilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Telefonda fiyat öğrenebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aracınızın marka, model ve şanzıman tipini bildiğimizde genel bir aralık paylaşabiliriz, ancak bu bir teklif değildir. Aynı şikâyetin arkasında çok farklı maliyetlerde arızalar olabilir; gerçekçi fiyat tespitten sonra çıkar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şanzıman yağı ne zaman değişmeli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klasik otomatiklerde genel aralık 60.000–80.000 km, ıslak debriyajlı DSG kutularda yaklaşık 60.000 km, CVT şanzımanlarda ise 40.000–60.000 km’dir. Şehir içi yoğun kullanım ve yük çekiminde bu aralıkların kısaltılmasını öneriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi markalara servis veriyorsunuz?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Volkswagen, Audi, Mercedes-Benz, BMW, Ford, Renault, Dacia, Toyota, Honda, Hyundai ve Kia başta olmak üzere çoğu binek ve hafif ticari araca servis veriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Şanzıman arızasıyla araç kullanmaya devam edebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Belirtiye bağlıdır. Kayma, uğultu, acil moda geçiş ve vitesin devreye girmemesi gibi durumlarda sürüşe devam etmek hasarı belirgin şekilde büyütür. Aracı zorlamadan kontrole getirmenizi öneririz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Her arızada komple revizyon mu gerekir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Birçok arıza solenoid değişimi, valf bloğu revizyonu, yağ ve filtre bakımı veya adaptasyon ile çözülür. Revizyon yalnızca birden fazla bileşende aşınma olduğunda önerilir."
+      }
+    }
+  ]
+}
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"></noscript>
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/pages.css">
 </head>
 <body>
+  <a class="skip-link" href="#anasayfa">İçeriğe geç</a>
 
   <!-- ===================== NAVBAR ===================== -->
   <nav class="nav" id="nav">
     <div class="container">
       <a href="#" class="brand" aria-label="HB Şanzıman">
-        <img src="assets/logo.svg" class="logo" alt="HB Şanzıman Logo">
+        <img src="assets/logo.svg" class="logo" width="40" height="40" alt="HB Şanzıman Logo">
         <span class="brand-text"><b>HB ŞANZIMAN</b><span>Bursa · Nilüfer</span></span>
       </a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#anasayfa">Anasayfa</a></li>
-        <li><a href="#hizmetler">Hizmetler</a></li>
-        <li><a href="#neden-biz">Neden Biz</a></li>
-        <li><a href="#surec">Süreç</a></li>
+        <li><a href="hizmetler/">Hizmetler</a></li>
+        <li><a href="markalar/">Markalar</a></li>
+        <li><a href="bolgeler/">Bölgeler</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="sss/">S.S.S.</a></li>
         <li><a href="#iletisim">İletişim</a></li>
         <li class="nav-only-desktop"><a href="#randevu" class="btn btn-primary btn-sm">Randevu Al</a></li>
       </ul>
@@ -109,7 +245,7 @@
           <!-- JS: giriş/kullanıcı alanı buraya -->
           <button class="btn btn-ghost btn-sm" id="navLoginBtn">Giriş Yap</button>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Menü">
+        <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -181,34 +317,47 @@
       <div class="grid grid-3" style="margin-top:48px">
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-          <h3>Otomatik Şanzıman Tamiri</h3>
+          <h3><a href="hizmetler/otomatik-sanziman-tamiri/">Otomatik Şanzıman Tamiri</a></h3>
           <p>Tork konvertörü, valf gövdesi ve elektronik aksam dahil komple otomatik şanzıman onarımı ve arıza tespiti.</p>
+          <a href="hizmetler/otomatik-sanziman-tamiri/" class="card-more">Detaylı bilgi →</a>
         </div>
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/></svg></div>
-          <h3>Tork Konvertörü Tamiri</h3>
+          <h3><a href="hizmetler/tork-konvertoru-tamiri/">Tork Konvertörü Tamiri</a></h3>
           <p>Otomatik şanzımanın tork konvertöründeki titreme, kayma ve kilitlenme arızalarında uzman onarım ve yenileme.</p>
+          <a href="hizmetler/tork-konvertoru-tamiri/" class="card-more">Detaylı bilgi →</a>
         </div>
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>DSG & CVT Şanzıman</h3>
+          <h3><a href="hizmetler/dsg-sanziman-tamiri/">DSG & CVT Şanzıman</a></h3>
           <p>Çift kavramalı (DSG) ve sürekli değişken (CVT) şanzımanlarda özel ekipmanla mekatronik onarım ve yazılım.</p>
+          <a href="hizmetler/dsg-sanziman-tamiri/" class="card-more">Detaylı bilgi →</a>
         </div>
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>Şanzıman Revizyonu</h3>
+          <h3><a href="hizmetler/sanziman-revizyonu/">Şanzıman Revizyonu</a></h3>
           <p>Komple sökme, parça yenileme ve fabrika standardında yeniden montaj ile şanzımanınızı ilk günkü performansına döndürüyoruz.</p>
+          <a href="hizmetler/sanziman-revizyonu/" class="card-more">Detaylı bilgi →</a>
         </div>
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 12h4l2 6 4-12 2 6h6"/></svg></div>
-          <h3>Arıza Tespiti (Diagnostik)</h3>
+          <h3><a href="hizmetler/sanziman-ariza-tespiti/">Arıza Tespiti (Diagnostik)</a></h3>
           <p>Bilgisayarlı test cihazlarıyla ücretsiz arıza tespiti. Sorunu tam olarak belirleyip şeffaf fiyat teklifi sunuyoruz.</p>
+          <a href="hizmetler/sanziman-ariza-tespiti/" class="card-more">Detaylı bilgi →</a>
         </div>
         <div class="card reveal">
           <div class="ic-lg"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 12l-2 0M12 5l0-2M19 12l2 0M12 19l0 2"/><circle cx="12" cy="12" r="5"/><path d="M12 10v4"/></svg></div>
-          <h3>Şanzıman Yağı & Bakım</h3>
+          <h3><a href="hizmetler/sanziman-yagi-degisimi/">Şanzıman Yağı & Bakım</a></h3>
           <p>Marka onaylı yağ değişimi, filtre yenileme ve periyodik bakım ile şanzıman ömrünü uzatın, arızayı önleyin.</p>
+          <a href="hizmetler/sanziman-yagi-degisimi/" class="card-more">Detaylı bilgi →</a>
         </div>
+      </div>
+
+      <div class="explore-row" id="hizmet-kesif">
+        <a href="hizmetler/">Tüm hizmetlerimiz →</a>
+        <a href="markalar/">Markaya göre servis →</a>
+        <a href="bolgeler/">Hizmet bölgelerimiz →</a>
+        <a href="blog/">Şanzıman rehberleri →</a>
       </div>
     </div>
   </section>
@@ -297,6 +446,58 @@
     </div>
   </section>
 
+
+  <!-- ===================== SIKÇA SORULAN SORULAR ===================== -->
+  <section class="section" id="sss" style="background:var(--bg-2)">
+    <div class="container narrow">
+      <div class="center reveal">
+        <span class="section-tag">S.S.S.</span>
+        <h2 class="section-title">Sıkça sorulan <span class="text-gold">sorular</span></h2>
+        <p class="section-sub">Müşterilerimizden en çok aldığımız soruların dürüst cevapları.</p>
+      </div>
+
+      <div class="faq reveal" style="margin-top:40px">
+        <details>
+          <summary>Şanzıman arıza tespiti ücretli mi?</summary>
+          <div class="faq-a"><p>Hayır. Hata kodu okuma, yağ kontrolü ve yol testini içeren standart arıza tespitimiz ücretsizdir ve sizi hiçbir şeye bağlamaz. Onarım kararını, bulguları ve maliyeti gördükten sonra siz verirsiniz.</p></div>
+        </details>
+        <details>
+          <summary>Şanzıman tamiri ne kadar sürer?</summary>
+          <div class="faq-a"><p>Arızanın kapsamına göre değişir. Solenoid veya valf bloğu müdahalesi genellikle 1 iş günü içinde tamamlanır. Komple revizyon, parça teminine bağlı olarak 2–5 iş günü sürebilir. Kesin süre arıza tespiti sonrasında bildirilir.</p></div>
+        </details>
+        <details>
+          <summary>Yaptığınız işe garanti veriyor musunuz?</summary>
+          <div class="faq-a"><p>Evet. İşçilik ve değişen parçalar için garanti veriyoruz. Garanti kapsamı ve süresi, uygulanan işleme göre teslim sırasında yazılı olarak belirtilir.</p></div>
+        </details>
+        <details>
+          <summary>Telefonda fiyat öğrenebilir miyim?</summary>
+          <div class="faq-a"><p>Aracınızın marka, model ve şanzıman tipini bildiğimizde genel bir aralık paylaşabiliriz, ancak bu bir teklif değildir. Aynı şikâyetin arkasında çok farklı maliyetlerde arızalar olabilir; gerçekçi fiyat tespitten sonra çıkar.</p></div>
+        </details>
+        <details>
+          <summary>Şanzıman yağı ne zaman değişmeli?</summary>
+          <div class="faq-a"><p>Klasik otomatiklerde genel aralık 60.000–80.000 km, ıslak debriyajlı DSG kutularda yaklaşık 60.000 km, CVT şanzımanlarda ise 40.000–60.000 km’dir. Şehir içi yoğun kullanım ve yük çekiminde bu aralıkların kısaltılmasını öneriyoruz.</p></div>
+        </details>
+        <details>
+          <summary>Hangi markalara servis veriyorsunuz?</summary>
+          <div class="faq-a"><p>Volkswagen, Audi, Mercedes-Benz, BMW, Ford, Renault, Dacia, Toyota, Honda, Hyundai ve Kia başta olmak üzere çoğu binek ve hafif ticari araca servis veriyoruz.</p></div>
+        </details>
+        <details>
+          <summary>Şanzıman arızasıyla araç kullanmaya devam edebilir miyim?</summary>
+          <div class="faq-a"><p>Belirtiye bağlıdır. Kayma, uğultu, acil moda geçiş ve vitesin devreye girmemesi gibi durumlarda sürüşe devam etmek hasarı belirgin şekilde büyütür. Aracı zorlamadan kontrole getirmenizi öneririz.</p></div>
+        </details>
+        <details>
+          <summary>Her arızada komple revizyon mu gerekir?</summary>
+          <div class="faq-a"><p>Hayır. Birçok arıza solenoid değişimi, valf bloğu revizyonu, yağ ve filtre bakımı veya adaptasyon ile çözülür. Revizyon yalnızca birden fazla bileşende aşınma olduğunda önerilir.</p></div>
+        </details>
+      </div>
+
+      <div class="explore-row" style="margin-top:28px">
+        <a href="sss/">Tüm soruları görün →</a>
+        <a href="blog/">Rehber yazılarımız →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== İLETİŞİM ===================== -->
   <section class="section" id="iletisim">
     <div class="container">
@@ -340,7 +541,7 @@
       <div class="footer-grid">
         <div>
           <a href="#" class="brand">
-            <img src="assets/logo.svg" class="logo" alt="HB Şanzıman">
+            <img src="assets/logo.svg" class="logo" width="40" height="40" alt="HB Şanzıman">
             <span class="brand-text"><b>HB ŞANZIMAN</b><span>Bursa · Nilüfer</span></span>
           </a>
           <p>Bursa Nilüfer'de otomatik ve manuel şanzıman tamiri, revizyonu ve bakımında uzman servisiniz. Garantili işçilik, güvenilir hizmet.</p>
@@ -348,20 +549,23 @@
         <div>
           <h5>Hizmetler</h5>
           <ul>
-            <li><a href="#hizmetler">Otomatik Şanzıman</a></li>
-            <li><a href="#hizmetler">Tork Konvertörü</a></li>
-            <li><a href="#hizmetler">DSG & CVT</a></li>
-            <li><a href="#hizmetler">Revizyon</a></li>
-            <li><a href="#hizmetler">Yağ & Bakım</a></li>
+            <li><a href="hizmetler/otomatik-sanziman-tamiri/">Otomatik Şanzıman Tamiri</a></li>
+            <li><a href="hizmetler/dsg-sanziman-tamiri/">DSG Şanzıman Tamiri</a></li>
+            <li><a href="hizmetler/cvt-sanziman-tamiri/">CVT Şanzıman Tamiri</a></li>
+            <li><a href="hizmetler/tork-konvertoru-tamiri/">Tork Konvertörü Tamiri</a></li>
+            <li><a href="hizmetler/mekatronik-tamiri/">Mekatronik Tamiri</a></li>
+            <li><a href="hizmetler/">Tüm hizmetler →</a></li>
           </ul>
         </div>
         <div>
-          <h5>Kurumsal</h5>
+          <h5>Keşfet</h5>
           <ul>
-            <li><a href="#neden-biz">Neden Biz</a></li>
-            <li><a href="#surec">Çalışma Sürecimiz</a></li>
-            <li><a href="#randevu">Randevu Al</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
+            <li><a href="markalar/">Markaya Göre Servis</a></li>
+            <li><a href="bolgeler/">Hizmet Bölgeleri</a></li>
+            <li><a href="blog/">Blog & Rehberler</a></li>
+            <li><a href="sss/">Sıkça Sorulan Sorular</a></li>
+            <li><a href="hakkimizda/">Hakkımızda</a></li>
+            <li><a href="iletisim/">İletişim</a></li>
           </ul>
         </div>
         <div>
@@ -370,6 +574,12 @@
             <li><a href="#iletisim">Üçevler, 28. Sk. No:51<br>Nilüfer / Bursa</a></li>
             <li><a href="tel:+905304918005">0530 491 80 05</a></li>
             <li><a href="mailto:info@hbsanziman.com">info@hbsanziman.com</a></li>
+          </ul>
+          <h5 style="margin-top:18px">Yasal</h5>
+          <ul>
+            <li><a href="gizlilik-politikasi/">Gizlilik Politikası</a></li>
+            <li><a href="kvkk-aydinlatma-metni/">KVKK Aydınlatma Metni</a></li>
+            <li><a href="cerez-politikasi/">Çerez Politikası</a></li>
           </ul>
         </div>
       </div>
@@ -387,7 +597,7 @@
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
       <div class="modal-head">
-        <img src="assets/logo.svg" class="logo" alt="HB">
+        <img src="assets/logo.svg" class="logo" width="40" height="40" alt="HB">
         <h3 id="authTitle">Giriş Yap</h3>
         <p id="authSubtitle">Randevu almak için hesabınıza giriş yapın</p>
       </div>
@@ -530,5 +740,21 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
   <script src="assets/firebase-config.js"></script>
   <script src="assets/app.js"></script>
+
+  <!-- Mobil hızlı eylem çubuğu -->
+  <div class="mobile-bar">
+    <a href="tel:+905304918005" class="mb-item">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+      <span>Ara</span>
+    </a>
+    <a href="https://wa.me/905304918005" class="mb-item" rel="noopener" target="_blank">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1a8 8 0 01-2.4-1.5 9 9 0 01-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.1 4.5 2.5 1 3 .8 3.6.8.5-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.4l-.7-.4zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#randevu" class="mb-item primary">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <span>Randevu</span>
+    </a>
+  </div>
 </body>
 </html>

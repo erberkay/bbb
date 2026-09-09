@@ -1,4 +1,16 @@
+# HB Şanzıman — robots.txt
 User-agent: *
 Allow: /
+
+# Yapay zekâ / tarama botlarına açık (marka görünürlüğü için)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Gereksiz tarama yükünü azalt
+Disallow: /build/
+Disallow: /*?*utm_
 
 Sitemap: https://hbsanziman.com/sitemap.xml

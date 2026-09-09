@@ -48,6 +48,20 @@
      STORE — localStorage veri katmanı (Firebase yoksa)
   ----------------------------------------------------- */
   const KEY = { users: 'hb_users', appts: 'hb_appointments', session: 'hb_session', admin: 'hb_admin_session' };
+  /* ⚠️  GÜVENLİK UYARISI — YAYINA ALMADAN ÖNCE MUTLAKA OKUYUN
+     Aşağıdaki kullanıcı adı ve şifre TARAYICI KAYNAK KODUNDA AÇIKTIR.
+     Siteyi ziyaret eden herkes "Sayfa kaynağını görüntüle" ile okuyabilir.
+     Bu yapı yalnızca DEMO/PROTOTİP amaçlıdır ve gerçek bir koruma sağlamaz.
+
+     Yayına almadan önce yapılması gerekenler:
+       1. Bu sabiti tamamen kaldırın.
+       2. Yönetici girişini Firebase Authentication ile yapın.
+       3. Yetkilendirmeyi SUNUCU TARAFINDA doğrulayın
+          (firestore.rules içindeki isAdmin() fonksiyonu bunun için hazırdır —
+           oradaki YONETICI_EPOSTA@gmail.com değerini kendi adresinizle değiştirin).
+       4. Randevu verilerini localStorage yerine Firestore'da tutun.
+     Ayrıntı için: SEO-YAPILACAKLAR.md → "0. Güvenlik" bölümü.
+  */
   const ADMIN_CREDS = { username: 'admin', password: 'hb2024' };
 
   const Store = {
@@ -595,15 +609,29 @@
     window.addEventListener('scroll', onScroll); onScroll();
 
     const burger = $('#hamburger'), links = $('#navLinks');
-    burger.addEventListener('click', () => links.classList.toggle('open'));
-    $$('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    burger.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      burger.classList.toggle('active', open);
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    $$('#navLinks a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
 
     $('#year').textContent = new Date().getFullYear();
 
+    // Giris animasyonu.
+    // NOT: .reveal varsayilan olarak GORUNUR (pages.css). Gizleme yalnizca
+    // <html class="js"> varken uygulanir. Asagidaki guvenlik agi, gozlemci
+    // herhangi bir nedenle tetiklenmezse icerigin gizli kalmasini onler.
+    const revealAll = () => $$('.reveal').forEach(el => el.classList.add('in'));
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
     $$('.reveal').forEach(el => io.observe(el));
+    window.addEventListener('load', () => setTimeout(revealAll, 2500));
 
     const cio = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); } });
