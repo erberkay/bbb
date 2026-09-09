@@ -1,0 +1,244 @@
+[
+  {
+    "slug": "dsg-sanziman-tamiri",
+    "kicker": "Çift Kavramalı · VAG Grubu",
+    "title": "DSG Şanzıman Tamiri Bursa | DQ200 DQ250 DQ381 | HB",
+    "meta": "Bursa Nilüfer'de DSG şanzıman tamiri. DQ200, DQ250 ve DQ381'de mekatronik arızası, kavrama aşınması ve kalkışta titreme şikâyetlerinde arıza tespiti ve onarım.",
+    "h1": "DSG Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "DSG Şanzıman Tamiri",
+    "service_type": "Otomatik şanzıman onarımı",
+    "intro": "Volkswagen, Seat, Škoda ve Cupra modellerindeki DSG şanzımanlarda arıza tespiti, mekatronik onarımı, kavrama yenileme ve revizyon. Sökmeden önce ölçüyor, kapsamı onayınıza sunuyoruz.",
+    "sections": [
+      {
+        "h2": "DSG neden farklı onarılır?",
+        "body": [
+          "DSG, iki ayrı kavramanın tek gövdede çalıştığı çift kavramalı otomatik şanzımandır. Klasik otomatiklerden farkı, kavramaların mekatronik adı verilen elektronik-hidrolik kontrol ünitesiyle yönetilmesidir.",
+          "Bu yüzden aynı belirti birden fazla kaynaktan gelebilir: kalkıştaki titreme kavrama aşınmasından da olabilir, mekatroniğin basınç kontrolünden de. İkisi ayrı ayrı ölçülmeden parça değiştirmek çoğu zaman arızayı geri getirir."
+        ]
+      },
+      {
+        "h2": "Yaygın DSG arıza belirtileri",
+        "body": [
+          "Belirtiler genellikle soğuk çalıştırmada ve rampa kalkışında belirginleşir; erken aşamada aralıklı görülür, ilerledikçe sürekli hâle gelir."
+        ],
+        "items": [
+          "<b>Kalkışta titreme (judder)</b> — özellikle kuru kavramalı DQ200'de sık görülür",
+          "<b>Vites geçişinde sarsıntı ve vuruntu</b> — 1→2 ve 2→3 geçişlerinde sertlik",
+          "<b>Vites göstergesinin yanıp sönmesi</b> — şanzıman kendini korumaya alır, araç sürülmeye devam edilmemelidir",
+          "<b>Yokuşta geri kaçırma, geç kavrama</b> — hidrolik basınç yetersizliğinde görülür",
+          "<b>Geri vitese geçmeme</b> — valf takılması ve basınç kaybında tipiktir"
+        ]
+      },
+      {
+        "h2": "DQ200 — 7 ileri kuru kavrama",
+        "body": [
+          "Golf, Polo, Passat, Octavia ve Leon gibi düşük torklu modellerde kullanılır. Mekatronik ünitesi kendi yağ devresine sahiptir.",
+          "Bu tipte en sık karşılaştığımız iki başlık kuru kavrama aşınması ve mekatronik arızasıdır. Kavrama yağ içinde soğutulmadığı için şehir içi dur-kalk kullanımda daha çok ısınır."
+        ]
+      },
+      {
+        "h2": "DQ250 ve DQ381 — ıslak kavramalı",
+        "body": [
+          "DQ250 6 ileri, DQ381 ise onun yerini alan 7 ileri ıslak kavramalı tiptir. Kavramalar yağ içinde çalıştığı için ısı yönetimi daha iyidir.",
+          "Buna karşılık yağ ve filtre bakımı ihmal edildiğinde kavrama ve valf gövdesi hızla yıpranır. Bu tiplerde bakım aralığına uymak doğrudan şanzıman ömrünü belirler."
+        ]
+      },
+      {
+        "h2": "Onarım sürecimiz",
+        "body": [
+          "Önce sizi dinliyoruz: titreme ne zaman başlıyor, hangi viteste, soğukken mi? Ardından diagnostik ile hata kayıtlarını, kavrama aşınma değerlerini ve basınç verilerini okuyoruz, yol testi yapıyoruz.",
+          "Gerekirse şanzıman sökülerek iç kontrol yapılır. Tespit sonrası yapılacak işlem ve değişecek parça kalemleri onayınıza sunulur. İşlem bittiğinde adaptasyon yapılır ve yol testiyle sonucu birlikte görürüz."
+        ]
+      }
+    ],
+    "faqs": [
+      ["DSG şanzıman yağı ne zaman değişmeli?", "Islak kavramalı tiplerde üretici ve kullanım koşuluna göre genellikle 60.000–80.000 km aralığında yağ ve filtre değişimi önerilir. Şehir içi yoğun dur-kalk kullanımda aralığı kısaltmak gerekebilir."],
+      ["Mekatronik tamir mi edilir, değişir mi?", "Arızanın elektronik kartta mı yoksa valf gövdesinde mi olduğuna bağlıdır. Tespit sonrası onarım mümkünse önce onarım değerlendirilir; komple değişim ilk seçenek değildir."],
+      ["Titreme sadece kavramadan mı olur?", "Hayır. Kalkış titremesi mekatroniğin basınç kontrolünden de gelebilir. Bu yüzden parça değişmeden önce ölçüm yapıyoruz."],
+      ["DSG tamiri ne kadar sürer?", "İşlemin kapsamına ve parça teminine göre değişir. Net süreyi arıza tespitinden sonra, işe başlamadan bildiriyoruz."],
+      ["Fiyat neye göre belirleniyor?", "Şanzıman kodu, arızanın kavrama/mekatronik/gövde ayrımı, değişecek parça sayısı ve şanzımanın sökülüp sökülmeyeceği belirleyicidir. Telefonda net fiyat vermiyoruz; aracı görmeden çıkarılan rakam yanıltıcı olur."]
+    ],
+    "related": ["s-tronic-sanziman-tamiri", "cvt-sanziman-tamiri", "ford-powershift-sanziman-tamiri"]
+  },
+  {
+    "slug": "s-tronic-sanziman-tamiri",
+    "kicker": "Çift Kavramalı · Audi",
+    "title": "Audi S-Tronic Şanzıman Tamiri Bursa | DL501 | HB",
+    "meta": "Bursa Nilüfer'de Audi S-Tronic şanzıman tamiri. DL501 ve DL382'de mekatronik arızası, kavrama aşınması, sarsıntı ve titreme için arıza tespiti ve onarım.",
+    "h1": "Audi S-Tronic Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "Audi S-Tronic Şanzıman Tamiri",
+    "service_type": "Otomatik şanzıman onarımı",
+    "intro": "Audi'nin çift kavramalı şanzımanlarında (S-Tronic) arıza tespiti, mekatronik onarımı ve kavrama yenileme. Bağımsız uzman servis olarak önce ölçüyor, sonra karar veriyoruz.",
+    "sections": [
+      {
+        "h2": "S-Tronic nedir?",
+        "body": [
+          "S-Tronic, Audi'nin çift kavramalı şanzımanlarına verdiği addır. Enine motorlu modellerde DSG ile aynı aileden gelir; quattro'lu boyuna motorlu modellerde ise DL501 ve DL382 kullanılır.",
+          "Boyuna tipler ayrı yağ devrelerine sahiptir. Bu yüzden bakım aralıkları ve onarım yaklaşımı enine tiplerden farklıdır."
+        ]
+      },
+      {
+        "h2": "DL501 ve DL382'de görülen belirtiler",
+        "body": [
+          "Hızlanma sırasında titreme veya kavrama kaçırma hissi genellikle kavrama balata aşınmasıyla ilişkilidir.",
+          "Gecikmeli vites atma, sarsıntı, gösterge uyarısı ve aracın emniyet moduna geçmesi ise sıklıkla mekatronik veya valf gövdesi kaynaklıdır. Bu ayrımı yapmadan yapılan işlem çoğu zaman kalıcı olmaz."
+        ]
+      },
+      {
+        "h2": "\"Ömür boyu yağ\" yanılgısı",
+        "body": [
+          "Bu şanzımanlarda yağın ömür boyu değişmeden kalabileceği yaygın bir kabuldür. Pratikte yağın kilometreyle özelliğini kaybettiğini görüyoruz.",
+          "İhmal edildiğinde mekatronik ve kavrama üzerindeki yük artar. Doğru spesifikasyonda yağ ve filtre kullanımı burada belirleyicidir."
+        ]
+      },
+      {
+        "h2": "Onarım yaklaşımımız",
+        "body": [
+          "Kavrama aşınma değerleri, hidrolik basınç ve hata kayıtları okunur; ardından arızanın kaynağına yönelik bir onarım planı çıkarılır.",
+          "Kavrama değişimi gerektiğinde mekatroniğin de zorunlu olarak değişmesi gerekmez — ayrıca test edilir, sağlamsa yerinde kalır."
+        ]
+      }
+    ],
+    "faqs": [
+      ["DL501 yağı ne zaman değişir?", "Kullanım koşuluna bağlı olmakla birlikte genellikle 60.000–80.000 km aralığı önerilir."],
+      ["Kavrama değişince mekatronik de değişir mi?", "Zorunlu değildir. Mekatronik ayrıca test edilir; sağlamsa değiştirilmez."],
+      ["Yetkili servis şart mı?", "Hayır. HB bağımsız bir uzman şanzıman servisidir; yapılacak işlem ve parça kalemleri onayınıza sunulur."],
+      ["Aracı çekiciyle mi getirmeliyim?", "Emniyet moduna geçmiş veya vites atmayan araçlarda çekici öneriyoruz."]
+    ],
+    "related": ["dsg-sanziman-tamiri", "cvt-sanziman-tamiri"]
+  },
+  {
+    "slug": "ford-powershift-sanziman-tamiri",
+    "kicker": "Çift Kavramalı · Ford",
+    "title": "Ford PowerShift Şanzıman Tamiri | Bursa Nilüfer | HB",
+    "meta": "Focus, Fiesta ve C-Max'te PowerShift (DPS6) titreme, sarsıntı ve kavrama arızaları. Bursa Nilüfer'de bağımsız uzman servisten arıza tespiti ve onarım.",
+    "h1": "Ford PowerShift (DPS6) Şanzıman Tamiri",
+    "service_name": "Ford PowerShift Şanzıman Tamiri",
+    "service_type": "Otomatik şanzıman onarımı",
+    "intro": "Focus, Fiesta ve C-Max modellerindeki PowerShift şanzımanlarda titreme ve sarsıntı şikâyetlerinin kaynağını ayırıyor, sızıntı giderilmeden kavrama değiştirmiyoruz.",
+    "sections": [
+      {
+        "h2": "PowerShift nedir, neden çok konuşuluyor?",
+        "body": [
+          "PowerShift (DPS6 / 6DCT250), Focus, Fiesta ve C-Max'te kullanılan kuru çift kavramalı otomatik şanzımandır. Kavramalar yağ içinde soğutulmadığı için şehir içi dur-kalk kullanımda ısınır ve zamanla karakter değiştirir.",
+          "Türkiye'deki geniş Focus ve Fiesta parkı nedeniyle bu şikâyetler otomotiv forumlarında sık paylaşılır. Sorunun tek bir kaynağı yoktur; bu yüzden doğru teşhis, yapılan işin kalıcı olup olmayacağını belirler."
+        ]
+      },
+      {
+        "h2": "En sık görülen belirtiler",
+        "body": [
+          "Belirtiler genelde soğuk çalıştırmada ve rampa kalkışında belirginleşir."
+        ],
+        "items": [
+          "Kalkışta titreme ve silkeleme",
+          "1-2 vites geçişinde sarsıntı",
+          "Geri vitese sert giriş",
+          "Gaza geç tepki, devir yükselirken aracın hızlanmaması",
+          "Metalik hışırtı veya takırtı",
+          "Gösterge uyarısı ya da aracın arıza moduna geçmesi"
+        ]
+      },
+      {
+        "h2": "Belirtilerin arkasındaki nedenler",
+        "body": [
+          "Aynı titreme birden fazla sebepten kaynaklanabilir; bu yüzden parça değiştirmeden önce nedeni ayırmak gerekir."
+        ],
+        "items": [
+          "<b>Giriş mili keçelerinden sızan yağın kuru kavramayı ıslatması</b> — titremenin en bilinen sebebi",
+          "Kavrama balata aşınması ve ısı yorgunluğu",
+          "Kavrama aktüatörü, çatal ve bilya yüzeylerinde aşınma",
+          "TCM / mekatronik ünitesi arızası",
+          "Eksik veya bozulmuş adaptasyon ve kalibrasyon değerleri"
+        ]
+      },
+      {
+        "h2": "Onarımda neler yapılıyor?",
+        "body": [
+          "Tespite göre kavrama seti, keçeler, aktüatör-çatal grubu veya TCM ele alınır. Sızıntı giderilmeden sadece kavrama değiştirilirse yeni kavrama kısa sürede yeniden ıslanır ve sorun geri döner.",
+          "İşlem sonrası adaptasyon ve kalibrasyon yapılmadan araç doğru vites geçişi yapmaz. Teslimden önce yol testiyle sonucu birlikte görüyoruz."
+        ]
+      },
+      {
+        "h2": "Şanzıman ömrünü uzatan kullanım",
+        "body": [
+          "Trafikte frenle tutmak yerine el freni veya park konumunu kullanın, rampada gazla tutmayın, D-R geçişlerini araç tam dururken yapın.",
+          "Titreme başladığında ertelemek aşınmayı diğer parçalara yayar; erken müdahale kapsamı küçük tutar."
+        ]
+      }
+    ],
+    "faqs": [
+      ["Titreme kendi kendine geçer mi?", "Hayır. Azalıp artabilir ama nedeni ortadan kalkmaz."],
+      ["Yazılım güncellemesi çözer mi?", "Mekanik aşınma veya yağ bulaşması varsa çözmez; belirtiyi bir süre maskeleyebilir."],
+      ["Sadece kavrama değişse yeter mi?", "Keçe sızıntısı varsa yetmez. Sızıntı yeni kavramayı da kısa sürede ıslatır."],
+      ["Şanzımanı komple değiştirmek gerekir mi?", "Çoğu durumda gerekmez; arızalı grup hedefli olarak onarılır."],
+      ["Araç arıza moduna geçtiyse çekiciyle mi gelmeli?", "Sarsıntı veya uyarı sürüyorsa çekici en güvenli seçenektir."]
+    ],
+    "related": ["dsg-sanziman-tamiri", "cvt-sanziman-tamiri"]
+  },
+  {
+    "slug": "cvt-sanziman-tamiri",
+    "kicker": "Sürekli Değişken",
+    "title": "CVT Şanzıman Tamiri ve Revizyonu | Bursa Nilüfer | HB",
+    "meta": "CVT şanzımanda titreme, kayma ve vuruntu. CVT gerçekten tamir edilmez mi? Bursa Nilüfer'de bağımsız uzman servisten dürüst tespit ve revizyon.",
+    "h1": "CVT Şanzıman Tamiri ve Revizyonu",
+    "service_name": "CVT Şanzıman Tamiri",
+    "service_type": "Otomatik şanzıman onarımı",
+    "intro": "Sürekli değişken (CVT) şanzımanlarda kayma, vuruntu ve titreme şikâyetleri. Kasnak ve kayış durumunu görmeden kapsam vermiyor, gereksiz komple değişim önermiyoruz.",
+    "sections": [
+      {
+        "h2": "CVT nasıl çalışır?",
+        "body": [
+          "CVT'de sabit dişli kademesi yoktur. Çelik kayış ya da zincir, çapı değişen iki koni kasnak arasında hareket ederek aktarma oranını sürekli değiştirir.",
+          "Bu yüzden sürüşte klasik anlamda \"vites atma\" hissi yerine sabit devirde hızlanma olur. Birçok sürücü bunu arıza sanır; oysa sistemin normal çalışma biçimidir."
+        ]
+      },
+      {
+        "h2": "\"CVT tamir edilmez\" doğru mu?",
+        "body": [
+          "Hayır — bu yaygın ama eksik bir bilgi. CVT'lerin valf gövdesi, solenoid, sensör, kalkış kavraması ve yağ kaynaklı arızalarının büyük kısmı onarılabilir.",
+          "Sınırı belirleyen şey kasnak yüzeyleridir. Koni yüzeyleri derin çizilmiş veya oyulmuşsa kayış ve kasnak takım olarak yenilenir; aksi hâlde yeni kayış kısa sürede yeniden kayar. Yani asıl soru \"tamir edilir mi\" değil, \"iç parçaların durumu ne\" sorusudur."
+        ]
+      },
+      {
+        "h2": "En sık görülen belirtiler",
+        "body": [],
+        "items": [
+          "Kalkışta veya sabit hızda \"küt küt\" vuruntu",
+          "Devir yükselirken aracın hızlanmaması (kayma)",
+          "Soğukta gecikmeli hareket",
+          "Titreşim ve uğultu",
+          "Gaz kesip verirken sarsıntı",
+          "Arıza lambası ve emniyet moduna geçiş"
+        ]
+      },
+      {
+        "h2": "Yaygın arıza nedenleri",
+        "body": [
+          "CVT'ler yağ basıncına çok duyarlıdır; mekanik görünen birçok şikâyetin kaynağı aslında basınç ve yağ kalitesidir."
+        ],
+        "items": [
+          "Kayış veya zincir uzaması, kasnak yüzeyinde aşınma",
+          "Bozulmuş, aşırı ısınmış ya da yanlış tip CVT yağı",
+          "Valf gövdesi ve basınç solenoidi sorunları",
+          "Oran kontrol mekanizması",
+          "Kalkış kavraması veya tork konvertörü",
+          "Hız ve devir sensörleri, kablo tesisatı"
+        ]
+      },
+      {
+        "h2": "Bakımla neyi önlersiniz?",
+        "body": [
+          "CVT'de \"ömür boyu yağ\" yaklaşımı en pahalı hatadır. Üreticinin belirttiği tipe uygun CVT yağının düzenli değişimi, kasnak ve kayış hasarının önündeki en güçlü bariyerdir.",
+          "Yağ değişimi erken evrede belirtiyi hafifletebilir; ancak oluşmuş mekanik aşınmayı geri döndürmez."
+        ]
+      }
+    ],
+    "faqs": [
+      ["CVT gerçekten tamir edilemez mi?", "Edilebilir. Belirleyici olan kasnak ve kayışın durumudur; elektronik ve hidrolik kaynaklı arızaların büyük kısmı onarılabilir."],
+      ["Yağ değişimi arızalı CVT'yi düzeltir mi?", "Erken evrede belirtiyi hafifletebilir, ancak mekanik aşınmayı geri döndürmez."],
+      ["Vuruntu ile titreme aynı şey mi?", "Değil. Farklı grupları işaret ederler; ayırmak için yol testi ve ölçüm gerekir."],
+      ["CVT'li araç çekilebilir mi?", "Riskli. Mümkünse çekici tercih edin."]
+    ],
+    "related": ["dsg-sanziman-tamiri", "ford-powershift-sanziman-tamiri"]
+  }
+]

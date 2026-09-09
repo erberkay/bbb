@@ -125,6 +125,7 @@
   ----------------------------------------------------- */
   function toast(title, msg, type = 'success') {
     const wrap = $('#toastWrap');
+    if (!wrap) return;
     const icons = {
       success: '<path d="M20 6L9 17l-5-5"/>',
       error: '<path d="M18 6L6 18M6 6l12 12"/>',
@@ -156,6 +157,7 @@
 
   function setAuthMode(mode) {
     authMode = mode;
+    if (!$('#authForm')) return; // auth modalı olmayan sayfalar (alt hizmet sayfaları)
     const reg = mode === 'register';
     $('#authTitle').textContent = reg ? 'Hesap Oluştur' : 'Giriş Yap';
     $('#authSubtitle').textContent = reg ? 'Randevu almak için ücretsiz hesap oluşturun' : 'Randevu almak için hesabınıza giriş yapın';
@@ -272,6 +274,7 @@
   function renderAuthUI() {
     const s = getSession();
     const area = $('#navAuthArea');
+    if (!area) return;
     if (s) {
       area.innerHTML = `<div class="nav-user">
         <div class="avatar" title="${esc(s.name)}">${esc(initials(s.name))}</div>
@@ -314,6 +317,7 @@
   const GOOGLE_SVG = `<svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 13.2 4.5 4.5 13.2 4.5 24S13.2 43.5 24 43.5 43.5 34.8 43.5 24c0-1.2-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 16.3 4.5 9.7 8.9 6.3 14.7z"/><path fill="#4CAF50" d="M24 43.5c5.4 0 10.3-2 14-5.3l-6.5-5.5c-2 1.5-4.6 2.3-7.5 2.3-5.2 0-9.6-3.3-11.2-7.9l-6.5 5C9.6 39 16.2 43.5 24 43.5z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.5 5.5c-.5.4 6.7-4.9 6.7-15 0-1.2-.1-2.3-.9-3.5z"/></svg>`;
 
   function renderApptCard() {
+    if (!$('#apptCard')) return; // randevu bölümü olmayan sayfalar
     const card = $('#apptCard');
     const s = getSession();
 
@@ -485,14 +489,19 @@
   ----------------------------------------------------- */
   function bindUI() {
     const nav = $('#nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-    window.addEventListener('scroll', onScroll); onScroll();
+    if (nav) {
+      const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+      window.addEventListener('scroll', onScroll); onScroll();
+    }
 
     const burger = $('#hamburger'), links = $('#navLinks');
-    burger.addEventListener('click', () => links.classList.toggle('open'));
-    $$('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    if (burger && links) {
+      burger.addEventListener('click', () => links.classList.toggle('open'));
+      $$('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    }
 
-    $('#year').textContent = new Date().getFullYear();
+    const yearEl = $('#year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -509,9 +518,14 @@
     renderAuthUI();
     renderApptCard();
 
-    $('#authForm').addEventListener('submit', handleAuthSubmit);
-    $('#googleBtn').addEventListener('click', handleGoogleLogin);
-    $('#authSwitchBtn').addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
+    // Alt hizmet sayfalarında randevu formu yok, auth modalı var. Her biri ayrı kontrol
+    // ediliyor ki sayfa bileşimi ne olursa olsun JS hata vermesin.
+    const authForm = $('#authForm');
+    if (authForm) authForm.addEventListener('submit', handleAuthSubmit);
+    const googleBtn = $('#googleBtn');
+    if (googleBtn) googleBtn.addEventListener('click', handleGoogleLogin);
+    const switchBtn = $('#authSwitchBtn');
+    if (switchBtn) switchBtn.addEventListener('click', () => setAuthMode(authMode === 'login' ? 'register' : 'login'));
     $('#navLoginBtn') && $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
 
     if (FB.on) { setAuthMode('login'); watchFirebaseAuth(); }
