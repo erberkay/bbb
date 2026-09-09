@@ -488,23 +488,6 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     $$('.reveal').forEach(el => io.observe(el));
-
-    const cio = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); } });
-    }, { threshold: 0.5 });
-    $$('[data-count]').forEach(c => cio.observe(c));
-  }
-
-  function animateCount(el) {
-    const target = +el.dataset.count; const dur = 1400; const start = performance.now();
-    const suffix = target === 100 ? '' : (target >= 1000 ? '+' : (target === 15 || target === 12 ? '+' : ''));
-    function tick(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const val = Math.floor((1 - Math.pow(1 - p, 3)) * target);
-      el.textContent = val.toLocaleString('tr-TR') + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
   }
 
   /* -----------------------------------------------------
