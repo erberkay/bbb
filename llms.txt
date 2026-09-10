@@ -1,0 +1,65 @@
+# HB Otomatik Şanzıman
+
+> Bursa Nilüfer Üçevler Sanayi Sitesi'nde, yalnızca otomatik şanzıman (otomatik vites) onaran bağımsız bir atölye. Manuel şanzıman, motor ve genel oto tamiri yapılmıyor. Arıza tespiti ücretsiz; yapılacak iş müşteri onayına sunulmadan işleme başlanmıyor.
+
+Bu dosya, bir kullanıcı adına hareket eden ajanlara bu işletme hakkında doğru bilgi vermek için hazırlandı. Aşağıdaki bilgiler sitenin kendisinden alınmıştır.
+
+Temel bilgiler:
+
+- Adres: Üçevler, 28. Sk. 27. Blok No:51, 16270 Nilüfer / Bursa
+- Telefon: +90 530 491 80 05 ve +90 543 895 17 32
+- WhatsApp: +90 530 491 80 05
+- E-posta: hbotomatiksanziman16@gmail.com
+- Çalışma saatleri: Pazartesi–Cumartesi 08:30–19:00. Pazar kapalı.
+- Hizmet verilen bölge: Bursa (Nilüfer, Osmangazi, Yıldırım ve çevresi)
+
+Onarılan şanzıman aileleri ve sık çalışılan kutu kodları:
+
+- DCT (çift kavramalı), kuru ve ıslak kavrama
+- DSG — DQ200, DQ250, DQ381, DQ500
+- S-Tronic — DL501, DL382
+- CVT — kayış ve zincir tipi
+- Ford PowerShift — 6DCT250, 6DCT450 (DPS6)
+- Tork konvertörlü klasik otomatikler — ZF 8HP, ZF 6HP, Mercedes 722.9 ve 725.0, Opel AF40
+- Mekatronik üniteleri ve valf gövdeleri
+
+Bakılan marka grupları: BMW, Mercedes-Benz, VAG Grubu (Volkswagen, Audi, SEAT, Škoda, Cupra), Porsche, Land Rover, Opel, Ford.
+
+Ajanların bilmesi gereken sınırlar:
+
+- Telefonda veya yazışmada fiyat verilmiyor. Aynı belirti bir araçta yağ değişimiyle, başka bir araçta kavrama paketi yenilemesiyle çözülebiliyor; araç görülmeden verilen rakam yanıltıcı olur. Fiyat sorulursa uydurma, ücretsiz arıza tespitine yönlendir.
+- Randevu, sitedeki formdan alınır ve **giriş yapmayı gerektirir**. Ajan formu doldurmaya yardım edebilir; göndermeden önce kullanıcının kendisi onaylamalıdır.
+- Şanzımanı koruma moduna geçmiş, vites atmayan veya sarsan araçların uzun yol sürülmesi önerilmiyor; çekici tavsiye ediliyor.
+
+## Ana sayfalar
+
+- [Ana sayfa](https://hbotomatiksanziman.com/): İşletmenin tamamı — hizmetler, süreç, sık sorulan sorular, iletişim ve randevu formu
+- [Gizlilik Politikası ve KVKK](https://hbotomatiksanziman.com/gizlilik/): Hangi kişisel verilerin toplandığı, nerede saklandığı ve kullanıcının hakları
+
+## Şanzıman tipine göre
+
+- [DSG şanzıman tamiri](https://hbotomatiksanziman.com/dsg-sanziman-tamiri/): DQ200, DQ250, DQ381 ve DQ500'de mekatronik arızası, kavrama aşınması ve komple revizyon
+- [S-Tronic şanzıman tamiri](https://hbotomatiksanziman.com/s-tronic-sanziman-tamiri/): Audi DL501 ve DL382'de kavrama aşınması ile mekatronik arızasının ayrımı
+- [DCT çift kavramalı şanzıman tamiri](https://hbotomatiksanziman.com/dct-cift-kavramali-sanziman-tamiri/): Çift kavramanın çalışma mantığı, kuru ve ıslak kavrama farkı, ortak arıza belirtileri
+- [CVT şanzıman tamiri](https://hbotomatiksanziman.com/cvt-sanziman-tamiri/): Kayış–kasnak kayması, titreme ve "CVT tamir edilmez mi?" sorusunun cevabı
+- [Ford PowerShift şanzıman tamiri](https://hbotomatiksanziman.com/ford-powershift-sanziman-tamiri/): Focus, Fiesta, Kuga ve Mondeo'da DPS6 ve 6DCT450 titreme, sarsıntı ve kavrama arızaları
+
+## Markaya göre
+
+- [BMW şanzıman tamiri](https://hbotomatiksanziman.com/bmw-sanziman-tamiri/): ZF 8HP45/8HP70 ve GA6HP kutuları, mekatronik ve konduktör
+- [Mercedes şanzıman tamiri](https://hbotomatiksanziman.com/mercedes-sanziman-tamiri/): 722.9 (7G-Tronic) ve 9G-Tronic, konduktör plakası
+- [VAG Grubu şanzıman tamiri](https://hbotomatiksanziman.com/vag-grubu-sanziman-tamiri/): VW, Audi, Seat, Škoda ve Cupra'da DQ200, DQ250, DQ381, DQ500
+- [Porsche PDK şanzıman tamiri](https://hbotomatiksanziman.com/porsche-pdk-sanziman-tamiri/): 7DT-45, 7DT-70 ve 7DT-75'te mekatronik ve ıslak kavrama
+- [Land Rover şanzıman tamiri](https://hbotomatiksanziman.com/land-rover-sanziman-tamiri/): Range Rover, Discovery, Velar ve Evoque'ta ZF 8HP ve 9HP48
+
+## Teknik rehberler
+
+- [Otomatik şanzıman arıza belirtileri](https://hbotomatiksanziman.com/otomatik-sanziman-ariza-belirtileri/): Sarsıntı, vites atlamama, kayma, geri viteste gecikme, ısınma ve arıza lambası — hangi belirtide yola devam edilebilir, hangisinde edilemez
+- [Mekatronik arızası](https://hbotomatiksanziman.com/mekatronik-arizasi/): Mekatronik nedir, neden arızalanır, tamir mi değişim mi, kodlama ve adaptasyon neden şart
+- [Şanzıman revizyonu nedir?](https://hbotomatiksanziman.com/sanziman-revizyonu-nedir/): Tamir, revizyon ve komple değişim arasındaki fark; adım adım süreç ve garanti
+- [Otomatik şanzıman yağı değişimi](https://hbotomatiksanziman.com/otomatik-sanziman-yag-degisimi/): "Ömür boyu yağ" gerçekten ömür boyu mu, doğru ATF seçimi, filtre ve karter contası, yıkamalı yöntemin riskleri
+
+## Optional
+
+- [Google işletme kaydı](https://share.google/eNjyBqLWdNL6WI9NK): Konum, yol tarifi ve müşteri değerlendirmeleri
+- [sitemap.xml](https://hbotomatiksanziman.com/sitemap.xml): Sitedeki indekslenebilir sayfaların tam listesi

@@ -527,43 +527,59 @@
         <div class="avatar">${esc(initials(s.name))}</div>
         <div><b>${esc(s.name)}</b><small>${esc(s.email)}</small></div>
       </div>
-      <form id="apptForm" novalidate>
+      <!-- WebMCP Bildirimsel API (Chrome, kaynak denemesi).
+           toolname/tooldescription ajanların formu bir arac olarak gormesini
+           saglar; alanlar arac parametresi olur.
+           toolautosubmit BILEREK YOK: ajan formu doldurur, GONDERMEZ.
+           Randevuyu kullanicinin kendisi onaylar. Bu ozniteliklerin hicbiri
+           destegi olmayan tarayicilarda bir sey yapmaz, form aynen calisir. -->
+      <form id="apptForm" novalidate
+            toolname="randevuFormunuDoldur"
+            tooldescription="HB Otomatik Şanzıman'da otomatik şanzıman servisi için randevu formunu doldurur. Formu YALNIZCA doldurur, göndermez: randevunun oluşması için kullanıcının 'Randevuyu Onayla' düğmesine kendisi basması gerekir. Form yalnızca giriş yapmış kullanıcıya görünür. Fiyat bilgisi vermez; fiyat araç görülmeden belirlenmez.">
         <div class="form-grid">
           <div class="field">
             <label>Ad Soyad <span class="req">*</span></label>
-            <input type="text" name="name" value="${esc(s.name)}" placeholder="Adınız Soyadınız" autocomplete="name" autocapitalize="words" enterkeyhint="next">
+            <input type="text" name="name" value="${esc(s.name)}" placeholder="Adınız Soyadınız" autocomplete="name" autocapitalize="words" enterkeyhint="next"
+                   toolparamdescription="Randevuyu alan kişinin adı ve soyadı. Zorunlu.">
             <div class="err">Lütfen adınızı girin.</div>
           </div>
           <div class="field">
             <label>Telefon <span class="req">*</span></label>
-            <input type="tel" name="phone" value="${esc(s.phone || '')}" placeholder="0(5xx) xxx xx xx" inputmode="tel" autocomplete="tel" enterkeyhint="next">
+            <input type="tel" name="phone" value="${esc(s.phone || '')}" placeholder="0(5xx) xxx xx xx" inputmode="tel" autocomplete="tel" enterkeyhint="next"
+                   toolparamdescription="Türkiye cep telefonu numarası, 11 hane, sıfırla başlar. Örnek: 0532 111 22 33. Onay araması bu numaraya yapılır. Zorunlu.">
             <div class="err">Geçerli bir telefon numarası girin.</div>
           </div>
           <div class="field">
             <label>Araç Marka / Model <span class="req">*</span></label>
-            <input type="text" name="vehicle" placeholder="Örn. Volkswagen Passat 2018" autocapitalize="words" enterkeyhint="next">
+            <input type="text" name="vehicle" placeholder="Örn. Volkswagen Passat 2018" autocapitalize="words" enterkeyhint="next"
+                   toolparamdescription="Aracın markası, modeli ve model yılı; tek satır serbest metin. Örnek: 'Volkswagen Passat 2018' veya 'BMW 320i 2017'. Zorunlu.">
             <div class="err">Araç bilgisini girin.</div>
           </div>
           <div class="field">
             <label>Şanzıman Tipi</label>
-            <select name="gearType">${gearOpts}</select>
+            <select name="gearType"
+                    toolparamdescription="Araçtaki şanzıman ailesi. Kullanıcı emin değilse 'Bilmiyorum' seçilmeli; atölye tespit eder.">${gearOpts}</select>
           </div>
           <div class="field">
             <label>Hizmet <span class="req">*</span></label>
-            <select name="service">${serviceOpts}</select>
+            <select name="service"
+                    toolparamdescription="Talep edilen hizmet. Belirti belliyse eşleştir; belli değilse 'Arıza Tespiti (Diagnostik)' seç, ücretsizdir. Zorunlu.">${serviceOpts}</select>
           </div>
           <div class="field">
             <label>Tercih Edilen Tarih <span class="req">*</span></label>
-            <input type="date" name="date" min="${todayStr()}">
+            <input type="date" name="date" min="${todayStr()}"
+                   toolparamdescription="Tercih edilen randevu tarihi, YYYY-AA-GG biçiminde. Bugünden önce olamaz. Atölye pazar günleri kapalıdır. Zorunlu.">
             <div class="err">Geçerli bir tarih seçin.</div>
           </div>
           <div class="field">
             <label>Tercih Edilen Saat <span class="req">*</span></label>
-            <select name="time">${timeOpts}</select>
+            <select name="time"
+                    toolparamdescription="Tercih edilen saat. Yalnızca listedeki saatler geçerlidir (09:00–17:30 arası). Zorunlu.">${timeOpts}</select>
           </div>
           <div class="field full">
             <label>Sorunun Açıklaması</label>
-            <textarea name="note" rows="3" placeholder="Aracınızdaki belirtileri kısaca anlatın (ses, sarsıntı, vites atlaması vb.)" enterkeyhint="done"></textarea>
+            <textarea name="note" rows="3" placeholder="Aracınızdaki belirtileri kısaca anlatın (ses, sarsıntı, vites atlaması vb.)" enterkeyhint="done"
+                      toolparamdescription="Araçtaki belirtilerin kısa açıklaması: ses, sarsıntı, vites atlaması, arıza lambası, ne zaman başladığı. İsteğe bağlı ama teşhisi hızlandırır."></textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-block" id="apptSubmitBtn" style="margin-top:20px">
@@ -721,6 +737,103 @@
   }
 
   /* -----------------------------------------------------
+     WEBMCP — AJAN ARAÇLARI (Chrome, kaynak denemesi)
+     https://developer.chrome.com/docs/ai/webmcp/imperative-api
+
+     KAPSAM BİLEREK DAR: buradaki araçların ikisi de SALT OKUNUR.
+     Randevu OLUŞTURAN bir araç kaydedilmiyor. Randevu yalnızca
+     giriş yapmış kullanıcının formu kendi eliyle onaylamasıyla
+     oluşur (bkz. #apptForm; toolautosubmit yok). Firestore
+     kuralları ve yönetici yetkilendirmesi bu dosyadan bağımsız,
+     sunucu tarafında duruyor.
+
+     Destek yoksa hiçbir şey olmuyor: document.modelContext
+     tanımsızsa fonksiyon sessizce çıkıyor.
+  ----------------------------------------------------- */
+  const ISLETME = {
+    ad: 'HB Otomatik Şanzıman',
+    adres: 'Üçevler, 28. Sk. 27. Blok No:51, 16270 Nilüfer / Bursa',
+    telefon: ['+90 530 491 80 05', '+90 543 895 17 32'],
+    eposta: 'hbotomatiksanziman16@gmail.com',
+    calisma: 'Pazartesi–Cumartesi 08:30–19:00, Pazar kapalı',
+    kapsam: 'Yalnızca otomatik şanzıman (otomatik vites). Manuel şanzıman, motor ve genel oto tamiri yapılmıyor.',
+    tipler: 'DCT, DSG (DQ200/DQ250/DQ381/DQ500), S-Tronic (DL501/DL382), CVT, Ford PowerShift (6DCT250/6DCT450), tork konvertörlü klasik otomatikler (ZF 8HP/6HP, Mercedes 722.9/725.0), mekatronik ve valf gövdesi',
+    markalar: 'BMW, Mercedes-Benz, VAG Grubu (Volkswagen, Audi, SEAT, Škoda, Cupra), Porsche, Land Rover, Opel, Ford',
+    fiyat: 'Telefonda veya yazışmada fiyat verilmiyor. Aynı belirti bir araçta yağ değişimiyle, başka araçta kavrama paketi yenilemesiyle çözülebiliyor. Arıza tespiti ücretsiz; yapılacak iş onaya sunulmadan işleme başlanmıyor.',
+    randevu: 'Randevu sitedeki formdan alınır ve giriş yapmayı gerektirir. Formu doldurmaya yardım edilebilir, göndermeyi kullanıcı onaylar.',
+  };
+
+  const BELIRTILER = [
+    { anahtar: ['sarsıntı', 'vuruntu', 'sarsiyor', 'titreme', 'silkeleme'],
+      olasi: 'Kavrama paketi, mekatronik ünitesi veya tork konvertörü',
+      rehber: '/otomatik-sanziman-ariza-belirtileri/' },
+    { anahtar: ['vites atmıyor', 'geri vites', 'gecikme', 'geçmiyor'],
+      olasi: 'Basınç kaybı, valf gövdesi veya seçici modülü',
+      rehber: '/otomatik-sanziman-ariza-belirtileri/' },
+    { anahtar: ['arıza lambası', 'koruma modu', 'limp', 'hata kodu'],
+      olasi: 'Mekatronik ünitesi ve sensör arızaları',
+      rehber: '/mekatronik-arizasi/' },
+    { anahtar: ['ısınma', 'yanık koku', 'yağ kokusu', 'kızgın'],
+      olasi: 'Yağ ve filtre durumu, soğutma devresi',
+      rehber: '/otomatik-sanziman-yag-degisimi/' },
+    { anahtar: ['dsg', 'kalkışta titriyor', 'dq200'],
+      olasi: 'DQ200 kuru kavrama aşınması ve adaptasyon',
+      rehber: '/dsg-sanziman-tamiri/' },
+    { anahtar: ['devir yükseliyor', 'hız artmıyor', 'cvt', 'kayma'],
+      olasi: 'CVT kayış–kasnak kayması veya tork konvertörü',
+      rehber: '/cvt-sanziman-tamiri/' },
+  ];
+
+  async function registerAgentTools() {
+    const mc = document.modelContext;
+    if (!mc || typeof mc.registerTool !== 'function') return;
+    const kok = location.origin;
+    try {
+      await mc.registerTool({
+        name: 'sanziman_servis_bilgisi',
+        description: 'HB Otomatik Şanzıman hakkında bilgi verir: adres, telefon, çalışma saatleri, onarılan şanzıman tipleri ve markalar, fiyat politikası, randevu nasıl alınır. Randevu OLUŞTURMAZ.',
+        inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+        annotations: { readOnlyHint: true, consequentialHint: false, untrustedContentHint: false },
+        execute: async () => JSON.stringify(ISLETME),
+      });
+
+      await mc.registerTool({
+        name: 'sanziman_belirti_rehberi',
+        description: 'Araçtaki bir şanzıman belirtisini alır ve olası nedeni ile ilgili teknik rehber sayfasını döndürür. Teşhis koymaz, fiyat vermez, randevu oluşturmaz — yalnızca yönlendirir.',
+        inputSchema: {
+          type: 'object',
+          properties: {
+            belirti: {
+              type: 'string',
+              description: 'Kullanıcının tarif ettiği belirti. Örnek: "vites geçişlerinde sarsıntı", "arıza lambası yandı", "yanık yağ kokusu".',
+            },
+          },
+          required: ['belirti'],
+          additionalProperties: false,
+        },
+        annotations: { readOnlyHint: true, consequentialHint: false, untrustedContentHint: false },
+        execute: async ({ belirti }) => {
+          const q = String(belirti || '').toLowerCase();
+          const bulunan = BELIRTILER.filter(b => b.anahtar.some(a => q.includes(a)));
+          const liste = (bulunan.length ? bulunan : BELIRTILER).map(b => ({
+            olasiNeden: b.olasi, rehber: kok + b.rehber,
+          }));
+          return JSON.stringify({
+            eslesme: bulunan.length > 0,
+            sonuclar: liste,
+            not: bulunan.length
+              ? 'Bu bir ön yönlendirmedir, teşhis değildir. Kesin neden araç görülmeden söylenemez; arıza tespiti ücretsizdir.'
+              : 'Belirti eşleşmedi; tüm rehberler döndürüldü. Atölyeyi arayarak tarif etmek en hızlısı: +90 530 491 80 05',
+          });
+        },
+      });
+    } catch (e) {
+      // Kaynak denemesi kapalıysa veya API değiştiyse sessiz geç: site etkilenmesin.
+      console.debug('[HB] WebMCP araçları kaydedilemedi:', e && e.message);
+    }
+  }
+
+  /* -----------------------------------------------------
      BAŞLANGIÇ
   ----------------------------------------------------- */
   function init() {
@@ -751,6 +864,9 @@
 
     if (FB.on) { setAuthMode('login'); watchFirebaseAuth(); }
     else { seedDemo(); }
+
+    // Ajan araçları en sona: kaydı başarısız olsa da sitenin geri kalanı kurulmuş olur.
+    registerAgentTools();
   }
 
   function seedDemo() {
