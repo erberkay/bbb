@@ -12,3 +12,7 @@
 
 # Node (ileride kullanılırsa)
 node_modules/
+
+# Marka logolari siteden kaldirildi (tescilli marka).
+# Dosyalar diskte duruyor, elle silinecek.
+assets/img/brands/
