@@ -672,6 +672,12 @@
       window.addEventListener('scroll', onScroll); onScroll();
     }
 
+    // Footer link kolonları mobilde kapalı başlasın (masaüstünde açık kalır).
+    // <details open> HTML'de duruyor ki JS çalışmazsa içerik erişilebilir olsun.
+    if (window.matchMedia('(max-width: 720px)').matches) {
+      $$('.footer-col[open]').forEach(d => d.removeAttribute('open'));
+    }
+
     const burger = $('#hamburger'), links = $('#navLinks');
     if (burger && links) {
       burger.addEventListener('click', () => links.classList.toggle('open'));
