@@ -214,9 +214,11 @@
 }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Yazı tipleri kendi sunucumuzda: Google Fonts'a giden iki alan adı
+       (DNS + TLS + render'ı bloklayan CSS) mobilde kaldırıldı.
+       İlk ekranda görünen iki dosya önden isteniyor. -->
+  <link rel="preload" href="/assets/fonts/archivo-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.className += " js";</script>
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
