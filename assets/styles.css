@@ -67,9 +67,13 @@
 
   /* EYLEM RENGİ — yanmış turuncu. Yalnızca birincil düğme ve mobil
      sabit çubukta. Sayfayı boyamaz. Üstünde beyaz metin: 5.02. */
-  --action:        #b45309;
+  --action:        #b45309;   /* dolgu: üstünde beyaz metin 5.02 */
   --action-hover:  #8f4207;
   --action-ink:    #ffffff;
+  /* Turuncu METİN olarak kullanıldığında (numara, ok, etiket) daha koyu:
+     #b45309 gri bantta 4.29 ile AA'yı geçmiyordu. Bu ton kağıtta 5.35,
+     bantta 4.94, beyazda 5.77. */
+  --action-text:   #a54c08;
 
   --success:       #177a45;
   --warning:       #96690a;
@@ -350,7 +354,7 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
 .step::before {
   counter-increment: step; content: counter(step, decimal-leading-zero);
   font-family: var(--ff-display); font-weight: 800; font-size: 2.4rem;
-  color: var(--action); font-family: var(--ff-mono);
+  color: var(--action-text); font-family: var(--ff-mono);
   display: block; margin-bottom: 12px; opacity: .9;
 }
 .step h3 { font-family: var(--ff-display); margin-bottom: 8px; }
@@ -361,7 +365,9 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
 .appt-info {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--s6); position: relative; overflow: hidden;
 }
-.appt-info::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; background: url("gear.svg") center/contain no-repeat; opacity: .12; }
+/* Dişli filigranı: koyu zeminde .12 opaklık doğruydu, beyaz kartta gri bir
+   leke gibi duruyordu. Neredeyse görünmez bir doku seviyesine çekildi. */
+.appt-info::after { content: ''; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; background: url("gear.svg") center/contain no-repeat; opacity: .05; }
 .appt-info h3 { font-family: var(--ff-display); font-size: 1.6rem; margin-bottom: 12px; }
 .appt-info p { color: var(--text-soft); margin-bottom: 24px; }
 .appt-info .info-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
@@ -868,7 +874,7 @@ small, .small { font-size: 14px; line-height: 20px; }
 .spec-body h3 { font-size: 20px; line-height: 28px; margin-bottom: var(--s1); }
 .spec-body p { color: var(--text-soft); font-size: 15px; line-height: 24px; }
 .spec-body a { color: var(--accent-text); }
-.spec-row:hover .spec-key { color: var(--action); }
+.spec-row:hover .spec-key { color: var(--action-text); }
 
 /* Numaralı süreç — yuvarlak rozet yerine mono numara + çizgi */
 .proc { border-top: 1px solid var(--border); }
@@ -877,7 +883,7 @@ small, .small { font-size: 14px; line-height: 20px; }
   padding: var(--s4) 0; border-bottom: 1px solid var(--border); align-items: baseline;
 }
 .proc-num {
-  font-family: var(--ff-mono); font-size: 13px; color: var(--action);
+  font-family: var(--ff-mono); font-size: 13px; color: var(--action-text);
   letter-spacing: .08em; white-space: nowrap;
 }
 .proc-row h3 { font-size: 18px; line-height: 26px; margin-bottom: 2px; }
@@ -916,7 +922,7 @@ small, .small { font-size: 14px; line-height: 20px; }
 .sym-row:active { background: var(--surface-2); }
 .sym-row b { font-weight: 600; font-size: 16px; color: var(--text); display: block; }
 .sym-row span { font-size: 14px; color: var(--text-dim); }
-.sym-row .go { font-family: var(--ff-mono); font-size: 13px; color: var(--action); white-space: nowrap; }
+.sym-row .go { font-family: var(--ff-mono); font-size: 13px; color: var(--action-text); white-space: nowrap; }
 
 /* =========================================================
    MOBİL SABİT EYLEM ÇUBUĞU
@@ -941,7 +947,7 @@ small, .small { font-size: 14px; line-height: 20px; }
     font-family: var(--ff-mono); font-size: 11px; color: var(--text-dim); font-weight: 400;
   }
   .action-bar a.primary { background: var(--action); color: var(--action-ink); }
-  .action-bar a.primary small { color: rgba(21,13,4,.75); }
+  .action-bar a.primary small { color: rgba(255,255,255,.88); }
   .action-bar a:active { filter: brightness(.9); }
 
   /* Sayfa sonu çubuğun altında kalmasın; app.js scrollIntoView'ı da hesaba kat */
@@ -989,19 +995,23 @@ small, .small { font-size: 14px; line-height: 20px; }
 
 /* Marka plakası — logo yerine kutu kodu.
    Fotoğraf konursa (.brand-item img) plaka gizlenir, oran korunur. */
-.brand-plate {
+/* Seçici, .brand-item span kuralını (--text-soft) geçecek kadar özgül
+   olmalı; yoksa koyu plakada 1.9:1 ile okunmaz kalıyor. */
+.rail .brand-item .brand-plate,
+.brand-item .brand-plate {
   display: flex; align-items: baseline; justify-content: space-between; gap: var(--s2);
-  aspect-ratio: 16 / 9; padding: var(--s3) var(--s3) var(--s2);
+  aspect-ratio: 16 / 9; padding: var(--s3);
   background: var(--ink); color: var(--text-on-ink);
   border-bottom: 2px solid var(--action);
 }
-.brand-plate b {
-  font-family: var(--ff-display); font-weight: 700; font-size: 1.35rem;
-  letter-spacing: .01em; line-height: 1;
+.brand-item .brand-plate b {
+  font-family: var(--ff-display); font-weight: 700; font-size: 1.4rem;
+  letter-spacing: .01em; line-height: 1; color: var(--text-on-ink);  /* 16.05:1 */
 }
-.brand-plate i {
+.brand-item .brand-plate i {
   font-family: var(--ff-mono); font-style: normal; font-size: 11px; line-height: 15px;
-  color: var(--text-on-ink-dim); text-align: right; white-space: nowrap;
+  color: var(--text-on-ink-soft);   /* 9.54:1 */
+  text-align: right; white-space: nowrap;
 }
 .brand-item img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .brand-item:has(img) .brand-plate { display: none; }
@@ -1141,7 +1151,7 @@ small, .small { font-size: 14px; line-height: 20px; }
   .sym-row span span { font-size: 13px; line-height: 19px; }
   .sym-row .go { font-size: 0; }
   .sym-row .go::after {
-    content: '→'; font-size: 18px; color: var(--action);
+    content: '→'; font-size: 18px; color: var(--action-text);
   }
 
   /* Marka şeridi: kart ve plaka biraz daraldı */

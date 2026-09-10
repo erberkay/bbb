@@ -33,7 +33,9 @@
     .legal li { position: relative; padding-left: 20px; margin-bottom: 8px; }
     .legal li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
     .legal strong { color: var(--text); }
-    .legal a { color: var(--accent-2); text-decoration: underline; text-underline-offset: 2px; }
+    /* :not(.btn) — bu kural turuncu düğmenin beyaz metnini de maviye
+       çeviriyordu (turuncu üstünde mavi: 1.58:1, okunmuyordu). */
+    .legal a:not(.btn) { color: var(--accent-2); text-decoration: underline; text-underline-offset: 2px; }
     .legal .updated { font-size: .88rem; color: var(--text-dim); margin-bottom: 30px; }
     .legal table { width: 100%; border-collapse: collapse; margin: 6px 0 20px; font-size: .93rem; }
     .legal th, .legal td { text-align: left; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-soft); }
