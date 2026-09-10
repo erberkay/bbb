@@ -330,6 +330,25 @@
       area.innerHTML = `<button class="btn btn-ghost btn-sm" id="navLoginBtn">Giriş Yap</button>`;
       $('#navLoginBtn').addEventListener('click', () => openAuth('login'));
     }
+    renderMobileLogout();
+  }
+
+  // Mobilde nav çubuğu giriş sonrası taşıyordu; "Çıkış" düğmesi orada gizlenip
+  // hamburger menüsünün sonuna taşındı. Masaüstünde bu satır görünmez (CSS).
+  function renderMobileLogout() {
+    const menu = $('#navLinks');
+    if (!menu) return;
+    const eski = $('#navLogoutMobile');
+    if (eski) eski.parentElement.remove();
+    if (!getSession()) return;
+    const li = document.createElement('li');
+    li.className = 'nav-only-mobile';
+    li.innerHTML = '<button type="button" id="navLogoutMobile">Çıkış yap</button>';
+    menu.appendChild(li);
+    li.querySelector('button').addEventListener('click', () => {
+      menu.classList.remove('open');
+      logout();
+    });
   }
 
   // Firebase oturum değişimini izle

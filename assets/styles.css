@@ -139,6 +139,15 @@ body::before {
 }
 .nav-links a:not(.btn):hover::after { width: 100%; }
 
+/* Mobil menüye JS ile eklenen çıkış satırı. Varsayılan gizli; hamburger
+   kırılımında görünür hâle geliyor (bkz. max-width:1120px bloğu). */
+.nav-links .nav-only-mobile { display: none; }
+.nav-links .nav-only-mobile button {
+  width: 100%; text-align: left; padding: 15px 26px;
+  font-size: .9rem; color: var(--text-soft); font-weight: 500;
+}
+.nav-links .nav-only-mobile button:hover { color: var(--text); }
+
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .nav-user { display: flex; align-items: center; gap: 10px; }
 .avatar {
@@ -634,6 +643,17 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
     position: fixed; inset: var(--nav-h) 0 auto 0; flex-direction: column; gap: 0;
     background: var(--bg-2); border-bottom: 1px solid var(--border); padding: 10px 0;
     transform: translateY(-145%); transition: transform .3s ease; box-shadow: var(--shadow);
+    /* Menü 20 bağlantıya çıkınca 1210px oldu ve 812px'lik ekrandan 472px taştı.
+       position:fixed olduğu için sayfayı kaydırmak da kurtarmıyordu: son 8 madde
+       -- "Randevu Al" dahil -- mobilde hiç tıklanamıyordu. */
+    max-height: calc(100dvh - var(--nav-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* dvh desteklemeyen tarayıcılar için */
+  @supports not (height: 100dvh) {
+    .nav-links { max-height: calc(100vh - var(--nav-h)); }
   }
   .nav-links.open { transform: none; }
   .nav-links li { width: 100%; }
@@ -648,6 +668,16 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
   .sub-caret { display: none; }
   .nav-links .nav-only-desktop { display: block; padding: 14px 26px 6px; }
   .nav-links .nav-only-desktop .btn { width: 100%; }
+
+  /* Giriş yapıldığında nav çubuğu taşıyordu: normal kullanıcıda 390px,
+     yöneticide 507px (ekran 375px). body{overflow-x:hidden} bunu gizliyor,
+     ama hamburger ekran dışında kalıyor ve menü hiç açılamıyordu.
+     Avatar ve rozet mobilde gereksiz; çıkış menünün içine taşındı. */
+  .brand-badge { display: none; }
+  .nav-actions .avatar { display: none; }
+  .nav-actions .nav-user .btn { padding: 8px 12px; font-size: .8rem; }
+  .nav-actions .nav-user #navLogoutBtn { display: none; }
+  .nav-links .nav-only-mobile { display: block; }
 }
 @media (max-width: 960px) {
   .hero { min-height: unset; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 48px; }
