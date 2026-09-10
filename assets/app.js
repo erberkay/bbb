@@ -333,21 +333,26 @@
     renderMobileLogout();
   }
 
-  // Mobilde nav çubuğu giriş sonrası taşıyordu; "Çıkış" düğmesi orada gizlenip
-  // hamburger menüsünün sonuna taşındı. Masaüstünde bu satır görünmez (CSS).
+  // Mobilde üst çubukta yalnızca logo ve hamburger var: 375px'te marka adı
+  // "Giriş Yap" düğmesinin altına giriyordu. Giriş/çıkış satırı menünün
+  // sonuna taşındı — başparmakla erişilebilir yerde. Masaüstünde bu satır
+  // görünmez, düğme üst çubukta kalır (CSS: .nav-only-mobile).
   function renderMobileLogout() {
     const menu = $('#navLinks');
     if (!menu) return;
-    const eski = $('#navLogoutMobile');
-    if (eski) eski.parentElement.remove();
-    if (!getSession()) return;
+    const eski = $('#navAuthMobile');
+    if (eski && eski.parentElement) eski.parentElement.remove();
+
     const li = document.createElement('li');
     li.className = 'nav-only-mobile';
-    li.innerHTML = '<button type="button" id="navLogoutMobile">Çıkış yap</button>';
+    const oturum = getSession();
+    li.innerHTML = oturum
+      ? '<button type="button" id="navAuthMobile">Çıkış yap</button>'
+      : '<button type="button" id="navAuthMobile">Giriş yap / kayıt ol</button>';
     menu.appendChild(li);
     li.querySelector('button').addEventListener('click', () => {
       menu.classList.remove('open');
-      logout();
+      if (oturum) logout(); else openAuth('login');
     });
   }
 
@@ -526,17 +531,17 @@
         <div class="form-grid">
           <div class="field">
             <label>Ad Soyad <span class="req">*</span></label>
-            <input type="text" name="name" value="${esc(s.name)}" placeholder="Adınız Soyadınız">
+            <input type="text" name="name" value="${esc(s.name)}" placeholder="Adınız Soyadınız" autocomplete="name" autocapitalize="words" enterkeyhint="next">
             <div class="err">Lütfen adınızı girin.</div>
           </div>
           <div class="field">
             <label>Telefon <span class="req">*</span></label>
-            <input type="tel" name="phone" value="${esc(s.phone || '')}" placeholder="0(5xx) xxx xx xx" inputmode="tel">
+            <input type="tel" name="phone" value="${esc(s.phone || '')}" placeholder="0(5xx) xxx xx xx" inputmode="tel" autocomplete="tel" enterkeyhint="next">
             <div class="err">Geçerli bir telefon numarası girin.</div>
           </div>
           <div class="field">
             <label>Araç Marka / Model <span class="req">*</span></label>
-            <input type="text" name="vehicle" placeholder="Örn. Volkswagen Passat 2018">
+            <input type="text" name="vehicle" placeholder="Örn. Volkswagen Passat 2018" autocapitalize="words" enterkeyhint="next">
             <div class="err">Araç bilgisini girin.</div>
           </div>
           <div class="field">
@@ -558,7 +563,7 @@
           </div>
           <div class="field full">
             <label>Sorunun Açıklaması</label>
-            <textarea name="note" placeholder="Aracınızdaki belirtileri kısaca anlatın (ses, sarsıntı, vites atlaması vb.)"></textarea>
+            <textarea name="note" rows="3" placeholder="Aracınızdaki belirtileri kısaca anlatın (ses, sarsıntı, vites atlaması vb.)" enterkeyhint="done"></textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary btn-block" id="apptSubmitBtn" style="margin-top:20px">
@@ -655,11 +660,11 @@
   }
 
   /* -----------------------------------------------------
-     ADMIN — KALDIRILDI (güvenlik)
-     Yönetici paneli herkese açık siteden tamamen çıkarıldı. Statik bir sitede
-     istemci tarafında güvenli yetkilendirme yapılamaz: tarayıcıya inen her şey
-     okunabilir, bu yüzden şifreyi gömmek/hash'lemek koruma sağlamaz.
-     Randevular Firebase Console üzerinden yönetilir.
+     NOT: Yönetici paneli yukarıda (openAdmin/loadAdmin) tanımlı.
+     Sabit kodlanmış şifre YOK. Buradaki e-posta karşılaştırması yalnızca
+     arayüzü gösterip gizliyor; gerçek yetkilendirme Firestore güvenlik
+     kurallarındaki isAdmin() ile SUNUCU tarafında yapılıyor. İstemci
+     kodunu değiştirip paneli açan biri Firestore'dan veri alamaz.
   ----------------------------------------------------- */
 
   /* -----------------------------------------------------
@@ -672,11 +677,33 @@
       window.addEventListener('scroll', onScroll); onScroll();
     }
 
-    // Footer link kolonları mobilde kapalı başlasın (masaüstünde açık kalır).
-    // <details open> HTML'de duruyor ki JS çalışmazsa içerik erişilebilir olsun.
-    if (window.matchMedia('(max-width: 720px)').matches) {
-      $$('.footer-col[open]').forEach(d => d.removeAttribute('open'));
-    }
+    // Footer link kolonları HTML'de KAPALI. Mobilde dört blok alt alta
+    // ~300px fazladan kaydırma demekti. Masaüstünde normal liste gibi
+    // görünsün diye burada açılıyor; kırılım değişirse (ekran döndürme,
+    // pencere yeniden boyutlandırma) yeniden değerlendiriliyor.
+    const genisEkran = window.matchMedia('(min-width: 721px)');
+    const footerKolonlari = () => $$('.footer-col').forEach(d => { d.open = genisEkran.matches; });
+    footerKolonlari();
+    genisEkran.addEventListener('change', footerKolonlari);
+
+    // Harita: iframe yalnızca kullanıcı açtığında yükleniyor. Google Maps
+    // gömülüsü ~900 KB ve üçüncü taraf çerezi; mobilde sayfanın en pahalı
+    // parçasıydı ve ziyaretçilerin çoğu haritayı hiç açmıyor.
+    $$('[data-map]').forEach(det => {
+      det.addEventListener('toggle', () => {
+        if (!det.open || det.dataset.mapYuklendi) return;
+        det.dataset.mapYuklendi = '1';
+        const kutu = det.querySelector('.map-embed');
+        if (!kutu) return;
+        const f = document.createElement('iframe');
+        f.src = det.dataset.map;
+        f.loading = 'lazy';
+        f.referrerPolicy = 'no-referrer-when-downgrade';
+        f.title = 'HB Otomatik Şanzıman konumu';
+        kutu.innerHTML = '';
+        kutu.appendChild(f);
+      }, { once: false });
+    });
 
     const burger = $('#hamburger'), links = $('#navLinks');
     if (burger && links) {

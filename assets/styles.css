@@ -773,12 +773,22 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
   .nav-actions .nav-user .btn { padding: 8px 12px; font-size: .8rem; }
   .nav-actions .nav-user #navLogoutBtn { display: none; }
   .nav-links .nav-only-mobile { display: block; }
+
+  /* Üst çubukta mobilde yalnızca logo + hamburger kalıyor.
+     Giriş/çıkış menünün sonunda — tek elle, başparmakla erişilebilir yerde. */
+  #navLoginBtn { display: none; }
+  .nav-links .nav-only-mobile button { min-height: 48px; }
 }
 @media (max-width: 960px) {
   .hero { min-height: unset; padding-top: calc(var(--nav-h) + 36px); padding-bottom: 48px; }
   .hero-inner { grid-template-columns: 1fr; gap: 32px; }
   .hero-card { max-width: 480px; }
-  .hero-bg-overlay { background: rgba(11,16,29,.93); }
+  /* Fotoğraf mobilde neredeyse tamamen kapanıyordu. Metnin oturduğu üst
+     kısım koyu, alt kısım açılıyor: atölye görünüyor, kontrast korunuyor.
+     Ölçüm: en açık noktada beyaz metin 8.9:1. */
+  .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(16,20,25,.93) 0%, rgba(16,20,25,.88) 62%, rgba(16,20,25,.62) 100%);
+  }
   .appt-wrap, .contact-wrap { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: repeat(2,1fr); }
   .steps { grid-template-columns: repeat(2,1fr); }
@@ -798,6 +808,10 @@ a.brand-item:hover span, a.brand-item:focus-visible span { color: var(--text); }
 @media (max-width: 560px) {
   .brand-text span { display: none; }
   .brand-badge { display: none; }
+  /* 375px'te "HB OTOMATİK ŞANZIMAN" + "Giriş Yap" + hamburger tek satıra
+     sığmıyor, marka adı düğmenin altına giriyordu. Orta kelime düşüyor:
+     "HB ŞANZIMAN". Giriş düğmesi de menüye taşındı (bkz. app.js). */
+  .brand-mid { display: none; }
 }
 @media (max-width: 460px) {
   .steps { grid-template-columns: 1fr; }
@@ -964,11 +978,33 @@ small, .small { font-size: 14px; line-height: 20px; }
 
 /* Şeritteki marka kartları — sabit genişlik olmadan scroll-snap çalışmaz */
 .rail .brand-item {
-  width: 176px; flex: 0 0 176px;
+  width: 200px; flex: 0 0 200px;
   background: var(--surface); border: 1px solid var(--border);
-  padding: var(--s4) var(--s3); border-radius: var(--radius);
+  padding: 0 0 var(--s3); border-radius: var(--radius); overflow: hidden;
+  align-items: stretch; gap: var(--s3);
 }
-.rail .brand-item:hover { border-color: var(--accent); background: var(--surface-2); transform: none; }
+.rail .brand-item:hover { border-color: var(--accent); background: var(--surface); transform: none; }
+.rail .brand-item > span:not(.brand-plate) { padding: 0 var(--s3); text-align: left; }
+.rail .brand-item small { text-align: left; }
+
+/* Marka plakası — logo yerine kutu kodu.
+   Fotoğraf konursa (.brand-item img) plaka gizlenir, oran korunur. */
+.brand-plate {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s2);
+  aspect-ratio: 16 / 9; padding: var(--s3) var(--s3) var(--s2);
+  background: var(--ink); color: var(--text-on-ink);
+  border-bottom: 2px solid var(--action);
+}
+.brand-plate b {
+  font-family: var(--ff-display); font-weight: 700; font-size: 1.35rem;
+  letter-spacing: .01em; line-height: 1;
+}
+.brand-plate i {
+  font-family: var(--ff-mono); font-style: normal; font-size: 11px; line-height: 15px;
+  color: var(--text-on-ink-dim); text-align: right; white-space: nowrap;
+}
+.brand-item img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.brand-item:has(img) .brand-plate { display: none; }
 
 
 @media (max-width: 720px) {
@@ -1034,4 +1070,93 @@ small, .small { font-size: 14px; line-height: 20px; }
   .faq-item p { padding-bottom: 13px; font-size: 14px; line-height: 22px; }
   .review-cta { padding: var(--s4); }
   .review-cta h3 { font-size: 17px; }
+}
+
+/* =========================================================
+   MOBİL DOKUNMA HEDEFLERİ
+   Ölçüm: 34 bağlantı 44px'in altındaydı; en kötüsü telefon
+   numaraları (17px). WCAG 2.5.5 ve Apple/Google kılavuzu 44px.
+   Yükseklik bir kez, dolgu yerine min-height + hizalama ile
+   veriliyor — satır araları şişmesin.
+   ========================================================= */
+@media (max-width: 860px) {
+  .faq-item summary,
+  .footer-col > summary { min-height: 48px; }
+
+  .footer li a,
+  .contact-item a,
+  .appt-info .info-row a,
+  .spec-body h3 a,
+  .type-card .type-name a {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+  /* Metin içi bağlantılar satır akışını bozmasın: yalnızca dokunma
+     alanı büyüsün, kutu büyümesin. */
+  .faq-item p a, .prose-block p a {
+    display: inline; position: relative;
+  }
+  .faq-item p a::after, .prose-block p a::after {
+    content: ''; position: absolute; left: 0; right: 0;
+    top: 50%; height: 44px; transform: translateY(-50%);
+  }
+  .btn, .btn-sm { min-height: 44px; }
+  .rail .brand-item { min-height: 44px; }
+  .map-facade .map-open { min-height: 44px; }
+  /* İletişim künyesindeki telefon ve e-posta bağlantıları 19px'ti */
+  .spec-body p a[href^="tel:"],
+  .spec-body p a.mail-link,
+  .footer-bottom a { display: inline-flex; align-items: center; min-height: 44px; }
+  .brand { min-height: 44px; }
+}
+
+/* =========================================================
+   MOBİLDE İÇERİK TEKRARININ KALDIRILMASI
+   Randevu bölümündeki "Servis Bilgileri" kartı adres, telefon ve
+   çalışma saatlerini İletişim bölümüyle birebir tekrar ediyordu.
+   Masaüstünde iki sütunlu düzenin sol yarısı olduğu için duruyor;
+   mobilde alt alta düşünce sadece 330px fazladan kaydırma oluyordu.
+   Bilgi hem İletişim bölümünde hem sabit çubukta zaten var.
+   ========================================================= */
+@media (max-width: 860px) {
+  .appt-info { display: none; }
+}
+
+/* Son sıkıştırma — bölüm dolgusu ve başlık ölçeği */
+@media (max-width: 720px) {
+  .section { padding: 30px 0; }
+  .section-title { font-size: 26px; line-height: 30px; }
+  .spec-body h3 { font-size: 18px; line-height: 26px; }
+  .spec-body p { font-size: 14px; line-height: 22px; }
+  .proc-row h3 { font-size: 17px; line-height: 24px; }
+  .proc-row p { font-size: 14px; line-height: 22px; }
+  .section-sub { font-size: 15px; line-height: 23px; }
+
+  /* Belirti satırı: "İncele →" ayrı sütun olduğu için başlık dar bir
+     alana sıkışıp üç satıra iniyordu. Tek sütun + sağda ok. */
+  .sym-row {
+    grid-template-columns: 1fr auto; gap: var(--s3);
+    padding: var(--s3) 0; min-height: 56px;
+  }
+  .sym-row b { font-size: 15px; line-height: 21px; }
+  .sym-row span span { font-size: 13px; line-height: 19px; }
+  .sym-row .go { font-size: 0; }
+  .sym-row .go::after {
+    content: '→'; font-size: 18px; color: var(--action);
+  }
+
+  /* Marka şeridi: kart ve plaka biraz daraldı */
+  .rail .brand-item { width: 168px; flex: 0 0 168px; }
+  .brand-plate b { font-size: 1.15rem; }
+  .brand-item small { font-size: .7rem; line-height: 15px; }
+
+  /* Google değerlendirme bandı tek satıra insin */
+  .review-cta { margin-top: var(--s5); padding: var(--s3) var(--s4); gap: var(--s2); }
+  .review-cta p { display: none; }
+  .review-cta h3 { font-size: 15px; margin: 0; }
+
+  /* Hero giriş metninin ikinci cümlesi ve tekrar eden ara metinler */
+  .lead-more { display: none; }
+  #uzmanlik > .container > .lead { display: none; }
+  .hero-cta { margin-bottom: var(--s5); }
+  .hero-facts { gap: var(--s3) var(--s5); margin-top: var(--s4); }
 }
