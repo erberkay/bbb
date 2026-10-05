@@ -409,12 +409,12 @@
       <form id="authForm" novalidate>
         <div class="field full" id="nameField" style="display:none; margin-bottom:14px">
           <label>Ad Soyad <span class="req">*</span></label>
-          <input type="text" name="name" placeholder="Adınız Soyadınız" autocomplete="name">
+          <input type="text" name="name" placeholder="Adınız Soyadınız" autocomplete="name" autocapitalize="words" enterkeyhint="next">
           <div class="err">Lütfen adınızı girin.</div>
         </div>
         <div class="field full" style="margin-bottom:14px">
           <label>E-posta <span class="req">*</span></label>
-          <input type="email" name="email" placeholder="ornek@eposta.com" autocomplete="email">
+          <input type="email" name="email" placeholder="ornek@eposta.com" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" enterkeyhint="next">
           <div class="err">Geçerli bir e-posta girin.</div>
         </div>
         <div class="field full" id="phoneField" style="display:none; margin-bottom:14px">
@@ -424,7 +424,7 @@
         </div>
         <div class="field full" style="margin-bottom:18px">
           <label>Şifre <span class="req">*</span></label>
-          <input type="password" name="password" placeholder="••••••••" autocomplete="current-password">
+          <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" enterkeyhint="go">
           <div class="err">Şifre en az 6 karakter olmalı.</div>
         </div>
         <button type="submit" class="btn btn-primary btn-block" id="authSubmit">Giriş Yap</button>
