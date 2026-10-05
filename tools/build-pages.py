@@ -44,17 +44,30 @@ def to_home_anchors(fragment):
     return fragment
 
 
+def asset_version(home):
+    """index.html'deki styles.css?v=... sürüm etiketini döndürür.
+
+    Alt sayfalar ana sayfayla aynı sürümü kullanmalı; aksi hâlde biri yeni
+    CSS'i, diğeri tarayıcı önbelleğindeki eskisini yükler.
+    """
+    m = re.search(r'/assets/styles\.css\?v=([\w.-]+)"', home)
+    if not m:
+        sys.exit("index.html'de styles.css?v=... sürüm etiketi bulunamadı")
+    return m.group(1)
+
+
 def load_shell():
     with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
         home = f.read()
     return {
+        "version": asset_version(home),
         "nav": to_home_anchors(slice_between(home, "<!-- ===================== NAVBAR", "</nav>")),
         "footer": to_home_anchors(slice_between(home, "<!-- ===================== FOOTER", "</footer>")),
         "mailscript": slice_between(home, "<!-- E-posta adreslerini kur", "</script>"),
         "authmodal": slice_between(home, "<!-- ===================== AUTH MODAL", "<!-- Yönetici giriş modalı", include_end=False),
         # app.js'i şablon kendisi ekliyor; buraya dahil edilirse iki kez yüklenir.
         "scripts": subpage_scripts(
-            slice_between(home, "<!-- Firebase SDK (compat) -->", '<script src="/assets/app.js"></script>', include_end=False)
+            slice_between(home, "<!-- Firebase SDK (compat) -->", '<script src="/assets/app.js', include_end=False)
         ),
     }
 
@@ -199,8 +212,9 @@ PAGE_TMPL = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content="{meta}">
-  <meta name="theme-color" content="#0a0d14">
+  <meta name="theme-color" content="#14181d">
   <link rel="icon" type="image/png" href="/assets/img/favicon-48.png">
+  <link rel="describedby" type="text/markdown" href="/llms.txt">
   <link rel="canonical" href="{url}">
   <meta name="robots" content="index, follow">
 
@@ -225,11 +239,12 @@ PAGE_TMPL = """<!DOCTYPE html>
 {schema}
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Yazı tipleri kendi sunucumuzda: Google Fonts'a giden iki alan adı
+       (DNS + TLS + render'ı bloklayan CSS) mobilde kaldırıldı. -->
+  <link rel="preload" href="/assets/fonts/archivo-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v={version}">
 </head>
 <body>
 
@@ -277,7 +292,7 @@ PAGE_TMPL = """<!DOCTYPE html>
   <div class="toast-wrap" id="toastWrap"></div>
 
 {scripts}
-  <script src="/assets/app.js"></script>
+  <script src="/assets/app.js?v={version}"></script>
 </body>
 </html>
 """
@@ -302,6 +317,7 @@ def main():
             mailscript=shell["mailscript"],
             authmodal=shell["authmodal"],
             scripts=shell["scripts"],
+            version=shell["version"],
             h1=page["h1"],
             kicker=page["kicker"],
             intro=page["intro"],

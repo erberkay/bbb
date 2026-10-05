@@ -51,12 +51,16 @@ Ajanların bilmesi gereken sınırlar:
 - [VAG Grubu şanzıman tamiri](https://hbotomatiksanziman.com/vag-grubu-sanziman-tamiri/): VW, Audi, Seat, Škoda ve Cupra'da DQ200, DQ250, DQ381, DQ500
 - [Porsche PDK şanzıman tamiri](https://hbotomatiksanziman.com/porsche-pdk-sanziman-tamiri/): 7DT-45, 7DT-70 ve 7DT-75'te mekatronik ve ıslak kavrama
 - [Land Rover şanzıman tamiri](https://hbotomatiksanziman.com/land-rover-sanziman-tamiri/): Range Rover, Discovery, Velar ve Evoque'ta ZF 8HP ve 9HP48
+- [Opel otomatik şanzıman tamiri](https://hbotomatiksanziman.com/opel-otomatik-sanziman-tamiri/): Astra, Insignia, Zafira, Mokka ve Grandland'da AF40, 6T40 (3-5-R dalga yayı) ve 8 ileri kutular
 
 ## Teknik rehberler
 
 - [Otomatik şanzıman arıza belirtileri](https://hbotomatiksanziman.com/otomatik-sanziman-ariza-belirtileri/): Sarsıntı, vites atlamama, kayma, geri viteste gecikme, ısınma ve arıza lambası — hangi belirtide yola devam edilebilir, hangisinde edilemez
 - [Mekatronik arızası](https://hbotomatiksanziman.com/mekatronik-arizasi/): Mekatronik nedir, neden arızalanır, tamir mi değişim mi, kodlama ve adaptasyon neden şart
 - [Şanzıman revizyonu nedir?](https://hbotomatiksanziman.com/sanziman-revizyonu-nedir/): Tamir, revizyon ve komple değişim arasındaki fark; adım adım süreç ve garanti
+- [Tork konvertörü tamiri](https://hbotomatiksanziman.com/tork-konvertoru-tamiri/): 40–80 km/s titremesi, kilitleme kavraması aşınması, titremenin konvertörden gelip gelmediğinin ayrımı, revizyon ve balans
+- [Şanzıman arıza tespiti](https://hbotomatiksanziman.com/sanziman-ariza-tespiti/): Ücretsiz tespitte neler yapıldığı, hata kodunun neden tek başına yetmediği, tespitten sonraki süreç
+- [Şanzıman tamiri fiyatı neye göre değişir?](https://hbotomatiksanziman.com/sanziman-tamiri-fiyati/): Fiyatı belirleyen kalemler, telefonda neden rakam verilmediği, teklif alırken sorulacak sorular (sayfada rakam yoktur)
 - [Otomatik şanzıman yağı değişimi](https://hbotomatiksanziman.com/otomatik-sanziman-yag-degisimi/): "Ömür boyu yağ" gerçekten ömür boyu mu, doğru ATF seçimi, filtre ve karter contası, yıkamalı yöntemin riskleri
 
 ## Optional

@@ -1838,5 +1838,382 @@
       "s-tronic-sanziman-tamiri",
       "bmw-sanziman-tamiri"
     ]
+  },
+  {
+    "slug": "tork-konvertoru-tamiri",
+    "kicker": "Tork Konvertörü · Klasik Otomatik",
+    "title": "Tork Konvertörü Tamiri Bursa | Titreme · Kilitleme | HB",
+    "meta": "Bursa Nilüfer'de tork konvertörü tamiri: 40–80 km/s titremesi, kilitleme kavraması aşınması ve dururken stop etmede tespit, revizyon ve balans.",
+    "h1": "Tork Konvertörü Tamiri — Bursa Nilüfer",
+    "service_name": "Tork Konvertörü Tamiri",
+    "service_type": "Tork konvertörü revizyonu ve kilitleme kavraması onarımı",
+    "intro": "Sabit hızda gelen ince titreme, dururken stop eden motor ve hızla kararan şanzıman yağı çoğu zaman tork konvertörünü işaret eder. Titremenin gerçekten konvertörden geldiğini yol testi ve canlı veriyle doğruluyor, ancak ondan sonra sökme kararı veriyoruz.",
+    "sections": [
+      {
+        "h2": "Tork konvertörü ne iş yapar?",
+        "body": [
+          "Manuel vitesli araçta motoru şanzımandan ayırmak için debriyaja basarsınız. Klasik otomatik şanzımanda bu görevi tork konvertörü üstlenir — ama mekanik değil, hidrolik olarak. İçinde motora bağlı bir pompa çarkı, şanzımana bağlı bir türbin ve ikisinin arasında akışı yönlendiren bir stator bulunur. Motor döndükçe pompa yağı türbine fırlatır; araç dururken motor stop etmez ama vites devrede kalabilir.",
+          "Belirli bir hızın üzerinde <b>kilitleme kavraması</b> (lock-up) devreye girer ve motoru şanzımana doğrudan bağlar. Hidrolik kayma ortadan kalkar, yakıt tüketimi düşer. Güncel şanzımanlar bu kavramayı çok düşük hızlarda bile devreye alır; bu da kavrama yüzeyinin çalıştığı süreyi uzatır.",
+          "Konvertör yalnızca tork konvertörlü klasik otomatiklerde bulunur: ZF 8HP ve 6HP, Mercedes 722.9 ve 9G-Tronic, Land Rover'daki ZF kutuları, Opel'in AF40 ve 6T40 aileleri, Porsche Cayenne. DSG, S-Tronic, PDK ve PowerShift gibi çift kavramalı kutularda konvertör yoktur; oradaki benzer şikâyetlerin kaynağı kavrama paketidir."
+        ]
+      },
+      {
+        "h2": "Arıza nasıl başlar, neden büyür?",
+        "body": [
+          "En sık gördüğümüz başlangıç noktası kilitleme kavramasının balatasıdır. Yüzey yoruldukça kavrama tam kapanmak yerine hafifçe kayarak çalışır; bu kayma sabit gazda ince bir titreşim olarak hissedilir.",
+          "Sorun burada kalmaz. Aşınan balatadan kopan malzeme doğrudan şanzıman yağına karışır, yağla birlikte bütün kutuyu dolaşır: valf gövdesindeki kanalları daraltır, solenoid süzgeçlerini tıkar, filtreyi doldurur. Basınç kontrolü bozuldukça diğer kavrama paketleri de kaymaya başlar.",
+          "Yani başlangıçta yalnızca konvertör onarımıyla çözülebilecek bir sorun, ihmal edildiğinde komple revizyona dönüşür. Titremenin \"yaşanabilir\" olması, hasarın ilerlemediği anlamına gelmez."
+        ]
+      },
+      {
+        "h2": "Hangi belirtiler konvertörü işaret eder?",
+        "body": [
+          "Aşağıdakilerden biri varsa aracı zorlamadan kontrole getirmenizi öneriyoruz:"
+        ],
+        "items": [
+          "<b>Sabit hızda ince titreşim</b> — genellikle 40–80 km/s bandında, hafif gazda; gaz bırakınca ya da artırınca kaybolur",
+          "<b>Dururken motorun stop etmesi</b> — kilitleme kavraması açılamıyor, motor şanzımana bağlı kalıyor",
+          "<b>Kalkışta güç kaybı, ağır hızlanma</b> — statorun tek yönlü kavraması tutmuyor olabilir",
+          "<b>Viteste artan, boşta kaybolan uğultu</b> — konvertör içi rulman veya kanat hasarı",
+          "<b>Şanzıman yağının hızla kararması</b> — balata malzemesi yağa karışıyor",
+          "<b>Şanzıman sıcaklık uyarısı</b> — sürekli kayan bir konvertör yağı ısıtır"
+        ]
+      },
+      {
+        "h2": "Titreme her zaman konvertörden mi gelir?",
+        "body": [
+          "Hayır — ve bu, gereksiz masrafın en sık nedenidir. Yıpranmış motor takozları, balanssız aktarma mili, jant balansı ve ateşleme kaynaklı tekleme de çok benzer bir his verir.",
+          "Ayrımı yol testinde canlı veriyle yapıyoruz: kilitleme kavramasının ne zaman devreye girdiğini ve motorla şanzıman arasındaki kayma devrini izliyoruz. Titreme kavrama devreye girdiği anda başlayıp açıldığında kayboluyorsa kaynak konvertördür. Ölçüm yapmadan konvertör değişimi önermiyoruz."
+        ]
+      },
+      {
+        "h2": "Onarım nasıl yapılıyor?",
+        "body": [
+          "Tork konvertörü kaynaklı, kapalı bir gövdedir; onarım için kesilerek açılması gerekir. Uyguladığımız süreç:"
+        ],
+        "items": [
+          "Konvertörün sökülmesi ve gövdenin kesilerek açılması",
+          "Kilitleme kavraması balatasının yenilenmesi",
+          "Stator, türbin ve pompa kanatlarının kontrolü",
+          "Tek yönlü kavrama, burç ve keçelerin yenilenmesi",
+          "<b>Balans ayarı</b> — atlanırsa yüksek devirde titreşim üretir",
+          "Yeniden kaynak ve basınçlı sızdırmazlık testi",
+          "<b>Şanzıman yağı, filtre ve yağ soğutucu hattının temizliği</b> — atlanırsa eski balata tozu yeni parçayı kısa sürede kirletir"
+        ]
+      },
+      {
+        "h2": "Onarımdan sonra: adaptasyon ve yol testi",
+        "body": [
+          "Konvertör ve yağ işleminden sonra şanzımanın öğrenilmiş değerleri sıfırlanır ve kutunun kilitleme davranışını yeniden öğrenmesi sağlanır. Aracı, titreme şikâyetinin geçtiğini aynı hız bandında yol testiyle doğrulamadan teslim etmiyoruz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Tork konvertörü tamir mi edilir, değiştirilir mi?",
+        "Kilitleme balatası, tek yönlü kavrama ve keçe kaynaklı arızaların büyük bölümünde revizyon yeterlidir. Gövde deformasyonu veya kanat hasarı varsa yenileme öneriyoruz. Hangisi olduğunu söküp açtıktan sonra size gösteriyoruz."
+      ],
+      [
+        "Konvertör değişirken yağ da değişmeli mi?",
+        "Evet, mutlaka. Aşınan balatadan kopan malzeme yağın içinde, filtrede ve yağ soğutucu hattında kalır. Bunlar temizlenmezse yeni ya da revize edilmiş konvertör kısa sürede kirlenir ve şikâyet geri döner."
+      ],
+      [
+        "Titremeyle sürmeye devam edebilir miyim?",
+        "Önermiyoruz. Titreme çoğu zaman balata malzemesinin yağa karıştığını gösterir; bu malzeme valf gövdesine ve diğer kavrama paketlerine ulaştıkça konvertör onarımıyla çözülebilecek bir iş komple revizyona dönüşür."
+      ],
+      [
+        "Balans ayarı neden bu kadar önemli?",
+        "Konvertör motor devriyle döner. Kaynak sonrası balansı alınmazsa yüksek devirde titreşim oluşur; bu hem sürüşü bozar hem de şanzıman ön keçesine ve krank mili rulmanına yük bindirir."
+      ],
+      [
+        "DSG'mde titreme var, tork konvertörü mü?",
+        "Hayır. DSG, S-Tronic, PDK ve PowerShift gibi çift kavramalı şanzımanlarda tork konvertörü yoktur; kalkıştaki titreme kavrama paketi veya adaptasyon kaynaklıdır. Bunun için DSG sayfamıza bakabilirsiniz."
+      ],
+      [
+        "Telefonda fiyat söyler misiniz?",
+        "Hayır. Aynı titreme bir araçta motor takozundan, başka birinde kilitleme kavramasından gelebilir. Aracı görmeden verilen rakam ya sizi yanıltır ya da bizi. Arıza tespiti ücretsiz; yapılacak işi ve kapsamını onayınıza sunuyoruz."
+      ]
+    ],
+    "related": [
+      "bmw-sanziman-tamiri",
+      "mercedes-sanziman-tamiri",
+      "opel-otomatik-sanziman-tamiri",
+      "sanziman-revizyonu-nedir",
+      "otomatik-sanziman-yag-degisimi"
+    ]
+  },
+  {
+    "slug": "opel-otomatik-sanziman-tamiri",
+    "kicker": "Opel · AF40 / 6T40 / 8 İleri",
+    "title": "Opel Otomatik Şanzıman Tamiri Bursa | AF40 · 6T40 | HB",
+    "meta": "Bursa Nilüfer'de Opel otomatik şanzıman tamiri: Astra, Insignia, Zafira, Mokka ve Grandland'da AF40, 6T40 ve 8 ileri kutularda tespit ve onarım.",
+    "h1": "Opel Otomatik Şanzıman Tamiri — Bursa Nilüfer",
+    "service_name": "Opel Otomatik Şanzıman Tamiri",
+    "service_type": "Opel tork konvertörlü otomatik şanzıman onarımı",
+    "intro": "Astra, Insignia, Zafira, Mokka, Corsa ve Grandland modellerindeki tork konvertörlü otomatik şanzımanlarda arıza tespiti, valf gövdesi ve kavrama paketi onarımı, tork konvertörü revizyonu ve yağ bakımı.",
+    "sections": [
+      {
+        "h2": "Opel'de hangi otomatik şanzıman var?",
+        "body": [
+          "Opel'de otomatik şanzıman kuşağa göre değişir ve üç aile birbirinden farklı arıza karakteri gösterir. Araç kabulünde kutunun tipini şasi numarasından doğruluyor, tespiti ona göre yapıyoruz."
+        ],
+        "items": [
+          "<b>Aisin AF40 (6 ileri)</b> — Insignia A, önceki nesil Astra ve Zafira'nın bir kısmında, özellikle dizel versiyonlarda",
+          "<b>GM 6T40 / 6T45 (6 ileri)</b> — Astra J ve K, Insignia A, Zafira C ve ilk nesil Mokka'da yaygın",
+          "<b>8 ileri otomatik (EAT8)</b> — yeni nesil Astra, Corsa, Mokka ve Grandland'da"
+        ]
+      },
+      {
+        "h2": "En sık gördüğümüz arızalar",
+        "body": [
+          "Opel otomatiklerinde gelen şikâyetlerin çoğu bu başlıklardan birine çıkar:"
+        ],
+        "items": [
+          "<b>6T40'ta 3., 5. ve geri vitesin birden kaybolması</b> — bu ailede bilinen bir zayıf nokta, 3-5-R kavrama paketindeki dalga yayıdır. Kırıldığında bu üç vites devreye girmez ve araç genellikle koruma moduna geçer. Onarım için kutunun açılması gerekir.",
+          "<b>Sert 1–2 geçişi ve kalkışta vuruntu</b> — yaşlanmış yağ, valf gövdesi aşınması veya bozulmuş adaptasyon değerleri",
+          "<b>AF40'ta geçişte devir sıçraması ve sert vites</b> — valf gövdesi ve solenoid aşınmasının tipik tablosu",
+          "<b>Sabit hızda ince titreme</b> — tork konvertörü kilitleme kavraması",
+          "<b>Panelde şanzıman uyarısı, koruma modu</b> — hata kayıtları okunmadan nedeni söylenemez"
+        ]
+      },
+      {
+        "h2": "Neden önce ölçüm yapıyoruz?",
+        "body": [
+          "Bu kutularda erken aşamadaki sert geçiş ve gecikme şikâyetlerinin bir kısmı doğru spesifikasyonda yağ, filtre ve adaptasyonla düzelir. Aynı belirti bir başka araçta kavrama paketinin aşındığını gösterir.",
+          "Bu yüzden işe hata kayıtlarını okuyarak, canlı veriyi izleyerek ve yol testiyle başlıyoruz. Kutuyu açma kararını ancak bundan sonra veriyor, kapsamını onayınıza sunuyoruz."
+        ]
+      },
+      {
+        "h2": "Yağ bakımı Opel'de neden ertelenmemeli?",
+        "body": [
+          "Opel'in tork konvertörlü otomatiklerinde geçiş kalitesini belirleyen ilk şey yağın durumudur. Yaşlanan yağ hidrolik basıncı doğru taşıyamaz, kavrama yüzeyleri kaymaya başlar ve aşınma malzemesi valf gövdesine ulaşır.",
+          "Bakım geçmişi bilinmeyen ikinci el araçlarda yağın rengini, kokusunu ve içindeki partikülü kontrol ederek uygun yöntemi belirliyoruz; çok yüksek kilometreli ve hiç bakım görmemiş kutularda kontrollü değişimi tercih ediyoruz."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Astra'mda geri vites ve 3. vites birden kayboldu, ne oldu?",
+        "6T40 ailesinde bu tablo genellikle 3-5-R kavrama paketindeki dalga yayının kırıldığını gösterir. Kesin teşhis hata kayıtları ve kontrolle konur; onarım için kutunun açılması gerekir. Aracı zorlamadan getirmenizi öneririz."
+      ],
+      [
+        "Opel otomatik şanzıman yağı değişmeli mi?",
+        "Evet. Bu kutularda geçiş kalitesi büyük ölçüde yağın durumuna bağlıdır. Doğru spesifikasyonda yağ kullanılması şarttır; bakım geçmişi bilinmeyen araçlarda önce yağın durumunu kontrol ediyoruz."
+      ],
+      [
+        "Corsa'mdaki şanzıman Easytronic, bakıyor musunuz?",
+        "Easytronic, otomatik kumandalı bir manuel şanzımandır; yapısı tork konvertörlü otomatikten tamamen farklıdır. Aracınızın kutusu Easytronic ise gelmeden önce telefonla teyit etmenizi rica ediyoruz."
+      ],
+      [
+        "Şanzımanı komple değiştirmek gerekir mi?",
+        "Çoğu zaman hayır. Dalga yayı, valf gövdesi, solenoid ve tork konvertörü kaynaklı arızalar onarılabilir. Komple değişimi yalnızca gövde veya dişli grubunda yaygın hasar varsa konuşuyoruz."
+      ],
+      [
+        "Telefonda fiyat söyler misiniz?",
+        "Hayır. Aynı belirti bir araçta yağ değişimiyle, başka bir araçta kavrama paketi yenilemesiyle çözülebiliyor. Arıza tespitini ücretsiz yapıyor, yapılacak işi ve kapsamını onayınıza sunuyoruz; onaylamazsanız hiçbir ücret çıkmıyor."
+      ]
+    ],
+    "related": [
+      "tork-konvertoru-tamiri",
+      "otomatik-sanziman-yag-degisimi",
+      "sanziman-revizyonu-nedir",
+      "otomatik-sanziman-ariza-belirtileri"
+    ]
+  },
+  {
+    "slug": "sanziman-ariza-tespiti",
+    "kicker": "Teşhis · Ücretsiz Arıza Tespiti",
+    "title": "Şanzıman Arıza Tespiti Bursa | Ücretsiz Teşhis | HB",
+    "meta": "Bursa Nilüfer'de ücretsiz şanzıman arıza tespiti: hata kodu, canlı veri, yağ kontrolü ve yol testiyle arızanın kaynağını kutuyu açmadan ayırıyoruz.",
+    "h1": "Şanzıman Arıza Tespiti — Bursa Nilüfer",
+    "service_name": "Şanzıman Arıza Tespiti",
+    "service_type": "Otomatik şanzıman arıza tespiti ve teşhis",
+    "intro": "Şanzıman onarımında en pahalı hata yanlış teşhistir. Kutuyu açmadan önce hata kayıtlarını, canlı veriyi, yağın durumunu ve yol testini birlikte değerlendiriyoruz. Arıza tespiti ücretsizdir ve sizi hiçbir şeye bağlamaz.",
+    "sections": [
+      {
+        "h2": "Neden önce teşhis?",
+        "body": [
+          "Basit bir solenoid arızası için komple revizyon yapmak da, içinde hasar olan bir kutuya sadece yağ değiştirmek de aynı sonucu doğurur: gereksiz masraf ve geri dönen şikâyet.",
+          "Tespitin amacı arızanın <b>elektronik</b> mi, <b>hidrolik</b> mi yoksa <b>mekanik</b> mi olduğunu ayırmaktır. Üçünün çözümü de, maliyeti de birbirinden tamamen farklıdır."
+        ]
+      },
+      {
+        "h2": "Tespitte neler yapıyoruz?",
+        "body": [
+          "Her araçta aynı sırayı izliyoruz; hangi adımın gerekli olduğu şikâyete göre değişebilir."
+        ],
+        "items": [
+          "<b>Şikâyeti dinlemek</b> — sorun ne zaman, hangi viteste, soğukken mi ısındıkça mı ortaya çıkıyor",
+          "<b>Hata kayıtlarını okumak</b> — şanzıman ve motor kontrol ünitelerindeki kayıtlı ve anlık kodlar",
+          "<b>Canlı veriyi izlemek</b> — devir, yağ sıcaklığı, kavrama kayması, adaptasyon değerleri",
+          "<b>Yağı kontrol etmek</b> — seviye, renk, koku ve metal partikül",
+          "<b>Yol testi</b> — şikâyetin birebir doğrulanması ve geçiş kalitesinin gözlenmesi",
+          "<b>Görsel kontrol</b> — sızıntı, soket ve kablo bağlantıları, yağ soğutucu hattı",
+          "<b>Bulguları anlatmak</b> — ne bulduğumuzu, seçenekleri ve kapsamı onayınıza sunmak"
+        ]
+      },
+      {
+        "h2": "Hata kodu okutmak neden yetmez?",
+        "body": [
+          "Hata kodu arızayı değil, kontrol ünitesinin hangi devrede sorun algıladığını söyler. Örneğin bir basınç kodu; solenoidden, valf gövdesindeki aşınmadan, düşük yağ seviyesinden ya da kayan bir kavrama paketinden gelebilir.",
+          "Başka bir yerde okutulmuş kodlarla gelirseniz bu bizim için değerli bir başlangıçtır; ama karar vermek için kodu canlı veri ve yol testiyle birlikte değerlendiriyoruz."
+        ]
+      },
+      {
+        "h2": "Tespitten sonra ne oluyor?",
+        "body": [
+          "Bulguları ve yapılması gereken işi kapsamıyla birlikte anlatıyoruz. Onay vermezseniz hiçbir işlem yapılmaz ve hiçbir ücret çıkmaz. Onarım sırasında kapsam değişirse işe devam etmeden önce size haber veriyoruz.",
+          "Yaptığımız işçilik ve değiştirdiğimiz parçalar garanti kapsamındadır; garantinin süresi ve kapsamı işin türüne göre değiştiği için teslim sırasında yazılı olarak verilir."
+        ]
+      },
+      {
+        "h2": "Gelmeden önce hazırlarsanız işimizi kolaylaştırır",
+        "body": [],
+        "items": [
+          "Aracın markası, modeli, yılı ve biliyorsanız şanzıman tipi",
+          "Şikâyetin tarifi: hangi viteste, hangi hızda, soğukken mi ısındıkça mı",
+          "Panelde uyarı çıktı mı, araç koruma moduna geçti mi",
+          "Şanzıman yağının en son ne zaman değiştiği",
+          "Varsa başka serviste okutulmuş hata kodları veya raporlar"
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Arıza tespiti gerçekten ücretsiz mi?",
+        "Evet. Arıza tespitini ücretsiz yapıyor, yapılacak işi ve kapsamını onayınıza sunuyoruz; onaylamazsanız hiçbir ücret çıkmıyor."
+      ],
+      [
+        "Tespitten sonra onarımı yaptırmazsam ne olur?",
+        "Hiçbir şey. Aracınız olduğu gibi teslim edilir. Tespitin amacı size doğru bilgiyle karar verdirmek; sizi bir işe bağlamak değil."
+      ],
+      [
+        "Kutuyu açmadan arızayı bulabilir misiniz?",
+        "Çoğu durumda arızanın elektronik, hidrolik ya da mekanik kaynaklı olduğunu kutuyu açmadan ayırabiliyoruz. Mekanik iç hasar şüphesinde kesin sonuç için söküm gerekir; bu kararı da onayınıza sunarız."
+      ],
+      [
+        "Başka serviste teşhis kondu, ikinci görüş alabilir miyim?",
+        "Elbette. Elinizdeki raporları ve okunmuş kodları getirmeniz süreci hızlandırır. Kendi kontrollerimizi bağımsız olarak yapar, bulgularımızı açıkça paylaşırız."
+      ],
+      [
+        "Aracım vites atmıyor, sürerek mi getireyim?",
+        "Şanzımanı koruma moduna geçmiş, vites atmayan veya sarsan bir aracı uzun yol sürmenizi önermiyoruz; çekici en doğrusu. Sürüşe devam etmek çoğu zaman hasarı büyütür."
+      ],
+      [
+        "Telefonda fiyat söyler misiniz?",
+        "Hayır. Aracı görmeden verilen rakam ya sizi yanıltır ya da bizi. Rakamı, tespitten sonra kapsamla birlikte veriyoruz."
+      ]
+    ],
+    "related": [
+      "otomatik-sanziman-ariza-belirtileri",
+      "mekatronik-arizasi",
+      "sanziman-tamiri-fiyati",
+      "tork-konvertoru-tamiri"
+    ]
+  },
+  {
+    "slug": "sanziman-tamiri-fiyati",
+    "kicker": "Fiyat Rehberi · Şeffaf Süreç",
+    "title": "Şanzıman Tamiri Fiyatı Neye Göre Değişir? | Bursa | HB",
+    "meta": "Şanzıman tamiri fiyatını belirleyen kalemler, telefonda neden rakam verilmediği ve teklif alırken sormanız gereken sorular. Bursa Nilüfer.",
+    "h1": "Şanzıman Tamiri Fiyatı Neye Göre Değişir?",
+    "service_name": "Şanzıman Tamiri",
+    "service_type": "Otomatik şanzıman onarımı teklif ve fiyatlandırma süreci",
+    "intro": "\"Şanzıman tamiri ne kadar?\" sorusunun dürüst cevabı \"önce bakmamız gerekiyor\"dur. Bu sayfada nedenini, fiyatı belirleyen kalemleri ve hangi servisten teklif alırsanız alın sormanız gereken soruları anlatıyoruz.",
+    "sections": [
+      {
+        "h2": "Neden telefonda rakam vermiyoruz?",
+        "body": [
+          "Aynı şikâyetin arkasında maliyeti birbirinden kat kat farklı işler olabilir. \"Vites geçişinde sarsıntı\" diye tarif edilen bir şikâyetin kaynağı şunlardan herhangi biri olabilir:"
+        ],
+        "items": [
+          "Ömrünü doldurmuş şanzıman yağı — bakım seviyesinde bir iş",
+          "Bozulmuş adaptasyon değerleri — ölçüm ve öğrenme işlemi",
+          "Arızalı bir solenoid — tek parça değişimi",
+          "Aşınmış valf gövdesi — kutunun hidrolik kumanda tarafında onarım",
+          "Aşınmış kavrama paketi — komple revizyon"
+        ]
+      },
+      {
+        "h2": "Telefonda verilen rakamın sorunu",
+        "body": [
+          "Aracı görmeden verilen rakam ya gerçekçi olmayacak kadar düşüktür ve iş başladıktan sonra büyür, ya da garantiye almak için gereğinden yüksektir. İki durum da müşteriye zarar verir. Bu yüzden rakamı, arıza tespitinden sonra kapsamla birlikte veriyoruz. Tespit ücretsizdir."
+        ]
+      },
+      {
+        "h2": "Fiyatı belirleyen kalemler",
+        "body": [],
+        "items": [
+          "<b>Arızanın türü ve kapsamı</b> — tek parça değişimi ile komple revizyon arasında büyük fark vardır",
+          "<b>Şanzıman tipi</b> — tork konvertörlü otomatik, çift kavramalı (DSG, S-Tronic, PowerShift, PDK) ve CVT kutuların parça ve işçilik gereksinimi farklıdır",
+          "<b>Marka ve model</b> — parça bulunabilirliği ve fiyatı markadan markaya değişir",
+          "<b>Parça tercihi</b> — orijinal, eşdeğer veya yenilenmiş parça; maliyet ve garanti açısından farklıdır",
+          "<b>Söküm-takma işçiliği</b> — bazı araçlarda kutuya ulaşmak çok daha fazla söküm gerektirir",
+          "<b>Tamamlayıcı işler</b> — tork konvertörü revizyonu, yağ soğutucu hattı temizliği, kodlama ve adaptasyon"
+        ]
+      },
+      {
+        "h2": "Maliyeti en çok ne değiştirir? Beklemek.",
+        "body": [
+          "Otomatik şanzımanda erken müdahale ile geç müdahale arasındaki fark, çoğu zaman bir parça onarımı ile komple revizyon arasındaki farktır.",
+          "Örneğin aşınmaya başlayan bir tork konvertörü kilitleme kavraması, ilk aşamada konvertör onarımı ve yağ bakımıyla çözülebilir. Sürüşe devam edildikçe balata malzemesi yağa karışır, valf gövdesine ve diğer kavrama paketlerine ulaşır; birkaç bin kilometre sonra iş komple revizyona dönüşür. Zamanında yapılan yağ bakımı da aynı mantıkla, ertelendiğinde çıkacak onarımın yanında küçük bir maliyettir."
+        ]
+      },
+      {
+        "h2": "Teklif alırken sorulacak sorular",
+        "body": [
+          "Hangi servisten teklif alırsanız alın, bu soruların cevabını istemeniz karşılaştırmayı kolaylaştırır:"
+        ],
+        "items": [
+          "Arıza nasıl tespit edildi? Hata kodu okundu mu, yol testi yapıldı mı?",
+          "Tam olarak hangi parçalar değişecek? Kalem kalem liste isteyin.",
+          "Parçalar orijinal mi, eşdeğer mi, yenilenmiş mi?",
+          "Yağ, filtre ve conta fiyata dahil mi?",
+          "Tork konvertörü kontrol edilecek mi? (Klasik otomatiklerde sık atlanır.)",
+          "Yağ soğutucu hattı temizlenecek mi?",
+          "Kodlama ve adaptasyon yapılacak mı? (Çift kavramalı kutularda şarttır.)",
+          "Garantinin süresi ve kapsamı nedir, yazılı veriliyor mu?"
+        ]
+      },
+      {
+        "h2": "Bizde süreç nasıl işliyor?",
+        "body": [
+          "Arıza tespitini ücretsiz yapıyoruz. Bulguları ve yapılacak işi kapsamıyla birlikte onayınıza sunuyoruz; onaylamazsanız hiçbir ücret çıkmıyor. Onarım sırasında kapsam değişirse devam etmeden önce size haber veriyoruz.",
+          "Yaptığımız işçilik ve değiştirdiğimiz parçalar garanti kapsamındadır. Garantinin süresi ve kapsamı işin türüne göre değiştiği için teslim sırasında yazılı olarak veriliyor."
+        ]
+      }
+    ],
+    "faqs": [
+      [
+        "Telefonda yaklaşık bir fiyat öğrenebilir miyim?",
+        "Hayır. Aynı belirti bir araçta yağ değişimiyle, başka bir araçta kavrama paketi yenilemesiyle çözülebiliyor. Aracı görmeden verilen rakam ya sizi yanıltır ya da bizi. Arıza tespitini ücretsiz yapıyor, yapılacak işi ve kapsamını onayınıza sunuyoruz."
+      ],
+      [
+        "Arıza tespiti ücretli mi?",
+        "Hayır, ücretsiz. Onaylamazsanız hiçbir ücret çıkmıyor."
+      ],
+      [
+        "Neden bazı servisler çok daha düşük rakam söylüyor?",
+        "Fark genellikle kapsamdan doğar. Tork konvertörü kontrolü, yağ soğutucu hattı temizliği, conta takımı, kodlama ve adaptasyon dahil mi değil mi, teklifi kökten değiştirir. Karşılaştırırken kalem kalem liste isteyin."
+      ],
+      [
+        "Tamir mi ucuz, şanzımanı komple değiştirmek mi?",
+        "Hasarın boyutuna bağlı. Kavrama, keçe, solenoid ve valf gövdesi kaynaklı arızalarda onarım hem daha ekonomik hem kalıcıdır. Gövde veya dişli grubunda yaygın hasar varsa değişimi konuşuyoruz. Tespitten sonra iki seçeneği de kapsamıyla anlatıyoruz."
+      ],
+      [
+        "Çıkma (ikinci el) şanzıman takmak mantıklı mı?",
+        "Geçmişi bilinmeyen bir kutu, aracınızdakiyle aynı sorunu taşıyor olabilir ve çoğu zaman kodlama ve adaptasyon gerektirir. Kendi kutunuz onarılabilir durumdaysa bunu genellikle daha güvenli buluyoruz; kararı tespitten sonra birlikte veriyoruz."
+      ],
+      [
+        "Yapılan işe garanti var mı?",
+        "Evet. Yaptığımız işçilik ve değiştirdiğimiz parçalar garanti kapsamında. Garantinin süresi ve neyi kapsadığı işin türüne göre değiştiği için teslim sırasında yazılı olarak veriyoruz. Kullanım hatası ve bakım aralığına uyulmaması garanti dışı."
+      ]
+    ],
+    "related": [
+      "sanziman-ariza-tespiti",
+      "sanziman-revizyonu-nedir",
+      "otomatik-sanziman-ariza-belirtileri",
+      "tork-konvertoru-tamiri"
+    ]
   }
 ]
