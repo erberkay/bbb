@@ -152,7 +152,7 @@
   <link rel="preload" href="/assets/fonts/archivo-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
   <script>document.documentElement.className += " js";</script>
-  <link rel="stylesheet" href="/assets/styles.css?v=20261005a">
+  <link rel="stylesheet" href="/assets/styles.css?v=20261005d">
 </head>
 <body>
 
@@ -342,49 +342,28 @@
   </main>
 
 <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
+  <footer class="footer cv-footer" id="iletisim">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <a href="/" class="brand">
-            <img src="/assets/img/logo-hb.webp" width="480" height="480" class="logo" alt="HB Otomatik Şanzıman">
-            <span class="brand-text"><b>HB<span class="brand-mid"> OTOMATİK</span> ŞANZIMAN</b><span>Bursa · Nilüfer</span></span>
-          </a>
-          <p>Bursa Nilüfer'de otomatik şanzıman tamiri, revizyonu ve bakımında uzman servisiniz. Garantili işçilik, güvenilir hizmet.</p>
+      <div class="cv-footer-grid">
+        <div class="cv-foot-brand">
+          <img src="/assets/img/logo-hb.webp" width="480" height="480" class="cv-foot-logo" alt="HB Otomatik Şanzıman" loading="lazy" decoding="async">
+          <p>Bursa'da yalnızca otomatik şanzıman tamiri ve revizyonu.</p>
         </div>
-        <details class="footer-col">
-          <summary><h4>Hizmetler</h4></summary>
-          <ul>
-            <li><a href="/dsg-sanziman-tamiri/">DSG Şanzıman Tamiri</a></li>
-            <li><a href="/s-tronic-sanziman-tamiri/">S-Tronic Şanzıman Tamiri</a></li>
-            <li><a href="/ford-powershift-sanziman-tamiri/">Ford PowerShift Tamiri</a></li>
-            <li><a href="/cvt-sanziman-tamiri/">CVT Şanzıman Tamiri</a></li>
-            <li><a href="/#hizmetler">Tüm Hizmetler</a></li>
-          </ul>
-        </details>
-        <details class="footer-col">
-          <summary><h4>Kurumsal</h4></summary>
-          <ul>
-            <li><a href="/#neden-biz">Neden Biz</a></li>
-            <li><a href="/#surec">Çalışma Sürecimiz</a></li>
-            <li><a href="/#rehber">Blog & Rehber</a></li>
-            <li><a href="/#randevu">Randevu Al</a></li>
-            <li><a href="/#iletisim">İletişim</a></li>
-          </ul>
-        </details>
-        <details class="footer-col">
-          <summary><h4>İletişim</h4></summary>
-          <ul>
-            <li><a href="/#iletisim">Üçevler, 28. Sk. No:51<br>Nilüfer / Bursa</a></li>
-            <li><a href="tel:+905304918005">0530 491 80 05</a></li>
-            <li><a href="tel:+905438951732">0543 895 17 32</a></li>
-            <li><a class="mail-link" data-mu="hbotomatiksanziman16" data-md="gmail.com" href="/">e-posta</a></li>
-          </ul>
-        </details>
+        <div class="cv-foot-contact">
+          <div class="cv-foot-h">İletişim</div>
+          <a href="tel:+905304918005">0530 491 80 05</a>
+          <a href="tel:+905438951732">0543 895 17 32</a>
+          <a class="mail-link" data-mu="hbotomatiksanziman16" data-md="gmail.com" href="/">e-posta</a>
+        </div>
+        <div class="cv-foot-contact">
+          <div class="cv-foot-h">Adres</div>
+          <span>Üçevler, 28. Sk. 27. Blok No:51<br>16270 Nilüfer / Bursa</span>
+          <a class="btn btn-ghost btn-sm cv-map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=HB%20Otomatik%20%C5%9Eanz%C4%B1man%2C%20%C3%9C%C3%A7evler%2C%2028.%20Sk.%2C%20Nil%C3%BCfer%20Bursa" target="_blank" rel="noopener">Haritada göster</a>
+        </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> HB Otomatik Şanzıman. Tüm hakları saklıdır.</span>
-        <span><a href="/gizlilik/">Gizlilik Politikası ve KVKK</a></span>
+        <span>© <span id="year"></span> HB Otomatik Şanzıman</span>
+        <span><a href="/gizlilik/">Gizlilik ve KVKK</a></span>
       </div>
     </div>
   </footer>
@@ -461,8 +440,8 @@
 <!-- Firebase SDK (compat) -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-  <script src="/assets/firebase-config.js?v=20261005a"></script>
+  <script src="/assets/firebase-config.js?v=20261005d"></script>
   
-  <script src="/assets/app.js?v=20261005a"></script>
+  <script src="/assets/app.js?v=20261005d"></script>
 </body>
 </html>
