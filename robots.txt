@@ -1,4 +1,4 @@
-# HB Şanzıman — robots.txt
+# HB Otomatik Şanzıman — robots.txt
 User-agent: *
 Allow: /
 

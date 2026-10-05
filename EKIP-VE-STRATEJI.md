@@ -1,4 +1,4 @@
-# HB Şanzıman — Dijital Büyüme Ekibi & SEO Stratejisi
+# HB Otomatik Şanzıman — Dijital Büyüme Ekibi & SEO Stratejisi
 
 Bu belge, siteyi kurumsal seviyeye taşımak için kurulan **50 kişilik sanal ekibin**
 görev dağılımını, çalışma planını ve teslim edilen işleri içerir.
@@ -121,8 +121,8 @@ Ana Sayfa  →  "bursa şanzıman", "otomatik şanzıman bursa"
 │
 ├── /markalar/           →  marka + model aramaları (yüksek niyet)
 │     ├── mercedes, bmw, volkswagen, audi
-│     ├── ford-powershift, renault-edc
-│     └── toyota-cvt, hyundai-kia
+│     ├── porsche-pdk, land-rover, opel
+│     └── ford-powershift
 │
 ├── /bolgeler/           →  "yakınımdaki" / ilçe aramaları
 │     └── nilüfer, osmangazi, yıldırım, gemlik, inegöl, mudanya

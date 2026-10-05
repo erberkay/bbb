@@ -26,7 +26,8 @@ const BRANDS = [
         'Polo — DQ200',
         'Tiguan — DQ250 / DQ500',
         'Caddy ve Transporter — DQ200 / DQ500',
-        'Jetta, Scirocco, Touran, T-Roc, Arteon'
+        'Jetta, Scirocco, Touran, T-Roc, Arteon',
+        'Skoda (Octavia, Superb) ve Seat (Leon, Ateca) — aynı DQ ailesi'
       ]
     },
     issues: {
@@ -190,6 +191,143 @@ const BRANDS = [
     ]
   },
   {
+    slug: 'porsche-pdk-sanziman-tamiri',
+    nav: 'Porsche',
+    brand: 'Porsche',
+    title: 'Porsche PDK Şanzıman Tamiri Bursa | Cayenne, Macan',
+    h1: 'Porsche Şanzıman Tamiri',
+    description: 'Bursa’da Porsche PDK ve Tiptronic S şanzıman tamiri. 911, Boxster, Cayman, Panamera, Macan ve Cayenne için mekatronik, kavrama ve yağ bakımı.',
+    lead: '911, Boxster, Cayman, Panamera ve Macan’daki PDK çift kavramalı şanzımanlar ile Cayenne’deki Tiptronic S otomatiklerde arıza tespiti, onarım ve bakım.',
+    intro: [
+      'Porsche iki farklı otomatik şanzıman mimarisi kullanır. Spor modellerde ve Macan’da <strong>PDK (Porsche Doppelkupplung)</strong> adlı çift kavramalı şanzıman bulunur; Cayenne’de ise tork konvertörlü klasik otomatik olan <strong>Tiptronic S</strong> yer alır. İkisinin arıza karakteri ve servis yöntemi birbirinden tamamen farklıdır.',
+      'PDK, ıslak kavramalı bir çift kavrama sistemidir: iki kavrama paketi yağ banyosunda çalışır, geçişleri mekatronik ünitesi yönetir. Bu yüzden PDK’da şanzımanın ömrünü belirleyen iki şey vardır: <strong>yağ ve filtre bakımının düzenli yapılması</strong> ve <strong>kavrama adaptasyon değerlerinin</strong> sağlıklı kalması. 7 ileri PDK önceki nesil 911, Boxster/Cayman ve Panamera’da; 8 ileri PDK yeni nesil 911 ve Panamera’da kullanılır.',
+      'Cayenne’deki Tiptronic S ise tork konvertörlü bir otomatiktir. Ağır gövde ve yüksek tork nedeniyle bu kutularda yağın termal yükü yüksektir; ihmal edilen yağ bakımı valf gövdesinde basınç sorunlarına ve tork konvertörü kaynaklı titremeye dönüşür.'
+    ],
+    models: {
+      h2: 'Servis verdiğimiz Porsche modelleri',
+      items: [
+        '911 — 7 ileri ve 8 ileri PDK',
+        'Boxster ve Cayman (718 dahil) — 7 ileri PDK',
+        'Panamera — 7 ileri ve 8 ileri PDK',
+        'Macan — 7 ileri PDK',
+        'Cayenne — 6 ve 8 ileri Tiptronic S (tork konvertörlü)'
+      ]
+    },
+    issues: {
+      h2: 'Porsche şanzımanlarında sık görülen şikâyetler',
+      items: [
+        '“PDK arızası” veya şanzıman uyarısı, acil moda geçiş',
+        'Kalkışta veya park manevrasında silkeleme (kavrama adaptasyonu / aşınma)',
+        'Geri vites veya 1. viteste gecikme, vuruntu',
+        'Mekatronik ünitesi ve sensör kaynaklı hata kayıtları',
+        'Cayenne Tiptronic S’te sert geçiş ve tork konvertörü titremesi',
+        'Yağ bakımı ihmaline bağlı geçiş bozuklukları ve yağ kaçakları'
+      ]
+    },
+    faqs: [
+      { q: 'PDK şanzıman yağı değişir mi?', a: 'Evet. PDK ıslak kavramalı bir çift kavrama sistemidir ve kavramalar yağ banyosunda çalışır; yaşlanan yağ hem kavrama davranışını hem mekatronik valflerini etkiler. Kullanım profilinize ve aracın bakım geçmişine göre uygun aralığı birlikte belirliyoruz.' },
+      { q: 'Kalkışta silkeleme PDK’da arıza mıdır?', a: 'Her zaman değil. Kavrama adaptasyon değerlerinin bozulması da aynı hissi verir ve bazı araçlarda temel ayar ile adaptasyon şikâyeti giderir. Aşınma ilerlemişse kavrama paketi yenilenir. Karar, değerler okunup yol testi yapıldıktan sonra verilir.' },
+      { q: 'Cayenne’deki şanzıman da PDK mı?', a: 'Hayır. Cayenne’de tork konvertörlü klasik otomatik (Tiptronic S) bulunur. Arıza karakteri PDK’dan farklıdır: valf gövdesi, solenoid ve tork konvertörü kaynaklı şikâyetler öne çıkar.' }
+    ],
+    related: [
+      { href: 'hizmetler/mekatronik-tamiri/', label: 'Mekatronik ünitesi tamiri' },
+      { href: 'hizmetler/tork-konvertoru-tamiri/', label: 'Tork konvertörü tamiri' },
+      { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı değişimi' }
+    ]
+  },
+  {
+    slug: 'land-rover-sanziman-tamiri',
+    nav: 'Land Rover',
+    brand: 'Land Rover',
+    title: 'Land Rover Şanzıman Tamiri Bursa | ZF 6HP, 8HP, 9HP',
+    h1: 'Land Rover Şanzıman Tamiri',
+    description: 'Bursa’da Land Rover ve Range Rover otomatik şanzıman tamiri. ZF 6HP, 8HP ve 9HP şanzımanlarda mekatronik, valf gövdesi ve yağ bakımı.',
+    lead: 'Range Rover, Range Rover Sport, Velar, Evoque, Discovery ve Discovery Sport modellerindeki ZF otomatik şanzımanlara arıza tespiti, onarım ve bakım.',
+    intro: [
+      'Land Rover ve Range Rover modellerinin büyük bölümünde <strong>ZF</strong> üretimi otomatik şanzımanlar bulunur. Önceki nesil Range Rover, Range Rover Sport ve Discovery 3/4’te <strong>ZF 6HP</strong>; yeni nesil Range Rover, Range Rover Sport, Velar ve Discovery 5’te boyuna yerleşimli <strong>ZF 8HP</strong>; Evoque ve Discovery Sport’ta ise enine yerleşimli <strong>ZF 9HP</strong> kullanılır.',
+      'Bu araçların ağır gövdesi, yüksek torku ve arazi kullanımı şanzıman yağının termal yükünü artırır. Arızaların önemli bir bölümü yapısal kusurdan değil, <strong>“ömürlük” kabul edilip hiç değiştirilmeyen yağdan</strong> kaynaklanır: yaşlanan yağ valf gövdesinde basınç kontrolünü bozar, geçişler sertleşir veya gecikir.',
+      '6HP serisinde mekatronik bağlantı noktalarındaki sızdırmazlık elemanları zamanla sertleşir; 9HP’de ise geçiş kalitesi büyük ölçüde yazılım ve adaptasyon değerlerine bağlıdır. Bu yüzden her kutuya kendi tespit protokolüyle yaklaşıyoruz.'
+    ],
+    models: {
+      h2: 'Servis verdiğimiz Land Rover modelleri',
+      items: [
+        'Range Rover — ZF 6HP / ZF 8HP',
+        'Range Rover Sport — ZF 6HP / ZF 8HP',
+        'Range Rover Velar — ZF 8HP',
+        'Discovery 3 ve 4 — ZF 6HP · Discovery 5 — ZF 8HP',
+        'Range Rover Evoque — ZF 9HP',
+        'Discovery Sport — ZF 9HP'
+      ]
+    },
+    issues: {
+      h2: 'Land Rover şanzımanlarında sık görülen şikâyetler',
+      items: [
+        '“Gearbox fault” / şanzıman arızası uyarısı ve kısıtlı performans modu',
+        'Vites geçişlerinde sertlik, darbe veya gecikme',
+        'ZF 6HP’de mekatronik bağlantılarında yağ kaçağı',
+        '9HP’de düşük viteslerde kararsız geçiş ve vites seçiminde gecikme',
+        'Tork konvertörü kilitlemesine bağlı titreme',
+        'Şanzıman karteri ve conta kaynaklı yağ sızıntısı'
+      ]
+    },
+    faqs: [
+      { q: 'Land Rover şanzıman yağı gerçekten ömürlük mü?', a: 'Uygulamada hayır. Ağır gövde, yüksek tork ve arazi kullanımı yağı üreticinin varsaydığından hızlı yaşlandırır. Bakım geçmişi bilinmeyen veya yüksek kilometreli araçlarda yağ ve filtre bakımını öneriyoruz; yöntemi şanzımanın durumunu gördükten sonra belirliyoruz.' },
+      { q: '“Gearbox fault” uyarısı gelince sürmeye devam edebilir miyim?', a: 'Uyarı şanzımanın kendini korumaya aldığını gösterir. Kısa mesafede servise ulaşmak çoğu zaman mümkündür, ancak sürüşü uzatmak arızayı büyütebilir. Hata kayıtlarını okumadan nedenini söylemek mümkün değildir.' },
+      { q: 'Evoque’ta vitesler sert geçiyor, yazılım mı arıza mı?', a: 'ZF 9HP’de geçiş kalitesi adaptasyon değerlerine ve yazılıma çok bağlıdır; bazı şikâyetler temel ayar ve adaptasyonla düzelir. Mekanik aşınma da olabilir — ayrımı, değerler okunup yol testi yapıldıktan sonra yapıyoruz.' }
+    ],
+    related: [
+      { href: 'markalar/bmw-sanziman-tamiri/', label: 'ZF 6HP / 8HP — BMW şanzıman servisi' },
+      { href: 'hizmetler/mekatronik-tamiri/', label: 'Mekatronik ünitesi tamiri' },
+      { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı değişimi' }
+    ]
+  },
+  {
+    slug: 'opel-otomatik-sanziman-tamiri',
+    nav: 'Opel',
+    brand: 'Opel',
+    title: 'Opel Otomatik Şanzıman Tamiri Bursa | Astra, Insignia',
+    h1: 'Opel Otomatik Şanzıman Tamiri',
+    description: 'Bursa’da Opel otomatik şanzıman tamiri. Astra, Insignia, Mokka, Corsa ve Grandland için valf gövdesi, kavrama paketi ve yağ bakımı.',
+    lead: 'Astra, Insignia, Zafira, Mokka, Corsa ve Grandland modellerindeki tork konvertörlü 6 ve 8 ileri otomatik şanzımanlara arıza tespiti ve onarım.',
+    intro: [
+      'Opel modellerinde kuşağa göre farklı otomatik şanzımanlar bulunur. Astra J, Insignia A, Zafira C ve ilk nesil Mokka gibi modellerde yaygın olan kutu, <strong>GM 6T40 / 6T45 ailesi 6 ileri otomatiktir</strong>. Bazı dizel Insignia ve önceki nesil modellerde <strong>Aisin üretimi 6 ileri otomatik</strong> yer alır. Yeni nesil Corsa, Astra, Mokka ve Grandland’da ise <strong>8 ileri otomatik (EAT8)</strong> kullanılır.',
+      '6T40 ailesinde bilinen bir zayıf nokta, <strong>3-5-R kavrama paketindeki dalga yayıdır</strong>; kırıldığında 3., 5. ve geri vites kaybolur, araç çoğu zaman acil moda geçer. Bu arıza çoğunlukla aniden ortaya çıkar ve şanzımanın açılarak kavrama paketinin onarılmasını gerektirir.',
+      'Bütün bu kutularda geçiş kalitesini belirleyen ortak faktör yağın durumu ve adaptasyon değerleridir. Erken aşamadaki sert 1–2 geçişi veya gecikme şikâyetlerinin bir kısmı yağ bakımı ve adaptasyonla çözülebilir; bu yüzden işleme başlamadan önce mutlaka ölçüm yapıyoruz.'
+    ],
+    models: {
+      h2: 'Servis verdiğimiz Opel modelleri',
+      items: [
+        'Astra J ve K — 6 ileri otomatik (6T40 ailesi)',
+        'Insignia A — 6 ileri otomatik (GM 6T / Aisin)',
+        'Zafira C ve Mokka — 6 ileri otomatik',
+        'Yeni Corsa ve Astra — 8 ileri otomatik',
+        'Mokka (yeni nesil) ve Grandland — 8 ileri otomatik',
+        'Diğer Opel otomatik modelleri — arıza tespiti ile'
+      ]
+    },
+    issues: {
+      h2: 'Opel otomatik şanzımanlarında sık görülen şikâyetler',
+      items: [
+        '3., 5. veya geri vitesin kaybolması, acil moda geçiş (6T40 — 3-5-R dalga yayı)',
+        'Sert 1–2 geçişi ve kalkışta vuruntu',
+        'Vites geçişlerinde gecikme, devir yükselmesi',
+        'Solenoid ve valf gövdesi kaynaklı hata kayıtları',
+        'Yağ yaşlanmasına bağlı geçiş bozuklukları',
+        'Tork konvertörü kaynaklı titreme'
+      ]
+    },
+    faqs: [
+      { q: 'Astra’mda geri vites ve 3. vites birden kayboldu, ne oldu?', a: '6T40 ailesi şanzımanlarda bu tablo genellikle 3-5-R kavrama paketindeki dalga yayının kırılmasına işaret eder. Kesin teşhis hata kayıtları ve kontrolle konur; onarım için şanzımanın açılması gerekir. Aracı zorlamadan getirmenizi öneririz.' },
+      { q: 'Opel otomatik şanzıman yağı değişmeli mi?', a: 'Evet. Bu kutularda geçiş kalitesi büyük ölçüde yağın durumuna bağlıdır. Bakım geçmişi bilinmeyen araçlarda yağ ve filtre durumunu kontrol ederek uygun yöntemi belirliyoruz.' },
+      { q: 'Easytronic şanzımana bakıyor musunuz?', a: 'Easytronic, otomatik kumandalı bir manuel şanzımandır (robotize). Biz yalnızca tork konvertörlü ve çift kavramalı otomatik şanzımanlara servis veriyoruz; aracınızın kutu tipinden emin değilseniz bizi arayın, birlikte bakalım.' }
+    ],
+    related: [
+      { href: 'hizmetler/otomatik-sanziman-tamiri/', label: 'Otomatik şanzıman tamiri' },
+      { href: 'hizmetler/sanziman-revizyonu/', label: 'Şanzıman revizyonu' },
+      { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı değişimi' }
+    ]
+  },
+  {
     slug: 'ford-powershift-sanziman-tamiri',
     nav: 'Ford',
     brand: 'Ford',
@@ -232,144 +370,6 @@ const BRANDS = [
     related: [
       { href: 'hizmetler/dsg-sanziman-tamiri/', label: 'Çift kavramalı şanzıman tamiri' },
       { href: 'hizmetler/mekatronik-tamiri/', label: 'Mekatronik / TCM onarımı' },
-      { href: 'hizmetler/sanziman-ariza-tespiti/', label: 'Şanzıman arıza tespiti' }
-    ]
-  },
-  {
-    slug: 'renault-edc-sanziman-tamiri',
-    nav: 'Renault & Dacia',
-    brand: 'Renault',
-    title: 'Renault EDC Şanzıman Tamiri Bursa | Megane, Clio',
-    h1: 'Renault & Dacia Şanzıman Tamiri',
-    description: 'Bursa’da Renault EDC (DC4) ve Dacia otomatik şanzıman tamiri. Megane, Clio, Fluence, Duster için mekatronik ve debriyaj onarımı.',
-    lead: 'Megane, Clio, Fluence, Captur ve Dacia Duster modellerinde EDC çift kavramalı şanzımanlara tamir, bakım ve adaptasyon hizmeti.',
-    intro: [
-      'Renault’nun <strong>EDC (Efficient Dual Clutch)</strong> şanzımanı, Getrag kaynaklı çift kavramalı bir kutudur ve Megane, Clio, Fluence, Captur ile Dacia Duster gibi modellerde yaygın olarak kullanılır. Türkiye’de çok sayıda araçta bulunması nedeniyle atölyemizde sık servis verdiğimiz sistemlerdendir.',
-      'EDC kutularda en yaygın şikâyetler <strong>kalkışta titreme</strong>, <strong>düşük viteslerde tekleme</strong> ve <strong>mekatronik kaynaklı vites atmama</strong> problemleridir. Ayrıca debriyaj aktüatörü ve yağ kaçakları sık karşılaşılan arızalardandır.',
-      'Renault EDC’de doğru teşhis için debriyaj adaptasyon değerlerinin ve hata kayıtlarının birlikte okunması gerekir. Adaptasyon değerleri sınırda olan araçlarda parça değiştirmeden önce temel ayar denemesi yapıyoruz.'
-    ],
-    models: {
-      h2: 'Servis verdiğimiz Renault & Dacia modelleri',
-      items: [
-        'Megane (3, 4) — EDC / DC4',
-        'Clio (4, 5) — EDC',
-        'Fluence — EDC',
-        'Captur ve Kadjar — EDC',
-        'Dacia Duster — EDC',
-        'Dacia Sandero, Logan — Otomatik / EDC'
-      ]
-    },
-    issues: {
-      h2: 'Renault EDC’de sık görülen arızalar',
-      items: [
-        'Kalkışta titreme ve zıplama',
-        'Düşük viteslerde tekleme ve sarsıntı',
-        'Vites atmama, N konumunda kalma',
-        'Mekatronik ünitesi ve solenoid arızaları',
-        'Debriyaj aktüatörü arızası',
-        'Şanzıman yağı kaçağı'
-      ]
-    },
-    faqs: [
-      { q: 'Megane EDC titremesi neden olur?', a: 'En yaygın nedenler debriyaj balatası aşınması ve adaptasyon değerlerinin bozulmasıdır. Bazı araçlarda temel ayar ve adaptasyon şikâyeti giderir; aşınma ilerlemişse debriyaj seti yenilenir. Karar ölçüm sonrası verilir.' },
-      { q: 'EDC şanzıman yağı değişmeli mi?', a: 'Evet. EDC kutularda yağ ve filtre bakımı ihmal edilirse mekatronik valf kanalları tıkanır ve geçiş kalitesi bozulur. Kullanım profilinize göre uygun aralığı belirliyoruz.' },
-      { q: 'Dacia Duster otomatik şanzımanına servis veriyor musunuz?', a: 'Evet. Duster ve diğer Dacia modellerindeki EDC ve otomatik şanzımanlara arıza tespiti, onarım ve bakım hizmeti veriyoruz.' }
-    ],
-    related: [
-      { href: 'hizmetler/dsg-sanziman-tamiri/', label: 'Çift kavramalı şanzıman tamiri' },
-      { href: 'hizmetler/mekatronik-tamiri/', label: 'Mekatronik ünitesi tamiri' },
-      { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı değişimi' }
-    ]
-  },
-  {
-    slug: 'toyota-cvt-sanziman-tamiri',
-    nav: 'Toyota & Honda',
-    brand: 'Toyota',
-    title: 'Toyota ve Honda CVT Şanzıman Tamiri Bursa',
-    h1: 'Toyota & Honda Şanzıman Tamiri',
-    description: 'Bursa’da Toyota ve Honda CVT ile otomatik şanzıman tamiri. Corolla, C-HR, Auris, Civic ve CR-V için kayış, kasnak ve valf bloğu onarımı.',
-    lead: 'Corolla, C-HR, Auris, Civic ve CR-V modellerinde CVT ve klasik otomatik şanzımanlara bakım, arıza tespiti ve onarım hizmeti.',
-    intro: [
-      'Toyota ve Honda, orta sınıf modellerinin büyük bölümünde <strong>CVT (kademesiz)</strong> şanzıman kullanır. Toyota’nın <strong>K-serisi CVT</strong> ve Honda’nın CVT kutuları dayanıklı sistemlerdir; ancak performansları doğrudan <strong>yağ kalitesine</strong> bağlıdır.',
-      'Bu araçlarda en sık karşılaştığımız şikâyetler hızla artan <strong>uğultu</strong>, gaza basıldığında devrin yükselip hızın artmaması (<strong>kayış kayması</strong>) ve düşük hızda titremedir. Bu belirtilerin ortak kökeni çoğunlukla ömrünü doldurmuş CVT yağıdır.',
-      'Toyota hibrit modellerdeki <strong>e-CVT</strong> sistemi ise yapı olarak farklıdır; kayış yerine planet dişli ve elektrik motorları kullanır. Bu sistemlerde arıza karakteri ve servis yaklaşımı tamamen ayrışır.'
-    ],
-    models: {
-      h2: 'Servis verdiğimiz Toyota & Honda modelleri',
-      items: [
-        'Toyota Corolla — CVT / e-CVT (hibrit)',
-        'Toyota C-HR — CVT / e-CVT',
-        'Toyota Auris — CVT / e-CVT',
-        'Toyota RAV4, Yaris — CVT / e-CVT',
-        'Honda Civic — CVT',
-        'Honda CR-V, HR-V, Jazz — CVT'
-      ]
-    },
-    issues: {
-      h2: 'Toyota & Honda CVT’de sık görülen arızalar',
-      items: [
-        'Hızla birlikte artan uğultu / vınlama sesi',
-        'Gaza basınca devir yükselmesi, hızın artmaması (kayma)',
-        'Düşük hızda titreme (judder)',
-        'Yokuşta zorlanma ve ısınma uyarısı',
-        'Valf bloğu ve step motor arızaları',
-        'CVT yağının ömrünü doldurmasına bağlı geçiş bozuklukları'
-      ]
-    },
-    faqs: [
-      { q: 'Toyota CVT yağı kaç kilometrede değişir?', a: 'Genel aralık 40.000–60.000 km’dir. Şehir içi dur-kalk kullanımda ve sıcak iklimde bu aralığın kısaltılması önerilir. Mutlaka üreticinin belirlediği spesifikasyonda CVT yağı kullanılmalıdır.' },
-      { q: 'Honda CVT’den uğultu geliyor, tehlikeli mi?', a: 'Uğultu genellikle kayış-kasnak temasının bozulduğunu veya rulman aşınmasını gösterir ve ilerleyici bir arızadır. Aracı zorlamadan kısa sürede kontrole getirmek, kasnak değişimi gibi çok daha maliyetli bir onarımı önleyebilir.' },
-      { q: 'Hibrit Toyota’ların e-CVT sistemine bakım gerekir mi?', a: 'e-CVT sistemleri kayış kullanmaz, bu nedenle klasik CVT arızaları görülmez. Ancak transaksel yağının kontrolü ve soğutma sisteminin sağlıklı çalışması yine de önemlidir. Bu araçlarda arıza tespiti farklı bir protokolle yapılır.' }
-    ],
-    related: [
-      { href: 'hizmetler/cvt-sanziman-tamiri/', label: 'CVT şanzıman tamiri' },
-      { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı değişimi' },
-      { href: 'blog/cvt-sanziman-nedir-nasil-calisir/', label: 'Rehber: CVT şanzıman nedir?' }
-    ]
-  },
-  {
-    slug: 'hyundai-kia-sanziman-tamiri',
-    nav: 'Hyundai & Kia',
-    brand: 'Hyundai',
-    title: 'Hyundai ve Kia Şanzıman Tamiri Bursa | DCT, Otomatik',
-    h1: 'Hyundai & Kia Şanzıman Tamiri',
-    description: 'Bursa’da Hyundai ve Kia otomatik / DCT şanzıman tamiri. i20, i30, Tucson, Ceed, Sportage için mekatronik ve debriyaj onarımı.',
-    lead: 'i20, i30, Tucson, Elantra, Ceed ve Sportage modellerinde DCT ve klasik otomatik şanzımanlara uzman servis.',
-    intro: [
-      'Hyundai ve Kia araçlarda iki ana otomatik şanzıman ailesi bulunur: klasik <strong>torklu otomatik (A6MF, A8MF)</strong> ve çift kavramalı <strong>DCT (D7UF / 7DCT)</strong> kutular. DCT kutular yakıt verimliliği sağlar, ancak dur-kalk trafikte debriyaj yükü artar.',
-      'DCT modellerde en sık gelen şikâyetler <strong>kalkışta titreme</strong>, <strong>düşük viteslerde tekleme</strong> ve <strong>debriyaj aşırı ısınma uyarısıdır</strong>. Klasik otomatiklerde ise valf bloğu, solenoid ve tork konvertörü kaynaklı arızalar öne çıkar.',
-      'Bu araçlarda doğru teşhis için hata kodlarının yanı sıra debriyaj sıcaklık ve adaptasyon verilerinin de okunması gerekir. Yalnızca hata koduna bakılarak yapılan parça değişimleri çoğu zaman şikâyeti çözmez.'
-    ],
-    models: {
-      h2: 'Servis verdiğimiz Hyundai & Kia modelleri',
-      items: [
-        'Hyundai i20, i30 — 7DCT / otomatik',
-        'Hyundai Tucson, Elantra, Kona — DCT / A6MF / A8MF',
-        'Hyundai Accent, Bayon — otomatik / DCT',
-        'Kia Ceed, Rio — 7DCT',
-        'Kia Sportage, Stonic — DCT / otomatik',
-        'Kia Cerato, Niro — DCT / otomatik'
-      ]
-    },
-    issues: {
-      h2: 'Hyundai & Kia şanzımanlarında sık görülen arızalar',
-      items: [
-        'DCT’de kalkışta titreme ve tekleme',
-        'Debriyaj aşırı ısınma uyarısı (yoğun trafikte)',
-        'Vites geçişlerinde sarsıntı ve gecikme',
-        'Mekatronik / TCU kaynaklı vites atmama',
-        'Valf bloğu ve solenoid arızaları (klasik otomatik)',
-        'Tork konvertörü kaynaklı titreme'
-      ]
-    },
-    faqs: [
-      { q: 'Hyundai DCT trafikte ısınma uyarısı veriyor, arıza mı?', a: 'Yoğun dur-kalk trafikte kuru debriyajlı DCT kutular ısınabilir ve koruma amaçlı uyarı verebilir. Ancak uyarı sıklaşıyor veya normal koşullarda geliyorsa debriyaj aşınması söz konusu olabilir; ölçüm yapılması gerekir.' },
-      { q: 'Kia Ceed 7DCT titremesi nasıl çözülür?', a: 'Öncelikle debriyaj adaptasyon değerleri ve hata kayıtları okunur. Bazı araçlarda temel ayar ve adaptasyon yeterli olurken, balata aşınması ilerlemişse debriyaj seti yenilenir ve ardından adaptasyon yapılır.' },
-      { q: 'Hyundai/Kia otomatik şanzıman yağı ne zaman değişir?', a: 'Klasik otomatiklerde genel aralık 60.000–80.000 km, DCT kutularda ise kullanım profiline göre belirlenir. Şehir içi yoğun kullanımda aralığın kısaltılmasını öneriyoruz.' }
-    ],
-    related: [
-      { href: 'hizmetler/dsg-sanziman-tamiri/', label: 'Çift kavramalı (DCT) şanzıman tamiri' },
-      { href: 'hizmetler/otomatik-sanziman-tamiri/', label: 'Otomatik şanzıman tamiri' },
       { href: 'hizmetler/sanziman-ariza-tespiti/', label: 'Şanzıman arıza tespiti' }
     ]
   }

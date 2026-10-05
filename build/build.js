@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* =========================================================
-   HB ŞANZIMAN — Statik sayfa üreticisi
+   HB OTOMATİK ŞANZIMAN — Statik sayfa üreticisi
    Çalıştırma:  npm run build   (veya: node build/build.js)
    Çıktı:       proje kökünde klasör/index.html yapısı
    ========================================================= */
@@ -8,14 +8,22 @@ const fs = require('fs');
 const path = require('path');
 
 const { SITE } = require('./config');
-const { layout, esc, gbpSchemaFields } = require('./layout');
+const { layout, esc, gbpSchemaFields, mapsUrl } = require('./layout');
 const B = require('./blocks');
 const { SERVICES } = require('./content/services');
 const { BRANDS } = require('./content/brands');
 const { REGIONS } = require('./content/regions');
 const { POSTS } = require('./content/blog');
+const { buildHome } = require('./home');
 
 const ROOT = path.join(__dirname, '..');
+
+/* Üretilen bölümleri her derlemede sıfırdan yaz: içerikten kaldırılan bir
+   sayfa (ör. eski bir marka) diskte ve sitede unutulmuş olarak kalmasın. */
+const GENERATED_DIRS = ['hizmetler', 'markalar', 'bolgeler', 'blog', 'sss', 'hakkimizda', 'iletisim',
+  'gizlilik-politikasi', 'kvkk-aydinlatma-metni', 'cerez-politikasi'];
+GENERATED_DIRS.forEach(d => fs.rmSync(path.join(ROOT, d), { recursive: true, force: true }));
+const trDate = d => new Date(d).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 const written = [];
 
 function write(url, html) {
@@ -27,6 +35,10 @@ function write(url, html) {
 
 const HOME = { name: 'Anasayfa', url: '/' };
 
+/* ===================== ANA SAYFA ===================== */
+fs.writeFileSync(path.join(ROOT, 'index.html'), buildHome(), 'utf8');
+written.push('/');
+
 /* ===================== HİZMETLER ===================== */
 const svcHub = { name: 'Hizmetler', url: '/hizmetler/' };
 
@@ -36,7 +48,7 @@ write(svcHub.url, layout({
   description: 'Bursa’da otomatik şanzıman tamiri, DSG, CVT, tork konvertörü, mekatronik, revizyon ve yağ değişimi. Tüm şanzıman hizmetlerimiz.',
   breadcrumb: [HOME, svcHub],
   body: B.hero({
-    tag: '⚙ Hizmetler',
+    tag: 'Hizmetler · Bursa Nilüfer',
     h1: 'Şanzıman Hizmetlerimiz',
     lead: 'Arıza tespitinden komple revizyona kadar, otomatik ve çift kavramalı şanzımanlarda ihtiyaç duyabileceğiniz tüm hizmetler.',
     root: '../'
@@ -56,10 +68,10 @@ write(svcHub.url, layout({
 
 SERVICES.forEach(s => {
   const url = `/hizmetler/${s.slug}/`;
-  let body = B.hero({ tag: s.tag, h1: s.h1, lead: s.lead, root: '../../' });
-  body += B.prose({ h2: `${s.h1} hakkında`, paras: s.intro });
-  if (s.symptoms) body += B.bulletSection({ ...s.symptoms, variant: 'alt' });
-  if (s.scope) body += B.bulletSection(s.scope);
+  let body = B.hero({ tag: s.kicker || 'Hizmet · Otomatik şanzıman', h1: s.h1, lead: s.lead, root: '../../' });
+  body += B.prose({ label: 'Genel bakış', h2: `${s.h1} hakkında`, paras: s.intro });
+  if (s.symptoms) body += B.bulletSection({ label: 'Belirtiler', ...s.symptoms, variant: 'alt' });
+  if (s.scope) body += B.bulletSection({ label: 'Kapsam', ...s.scope });
   if (s.table) body += B.tableSection(s.table);
   if (s.steps) body += B.stepsSection({ h2: 'Nasıl çalışıyoruz?', steps: s.steps });
   body += B.faqSection({ faqs: s.faqs });
@@ -79,11 +91,11 @@ const brandHub = { name: 'Markalar', url: '/markalar/' };
 
 write(brandHub.url, layout({
   url: brandHub.url,
-  title: 'Markaya Göre Şanzıman Servisi | Bursa | HB Şanzıman',
-  description: 'Volkswagen, Audi, Mercedes, BMW, Ford, Renault, Toyota, Hyundai ve Kia şanzıman tamiri. Markaya özel arıza karakteri ve servis yaklaşımı.',
+  title: 'Markaya Göre Şanzıman Servisi | Bursa | HB Otomatik Şanzıman',
+  description: 'BMW, Mercedes, Volkswagen, Audi, Porsche, Land Rover, Opel ve Ford otomatik şanzıman tamiri. Markaya özel arıza karakteri ve servis yaklaşımı.',
   breadcrumb: [HOME, brandHub],
   body: B.hero({
-    tag: '⚙ Markalar',
+    tag: 'Markalar · Yedi marka grubu',
     h1: 'Markaya Göre Şanzıman Servisi',
     lead: 'Her markanın şanzıman mimarisi ve tipik arıza karakteri farklıdır. Aracınızın markasına göre bilgi alın.',
     root: '../'
@@ -102,10 +114,10 @@ write(brandHub.url, layout({
 
 BRANDS.forEach(b => {
   const url = `/markalar/${b.slug}/`;
-  let body = B.hero({ tag: `⚙ ${b.brand}`, h1: b.h1, lead: b.lead, root: '../../' });
-  body += B.prose({ h2: `${b.brand} şanzımanları hakkında`, paras: b.intro });
-  if (b.models) body += B.bulletSection({ ...b.models, variant: 'alt' });
-  if (b.issues) body += B.bulletSection(b.issues);
+  let body = B.hero({ tag: `${b.brand} · Otomatik şanzıman`, h1: b.h1, lead: b.lead, root: '../../' });
+  body += B.prose({ label: 'Genel bakış', h2: `${b.brand} şanzımanları hakkında`, paras: b.intro });
+  if (b.models) body += B.bulletSection({ label: 'Modeller', ...b.models, variant: 'alt' });
+  if (b.issues) body += B.bulletSection({ label: 'Sık şikâyetler', ...b.issues });
   body += B.faqSection({ faqs: b.faqs });
   body += B.relatedSection({ links: b.related, root: '../../' });
   body += B.ctaSection({ title: `${b.brand} aracınız için randevu alın`, text: 'Ücretsiz arıza tespiti ile başlıyoruz. Bulguları ve maliyeti gördükten sonra kararı siz verirsiniz.', root: '../../' });
@@ -127,7 +139,7 @@ write(regHub.url, layout({
   description: 'Nilüfer, Osmangazi, Yıldırım, Gemlik, İnegöl ve Mudanya’dan gelen araçlara şanzıman tamiri. Atölyemiz Nilüfer Üçevler’de.',
   breadcrumb: [HOME, regHub],
   body: B.hero({
-    tag: '📍 Bölgeler',
+    tag: 'Hizmet bölgeleri · Bursa',
     h1: 'Hizmet Bölgelerimiz',
     lead: 'Atölyemiz Bursa Nilüfer Üçevler’de. Bursa geneli ve çevre ilçelerden gelen araçlara servis veriyoruz.',
     root: '../'
@@ -146,10 +158,10 @@ write(regHub.url, layout({
 
 REGIONS.forEach(r => {
   const url = `/bolgeler/${r.slug}/`;
-  let body = B.hero({ tag: `📍 ${r.area}`, h1: r.h1, lead: r.lead, root: '../../' });
-  body += B.prose({ h2: `${r.area}’den gelen araçlarda yaklaşımımız`, paras: r.intro });
-  if (r.neighborhoods) body += B.bulletSection({ ...r.neighborhoods, variant: 'alt' });
-  if (r.access) body += B.bulletSection(r.access);
+  let body = B.hero({ tag: `${r.area} · Bursa`, h1: r.h1, lead: r.lead, root: '../../' });
+  body += B.prose({ label: 'Bölge', h2: `${r.area}’den gelen araçlarda yaklaşımımız`, paras: r.intro });
+  if (r.neighborhoods) body += B.bulletSection({ label: 'Mahalleler', ...r.neighborhoods, variant: 'alt' });
+  if (r.access) body += B.bulletSection({ label: 'Ulaşım', ...r.access });
   body += B.faqSection({ faqs: r.faqs });
   body += B.relatedSection({
     h2: 'Sık talep edilen hizmetler',
@@ -177,11 +189,11 @@ const blogHub = { name: 'Blog', url: '/blog/' };
 
 write(blogHub.url, layout({
   url: blogHub.url,
-  title: 'Şanzıman Rehberleri ve Blog | HB Şanzıman',
+  title: 'Şanzıman Rehberleri ve Blog | HB Otomatik Şanzıman',
   description: 'Şanzıman arıza belirtileri, yağ değişimi, DSG bakımı, CVT ve tork konvertörü hakkında uzman rehberleri.',
   breadcrumb: [HOME, blogHub],
   body: B.hero({
-    tag: '📚 Blog',
+    tag: 'Teknik rehberler',
     h1: 'Şanzıman Rehberleri',
     lead: 'Aracınızın şanzımanını daha iyi anlamanız için hazırladığımız teknik rehberler. Sade dille, satış kaygısı olmadan.',
     root: '../'
@@ -189,15 +201,15 @@ write(blogHub.url, layout({
   + `
     <section class="section">
       <div class="container">
+        <span class="eyebrow">Tüm rehberler</span>
+        <h2 class="sec-title">Bilmeniz gerekenler</h2>
         <div class="post-list">
-          ${POSTS.map(p => `<article class="post-card">
-            <a href="../blog/${p.slug}/">
-              <div class="post-meta"><time datetime="${p.published}">${new Date(p.published).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}</time> · ${p.readingTime} okuma</div>
-              <h2>${esc(p.h1)}</h2>
-              <p>${esc(p.excerpt)}</p>
-              <span class="card-more">Yazıyı oku →</span>
-            </a>
-          </article>`).join('\n          ')}
+          ${POSTS.map(p => `<a class="card post-card" href="../blog/${p.slug}/">
+            <div class="post-date"><time datetime="${p.published}">${trDate(p.published)}</time> · ${p.readingTime} okuma</div>
+            <h2>${esc(p.h1)}</h2>
+            <p>${esc(p.excerpt)}</p>
+            <span class="more mono">Oku →</span>
+          </a>`).join('\n          ')}
         </div>
       </div>
     </section>`
@@ -208,29 +220,29 @@ POSTS.forEach(p => {
   const url = `/blog/${p.slug}/`;
   let body = `
     <article>
-    <section class="page-hero article-hero">
-      <div class="container narrow">
-        <span class="section-tag">📚 Rehber</span>
-        <h1>${esc(p.h1)}</h1>
-        <div class="post-meta">
-          <time datetime="${p.published}">${new Date(p.published).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+    <section class="page-hero">
+      <div class="container">
+        <div class="hero-kicker up d1">Teknik rehber</div>
+        <h1 class="up d2">${esc(p.h1)}</h1>
+        <div class="post-meta up d3">
+          <time datetime="${p.published}">${trDate(p.published)}</time>
           · ${p.readingTime} okuma
-          · Güncelleme: <time datetime="${p.modified}">${new Date(p.modified).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}</time>
+          · Güncelleme: <time datetime="${p.modified}">${trDate(p.modified)}</time>
         </div>
-        <p class="lead">${p.lead}</p>
+        <p class="lead up d3">${p.lead}</p>
       </div>
     </section>
     <section class="section prose article-body">
       <div class="container narrow">
         <nav class="toc" aria-label="İçindekiler">
-          <h2>İçindekiler</h2>
+          <div class="mono">İçindekiler</div>
           <ol>${p.sections.map((s, i) => `<li><a href="#b${i + 1}">${esc(s.h2)}</a></li>`).join('')}</ol>
         </nav>
         ${p.sections.map((s, i) => `
         <h2 id="b${i + 1}">${esc(s.h2)}</h2>
         ${(s.paras || []).map(x => `<p>${x}</p>`).join('\n        ')}
         ${s.list ? `<ul class="check-list">${s.list.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
-        ${s.table ? `<div class="table-wrap"><table class="info-table"><thead><tr>${s.table.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.table.rows.map(r => `<tr>${r.map((c, j) => j === 0 ? `<th scope="row">${c}</th>` : `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}
+        ${s.table ? `<div class="table-wrap"><table class="info-table"><thead><tr>${s.table.head.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${s.table.rows.map(r => `<tr>${r.map((c, j) => j === 0 ? `<th scope="row">${c}</th>` : `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : ''}
         `).join('\n')}
       </div>
     </section>
@@ -253,11 +265,11 @@ const GENERAL_FAQS = [
   { q: 'Randevu almadan gelebilir miyim?', a: 'Gelebilirsiniz, ancak yoğunluğa bağlı olarak bekleme olabilir. Online randevu formumuzu doldurarak veya telefonla arayarak randevu almanız süreci hızlandırır.' },
   { q: 'Şanzıman tamiri ne kadar sürer?', a: 'Arızanın kapsamına göre değişir. Solenoid veya valf bloğu müdahalesi genellikle 1 iş günü içinde tamamlanır. Komple revizyon, parça teminine bağlı olarak 2–5 iş günü sürebilir. Kesin süre arıza tespiti sonrasında bildirilir.' },
   { q: 'Yaptığınız işe garanti veriyor musunuz?', a: 'Evet. İşçilik ve değişen parçalar için garanti veriyoruz. Garanti kapsamı ve süresi, uygulanan işleme göre teslim sırasında yazılı olarak belirtilir.' },
-  { q: 'Telefonda fiyat öğrenebilir miyim?', a: 'Aracınızın marka, model ve şanzıman tipini bildiğimizde genel bir aralık paylaşabiliriz, ancak bu bir teklif değildir. Aynı şikâyetin arkasında çok farklı maliyetlerde arızalar olabilir; gerçekçi fiyat tespitten sonra çıkar.' },
+  { q: 'Aracı görmeden fiyat veriyor musunuz?', a: 'Hayır. Aracı görmeden rakam vermiyoruz. Aynı şikâyetin arkasında maliyeti çok farklı arızalar olabilir; önce ön inceleme ve teşhis yapılır, ardından yapılacak işi ve maliyetini onayınıza sunarız. Arıza tespiti ücretsizdir.' },
   { q: 'Onayım olmadan işlem yapılır mı?', a: 'Hayır. Kapsam ve maliyet netleşip siz onaylamadan hiçbir işleme başlanmaz. Süreçte kapsam değişirse önce size bilgi verir, onayınızı alırız.' },
   { q: 'Aracımı çektirmem gerekir mi?', a: 'Araç vites atmıyor, harekete geçmiyor veya acil moda geçtiyse aracı zorlamadan çekici ile getirmeniz en doğrusudur. Sürüşe devam etmek çoğu zaman hasarı büyütür ve maliyeti artırır.' },
-  { q: 'Hangi şanzıman tiplerine servis veriyorsunuz?', a: 'Klasik otomatik (torklu), çift kavramalı (DSG, DCT, EDC, PowerShift, S-tronic), CVT (kademesiz) ve manuel şanzımanlara servis veriyoruz.' },
-  { q: 'Hangi markalara bakıyorsunuz?', a: 'Volkswagen, Audi, Mercedes-Benz, BMW, Ford, Renault, Dacia, Toyota, Honda, Hyundai, Kia başta olmak üzere çoğu binek ve hafif ticari araca servis veriyoruz. Listede olmayan markalar için de arıza tespiti yapıyoruz.' },
+  { q: 'Hangi şanzıman tiplerine servis veriyorsunuz?', a: 'Yalnızca otomatik şanzımanlara bakıyoruz: DSG, S-Tronic, CVT ve PowerShift aileleri ile tork konvertörlü klasik otomatikler. Manuel şanzımana servis vermiyoruz.' },
+  { q: 'Hangi markalara bakıyorsunuz?', a: 'BMW, Mercedes, VAG Group (Volkswagen, Audi, Skoda, Seat), Porsche, Land Rover, Opel ve Ford araçlarının otomatik şanzımanlarına servis veriyoruz.' },
   { q: 'Şanzıman yağı ne zaman değişmeli?', a: 'Klasik otomatiklerde genel aralık 60.000–80.000 km, ıslak debriyajlı DSG kutularda ~60.000 km, CVT’de ise 40.000–60.000 km’dir. Şehir içi yoğun kullanım, yük çekimi ve ticari kullanımda bu aralıkların kısaltılmasını öneriyoruz.' },
   { q: 'Şanzımanı sökmeden arızayı bulabilir misiniz?', a: 'Çoğu durumda evet. Hata kodu okuma, canlı veri analizi, yağ analizi, basınç ölçümü ve yol testi ile arızanın elektronik mi, hidrolik mi yoksa mekanik mi olduğunu büyük ölçüde belirleyebiliyoruz. Mekanik iç hasar şüphesinde kesin sonuç için söküm gerekir.' },
   { q: 'Her arızada komple revizyon mu gerekir?', a: 'Hayır. Birçok arıza solenoid değişimi, valf bloğu revizyonu, yağ + filtre bakımı veya adaptasyon ile çözülür. Revizyon yalnızca birden fazla bileşende aşınma olduğunda önerilir. Gereksiz revizyon önermiyoruz.' },
@@ -274,7 +286,7 @@ write(sssUrl, layout({
   description: 'Şanzıman tamiri hakkında sık sorulan sorular: süre, fiyat, garanti, arıza tespiti, yağ değişimi ve daha fazlası.',
   breadcrumb: [HOME, { name: 'S.S.S.', url: sssUrl }],
   faqs: GENERAL_FAQS,
-  body: B.hero({ tag: '❓ S.S.S.', h1: 'Sıkça Sorulan Sorular', lead: 'Müşterilerimizden en çok aldığımız soruları ve dürüst cevaplarını burada topladık.', root: '../' })
+  body: B.hero({ tag: 'Sık sorulan sorular', h1: 'Sıkça Sorulan Sorular', lead: 'Müşterilerimizden en çok aldığımız soruları ve dürüst cevaplarını burada topladık.', root: '../' })
     + B.faqSection({ h2: 'Genel sorular', faqs: GENERAL_FAQS })
     + B.relatedSection({
         h2: 'Cevabını bulamadınız mı?',
@@ -292,21 +304,21 @@ write(sssUrl, layout({
 const aboutUrl = '/hakkimizda/';
 write(aboutUrl, layout({
   url: aboutUrl,
-  title: 'Hakkımızda | HB Şanzıman — Bursa Şanzıman Uzmanı',
-  description: 'HB Şanzıman hakkında: 15+ yıllık tecrübe, uzman kadro, çalışma ilkelerimiz ve Bursa Nilüfer’deki atölyemiz.',
+  title: 'Hakkımızda | HB Otomatik Şanzıman',
+  description: 'HB Otomatik Şanzıman hakkında: yalnızca otomatik şanzımana odaklanan atölyemiz, çalışma ilkelerimiz ve Bursa Nilüfer Üçevler’deki konumumuz.',
   breadcrumb: [HOME, { name: 'Hakkımızda', url: aboutUrl }],
-  body: B.hero({ tag: '🏭 Kurumsal', h1: 'Hakkımızda', lead: 'Bursa Nilüfer’de, yalnızca şanzıman üzerine uzmanlaşmış bir atölyeyiz.', root: '../' })
+  body: B.hero({ tag: 'Kurumsal', h1: 'Hakkımızda', lead: 'Bursa Nilüfer Üçevler’de yalnızca otomatik şanzıman onaran bir atölyeyiz.', root: '../' })
     + B.prose({ h2: 'Biz kimiz?', paras: [
-        'HB Şanzıman, Bursa Nilüfer Üçevler’de faaliyet gösteren, <strong>yalnızca şanzıman üzerine uzmanlaşmış</strong> bir servistir. Genel bir oto tamirhanesi değiliz; işimizin tamamı otomatik, çift kavramalı, CVT ve manuel şanzımanlar üzerinedir.',
+        'HB Otomatik Şanzıman, Bursa Nilüfer Üçevler’de faaliyet gösteren ve <strong>yalnızca otomatik şanzıman</strong> onaran bir atölyedir. Genel bir oto tamirhanesi değiliz; işimizin tamamı DSG, S-Tronic, CVT, PowerShift ve tork konvertörlü otomatik şanzımanlar üzerinedir.',
         'Bu uzmanlaşma bir tercihtir. Şanzıman, aracın en karmaşık mekanik grubudur; hidrolik, elektronik ve mekanik disiplinlerin kesiştiği noktadır. Doğru teşhis için hem diagnostik ekipmana hem de yılların getirdiği deneyime aynı anda ihtiyaç vardır.',
-        '15 yılı aşkın süredir Bursa ve çevresinden gelen araçlara hizmet veriyor, uzman kadromuzla her yıl binlerce şanzımana müdahale ediyoruz.'
+        'Servis verdiğimiz yedi marka grubu: BMW, Mercedes, VAG Group, Porsche, Land Rover, Opel ve Ford. Bu dar odak, her kutunun tipik arızasını ve doğru onarım yöntemini derinlemesine bilmemizi sağlıyor.'
       ]})
     + B.bulletSection({
         h2: 'Çalışma ilkelerimiz',
         intro: 'Şanzıman tamiri, müşterinin kontrol etmesi zor bir alandır. Bu yüzden şeffaflığı bir tercih değil, zorunluluk olarak görüyoruz.',
         variant: 'alt',
         items: [
-          '<strong>Önce teşhis, sonra teklif.</strong> Arıza tespiti yapılmadan fiyat verilmez; tespit ücretsizdir ve sizi bağlamaz.',
+          '<strong>Aracı görmeden rakam vermiyoruz.</strong> Önce inceleriz, sonra anlatırız; arıza tespiti ücretsizdir ve sizi bağlamaz.',
           '<strong>Gereken kadar müdahale.</strong> Her arızada komple revizyon önermiyoruz. Sorun tek bir parçayla çözülüyorsa çözüm odur.',
           '<strong>Onaysız işlem yok.</strong> Kapsam ve maliyet netleşip onay vermeden hiçbir işleme başlanmaz.',
           '<strong>Değişen parçalar gösterilir.</strong> Sökülen ve yenilenen parçaları görmek isterseniz size sunulur.',
@@ -315,11 +327,11 @@ write(aboutUrl, layout({
         ]
       })
     + B.bulletSection({
-        h2: 'Neden şanzımanda uzmanlaşmak fark yaratır?',
+        h2: 'Neden yalnızca otomatik şanzıman?',
         items: [
           '<strong>Doğru teşhis oranı.</strong> Gün boyu aynı sistem üzerinde çalışmak, arıza örüntülerini tanımayı sağlar.',
           '<strong>Doğru ekipman.</strong> Şanzımana özel diagnostik, basınç ölçüm ve söküm ekipmanları.',
-          '<strong>Marka bazlı deneyim.</strong> Her kutunun (DQ200, ZF 8HP, 722.9, DPS6…) kendine özgü zayıf noktaları vardır.',
+          '<strong>Marka bazlı deneyim.</strong> Her kutunun (DQ200, DL501, ZF 8HP, 722.9, 6DCT250…) kendine özgü zayıf noktaları vardır.',
           '<strong>Adaptasyon ve kodlama yetkinliği.</strong> Onarımın kalıcı olması için zorunlu son adım.',
           '<strong>Tork konvertörü revizyon kapasitesi.</strong> Kesme, balata yenileme, balans ve yeniden kaynak işlemleri.',
           '<strong>Gereksiz işlemden kaçınma.</strong> Uzmanlık, ne yapılmayacağını bilmektir.'
@@ -338,8 +350,8 @@ write(aboutUrl, layout({
 const contactUrl = '/iletisim/';
 write(contactUrl, layout({
   url: contactUrl,
-  title: 'İletişim | HB Şanzıman — Bursa Nilüfer',
-  description: `HB Şanzıman iletişim bilgileri. ${SITE.addressText}. Telefon: ${SITE.phoneDisplay}. ${SITE.hoursText}.`,
+  title: 'İletişim | HB Otomatik Şanzıman',
+  description: `${SITE.name} iletişim bilgileri. ${SITE.addressText}. Telefon: ${SITE.phoneDisplay}. ${SITE.hoursText}.`,
   breadcrumb: [HOME, { name: 'İletişim', url: contactUrl }],
   extraSchema: {
     '@context': 'https://schema.org',
@@ -358,44 +370,49 @@ write(contactUrl, layout({
     geo: { '@type': 'GeoCoordinates', latitude: SITE.lat, longitude: SITE.lng },
     openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: SITE.hours.days, opens: SITE.hours.open, closes: SITE.hours.close }]
   },
-  body: B.hero({ tag: '📞 İletişim', h1: 'Bize Ulaşın', lead: 'Randevu, fiyat bilgisi veya teknik sorularınız için doğrudan arayabilirsiniz.', root: '../' })
+  body: B.hero({ tag: 'İletişim · Üçevler Sanayi, Nilüfer', h1: 'Bize ulaşın', lead: 'Aracı görmeden rakam vermiyoruz — ama belirtiyi telefonda dinleyip ne yapmanız gerektiğini söyleyebiliriz. Arıza tespiti ücretsiz.', root: '../' })
     + `
     <section class="section">
       <div class="container">
-        <div class="grid grid-3 contact-cards">
-          <div class="card">
+        <span class="eyebrow">Ulaşım kanalları</span>
+        <h2 class="sec-title">Telefon, WhatsApp, e-posta</h2>
+        <div class="cards">
+          <div class="card contact-card">
             <h3>Telefon</h3>
             <p><a class="big-link" href="tel:${SITE.phone}">${SITE.phoneDisplay}</a></p>
+            <p><a class="big-link" href="tel:${SITE.phone2}">${SITE.phone2Display}</a></p>
             <p class="muted">${SITE.hoursText}</p>
           </div>
-          <div class="card">
+          <div class="card contact-card">
             <h3>WhatsApp</h3>
-            <p><a class="big-link" href="https://wa.me/${SITE.phone.replace('+', '')}" rel="noopener" target="_blank">Mesaj gönder</a></p>
-            <p class="muted">Fotoğraf ve hata kodu paylaşabilirsiniz</p>
+            <p><a class="big-link" href="https://wa.me/${SITE.phone.replace('+', '')}" rel="noopener" target="_blank">Mesaj gönderin</a></p>
+            <p class="muted">Arıza lambasının fotoğrafını veya okunmuş hata kodlarını paylaşabilirsiniz.</p>
           </div>
-          <div class="card">
+          <div class="card contact-card">
             <h3>E-posta</h3>
-            <p><a class="big-link" href="mailto:${SITE.email}">${SITE.email}</a></p>
-            <p class="muted">Teklif ve kurumsal talepler</p>
+            <p><a class="big-link" style="font-size:17px;overflow-wrap:anywhere" href="mailto:${SITE.email}">${SITE.email}</a></p>
+            <p class="muted">Kurumsal ve filo talepleri</p>
           </div>
         </div>
-${SITE.googleReviewUrl || SITE.googleBusinessUrl ? `        <div class="card review-card">
-          <h3>Bizi Google'da değerlendirin</h3>
-          <p>Hizmetimizden memnun kaldıysanız kısa bir değerlendirme yazmanız,
-             aynı sorunu yaşayan diğer araç sahiplerinin bize ulaşmasına yardımcı olur.</p>
+${SITE.googleReviewUrl || SITE.googleBusinessUrl ? `
+        <div class="card contact-card" style="margin-top:16px">
+          <h3>Google</h3>
+          <p>Hizmetimizden memnun kaldıysanız kısa bir değerlendirme yazmanız, aynı sorunu yaşayan diğer araç sahiplerinin bize ulaşmasına yardımcı olur.</p>
           <div class="review-actions">
-${SITE.googleReviewUrl ? `            <a class="btn btn-primary btn-sm" href="${SITE.googleReviewUrl}" target="_blank" rel="noopener">★ Değerlendirme yaz</a>\n` : ''}${SITE.googleBusinessUrl ? `            <a class="btn btn-ghost btn-sm" href="${SITE.googleBusinessUrl}" target="_blank" rel="noopener">Google İşletme Profilimiz →</a>\n` : ''}          </div>
+${SITE.googleReviewUrl ? `            <a class="btn btn-primary btn-sm" href="${SITE.googleReviewUrl}" target="_blank" rel="noopener">Değerlendirme yazın</a>\n` : ''}${SITE.googleBusinessUrl ? `            <a class="btn btn-ghost btn-sm" href="${SITE.googleBusinessUrl}" target="_blank" rel="noopener">Google İşletme Profilimiz →</a>\n` : ''}          </div>
         </div>` : ''}
-        <div class="card address-card">
-          <h3>Adres</h3>
-          <p>${SITE.street}<br>${SITE.postalCode} ${SITE.district} / ${SITE.city}</p>
-          <p class="muted">Atölyemiz Üçevler’de, Üniversite Caddesi'ne yakın konumdadır.</p>
-          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${SITE.lat},${SITE.lng}">Google Haritalar'da aç →</a>
-        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <span class="eyebrow">Adres</span>
+        <h2 class="sec-title with-lead">${SITE.locationShort}</h2>
+        <p class="sec-lead">${SITE.street}, ${SITE.postalCode} ${SITE.district} / ${SITE.city}</p>
+        <a class="btn btn-ghost" target="_blank" rel="noopener" href="${mapsUrl()}">Google Haritalar'da aç →</a>
         <div class="map-embed">
-          <iframe title="HB Şanzıman konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=${SITE.lat},${SITE.lng}&z=15&output=embed"
-            width="100%" height="380" style="border:0"></iframe>
+          <iframe title="${SITE.name} konumu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=${SITE.lat},${SITE.lng}&z=15&output=embed"></iframe>
         </div>
       </div>
     </section>`
@@ -418,8 +435,8 @@ ${SITE.googleReviewUrl ? `            <a class="btn btn-primary btn-sm" href="${
 const legal = [
   {
     slug: 'gizlilik-politikasi', nav: 'Gizlilik Politikası',
-    title: 'Gizlilik Politikası | HB Şanzıman',
-    description: 'HB Şanzıman web sitesi gizlilik politikası: hangi veriler toplanır, nasıl kullanılır ve nasıl korunur.',
+    title: 'Gizlilik Politikası | HB Otomatik Şanzıman',
+    description: 'HB Otomatik Şanzıman web sitesi gizlilik politikası: hangi veriler toplanır, nasıl kullanılır ve nasıl korunur.',
     h1: 'Gizlilik Politikası',
     sections: [
       { h2: 'Genel', paras: [`Bu gizlilik politikası, ${SITE.name} (“biz”) tarafından işletilen ${SITE.origin} adresindeki web sitesini ziyaret ettiğinizde kişisel verilerinizin nasıl işlendiğini açıklar.`] },
@@ -443,8 +460,8 @@ const legal = [
   },
   {
     slug: 'kvkk-aydinlatma-metni', nav: 'KVKK Aydınlatma Metni',
-    title: 'KVKK Aydınlatma Metni | HB Şanzıman',
-    description: '6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında HB Şanzıman aydınlatma metni.',
+    title: 'KVKK Aydınlatma Metni | HB Otomatik Şanzıman',
+    description: '6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında HB Otomatik Şanzıman aydınlatma metni.',
     h1: 'KVKK Aydınlatma Metni',
     sections: [
       { h2: 'Veri sorumlusu', paras: [`6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca veri sorumlusu sıfatıyla ${SITE.name}, ${SITE.addressText} adresinde faaliyet göstermektedir.`] },
@@ -479,8 +496,8 @@ const legal = [
   },
   {
     slug: 'cerez-politikasi', nav: 'Çerez Politikası',
-    title: 'Çerez Politikası | HB Şanzıman',
-    description: 'HB Şanzıman web sitesinde kullanılan çerezler, amaçları ve çerez tercihlerinizi nasıl yönetebileceğiniz.',
+    title: 'Çerez Politikası | HB Otomatik Şanzıman',
+    description: 'HB Otomatik Şanzıman web sitesinde kullanılan çerezler, amaçları ve çerez tercihlerinizi nasıl yönetebileceğiniz.',
     h1: 'Çerez Politikası',
     sections: [
       { h2: 'Çerez nedir?', paras: ['Çerezler (cookies), ziyaret ettiğiniz web siteleri tarafından tarayıcınıza kaydedilen küçük metin dosyalarıdır. Sitenin düzgün çalışmasını sağlamak ve kullanıcı deneyimini iyileştirmek için kullanılırlar.'] },
@@ -499,7 +516,7 @@ const legal = [
 
 legal.forEach(l => {
   const url = `/${l.slug}/`;
-  const body = B.hero({ tag: '⚖ Yasal', h1: l.h1, lead: '', root: '../' })
+  const body = B.hero({ tag: 'Yasal', h1: l.h1, lead: '', root: '../' })
     + `
     <section class="section prose">
       <div class="container narrow">
@@ -520,33 +537,33 @@ legal.forEach(l => {
 /* ===================== 404 ===================== */
 const html404 = layout({
   url: '/404.html', root: '/', noindex: true,
-  title: 'Sayfa Bulunamadı (404) | HB Şanzıman',
+  title: 'Sayfa Bulunamadı (404) | HB Otomatik Şanzıman',
   description: 'Aradığınız sayfa bulunamadı. Hizmetlerimize, markalara veya iletişim sayfamıza göz atabilirsiniz.',
   body: `
     <section class="page-hero">
-      <div class="container narrow center">
-        <span class="section-tag">404</span>
-        <h1>Aradığınız sayfa bulunamadı</h1>
+      <div class="container">
+        <div class="hero-kicker">404 · Sayfa bulunamadı</div>
+        <h1>Aradığınız sayfa burada değil</h1>
         <p class="lead">Bağlantı taşınmış veya adres yanlış yazılmış olabilir. Aşağıdaki bağlantılardan devam edebilirsiniz.</p>
-        <div class="hero-cta" style="justify-content:center">
+        <div class="hero-cta">
           <a href="/" class="btn btn-primary">Anasayfaya dön</a>
-          <a href="tel:${SITE.phone}" class="btn btn-ghost">${SITE.phoneDisplay}</a>
+          <a href="tel:${SITE.phone}" class="btn btn-ghost on-night">${SITE.phoneDisplay}</a>
         </div>
       </div>
     </section>
     <section class="section">
       <div class="container narrow">
-        <h2>Popüler sayfalar</h2>
-        <ul class="rel-links">
-          <li><a href="/hizmetler/">Tüm hizmetlerimiz</a></li>
-          <li><a href="/hizmetler/otomatik-sanziman-tamiri/">Otomatik şanzıman tamiri</a></li>
-          <li><a href="/hizmetler/dsg-sanziman-tamiri/">DSG şanzıman tamiri</a></li>
-          <li><a href="/markalar/">Markaya göre servis</a></li>
-          <li><a href="/bolgeler/">Hizmet bölgeleri</a></li>
-          <li><a href="/blog/">Rehber yazıları</a></li>
-          <li><a href="/sss/">Sıkça sorulan sorular</a></li>
-          <li><a href="/iletisim/">İletişim</a></li>
-        </ul>
+        <span class="eyebrow">Popüler sayfalar</span>
+        <h2 class="section-h">Buradan devam edin</h2>
+        <div class="rel-links">
+          <a href="/hizmetler/">Tüm hizmetlerimiz</a>
+          <a href="/hizmetler/dsg-sanziman-tamiri/">DSG şanzıman tamiri</a>
+          <a href="/hizmetler/mekatronik-tamiri/">Mekatronik tamiri</a>
+          <a href="/markalar/">Markaya göre servis</a>
+          <a href="/blog/">Teknik rehberler</a>
+          <a href="/sss/">Sık sorulan sorular</a>
+          <a href="/iletisim/">İletişim</a>
+        </div>
       </div>
     </section>`
 });
@@ -586,7 +603,7 @@ ${urls.map(u => `  <url>
 
 /* ===================== ROBOTS ===================== */
 fs.writeFileSync(path.join(ROOT, 'robots.txt'),
-`# HB Şanzıman — robots.txt
+`# HB Otomatik Şanzıman — robots.txt
 User-agent: *
 Allow: /
 
@@ -612,13 +629,12 @@ fs.writeFileSync(path.join(ROOT, 'site.webmanifest'), JSON.stringify({
   start_url: '/',
   scope: '/',
   display: 'standalone',
-  background_color: '#0a0e17',
-  theme_color: '#0a0e17',
+  background_color: '#14181d',
+  theme_color: '#14181d',
   lang: 'tr',
   dir: 'ltr',
   categories: ['business', 'automotive'],
   icons: [
-    { src: '/assets/logo.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
     { src: '/assets/icon-192.png', sizes: '192x192', type: 'image/png' },
     { src: '/assets/icon-512.png', sizes: '512x512', type: 'image/png' },
     { src: '/assets/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }

@@ -5,8 +5,8 @@
 
 const SITE = {
   origin: 'https://hbsanziman.com',
-  name: 'HB Şanzıman',
-  legalName: 'HB Şanzıman Otomotiv',
+  name: 'HB Otomatik Şanzıman',
+  legalName: 'HB Otomatik Şanzıman',
   slogan: 'Bursa Otomatik Şanzıman Uzmanı',
   lang: 'tr',
   locale: 'tr_TR',
@@ -15,11 +15,13 @@ const SITE = {
   // BİREBİR aynı yazılmalıdır. Değişiklik burada yapılır.
   phone: '+905304918005',
   phoneDisplay: '0530 491 80 05',
-  email: 'info@hbsanziman.com',
+  phone2: '+905438951732',
+  phone2Display: '0543 895 17 32',
+  email: 'hbotomatiksanziman16@gmail.com',
   street: 'Üçevler, 28. Sk. 27. Blok No:51',
   district: 'Nilüfer',
   city: 'Bursa',
-  postalCode: '16120',
+  postalCode: '16270',
   country: 'TR',
   lat: 40.2214,
   lng: 28.9847,
@@ -28,7 +30,8 @@ const SITE = {
   hoursText: 'Pazartesi – Cumartesi 08:30 – 19:00',
 
   ogImage: '/assets/og-image.png',
-  logo: '/assets/logo.svg',
+  logo: '/assets/logo.jpg',
+  locationShort: 'Üçevler Sanayi, Nilüfer',
 
   // Kurulduktan sonra doldurun (boşsa ilgili etiket/blok hiç üretilmez)
   googleSiteVerification: '',

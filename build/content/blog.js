@@ -118,8 +118,7 @@ const POSTS = [
           ['Klasik otomatik (torklu)', 'ATF (üretici spesifik)', '60.000 – 80.000 km', 'Filtre ve karter contası birlikte yenilenmeli'],
           ['DSG / DCT — ıslak debriyaj', 'DSG özel yağı', '~60.000 km', 'Filtre değişimi zorunlu'],
           ['DSG — kuru debriyaj (DQ200)', 'Mekatronik hidrolik yağı', 'Kontrol esaslı', 'Şanzıman yağı ömürlük kabul edilir'],
-          ['CVT', 'CVT özel yağı', '40.000 – 60.000 km', 'ATF ile ASLA değiştirilmemeli'],
-          ['Manuel', 'Dişli yağı (MTF)', '80.000 – 100.000 km', 'Sert kullanımda kısaltılmalı']
+          ['CVT', 'CVT özel yağı', '40.000 – 60.000 km', 'ATF ile ASLA değiştirilmemeli']
         ]
       }},
       { h2: 'Bu aralıkları hangi durumlarda kısaltmalısınız?', paras: [
@@ -228,7 +227,7 @@ const POSTS = [
     slug: 'cvt-sanziman-nedir-nasil-calisir',
     title: 'CVT Şanzıman Nedir, Nasıl Çalışır? Tam Rehber',
     h1: 'CVT Şanzıman Nedir, Nasıl Çalışır?',
-    description: 'CVT (kademesiz) şanzımanın çalışma prensibi, avantajları, zayıf noktaları ve bakımı. Toyota, Honda, Nissan CVT sistemleri hakkında rehber.',
+    description: 'CVT (kademesiz) şanzımanın çalışma prensibi, avantajları, zayıf noktaları ve bakımı. Kayışlı ve zincirli (Multitronic) CVT sistemleri.',
     published: '2026-04-12',
     modified: '2026-09-09',
     excerpt: 'Kademesiz şanzıman nasıl çalışır, neden yağa bu kadar duyarlıdır ve ömrünü uzatmak için ne yapmalısınız?',
@@ -288,7 +287,7 @@ const POSTS = [
     ],
     related: [
       { href: 'hizmetler/cvt-sanziman-tamiri/', label: 'CVT şanzıman tamiri hizmetimiz' },
-      { href: 'markalar/toyota-cvt-sanziman-tamiri/', label: 'Toyota & Honda CVT servisi' },
+      { href: 'markalar/audi-sanziman-tamiri/', label: 'Audi Multitronic (zincirli CVT) servisi' },
       { href: 'blog/sanziman-yagi-ne-zaman-degismeli/', label: 'Şanzıman yağı ne zaman değişmeli?' }
     ]
   },
@@ -411,14 +410,14 @@ const POSTS = [
         '<strong>Garanti kapsamı ve süresi nedir?</strong> Yazılı olmasını isteyin.'
       ]},
       { h2: 'Bizim yaklaşımımız', paras: [
-        'HB Şanzıman olarak fiyatlandırmada üç ilkeye bağlı kalıyoruz:',
+        'HB Otomatik Şanzıman olarak fiyatlandırmada üç ilkeye bağlı kalıyoruz:',
         '<strong>1. Önce tespit, sonra fiyat.</strong> Arıza tespiti ücretsizdir ve sizi bağlamaz. Ne bulduğumuzu ve hangi seçeneklerin olduğunu maliyetleriyle birlikte anlatırız.',
         '<strong>2. Gereken kadar müdahale.</strong> Her arızada komple revizyon önermiyoruz. Sorun tek bir solenoid veya yağ bakımıyla çözülüyorsa, çözümü budur.',
         '<strong>3. Onaysız işlem yok.</strong> Kapsam ve maliyet netleşip siz onaylamadan hiçbir işleme başlanmaz. Süreçte kapsam değişirse önce size bilgi veririz.'
       ]}
     ],
     faqs: [
-      { q: 'Telefonda yaklaşık bir fiyat öğrenebilir miyim?', a: 'Aracınızın marka, model ve şanzıman tipini bildiğimizde genel bir aralık paylaşabiliriz. Ancak bu bir teklif değildir; gerçekçi fiyat yalnızca arıza tespitinden sonra çıkar. Tespit ücretsizdir ve sizi bağlamaz.' },
+      { q: 'Telefonda yaklaşık bir fiyat öğrenebilir miyim?', a: 'Hayır — aracı görmeden rakam vermiyoruz. Aynı şikâyetin arkasında maliyeti kat kat farklı arızalar olabildiği için telefonda söylenecek her rakam yanıltıcı olur. Ön inceleme ve teşhis ücretsizdir ve sizi bağlamaz; maliyeti bulgularla birlikte görürsünüz.' },
       { q: 'Arıza tespiti ücretli mi?', a: 'Hayır. Hata kodu okuma, yağ kontrolü ve yol testini içeren standart arıza tespitimiz ücretsizdir. Onarım kararını bulguları ve maliyeti gördükten sonra siz verirsiniz.' },
       { q: 'Neden bazı servisler çok daha ucuz fiyat veriyor?', a: 'Fiyat farkı genellikle kapsam farkından doğar. Tork konvertörü kontrolünün, yağ soğutucu temizliğinin, adaptasyonun veya conta takımının dahil olup olmaması ciddi fark yaratır. Bu yüzden teklifleri karşılaştırırken kalem kalem liste istemenizi öneriyoruz.' },
       { q: 'Şanzıman değiştirmek mi ucuz, tamir mi?', a: 'Hasarın boyutuna bağlıdır. Balata, keçe, solenoid ve valf bloğu kaynaklı arızalarda onarım hem daha ekonomik hem kalıcıdır. Gövde çatlağı veya yaygın dişli hasarı gibi durumlarda yenileme değerlendirilir. Tespit sonrası her iki seçeneği de maliyetiyle paylaşırız.' }

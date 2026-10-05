@@ -1,5 +1,21 @@
 # Sıradaki Adımlar — Sizin Yapmanız Gerekenler
 
+> ### ⚠️ Tasarım geçişiyle NAP bilgileri değişti — İşletme Profili'ni kontrol edin
+>
+> Yeni tasarımdaki bilgiler siteye işlendi. **Google İşletme Profili'nde de
+> harf harf aynı olmalılar**, yoksa Google iki kaydı farklı işletme sanabilir:
+>
+> | Alan | Eski site | Yeni (tasarımdan) |
+> |------|-----------|-------------------|
+> | İşletme adı | HB Şanzıman | **HB Otomatik Şanzıman** |
+> | Posta kodu | 16120 | **16270** |
+> | E-posta | info@hbsanziman.com | **hbotomatiksanziman16@gmail.com** |
+> | İkinci telefon | — | **0543 895 17 32** |
+>
+> Posta kodu iki kaynakta farklıydı; tasarımdakini (16270) esas aldım.
+> Doğrusu hangisiyse `build/config.js` → `postalCode` alanına yazıp
+> `npm run build` çalıştırın.
+
 Kod tarafındaki iş tamamlandı. Aşağıdakiler **kodla yapılamayan**, hesap
 açma / bilgi girme / doğrulama gerektiren adımlardır. Öncelik sırasına
 göre dizilmiştir.
@@ -104,9 +120,9 @@ sonuçlarıdır. Web sitesi bu sıralamayı destekler ama **belirleyici olan
 2. Kategori: **Oto Tamir Servisi** (birincil), ek olarak *Şanzıman Servisi*
 3. **NAP bilgilerini birebir şu şekilde girin** (sitedekiyle harf harf aynı olmalı):
    ```
-   HB Şanzıman
-   Üçevler, 28. Sk. 27. Blok No:51, 16120 Nilüfer / Bursa
-   0530 491 80 05
+   HB Otomatik Şanzıman
+   Üçevler, 28. Sk. 27. Blok No:51, 16270 Nilüfer / Bursa
+   0530 491 80 05  (ikinci hat: 0543 895 17 32)
    ```
 4. Çalışma saatleri: Pazartesi–Cumartesi 08:30–19:00, Pazar kapalı
 5. Web sitesi: alan adınız

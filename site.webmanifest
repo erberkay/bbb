@@ -1,12 +1,12 @@
 {
-  "name": "HB Şanzıman — Bursa Otomatik Şanzıman Uzmanı",
-  "short_name": "HB Şanzıman",
+  "name": "HB Otomatik Şanzıman — Bursa Otomatik Şanzıman Uzmanı",
+  "short_name": "HB Otomatik Şanzıman",
   "description": "Bursa Nilüfer'de otomatik, DSG ve CVT şanzıman tamiri ve bakımı.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0e17",
-  "theme_color": "#0a0e17",
+  "background_color": "#14181d",
+  "theme_color": "#14181d",
   "lang": "tr",
   "dir": "ltr",
   "categories": [
@@ -14,12 +14,6 @@
     "automotive"
   ],
   "icons": [
-    {
-      "src": "/assets/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
     {
       "src": "/assets/icon-192.png",
       "sizes": "192x192",

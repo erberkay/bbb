@@ -7,14 +7,14 @@ const SERVICES = [
   {
     slug: 'otomatik-sanziman-tamiri',
     nav: 'Otomatik Şanzıman Tamiri',
-    title: 'Otomatik Şanzıman Tamiri Bursa | HB Şanzıman',
+    title: 'Otomatik Şanzıman Tamiri Bursa | HB Otomatik Şanzıman',
     h1: 'Otomatik Şanzıman Tamiri',
     description: 'Bursa Nilüfer’de otomatik şanzıman tamiri ve revizyonu. Sarsıntı, vites atmama, kayma arızalarında ücretsiz arıza tespiti ve garantili işçilik.',
-    tag: '⚙ Hizmet',
+    kicker: 'Torklu otomatik · Valf gövdesi · Solenoid',
     lead: 'Vites geçişlerinde sarsıntı, gecikme veya kayma yaşıyorsanız sorun büyümeden çözülebilir. Otomatik şanzımanınızı sökmeden önce diagnostik test ve yağ analizi ile gerçek arızayı tespit ediyoruz.',
     intro: [
       'Otomatik şanzıman, aracınızın en karmaşık ve en pahalı mekanik grubudur. Hidrolik, elektronik ve mekanik bileşenlerin birlikte çalıştığı bu sistemde küçük bir balata aşınması ya da tıkanmış bir valf, kısa sürede tüm şanzımanı etkileyebilir. Bu nedenle <strong>erken teşhis</strong>, onarım maliyetini belirleyen en önemli faktördür.',
-      'HB Şanzıman olarak Bursa Nilüfer’deki atölyemizde, aracınızı sökmeden önce her zaman <strong>arıza tespiti</strong> yaparız: hata kodları okunur, yağ durumu ve seviyesi kontrol edilir, yol testi yapılır ve basınç değerleri ölçülür. Ancak bu adımlar tamamlandıktan sonra size gerçekçi bir onarım kapsamı ve fiyat sunarız.',
+      'HB Otomatik Şanzıman olarak Bursa Nilüfer’deki atölyemizde, aracınızı sökmeden önce her zaman <strong>arıza tespiti</strong> yaparız: hata kodları okunur, yağ durumu ve seviyesi kontrol edilir, yol testi yapılır ve basınç değerleri ölçülür. Ancak bu adımlar tamamlandıktan sonra size gerçekçi bir onarım kapsamı ve fiyat sunarız.',
       'Amacımız her arızada komple revizyon satmak değil; sorunun kaynağını bulup <strong>gereken kadar</strong> müdahale etmektir. Bazı durumlarda sadece solenoid değişimi veya yağ + filtre bakımı sorunu çözer.'
     ],
     symptoms: {
@@ -75,7 +75,7 @@ const SERVICES = [
     title: 'DSG Şanzıman Tamiri Bursa | Mekatronik & Debriyaj',
     h1: 'DSG Şanzıman Tamiri',
     description: 'Bursa’da DSG (DQ200, DQ250, DQ381) şanzıman tamiri, mekatronik onarımı ve debriyaj değişimi. Volkswagen, Audi, Skoda, Seat için uzman servis.',
-    tag: '⚙ Hizmet',
+    kicker: 'DQ200 · DQ250 · DQ381 · DQ500',
     lead: 'Kalkışta titreme, düşük viteslerde tekleme veya “şanzıman arızası” uyarısı DSG şanzımanlarda en sık görülen şikâyetlerdir. Kuru ve ıslak tip DSG kutularında mekatronik ve debriyaj onarımı yapıyoruz.',
     intro: [
       'DSG (Direct Shift Gearbox), iki ayrı debriyaj üzerinden çalışan çift kavramalı bir otomatik şanzımandır. Klasik otomatiklerden farklı olarak tork konvertörü yerine debriyaj kullanır; bu da onu daha hızlı ve yakıt açısından verimli yapar, ancak <strong>debriyaj ve mekatronik ünitesi</strong> daha çok yıpranır.',
@@ -132,7 +132,7 @@ const SERVICES = [
       { q: 'DSG yağı kaç kilometrede değişmeli?', a: 'Islak debriyajlı DSG kutularında (DQ250, DQ500, DL501) üreticiler genellikle 60.000 km civarında yağ ve filtre değişimi öngörür. Kuru debriyajlı DQ200’de şanzıman yağı ömürlük kabul edilse de mekatronik hidrolik yağının kontrolü önemlidir. Şehir içi yoğun kullanımda aralığı kısaltmanızı öneririz.' },
       { q: 'Mekatronik ünitesi onarılabilir mi, yoksa değişmeli mi?', a: 'Çoğu mekatronik arızası onarılabilir. Solenoid, basınç sensörü ve kart üzerindeki lehim/iletken sorunları giderilebilir. Yalnızca ağır elektronik hasarda ünite yenilenir. Hangi yolun uygun olduğunu tespit sonrası maliyet karşılaştırmasıyla anlatırız.' },
       { q: 'DSG onarımı sonrası adaptasyon şart mı?', a: 'Evet, kesinlikle. Debriyaj veya mekatronik müdahalesi sonrası temel ayar ve adaptasyon yapılmazsa şanzıman doğru kavrama noktasını bilemez; kısa sürede aynı titreme ve sarsıntı şikâyeti tekrarlar.' },
-      { q: 'Hangi markalara DSG servisi veriyorsunuz?', a: 'Volkswagen, Audi, Skoda ve Seat başta olmak üzere VAG grubu araçların DSG ve S-tronic şanzımanlarına servis veriyoruz. Ford PowerShift ve Renault EDC gibi diğer çift kavramalı sistemlerde de hizmet sunuyoruz.' }
+      { q: 'Hangi markalara DSG servisi veriyorsunuz?', a: 'Volkswagen, Audi, Skoda ve Seat başta olmak üzere VAG grubu araçların DSG ve S-tronic şanzımanlarına servis veriyoruz. Ford PowerShift ve Porsche PDK gibi diğer çift kavramalı sistemlerde de hizmet sunuyoruz.' }
     ],
     related: [
       { href: 'hizmetler/mekatronik-tamiri/', label: 'Mekatronik ünitesi tamiri' },
@@ -147,8 +147,8 @@ const SERVICES = [
     nav: 'CVT Şanzıman Tamiri',
     title: 'CVT Şanzıman Tamiri Bursa | Kayış ve Konik Onarımı',
     h1: 'CVT Şanzıman Tamiri',
-    description: 'Bursa’da CVT şanzıman tamiri: kayış (çelik bant) değişimi, konik yüzey kontrolü, valf bloğu ve step motor onarımı. Toyota, Honda, Nissan, Subaru.',
-    tag: '⚙ Hizmet',
+    description: 'Bursa’da CVT şanzıman tamiri: kayış (çelik bant) değişimi, konik yüzey kontrolü, valf bloğu ve step motor onarımı. Audi Multitronic, Mercedes Autotronic.',
+    kicker: 'Kayışlı ve zincirli CVT',
     lead: 'CVT şanzımanlar kademesiz çalışır; bu yüzden arıza belirtileri klasik otomatiklerden farklıdır. Uğultu, kayma ve titreşim şikâyetlerinde kayış ve konik yüzey kontrolü yapıyoruz.',
     intro: [
       'CVT (Continuously Variable Transmission — kademesiz şanzıman), sabit vites kademeleri yerine iki konik kasnak arasında gerilen <strong>çelik kayış veya zincir</strong> ile çalışır. Kasnakların açıklığı değiştikçe çevrim oranı kademesiz olarak değişir. Bu yapı yakıt verimliliği ve sarsıntısız sürüş sağlar, ancak sistem <strong>yağ kalitesine ve temizliğine olağanüstü duyarlıdır</strong>.',
@@ -198,7 +198,7 @@ const SERVICES = [
     ],
     related: [
       { href: 'hizmetler/sanziman-yagi-degisimi/', label: 'Şanzıman yağı ve filtre değişimi' },
-      { href: 'markalar/toyota-cvt-sanziman-tamiri/', label: 'Toyota CVT şanzıman servisi' },
+      { href: 'markalar/audi-sanziman-tamiri/', label: 'Audi Multitronic (zincirli CVT) servisi' },
       { href: 'blog/cvt-sanziman-nedir-nasil-calisir/', label: 'Rehber: CVT şanzıman nedir, nasıl çalışır?' }
     ]
   },
@@ -209,7 +209,7 @@ const SERVICES = [
     title: 'Tork Konvertörü Tamiri Bursa | Balata ve Balans',
     h1: 'Tork Konvertörü Tamiri',
     description: 'Bursa’da tork konvertörü (torkmatik) tamiri ve balans ayarı. Titreme, uğultu ve kilitleme (lock-up) arızalarında uzman onarım.',
-    tag: '⚙ Hizmet',
+    kicker: 'Kilitleme balatası · Balans · Kaynak',
     lead: 'Belirli hızlarda gelen titreme ve rölantide duran araçta stop etme şikâyetlerinin çoğu tork konvertörü kaynaklıdır. Konvertörü kesip revize ediyor, balans ayarı yaparak yeniden kaynaklıyoruz.',
     intro: [
       'Tork konvertörü, motor ile otomatik şanzıman arasındaki hidrolik bağlantıyı sağlayan parçadır. Kısaca “sıvı kavrama” olarak düşünülebilir: motorun ürettiği tork, yağ akışıyla şanzımana aktarılır. Belirli bir hızın üzerinde ise <strong>kilitleme (lock-up) debriyajı</strong> devreye girerek doğrudan mekanik bağlantı kurar ve yakıt tüketimini düşürür.',
@@ -261,7 +261,7 @@ const SERVICES = [
     title: 'Şanzıman Revizyonu Bursa | Komple Bakım ve Yenileme',
     h1: 'Şanzıman Revizyonu',
     description: 'Bursa’da komple şanzıman revizyonu: söküm, parça bazında ölçüm, aşınan bileşenlerin yenilenmesi, montaj ve test. Garantili işçilik.',
-    tag: '⚙ Hizmet',
+    kicker: 'Söküm · Ölçüm · Yenileme · Adaptasyon',
     lead: 'Revizyon, şanzımanın komple sökülüp her parçasının ölçülerek değerlendirilmesi ve aşınan bileşenlerin yenilenmesidir. Yüksek kilometreli araçlarda şanzımanı ilk günkü performansına yaklaştırır.',
     intro: [
       '“Şanzıman revizyonu” (overhaul), tek bir parçanın değişimi değil; şanzımanın araçtan sökülüp <strong>tamamen parçalarına ayrılması</strong>, her bileşenin ölçülerek değerlendirilmesi ve aşınmış olanların yenilenmesi işlemidir. Revizyon sonrası şanzıman, tolerans değerleri içinde yeniden monte edilir.',
@@ -310,7 +310,7 @@ const SERVICES = [
     title: 'Şanzıman Yağı Değişimi Bursa | Filtre ve Karter',
     h1: 'Şanzıman Yağı ve Filtre Değişimi',
     description: 'Bursa’da otomatik şanzıman yağı değişimi. Karter sökümlü bakım, filtre ve conta yenileme, üretici spesifikasyonunda ATF/CVT/DSG yağı.',
-    tag: '⚙ Hizmet',
+    kicker: 'ATF · DSG · CVT yağları',
     lead: 'Şanzıman yağı sadece yağlamaz; hidrolik basıncı taşır, soğutur ve kavrama performansını belirler. Zamanında yapılan yağ bakımı, şanzıman arızalarının en etkili önleyicisidir.',
     intro: [
       'Otomatik şanzımanlarda yağ (ATF), motor yağından çok daha kritik bir görev üstlenir. Yağlamanın yanı sıra <strong>hidrolik basıncı iletir</strong>, kavrama balatalarının sürtünme davranışını belirler ve şanzımanı soğutur. Ömrünü doldurmuş yağ bu üç görevin üçünü birden aksatır.',
@@ -338,8 +338,7 @@ const SERVICES = [
         ['Klasik otomatik (torklu)', 'ATF (üretici spesifik)', '60.000 – 80.000 km', 'Şehir içi yoğun kullanımda kısaltılmalı'],
         ['DSG — ıslak debriyaj', 'DSG özel yağı', '~60.000 km', 'Filtre birlikte değişmeli'],
         ['DSG — kuru debriyaj (DQ200)', 'Mekatronik hidrolik yağı', 'Kontrol esaslı', 'Şanzıman yağı ömürlük kabul edilir'],
-        ['CVT', 'CVT özel yağı', '40.000 – 60.000 km', 'Kesinlikle ATF ile değiştirilmemeli'],
-        ['Manuel şanzıman', 'Dişli yağı (MTF)', '80.000 – 100.000 km', 'Sert kullanımda kısaltılmalı']
+        ['CVT', 'CVT özel yağı', '40.000 – 60.000 km', 'Kesinlikle ATF ile değiştirilmemeli']
       ]
     },
     faqs: [
@@ -361,7 +360,7 @@ const SERVICES = [
     title: 'Şanzıman Arıza Tespiti Bursa | Ücretsiz Diagnostik',
     h1: 'Şanzıman Arıza Tespiti (Diagnostik)',
     description: 'Bursa’da ücretsiz şanzıman arıza tespiti. Hata kodu okuma, canlı veri analizi, basınç ölçümü ve yol testi ile doğru teşhis.',
-    tag: '⚙ Hizmet',
+    kicker: 'Hata kodu · Canlı veri · Basınç · Yol testi',
     lead: 'Doğru onarım, doğru teşhisle başlar. Şanzımanı sökmeden önce hata kodu, canlı veri, basınç ölçümü ve yol testi ile arızanın gerçek kaynağını belirliyoruz. Arıza tespiti ücretsizdir.',
     intro: [
       'Şanzıman arızalarında en pahalı hata, <strong>yanlış teşhistir</strong>. Basit bir solenoid arızası için komple revizyon yapmak da, gerçekte iç hasarı olan bir şanzımana sadece yağ değiştirmek de aynı sonucu doğurur: gereksiz masraf ve tekrarlayan şikâyet.',
@@ -400,7 +399,7 @@ const SERVICES = [
     title: 'Mekatronik Ünitesi Tamiri Bursa | DSG ve ZF Şanzıman',
     h1: 'Mekatronik Ünitesi Tamiri',
     description: 'Bursa’da şanzıman mekatronik ünitesi tamiri. Solenoid, basınç sensörü ve kart onarımı; DSG, S-tronic ve ZF şanzımanlar için.',
-    tag: '⚙ Hizmet',
+    kicker: 'DSG · S-Tronic · ZF · Kodlama',
     lead: 'Mekatronik, şanzımanın beynidir. “Şanzıman arızası” uyarısı, vites atmama ve acil moda geçme şikâyetlerinin büyük kısmı mekatronik kaynaklıdır ve çoğu onarılabilir.',
     intro: [
       'Mekatronik ünitesi, elektronik kontrol kartı ile hidrolik valf bloğunun tek gövdede birleştiği bileşendir. Şanzıman kontrol ünitesinden gelen komutları solenoidler aracılığıyla hidrolik basınca çevirir; hangi kavramanın ne zaman ve hangi basınçla devreye gireceğini belirler.',

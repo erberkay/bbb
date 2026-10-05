@@ -101,8 +101,8 @@ Her sayfada: teknik açıklama, arıza belirtileri, onarım kapsamı, çalışma
 süreci, sayfaya özel SSS ve iç bağlantılar.
 
 ### 8 marka sayfası
-Volkswagen · Audi · Mercedes-Benz · BMW · Ford · Renault/Dacia ·
-Toyota/Honda · Hyundai/Kia
+Volkswagen · Audi · Mercedes-Benz · BMW · Porsche · Land Rover · Opel · Ford
+(tasarım geçişinde yedi marka grubuna hizalandı — aşağıya bakın)
 
 Her markada: kullanılan şanzıman tipleri (DQ200, ZF 8HP, 722.9, DPS6, DL501…),
 servis verilen modeller, o markaya özgü tipik arızalar ve SSS.
@@ -187,7 +187,7 @@ build/
 ├── layout.js              Ortak şablon: head, nav, footer, yapısal veri
 ├── blocks.js              Yeniden kullanılabilir içerik blokları
 ├── build.js               Üretici
-├── patch-index.js         Ana sayfayı yeni mimariye bağlar (idempotent)
+├── home.js                Ana sayfa üreticisi (tasarım kanvasından)
 ├── verify.js              Denetleyici
 └── content/
     ├── services.js  brands.js  regions.js  blog.js
@@ -210,3 +210,50 @@ npm run serve     # http://localhost:8123 (404 sayfası dahil)
 `assets/app.js` içindeki yönetici şifresi tarayıcı kaynak kodunda açıktır.
 Kodun içine ayrıntılı uyarı eklendi. Yayına almadan önce mutlaka
 `SEO-YAPILACAKLAR.md → 0. Güvenlik` bölümünü uygulayın.
+
+---
+
+## 🎨 Tasarım geçişi — "HB Otomatik Şanzıman" kanvası
+
+Site, kullanıcının hazırladığı Masaüstü + Mobil tasarıma geçirildi.
+
+**Görsel sistem:** kâğıt zemin (#f7f6f4) + gece bölümleri (#14181d), 4px keskin
+köşeler, Archivo başlık / Inter gövde / IBM Plex Mono etiket, yanık turuncu
+eylem rengi (#b45309), lacivert yapı rengi (#16509b). Eski `styles.css` +
+`pages.css` tek bir `styles.css`'te yeniden yazıldı; randevu formu, giriş
+modalı, yönetici paneli ve bildirimler de yeni görünüme taşındı.
+
+**Ana sayfa artık üretiliyor.** `index.html` elle düzenlenmiyor;
+`build/home.js` tasarımdaki bölümleri (kahraman, marka bandı, belirtiler,
+şanzıman aileleri, hizmetler, süreç, rehberler, SSS, randevu) üretir.
+Kırılgan metin yamaları yapan `patch-index.js` kaldırıldı.
+
+**Tasarımdan bilinçli olarak ayrılınan yerler:**
+- Kartlar ve belirti satırları `#randevu` yerine ilgili alt sayfaya bağlanır
+  (iç bağlantı; ziyaretçi de doğru bilgiye ulaşır).
+- Tasarımdaki randevu bandı, gerçek randevu formuyla birleştirildi.
+- Alt bilgiye Hizmetler / Keşfet / Yasal bağlantı sütunları eklendi
+  (yasal sayfalar ve marka/bölge sayfaları başka yerden bağlanmıyor).
+- Mobil hızlı eylem çubuğu kaldırıldı (tasarımda yok).
+
+**Tasarımın getirdiği içerik değişiklikleri siteye uygulandı:**
+- İşletme adı, e-posta, ikinci telefon, posta kodu (bkz. `SEO-YAPILACAKLAR.md`)
+- **Yalnızca otomatik şanzıman:** manuel şanzıman servisi iddiaları kaldırıldı
+- **Yedi marka grubu:** Toyota/Honda, Hyundai/Kia, Renault sayfaları kaldırıldı;
+  Porsche (PDK / Tiptronic S), Land Rover (ZF 6HP / 8HP / 9HP) ve
+  Opel (6T40 ailesi / 8 ileri) sayfaları yazıldı
+- **"Aracı görmeden rakam vermiyoruz":** SSS'de, fiyat rehberinde ve Yıldırım
+  sayfasında "telefonda genel aralık verebiliriz" diyen cevaplar bu politikaya
+  hizalandı
+- Tasarımda yer almayan "15+ yıl", "binlerce şanzıman" gibi doğrulanamayan
+  rakamlar kaldırıldı; sosyal paylaşım görseli yeni kimlikle yeniden üretildi
+
+**Geçiş sırasında düzeltilen hatalar:**
+- Randevu kartındaki "E-posta ile giriş" düğmesi koyu bölümün stilini
+  miras aldığı için açık kart üzerinde neredeyse görünmüyordu
+- Mobilde kahraman logosu oval görünüyordu (dikey flex'te esneme)
+- Alt sayfalarda üst bilgi iki satıra kırılıyordu; hamburger eşiği 1080px'e alındı
+- Yönetici giriş modalında varsayılan kullanıcı adı ve şifre **sayfada açıkça
+  yazıyordu** — kaldırıldı
+- Derleme artık üretilen klasörleri sıfırdan yazıyor: içerikten kaldırılan
+  bir sayfa diskte unutulmuş olarak kalmıyor

@@ -17,7 +17,7 @@ const REGIONS = [
     description: 'Nilüfer’de otomatik şanzıman tamiri. Üçevler’deki atölyemizde ücretsiz arıza tespiti, DSG, CVT ve otomatik şanzıman onarımı.',
     lead: 'Atölyemiz Nilüfer Üçevler’de bulunuyor. İlçe içinden gelen araçlar için aynı gün arıza tespiti yapabiliyoruz.',
     intro: [
-      'HB Şanzıman’ın atölyesi <strong>Nilüfer Üçevler’de</strong>, 28. Sokak üzerindedir. Nilüfer sınırları içindeki mahallelerden ulaşım kısa sürdüğü için, ilçe içinden gelen araçlarda çoğunlukla <strong>aynı gün arıza tespiti</strong> yapabiliyoruz.',
+      'HB Otomatik Şanzıman’ın atölyesi <strong>Nilüfer Üçevler’de</strong>, 28. Sokak üzerindedir. Nilüfer sınırları içindeki mahallelerden ulaşım kısa sürdüğü için, ilçe içinden gelen araçlarda çoğunlukla <strong>aynı gün arıza tespiti</strong> yapabiliyoruz.',
       'Nilüfer, Bursa’nın en yoğun trafiğe sahip ilçelerinden biri. Özellikle sabah ve akşam saatlerinde Üniversite Caddesi, İzmir Yolu ve FSM Bulvarı üzerindeki dur-kalk trafik, otomatik şanzımanlar için en yorucu kullanım biçimidir. Sürekli kalkış-duruş döngüsü tork konvertörünü ve çift kavramalı kutularda debriyajı ısıtır; bu da yağın termal yaşlanmasını hızlandırır.',
       'Bu nedenle ağırlıklı olarak şehir içi kullanılan Nilüfer araçlarında, üreticinin belirlediği yağ bakım aralığını <strong>bir miktar kısaltmayı</strong> öneriyoruz. Bu basit önlem, ileride çok daha maliyetli bir revizyon riskini belirgin şekilde azaltır.'
     ],
@@ -115,7 +115,7 @@ const REGIONS = [
     faqs: [
       { q: 'Yüksek kilometreli aracımın şanzımanı revizyon ister mi?', a: 'Kilometre tek başına belirleyici değildir. Belirleyici olan bakım geçmişi, yağın durumu ve mevcut aşınmadır. Ölçüm ve test yapmadan revizyon önermiyoruz; birçok araçta yağ + filtre bakımı ve valf bloğu revizyonu yeterli olabiliyor.' },
       { q: 'Hiç şanzıman yağı değiştirmedim, şimdi değiştirsem zarar verir mi?', a: 'Çok yüksek kilometreli ve hiç bakım görmemiş şanzımanlarda basınçlı şok yıkama, tortuların yerinden oynayarak kanalları tıkamasına yol açabilir. Bu araçlarda karter sökümlü, kontrollü değişimi tercih ediyor; yöntem kararını şanzımanın durumunu görerek veriyoruz.' },
-      { q: 'Önce fiyat öğrenebilir miyim?', a: 'Telefonda ancak genel bir aralık verilebilir; gerçekçi fiyat arıza tespitinden sonra çıkar. Tespit ücretsizdir ve sizi bağlamaz — kararı bulguları ve maliyeti gördükten sonra verirsiniz.' }
+      { q: 'Önce fiyat öğrenebilir miyim?', a: 'Aracı görmeden rakam vermiyoruz; gerçekçi fiyat ancak ön inceleme ve teşhisten sonra çıkar. Tespit ücretsizdir ve sizi bağlamaz — kararı bulguları ve maliyeti gördükten sonra verirsiniz.' }
     ]
   },
   {

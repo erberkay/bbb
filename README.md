@@ -1,6 +1,6 @@
-# HB Şanzıman — Kurumsal Web Sitesi & Randevu Sistemi
+# HB Otomatik Şanzıman — Kurumsal Web Sitesi & Randevu Sistemi
 
-Bursa / Nilüfer'de faaliyet gösteren **HB Şanzıman** için hazırlanmış kurumsal
+Bursa / Nilüfer'de yalnızca otomatik şanzıman onaran **HB Otomatik Şanzıman** için hazırlanmış kurumsal
 web sitesi, online randevu sistemi ve SEO içerik mimarisi.
 
 > **39 indekslenebilir sayfa** · statik · derleme adımı Node.js ile
@@ -38,12 +38,12 @@ web sitesi, online randevu sistemi ve SEO içerik mimarisi.
 ├── gizlilik-politikasi/  kvkk-aydinlatma-metni/  cerez-politikasi/  ┘
 │
 ├── assets/
-│   ├── styles.css              Tasarım sistemi
-│   ├── pages.css               Alt sayfa stilleri + erişilebilirlik
+│   ├── styles.css              Tasarım sistemi (tek stil dosyası)
 │   ├── app.js                  Randevu / giriş / admin mantığı
 │   ├── pages.js                Alt sayfa etkileşimleri (hafif)
 │   ├── firebase-config.js
-│   ├── logo.svg  gear.svg
+│   ├── logo.jpg                Logo (üst bilgi, kahraman, alt bilgi)
+│   ├── brands/                 Marka bandı logoları (7 marka)
 │   ├── og-image.png            Sosyal paylaşım görseli (1200×630)
 │   └── icon-192.png  icon-512.png  apple-touch-icon.png
 │
@@ -52,7 +52,7 @@ web sitesi, online randevu sistemi ve SEO içerik mimarisi.
     ├── layout.js               Ortak şablon (head, nav, footer, JSON-LD)
     ├── blocks.js               İçerik blokları
     ├── build.js                Üretici
-    ├── patch-index.js          Ana sayfayı mimariye bağlar (idempotent)
+    ├── home.js                 Ana sayfa (tasarım kanvasından) + randevu/giriş/yönetici kabuğu
     ├── verify.js               Denetleyici
     └── content/
         ├── services.js         Hizmet içerikleri
@@ -116,6 +116,6 @@ Sitenin en altındaki **"Yönetici Girişi"** bağlantısından:
 
 ## 📍 İletişim
 
-Üçevler, 28. Sk. 27. Blok No:51, 16120 Nilüfer / Bursa
-0530 491 80 05 · info@hbsanziman.com
+Üçevler, 28. Sk. 27. Blok No:51, 16270 Nilüfer / Bursa
+0530 491 80 05 · 0543 895 17 32 · hbotomatiksanziman16@gmail.com
 Pazartesi – Cumartesi 08:30 – 19:00

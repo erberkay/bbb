@@ -1,43 +1,50 @@
 /* =========================================================
-   HB ŞANZIMAN — Yeniden kullanılabilir içerik blokları
+   HB OTOMATİK ŞANZIMAN — Yeniden kullanılabilir içerik blokları
+   Görsel dil: mono etiket (üst çizgili) + Archivo başlık,
+   satır listeleri, mavi üst çizgili kartlar, koyu kapanış bandı.
    ========================================================= */
 const { SITE } = require('./config');
 const { esc } = require('./layout');
 
-/** Sayfa başlığı bloğu */
-function hero({ tag, h1, lead, root = '../../' }) {
+const eyebrow = label => label ? `<span class="eyebrow">${esc(label)}</span>` : '';
+
+/** Sayfa başlığı (koyu) */
+function hero({ tag, h1, lead, root = '../../', meta = '' }) {
   return `
     <section class="page-hero">
       <div class="container">
-        ${tag ? `<span class="section-tag">${tag}</span>` : ''}
-        <h1>${h1}</h1>
-        ${lead ? `<p class="lead">${lead}</p>` : ''}
-        <div class="hero-cta">
-          <a href="${root}#randevu" class="btn btn-primary">Ücretsiz Arıza Tespiti İçin Randevu Al</a>
-          <a href="tel:${SITE.phone}" class="btn btn-ghost">${SITE.phoneDisplay}</a>
+        ${tag ? `<div class="hero-kicker up d1">${tag}</div>` : ''}
+        <h1 class="up d2">${h1}</h1>
+        ${meta}
+        ${lead ? `<p class="lead up d3">${lead}</p>` : ''}
+        <div class="hero-cta up d4">
+          <a href="tel:${SITE.phone}" class="btn btn-primary">${SITE.phoneDisplay}</a>
+          <a href="${root}#randevu" class="btn btn-ghost on-night">Online Randevu Al</a>
         </div>
       </div>
     </section>`;
 }
 
-/** Serbest metin bölümü — paragraf dizisi */
-function prose({ h2, paras = [], id = '' }) {
+/** Serbest metin */
+function prose({ label, h2, paras = [], id = '' }) {
   return `
     <section class="section prose"${id ? ` id="${id}"` : ''}>
       <div class="container narrow">
-        ${h2 ? `<h2>${h2}</h2>` : ''}
+        ${eyebrow(label)}
+        ${h2 ? `<h2 class="section-h">${h2}</h2>` : ''}
         ${paras.map(p => `<p>${p}</p>`).join('\n        ')}
       </div>
     </section>`;
 }
 
-/** İşaretli liste bölümü (belirtiler, kapsam vb.) */
-function bulletSection({ h2, intro, items = [], variant = '', id = '' }) {
+/** Satır biçiminde işaretli liste (belirtiler, kapsam…) */
+function bulletSection({ label, h2, intro, items = [], variant = '', id = '' }) {
   return `
     <section class="section ${variant}"${id ? ` id="${id}"` : ''}>
       <div class="container narrow">
-        <h2>${h2}</h2>
-        ${intro ? `<p class="section-sub left">${intro}</p>` : ''}
+        ${eyebrow(label)}
+        <h2 class="section-h">${h2}</h2>
+        ${intro ? `<p class="section-sub">${intro}</p>` : ''}
         <ul class="check-list">
           ${items.map(i => `<li>${i}</li>`).join('\n          ')}
         </ul>
@@ -46,45 +53,49 @@ function bulletSection({ h2, intro, items = [], variant = '', id = '' }) {
 }
 
 /** Kart ızgarası (hizmet / marka / bölge listeleri) */
-function cardGrid({ h2, sub, cards = [], root = '../' }) {
+function cardGrid({ label, h2, sub, cards = [], root = '../' }) {
   return `
     <section class="section">
       <div class="container">
-        ${h2 ? `<div class="center"><h2 class="section-title">${h2}</h2>${sub ? `<p class="section-sub">${sub}</p>` : ''}</div>` : ''}
-        <div class="grid grid-3">
-          ${cards.map(c => `<a class="card link-card" href="${root}${c.href}">
+        ${eyebrow(label)}
+        ${h2 ? `<h2 class="sec-title${sub ? ' with-lead' : ''}">${h2}</h2>` : ''}
+        ${sub ? `<p class="sec-lead">${sub}</p>` : ''}
+        <div class="cards">
+          ${cards.map(c => `<a class="card" href="${root}${c.href}">
             <h3>${esc(c.title)}</h3>
             <p>${esc(c.text)}</p>
-            <span class="card-more">Detaylı bilgi →</span>
+            <span class="more mono">İncele →</span>
           </a>`).join('\n          ')}
         </div>
       </div>
     </section>`;
 }
 
-/** Adım adım süreç */
-function stepsSection({ h2, steps = [] }) {
+/** Süreç (dikey zaman çizelgesi) */
+function stepsSection({ label = 'Çalışma biçimimiz', h2, steps = [] }) {
   return `
-    <section class="section" style="background:var(--bg-2)">
+    <section class="section alt">
       <div class="container narrow">
-        <h2>${h2}</h2>
+        ${eyebrow(label)}
+        <h2 class="section-h">${h2}</h2>
         <ol class="proc-list">
-          ${steps.map(s => `<li><strong>${esc(s.t)}</strong><span>${s.d}</span></li>`).join('\n          ')}
+          ${steps.map(s => `<li><strong>${esc(s.t.replace(/^\d+\.\s*/, ''))}</strong><span>${s.d}</span></li>`).join('\n          ')}
         </ol>
       </div>
     </section>`;
 }
 
 /** Karşılaştırma / bilgi tablosu */
-function tableSection({ h2, intro, head = [], rows = [] }) {
+function tableSection({ label = 'Karşılaştırma', h2, intro, head = [], rows = [] }) {
   return `
     <section class="section">
       <div class="container narrow">
-        <h2>${h2}</h2>
-        ${intro ? `<p class="section-sub left">${intro}</p>` : ''}
+        ${eyebrow(label)}
+        <h2 class="section-h">${h2}</h2>
+        ${intro ? `<p class="section-sub">${intro}</p>` : ''}
         <div class="table-wrap">
           <table class="info-table">
-            <thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+            <thead><tr>${head.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead>
             <tbody>
               ${rows.map(r => `<tr>${r.map((c, i) => i === 0 ? `<th scope="row">${c}</th>` : `<td>${c}</td>`).join('')}</tr>`).join('\n              ')}
             </tbody>
@@ -94,12 +105,13 @@ function tableSection({ h2, intro, head = [], rows = [] }) {
     </section>`;
 }
 
-/** SSS — görünür akordeon (schema layout tarafında üretilir) */
-function faqSection({ h2 = 'Sıkça Sorulan Sorular', faqs = [] }) {
+/** SSS — görünür akordeon (FAQPage şeması layout'ta aynı listeden üretilir) */
+function faqSection({ label = 'Sık sorulan sorular', h2 = 'Merak edilenler', faqs = [] }) {
   return `
-    <section class="section" style="background:var(--bg-2)" id="sss">
+    <section class="section alt" id="sss">
       <div class="container narrow">
-        <h2>${h2}</h2>
+        ${eyebrow(label)}
+        <h2 class="section-h">${h2}</h2>
         <div class="faq">
           ${faqs.map(f => `<details>
             <summary>${esc(f.q)}</summary>
@@ -110,38 +122,36 @@ function faqSection({ h2 = 'Sıkça Sorulan Sorular', faqs = [] }) {
     </section>`;
 }
 
-/** İlgili sayfalara iç bağlantı bloğu (konu otoritesi için kritik) */
-function relatedSection({ h2 = 'İlgili sayfalar', links = [], root = '../../' }) {
+/** İlgili sayfalar — iç bağlantı (konu otoritesi için) */
+function relatedSection({ label = 'İlgili sayfalar', h2 = 'Devamını okuyun', links = [], root = '../../' }) {
   if (!links.length) return '';
   return `
-    <section class="section related">
+    <section class="section">
       <div class="container narrow">
-        <h2>${h2}</h2>
-        <ul class="rel-links">
-          ${links.map(l => `<li><a href="${root}${l.href}">${esc(l.label)}</a></li>`).join('\n          ')}
-        </ul>
+        ${eyebrow(label)}
+        <h2 class="section-h">${h2}</h2>
+        <div class="rel-links">
+          ${links.map(l => `<a href="${root}${l.href}">${esc(l.label)}</a>`).join('\n          ')}
+        </div>
       </div>
     </section>`;
 }
 
-/** Kapanış çağrısı */
+/** Koyu kapanış bandı */
 function ctaSection({ title, text, root = '../../' }) {
   return `
     <section class="cta-band">
-      <div class="container">
-        <div class="cta-inner">
-          <div>
-            <h2>${title}</h2>
-            <p>${text}</p>
-          </div>
-          <div class="cta-actions">
-            <a href="${root}#randevu" class="btn btn-primary">Online Randevu Al</a>
-            <a href="tel:${SITE.phone}" class="btn btn-ghost">${SITE.phoneDisplay}</a>
-          </div>
+      <div class="cta-inner">
+        <div>
+          <h2>${title}</h2>
+          <p>${text}</p>
         </div>
-        <p class="cta-note">${SITE.addressText} · ${SITE.hoursText}</p>
+        <div class="cta-actions">
+          <a href="${root}#randevu" class="btn btn-primary">Online Randevu Al</a>
+          <a href="tel:${SITE.phone}" class="btn btn-ghost on-night">${SITE.phoneDisplay}</a>
+        </div>
       </div>
     </section>`;
 }
 
-module.exports = { hero, prose, bulletSection, cardGrid, stepsSection, tableSection, faqSection, relatedSection, ctaSection };
+module.exports = { hero, prose, bulletSection, cardGrid, stepsSection, tableSection, faqSection, relatedSection, ctaSection, eyebrow };

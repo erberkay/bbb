@@ -1,10 +1,10 @@
 {
-  "name": "hb-sanziman",
-  "version": "2.0.0",
+  "name": "hb-otomatik-sanziman",
+  "version": "3.0.0",
   "private": true,
-  "description": "HB Şanzıman — kurumsal web sitesi, randevu sistemi ve SEO içerik mimarisi",
+  "description": "HB Otomatik Şanzıman — kurumsal web sitesi, randevu sistemi ve SEO içerik mimarisi",
   "scripts": {
-    "build": "node build/build.js && node build/patch-index.js",
+    "build": "node build/build.js",
     "verify": "node build/verify.js",
     "serve": "node -e \"const h=require('http'),f=require('fs'),p=require('path');h.createServer((q,s)=>{let u=decodeURIComponent(q.url.split('?')[0]);let fp=p.join('.',u);if(f.existsSync(fp)&&f.statSync(fp).isDirectory())fp=p.join(fp,'index.html');if(!f.existsSync(fp)){s.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});return s.end(f.readFileSync('404.html'))}const t={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.png':'image/png','.xml':'application/xml','.webmanifest':'application/manifest+json'}[p.extname(fp)]||'application/octet-stream';s.writeHead(200,{'Content-Type':t});s.end(f.readFileSync(fp))}).listen(8123,()=>console.log('http://localhost:8123'))\"",
     "check": "npm run build && npm run verify"

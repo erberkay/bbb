@@ -330,8 +330,8 @@
   /* -----------------------------------------------------
      RANDEVU
   ----------------------------------------------------- */
-  const SERVICES = ['Otomatik Şanzıman Tamiri', 'Tork Konvertörü Tamiri', 'DSG / CVT Şanzıman', 'Şanzıman Revizyonu', 'Arıza Tespiti (Diagnostik)', 'Şanzıman Yağı & Bakım', 'Diğer / Emin Değilim'];
-  const GEARTYPES = ['Otomatik', 'Yarı Otomatik', 'DSG (Çift Kavrama)', 'CVT', 'Bilmiyorum'];
+  const SERVICES = ['Teşhis (arıza tespiti)', 'Mekatronik tamiri', 'Debriyaj paketi yenileme', 'Tork konvertörü', 'Yağ değişimi', 'Komple revizyon', 'Emin değilim'];
+  const GEARTYPES = ['Bilmiyorum', 'DSG', 'S-Tronic', 'CVT', 'PowerShift', 'PDK', 'Torklu otomatik'];
   const TIMES = ['09:00', '10:00', '11:00', '12:00', '13:30', '14:30', '15:30', '16:30', '17:30'];
 
   const GOOGLE_SVG = `<svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 13.2 4.5 4.5 13.2 4.5 24S13.2 43.5 24 43.5 43.5 34.8 43.5 24c0-1.2-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.5 6.5 29.5 4.5 24 4.5 16.3 4.5 9.7 8.9 6.3 14.7z"/><path fill="#4CAF50" d="M24 43.5c5.4 0 10.3-2 14-5.3l-6.5-5.5c-2 1.5-4.6 2.3-7.5 2.3-5.2 0-9.6-3.3-11.2-7.9l-6.5 5C9.6 39 16.2 43.5 24 43.5z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.5 5.5c-.5.4 6.7-4.9 6.7-15 0-1.2-.1-2.3-.9-3.5z"/></svg>`;
@@ -623,7 +623,7 @@
     $('#year').textContent = new Date().getFullYear();
 
     // Giris animasyonu.
-    // NOT: .reveal varsayilan olarak GORUNUR (pages.css). Gizleme yalnizca
+    // NOT: .reveal varsayilan olarak GORUNUR (styles.css). Gizleme yalnizca
     // <html class="js"> varken uygulanir. Asagidaki guvenlik agi, gozlemci
     // herhangi bir nedenle tetiklenmezse icerigin gizli kalmasini onler.
     const revealAll = () => $$('.reveal').forEach(el => el.classList.add('in'));
